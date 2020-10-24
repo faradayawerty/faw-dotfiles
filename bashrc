@@ -103,8 +103,6 @@
 	alias cpp-new='echo -e "#include <cstdio>\n\nint main()\n{\n\treturn 0;\n}\n"'
 
 # --- FUNCTIONS --- #
-    function weather { curl wttr.in/$1 }
-
     function cd {
         builtin cd "$@" && l
     }
@@ -121,5 +119,4 @@
 
     ## xterm transparency
     #[ -z $TMUX ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" -m0.9 >/dev/null
-
 
