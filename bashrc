@@ -103,13 +103,7 @@
 	alias cpp-new='echo -e "#include <cstdio>\n\nint main()\n{\n\treturn 0;\n}\n"'
 
 # --- FUNCTIONS --- #
-    function gp {
-        msg="$@"
-        [ -z $msg ] && msg="-"
-        git add . ; git commit -m $msg ; git push
-    }
-
-    #function weather { curl wttr.in/$1 }
+    function weather { curl wttr.in/$1 }
 
     function cd {
         builtin cd "$@" && l
