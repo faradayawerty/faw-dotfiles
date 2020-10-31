@@ -1,10 +1,12 @@
 #! /bin/bash
 
-touch ~/.vimrc
+mkdir -p ~/.config/kak
+
+touch ~/.config/kak/kakrc
 touch ~/.bashrc
 touch ~/.tmux.conf
 
-echo "so $(realpath vimrc)" >> ~/.vimrc
+echo "source $(realpath kakrc)" >> ~/.config/kak/kakrc
 echo "source $(realpath bashrc)" >> ~/.bashrc
 echo "source-file $(realpath tmux.conf)" >> ~/.tmux.conf
 
