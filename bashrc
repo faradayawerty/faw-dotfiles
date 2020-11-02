@@ -83,12 +83,9 @@
     # misc aliases
     alias nf='clear;neofetch'
     alias ht='htop'
-    alias pm='pulsemixer'
+    alias am='alsamixer'
     alias nb='newsboat'
     alias p='clear;python3 -ic "from math import *"'
-    alias q='clear;qalc'
-
-    alias clock='tty-clock -csC4'
 
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
