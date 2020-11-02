@@ -73,6 +73,9 @@
     alias tmt='tmux new-session -A -s tty'
     alias tms='tmux new-session -A -s ssh'
 
+	# kakoune
+	alias kd='kak -c default'
+
     # default options for commands
     alias surfraw="surfraw -browser=$BROWSER"
     alias aria2c='aria2c --max-overall-download-limit 200K --all-proxy="localhost:9050"'
@@ -85,7 +88,6 @@
     alias p='clear;python3 -ic "from math import *"'
     alias q='clear;qalc'
 
-    alias temp='watch -n 3 sensors'
     alias clock='tty-clock -csC4'
 
     alias mn='udisksctl mount -b'
