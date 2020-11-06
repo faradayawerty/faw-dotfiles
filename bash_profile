@@ -1,12 +1,12 @@
 #!/bin/bash
 
-export TERMINAL=st
-export BROWSER=w3m
-export PAGER=w3m
-export EDITOR=kak
-export SHELL=bash
-export GUI_BROWSER=qutebrowser
 export GOPATH=~/.go
+export SHELL=bash
+export EDITOR=kak
+export PAGER=w3m
+export BROWSER=w3m
+export GUI_BROWSER=qutebrowser
+export TERMINAL=xterm
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

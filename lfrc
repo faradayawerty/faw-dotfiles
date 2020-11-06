@@ -22,7 +22,7 @@ map teh $tmux split-window -h $EDITOR $f
 
 map oi $sxiv $fx
 map om $mpv $fx
-map od $zathura $fx &
+map od $zathura $fx
 
 map x $$f
 map X !$f
