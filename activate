@@ -1,0 +1,16 @@
+#! /bin/bash
+
+mkdir -p ~/.config/kak
+mkdir -p ~/.config/lf
+mkdir -p ~/.w3m
+mkdir -p ~/.newsboat
+
+ln -snf $(realpath bashrc) ~/.bashrc
+ln -snf $(realpath bash_profile) ~/.bash_profile
+ln -snf $(realpath tmux.conf) ~/.tmux.conf
+ln -snf $(realpath w3m.keymap) ~/.w3m/keymap
+ln -snf $(realpath w3m.config) ~/.w3m/config
+ln -snf $(realpath newsboat.config) ~/.newsboat/config
+ln -snf $(realpath kakrc) ~/.config/kak/kakrc
+ln -snf $(realpath lfrc) ~/.config/lf/lfrc
+

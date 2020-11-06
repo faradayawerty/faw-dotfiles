@@ -1,0 +1,31 @@
+# interpreter for shell commands
+set shell bash
+set shellopts '-eu'
+
+# leave some space at the top and the bottom of the screen
+set scrolloff 10
+
+# set internal field separator (IFS)
+set ifs "\n"
+
+map <enter> open
+cmd open shell
+
+map Gh :cd ~
+
+map gj :bottom
+map gk :top
+
+map e $$EDITOR $f
+map tev $tmux split-window -v $EDITOR $f
+map teh $tmux split-window -h $EDITOR $f
+
+map oi $sxiv $fx
+map om $mpv $fx
+map od $zathura $fx &
+
+map x $$f
+map X !$f
+
+map D :delete
+

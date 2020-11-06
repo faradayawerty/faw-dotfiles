@@ -1,0 +1,174 @@
+# --- movement --- #
+keymap	h	MOVE_LEFT
+keymap	j	MOVE_DOWN
+keymap	k	MOVE_UP
+keymap	l	MOVE_RIGHT
+
+keymap J NEXT_LINK
+keymap K PREV_LINK
+
+keymap	b	PREV_WORD
+keymap	w	NEXT_WORD
+
+#keymap	C-e	UP
+#keymap	C-y	DOWN
+
+keymap	C-d	UP 12
+keymap	C-u	DOWN 12
+
+keymap	C-b	PREV_PAGE
+keymap	C-f	NEXT_PAGE
+
+keymap	gh	LINE_BEGIN
+keymap	gj	END
+keymap	gk	BEGIN
+keymap	gl	LINE_END
+
+keymap	/	SEARCH
+keymap	?	SEARCH_BACK
+keymap	n   SEARCH_NEXT
+keymap  N   SEARCH_PREV
+
+
+# --- browsing --- #
+keymap	o	GOTO
+keymap	Q	QUIT
+keymap	r	RELOAD
+
+keymap H HISTORY
+keymap D DOWNLOAD_LIST
+
+keymap z BACK
+
+keymap f LINK_BEGIN
+keymap F MOVE_LIST_MENU
+
+keymap O OPTIONS
+
+
+# --- bookmarks --- #
+keymap Gs GOTO 'https://duckduckgo.com/html'
+keymap Gv GOTO 'm.vk.com'
+keymap Gt GOTO 'http://rutor.info'
+keymap Gl GOTO 'http://bse.sci-lib.com'
+keymap Gu GOTO 'new.vyatsu.ru/account'
+keymap Gy GOTO 'https://instances.invidio.us/'
+
+
+# --- tabs --- #
+keymap tt TAB_LINK
+keymap tn NEW_TAB
+keymap	th	PREV_TAB
+keymap	tl	NEXT_TAB
+
+keymap	q	CLOSE_TAB
+
+#keymap C-t TAB_MENU
+
+
+# --- tmux --- #
+
+# 'a' for address
+keymap a EXTERN_LINK 'tmux split-window -p 20 -v handlelink'
+keymap A EXTERN 'tmux new-window -n url handlelink'
+
+keymap sv EXTERN_LINK 'tmux split-window -v w3m'
+keymap sh EXTERN_LINK 'tmux split-window -h w3m'
+keymap Sv EXTERN 'tmux split-window -v w3m'
+keymap Sh EXTERN 'tmux split-window -h w3m'
+
+
+# --- external programs --- #
+keymap i VIEW_IMAGE
+keymap I PEEK_IMG
+
+keymap x EXTERN_LINK 'handlelink'
+keymap X EXTERN 'handlelink'
+
+keymap E EDIT_SCREEN
+
+keymap d EXTERN_LINK 'wget'
+
+keymap y EXTERN_LINK 'copytoclipboard'
+keymap Y EXTERN 'copytoclipboard'
+
+
+# --- unbind keys --- #
+keymap B NULL
+
+
+
+
+
+
+
+
+
+
+#keymap	C-@	MARK
+#keymap	C-a	LINE_BEGIN
+#keymap	C-b	MOVE_LEFT
+#keymap	C-e	LINE_END
+#keymap	C-f	MOVE_RIGHT
+#keymap	C-g	LINE_INFO
+#keymap	C-j	GOTO_LINK
+#keymap	C-k	COOKIE
+#keymap	C-l	REDRAW
+#keymap	C-m	GOTO_LINK
+#keymap	C-n	MOVE_DOWN
+#keymap	C-p	MOVE_UP
+#keymap	C-r	ISEARCH_BACK
+#keymap	C-s	ISEARCH
+#keymap	C-u	PREV_LINK
+#keymap	C-w	WRAP_TOGGLE
+#keymap	C-z	SUSPEND
+#
+#keymap	!	SHELL
+#keymap	\"	REG_MARK
+#keymap	#	PIPE_SHELL
+#keymap	(	UNDO
+#keymap	)	REDO
+#keymap	,	LEFT
+#keymap	.	RIGHT
+#keymap	:	MARK_URL
+#keymap	";"	MARK_WORD
+#keymap	<	SHIFT_LEFT
+#keymap	=	INFO
+#keymap	>	SHIFT_RIGHT
+#keymap	@	READ_SHELL
+#keymap	E	EDIT
+#keymap	F	FRAME
+#keymap	H	HELP
+#keymap	L	LIST
+#keymap	S	SAVE_SCREEN
+#keymap	V	LOAD
+#keymap	Z	CENTER_H
+#keymap	a	SAVE_LINK
+#keymap	c	PEEK
+#keymap	m	MOUSE_TOGGLE
+#keymap	r	VERSION
+#keymap	v	VIEW
+#keymap	z	CENTER_V
+#keymap	|	PIPE_BUF
+#
+#keymap	M-C-j	SAVE_LINK
+#keymap	M-C-m	SAVE_LINK
+#
+#keymap	M-:	MARK_MID
+#keymap	M-<	BEGIN
+#keymap	M->	END
+#keymap	M-I	SAVE_IMAGE
+#keymap	M-M	EXTERN_LINK
+#keymap	M-W	DICT_WORD_AT
+#keymap	M-a	ADD_BOOKMARK
+#keymap	M-b	BOOKMARK
+#keymap	M-c	COMMAND
+#keymap	M-e	EDIT_SCREEN
+#keymap	M-k	DEFINE_KEY
+#keymap	M-n	NEXT_MARK
+#keymap	M-o	SET_OPTION
+#keymap	M-p	PREV_MARK
+#keymap	M-s	SAVE
+#keymap	M-u	GOTO_RELATIVE
+#keymap	M-w	DICT_WORD
+
