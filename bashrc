@@ -16,6 +16,7 @@
 # --- PROMPT --- #
     if [ "$color_prompt" = yes ]; then
         PS1="\[$(tput bold)\]\[$(tput setaf 4)\][\[$(tput bold)\]\[$(tput setaf 3)\]\W\[$(tput bold)\]\[$(tput setaf 4)\]] \[$(tput sgr0)\]"
+        #PS1="\[$(tput setaf 4)\][\[$(tput setaf 3)\]\W\[$(tput setaf 4)\]] \[$(tput sgr0)\]"
     else
         PS1='[\w] '
     fi
@@ -106,6 +107,20 @@
 # --- FUNCTIONS --- #
     function cd {
         builtin cd "$@" && l
+    }
+
+	function ks {
+    	kaksesslist=$(kak -l)
+		if [ -z $kaksesslist ];
+		then
+    		kak $@
+    	else
+        	select i in $kaksesslist
+        	do
+    			kak -c $i $@
+    			return
+			done
+		fi
     }
 
 # --- MISC --- #

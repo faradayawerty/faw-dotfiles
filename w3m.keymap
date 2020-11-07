@@ -19,10 +19,15 @@ keymap	C-u	DOWN 12
 keymap	C-b	PREV_PAGE
 keymap	C-f	NEXT_PAGE
 
-keymap	gh	LINE_BEGIN
-keymap	gj	END
-keymap	gk	BEGIN
-keymap	gl	LINE_END
+#keymap	gh	LINE_BEGIN
+#keymap	gj	END
+#keymap	gk	BEGIN
+#keymap	gl	LINE_END
+
+keymap	gg	BEGIN
+keymap	G	END
+keymap	0	LINE_BEGIN
+keymap	$	LINE_END
 
 keymap	/	SEARCH
 keymap	?	SEARCH_BACK
@@ -47,17 +52,17 @@ keymap O OPTIONS
 
 
 # --- bookmarks --- #
-keymap Gs GOTO 'https://duckduckgo.com/html'
-keymap Gv GOTO 'm.vk.com'
-keymap Gt GOTO 'http://rutor.info'
-keymap Gl GOTO 'http://bse.sci-lib.com'
-keymap Gu GOTO 'new.vyatsu.ru/account'
-keymap Gy GOTO 'https://instances.invidio.us/'
+keymap gs GOTO 'https://duckduckgo.com/html'
+keymap gv GOTO 'm.vk.com'
+keymap gt GOTO 'http://rutor.info'
+keymap gl GOTO 'http://bse.sci-lib.com'
+keymap gu GOTO 'new.vyatsu.ru/account'
+keymap gy GOTO 'https://instances.invidio.us/'
 
 
 # --- tabs --- #
-keymap tt TAB_LINK
-keymap tn NEW_TAB
+keymap	tt TAB_LINK
+keymap	tn NEW_TAB
 keymap	th	PREV_TAB
 keymap	tl	NEXT_TAB
 

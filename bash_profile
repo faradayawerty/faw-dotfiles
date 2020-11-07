@@ -2,7 +2,7 @@
 
 export GOPATH=~/.go
 export SHELL=bash
-export EDITOR=kak
+export EDITOR=vim
 export PAGER=w3m
 export BROWSER=w3m
 export GUI_BROWSER=qutebrowser

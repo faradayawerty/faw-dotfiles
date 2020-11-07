@@ -11,10 +11,10 @@ set ifs "\n"
 map <enter> open
 cmd open shell
 
-map Gh :cd ~
+map gh :cd ~
 
-map gj :bottom
-map gk :top
+map G :bottom
+map gg :top
 
 map e $$EDITOR $f
 map tev $tmux split-window -v $EDITOR $f

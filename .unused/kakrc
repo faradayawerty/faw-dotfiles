@@ -2,6 +2,7 @@
 set global tabstop 4
 add-highlighter global/ number-lines
 
+
 # -- Visuals -- #
 
 # For Code
