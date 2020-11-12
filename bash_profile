@@ -1,10 +1,15 @@
 #!/bin/bash
 
 export GOPATH=~/.go
+
 export SHELL=bash
 export EDITOR=vim
 export PAGER=w3m
 export BROWSER=w3m
+export MUSIC_PLAYER=cmus
+export FILE_MANAGER=ranger
+export NEWS_READER=newsboat
+
 export GUI_BROWSER=qutebrowser
 export TERMINAL=xterm
 
@@ -28,8 +33,8 @@ if [ -d "$GOPATH/bin" ] ; then
     PATH="$GOPATH/bin:$PATH"
 fi
 
-# autostart x
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && [ -z $TMUX ]; then
-    exec startx
-fi
+## autostart x
+#if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && [ -z $TMUX ]; then
+#    exec startx
+#fi
 

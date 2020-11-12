@@ -55,6 +55,7 @@
     alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
     # youtube aliases
+	alias ydurls="$EDITOR ~/.local/share/downloadstuff/youtube-download"
     alias yd240='youtube-dl --add-metadata -ic -f "bestvideo[height<=240]+bestaudio/best[height<=240]"'
     alias yd360='youtube-dl --add-metadata -ic -f "bestvideo[height<=360]+bestaudio/best[height<=360]"'
     alias yd480='youtube-dl --add-metadata -ic -f "bestvideo[height<=480]+bestaudio/best[height<=480]"'
@@ -76,9 +77,6 @@
     alias tmt='tmux new-session -A -s tty'
     alias tms='tmux new-session -A -s ssh'
 
-	# kakoune
-	alias kd='kak -c default'
-
     # default options for commands
     alias surfraw="surfraw -browser=$BROWSER"
     alias aria2c='aria2c --max-overall-download-limit 200K --all-proxy="localhost:9050"'
@@ -89,19 +87,19 @@
     alias am='alsamixer'
     alias nb='newsboat'
     alias p='clear;python3 -ic "from math import *"'
+	alias r=ranger
 
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
 
     # creating files
-    alias todo-new='echo -e "$(for i in $(seq -w 00 23)
-        do
-            for j in 00 20 40
-            do
-                echo $i:$j
-            done
-        done)"'
-
+	alias todo-new='echo -e "$(for i in $(seq -w 00 23)
+		do
+			for j in 00 20 40
+			do
+				echo $i:$j
+			done
+		done)"'
 	alias cpp-new='echo -e "#include <cstdio>\n\nint main()\n{\n\treturn 0;\n}\n"'
 
 # --- FUNCTIONS --- #

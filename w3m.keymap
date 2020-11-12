@@ -53,9 +53,9 @@ keymap O OPTIONS
 
 # --- bookmarks --- #
 keymap gs GOTO 'https://duckduckgo.com/html'
-keymap gv GOTO 'm.vk.com'
 keymap gt GOTO 'http://rutor.info'
-keymap gl GOTO 'http://bse.sci-lib.com'
+#keymap gl GOTO 'http://bse.sci-lib.com'
+keymap gl GOTO 'gufo.me'
 keymap gu GOTO 'new.vyatsu.ru/account'
 keymap gy GOTO 'https://instances.invidio.us/'
 
