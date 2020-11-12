@@ -33,8 +33,8 @@ if [ -d "$GOPATH/bin" ] ; then
     PATH="$GOPATH/bin:$PATH"
 fi
 
-## autostart x
-#if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && [ -z $TMUX ]; then
-#    exec startx
-#fi
+# autostart x
+if [ -f ~/.xinitrc ] && ystemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && [ -z $TMUX ]; then
+    exec startx
+fi
 
