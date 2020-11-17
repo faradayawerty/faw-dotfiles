@@ -10,8 +10,8 @@ keymap K PREV_LINK
 keymap	b	PREV_WORD
 keymap	w	NEXT_WORD
 
-#keymap	C-e	UP
-#keymap	C-y	DOWN
+keymap	C-e	UP
+keymap	C-y	DOWN
 
 keymap	C-d	UP 12
 keymap	C-u	DOWN 12

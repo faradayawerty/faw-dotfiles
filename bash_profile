@@ -8,10 +8,12 @@ export PAGER=w3m
 export BROWSER=w3m
 export MUSIC_PLAYER=cmus
 export FILE_MANAGER=ranger
-export NEWS_READER=newsboat
+export DOWNLOADER=wget
 
 export GUI_BROWSER=qutebrowser
 export TERMINAL=xterm
+#export MEDIA_VIEWER='mpv --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
+export IMAGE_VIEWER=sxiv
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -34,7 +36,7 @@ if [ -d "$GOPATH/bin" ] ; then
 fi
 
 # autostart x
-if [ -f ~/.xinitrc ] && ystemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && [ -z $TMUX ]; then
+if [ -f ~/.xinitrc ] && systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && [ -z $TMUX ]; then
     exec startx
 fi
 

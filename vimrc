@@ -17,10 +17,10 @@
     set foldmethod=indent
     set nofoldenable
     set cursorline
-    "set paste
+    set paste
     set noexpandtab
     set nocompatible
-    syntax off
+    syntax on
 
 " shortcuts
     noremap <cr> o<esc>
@@ -76,7 +76,7 @@
 
 " appearance
     highlight normal ctermfg=none
-    highlight visual ctermfg=black ctermbg=blue
+    highlight visual ctermfg=black ctermbg=magenta
 
     highlight nontext ctermfg=magenta
     highlight specialkey ctermfg=magenta
@@ -91,9 +91,9 @@
     highlight cursorcolumn ctermfg=none ctermbg=none cterm=none
 
     highlight colorcolumn ctermbg=red
-    highlight folded ctermfg=blue ctermbg=none
+    highlight folded ctermfg=magenta ctermbg=none
 
-	highlight TabLine ctermbg=none ctermfg=blue cterm=none
-	highlight TabLineFill ctermbg=none ctermfg=blue cterm=none
-	highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
+	highlight TabLine ctermbg=none ctermfg=magenta cterm=none
+	highlight TabLineFill ctermbg=none ctermfg=magenta cterm=none
+	highlight TabLineSel ctermbg=magenta ctermfg=black cterm=none
 
