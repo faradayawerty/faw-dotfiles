@@ -82,12 +82,10 @@
     alias aria2c='aria2c --max-overall-download-limit 200K --all-proxy="localhost:9050"'
 
     # misc aliases
-    alias nf='clear;neofetch'
-    alias ht='htop'
-    alias am='alsamixer'
+    alias nf='clear; neofetch'
     alias nb='newsboat'
-    alias p='clear;python3 -ic "from math import *"'
-	alias r=ranger
+    alias p='clear; python3 -ic "from math import *"'
+	alias r='ranger'
 
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'

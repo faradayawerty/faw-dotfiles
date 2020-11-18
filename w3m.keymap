@@ -52,12 +52,10 @@ keymap O OPTIONS
 
 
 # --- bookmarks --- #
-keymap gs GOTO 'https://duckduckgo.com/html'
-keymap gt GOTO 'http://rutor.info'
-#keymap gl GOTO 'http://bse.sci-lib.com'
-keymap gl GOTO 'gufo.me'
-keymap gu GOTO 'new.vyatsu.ru/account'
-keymap gy GOTO 'https://instances.invidio.us/'
+keymap	m	BOOKMARK
+keymap	M	ADD_BOOKMARK
+
+keymap gh GOTO 'https://duckduckgo.com/html' # homepage
 
 
 # --- tabs --- #
@@ -165,8 +163,6 @@ keymap B NULL
 #keymap	M-I	SAVE_IMAGE
 #keymap	M-M	EXTERN_LINK
 #keymap	M-W	DICT_WORD_AT
-#keymap	M-a	ADD_BOOKMARK
-#keymap	M-b	BOOKMARK
 #keymap	M-c	COMMAND
 #keymap	M-e	EDIT_SCREEN
 #keymap	M-k	DEFINE_KEY
