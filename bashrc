@@ -5,18 +5,17 @@
     HISTCONTROL=ignoreboth
 
     # for setting history length see HISTSIZE and HISTFILESIZE
-    HISTSIZE=10
-    HISTFILESIZE=10
+    HISTSIZE=1000
+    HISTFILESIZE=1000
 
+# --- PROMPT --- #
     # set a fancy prompt (non-color, unless we know we "want" color)
     case "$TERM" in
         xterm-color|*-256color) color_prompt=yes;;
     esac
 
-# --- PROMPT --- #
     if [ "$color_prompt" = yes ]; then
         PS1="\[$(tput bold)\]\[$(tput setaf 4)\][\[$(tput bold)\]\[$(tput setaf 3)\]\W\[$(tput bold)\]\[$(tput setaf 4)\]] \[$(tput sgr0)\]"
-        #PS1="\[$(tput setaf 4)\][\[$(tput setaf 3)\]\W\[$(tput setaf 4)\]] \[$(tput sgr0)\]"
     else
         PS1='[\w] '
     fi
@@ -48,13 +47,11 @@
         alias grep='grep --color=auto'
     fi
 
-    # some ls aliases
     alias l='ls -Fh --color=auto --group-directories-first'
     alias ll='clear;ls -lFh --color=auto --group-directories-first'
     alias la='ls -aFh --color=auto --group-directories-first'
     alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
-    # youtube aliases
 	alias ydurls="$EDITOR ~/.local/share/downloadstuff/youtube-download"
     alias yd240='youtube-dl --add-metadata -ic -f "bestvideo[height<=240]+bestaudio/best[height<=240]"'
     alias yd360='youtube-dl --add-metadata -ic -f "bestvideo[height<=360]+bestaudio/best[height<=360]"'
@@ -66,26 +63,14 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
-    # terminal web aliases
     alias ww="$BROWSER https://duckduckgo.com/html"
     alias wt="torsocks $BROWSER https://3g2upl4pq6kufc4m.onion/html"
-
-    # tmux aliases
-    alias tmn='tmux new-session -A -s $1'
 
     alias tmd='tmux new-session -A -s default'
     alias tmt='tmux new-session -A -s tty'
     alias tms='tmux new-session -A -s ssh'
 
-    # default options for commands
-    alias surfraw="surfraw -browser=$BROWSER"
-    alias aria2c='aria2c --max-overall-download-limit 200K --all-proxy="localhost:9050"'
-
-    # misc aliases
-    alias nf='clear; neofetch'
-    alias nb='newsboat'
     alias p='clear; python3 -ic "from math import *"'
-	alias r='ranger'
 
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
@@ -105,20 +90,6 @@
         builtin cd "$@" && l
     }
 
-	function ks {
-    	kaksesslist=$(kak -l)
-		if [ -z $kaksesslist ];
-		then
-    		kak $@
-    	else
-        	select i in $kaksesslist
-        	do
-    			kak -c $i $@
-    			return
-			done
-		fi
-    }
-
 # --- MISC --- #
     # enable programmable completion features
     if ! shopt -oq posix; then
@@ -128,7 +99,4 @@
         . /etc/bash_completion
       fi
     fi
-
-    ## xterm transparency
-    #[ -z $TMUX ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" -m0.9 >/dev/null
 

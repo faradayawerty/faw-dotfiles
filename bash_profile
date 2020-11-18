@@ -1,19 +1,19 @@
 #!/bin/bash
 
-export GOPATH=~/.go
-
+# terminal programs
 export SHELL=bash
 export EDITOR=vim
 export PAGER=w3m
 export BROWSER=w3m
 export MUSIC_PLAYER=cmus
-export FILE_MANAGER=ranger
 export DOWNLOADER=wget
 
+# gui programs
 export GUI_BROWSER=qutebrowser
 export TERMINAL=xterm
-#export MEDIA_VIEWER='mpv --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
 export IMAGE_VIEWER=sxiv
+
+export GOPATH=~/.go
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

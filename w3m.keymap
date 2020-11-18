@@ -82,16 +82,11 @@ keymap Sh EXTERN 'tmux split-window -h w3m'
 
 
 # --- external programs --- #
-keymap i VIEW_IMAGE
+keymap	i	SAVE_IMAGE
 keymap I PEEK_IMG
-
 keymap x EXTERN_LINK 'handlelink'
 keymap X EXTERN 'handlelink'
-
 keymap E EDIT_SCREEN
-
-keymap d EXTERN_LINK 'wget'
-
 keymap y EXTERN_LINK 'copytoclipboard'
 keymap Y EXTERN 'copytoclipboard'
 
@@ -108,6 +103,7 @@ keymap B NULL
 
 
 
+#keymap i VIEW_IMAGE
 #keymap	C-@	MARK
 #keymap	C-a	LINE_BEGIN
 #keymap	C-b	MOVE_LEFT
@@ -160,7 +156,6 @@ keymap B NULL
 #keymap	M-:	MARK_MID
 #keymap	M-<	BEGIN
 #keymap	M->	END
-#keymap	M-I	SAVE_IMAGE
 #keymap	M-M	EXTERN_LINK
 #keymap	M-W	DICT_WORD_AT
 #keymap	M-c	COMMAND

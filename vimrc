@@ -24,9 +24,8 @@
 
 " shortcuts
     noremap <cr> o<esc>
-    noremap <tab> za
-    vnoremap <c-c> "yy <Bar> :call system('xclip -selection clipboard', @y)<cr>
     noremap <c-s> :w<cr>
+    noremap <tab> za
 
     noremap K <nop>
     noremap J <nop>
@@ -45,11 +44,10 @@
     noremap tl :tabnext<cr>
     noremap th :tabprevious<cr>
 
-" general configuration
-    " copy to clipboard (neovim)
-    "set clipboard+=unnamedplus
-    "set clipboard=unnamedplus,unnamed
+    " clipboard
+    vnoremap <c-c> "yy <Bar> :call system('xclip -selection clipboard', @y)<cr>
 
+" general configuration
     " show whitespaces
     set listchars=tab:>-,space:·,eol:~
 
