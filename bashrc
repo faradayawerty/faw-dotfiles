@@ -9,17 +9,7 @@
     HISTFILESIZE=1000
 
 # --- PROMPT --- #
-    # set a fancy prompt (non-color, unless we know we "want" color)
-    case "$TERM" in
-        xterm-color|*-256color) color_prompt=yes;;
-    esac
-
-    if [ "$color_prompt" = yes ]; then
-        PS1="\[$(tput bold)\]\[$(tput setaf 4)\][\[$(tput bold)\]\[$(tput setaf 3)\]\W\[$(tput bold)\]\[$(tput setaf 4)\]] \[$(tput sgr0)\]"
-    else
-        PS1='[\w] '
-    fi
-    unset color_prompt
+	PS1='\[\e[0;1;34m\]\u\[\e[0;1;36m\]@\[\e[0;1;34m\]\H\[\e[m\] \[\e[0;1;35m\]\W\[\e[m\] \[\e0'
 
 # --- OPTIONS --- #
     # append to the history file, don't overwrite it
@@ -71,6 +61,8 @@
     alias tms='tmux new-session -A -s ssh'
 
     alias p='clear; python3 -ic "from math import *"'
+    alias nf='clear; neofetch'
+    alias nb=newsboat
 
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
