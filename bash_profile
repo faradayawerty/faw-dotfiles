@@ -12,6 +12,7 @@ export DOWNLOADER=wget
 export GUI_BROWSER=qutebrowser
 export TERMINAL=xterm
 export IMAGE_VIEWER=sxiv
+export MENU="rofi -dmenu"
 
 export GOPATH=~/.go
 
