@@ -52,12 +52,15 @@ keymap	c	PEEK
 
 keymap O OPTIONS
 
+keymap u EXTERN_LINK dmenulink
+keymap U EXTERN dmenulink
 
 # --- bookmarks --- #
 keymap	m	BOOKMARK
 keymap	M	ADD_BOOKMARK
 
-keymap gh GOTO 'https://duckduckgo.com/html' # homepage
+keymap s GOTO 'https://duckduckgo.com/html' # search
+keymap S GOTO 'https://duckduckgo.com/' # search
 
 
 # --- tabs --- #
@@ -69,16 +72,6 @@ keymap	tl	NEXT_TAB
 keymap	q	CLOSE_TAB
 
 #keymap C-t TAB_MENU
-
-
-# --- tmux --- #
-keymap u EXTERN_LINK 'tmux split-window -p 20 -v handlelink'
-keymap U EXTERN 'tmux new-window -n url handlelink'
-
-keymap sv EXTERN_LINK 'tmux split-window -v w3m'
-keymap sh EXTERN_LINK 'tmux split-window -h w3m'
-keymap Sv EXTERN 'tmux split-window -v w3m'
-keymap Sh EXTERN 'tmux split-window -h w3m'
 
 
 # --- external programs --- #

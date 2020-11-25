@@ -53,29 +53,11 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
-    alias ww="$BROWSER https://duckduckgo.com/html"
-    alias wt="torsocks $BROWSER https://3g2upl4pq6kufc4m.onion/html"
-
-    alias tmd='tmux new-session -A -s default'
-    alias tmt='tmux new-session -A -s tty'
-    alias tms='tmux new-session -A -s ssh'
-
     alias p='clear; python3 -ic "from math import *"'
     alias nf='clear; neofetch'
-    alias nb=newsboat
 
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
-
-    # creating files
-	alias todo-new='echo -e "$(for i in $(seq -w 00 23)
-		do
-			for j in 00 20 40
-			do
-				echo $i:$j
-			done
-		done)"'
-	alias cpp-new='echo -e "#include <cstdio>\n\nint main()\n{\n\treturn 0;\n}\n"'
 
 # --- FUNCTIONS --- #
     function cd {

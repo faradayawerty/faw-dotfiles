@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# terminal programs
 export SHELL=bash
 export EDITOR=vim
 export PAGER=w3m
-export BROWSER=w3m
-export MUSIC_PLAYER=cmus
 export DOWNLOADER=wget
+export RSS_READER=newsboat
+export TERMINAL_BROWSER=w3m
+export MUSIC_PLAYER=cmus
+export FILE_MANAGER=ranger
 
-# gui programs
-export GUI_BROWSER=qutebrowser
-export TERMINAL=xterm
-export IMAGE_VIEWER=sxiv
 export MENU="rofi -dmenu"
+export TERMINAL=urxvt
+export BROWSER=qutebrowser
+export IMAGE_VIEWER=sxiv
 
 export GOPATH=~/.go
 
