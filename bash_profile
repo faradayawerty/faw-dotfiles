@@ -3,7 +3,7 @@
 export SHELL=bash
 export EDITOR=vim
 export PAGER=w3m
-export DOWNLOADER=wget
+export DOWNLOADER=aria2c
 export RSS_READER=newsboat
 export TERMINAL_BROWSER=w3m
 export MUSIC_PLAYER=cmus
