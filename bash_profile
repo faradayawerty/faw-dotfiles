@@ -11,7 +11,7 @@ export FILE_MANAGER=ranger
 
 export MENU="rofi -dmenu"
 export TERMINAL=urxvt
-export BROWSER=qutebrowser
+export BROWSER=chromium
 export IMAGE_VIEWER=sxiv
 
 export GOPATH=~/.go
