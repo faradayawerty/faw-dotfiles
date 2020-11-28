@@ -1,0 +1,93 @@
+! --- Colorscheme --- !
+
+! special
+*foreground:   #98d1ce
+*background:   #0a0f14
+*cursorColor:  #98d1ce
+
+! black
+*color0:       #0a0f14
+*color8:       #10151b
+
+!red
+*color1:       #d26939
+*color9:       #d26939
+
+!green
+*color2:       #26a98b
+*color10:      #26a98b
+
+!yellow
+*color3:       #edb54b
+*color11:      #edb54b
+
+!blue
+*color4:       #33859d
+*color12:      #33859d
+
+!magenta
+*color5:       #888ba5
+*color13:      #888ba5
+
+!cyan
+*color6:       #599caa
+*color14:      #599caa
+
+!white
+*color7:       #98d1ce
+*color15:      #d3ebe9
+
+! rofi settings
+rofi.color-normal: #0a0f14, #4e5165, #0a0f14, #888ba5, #0a0f14
+rofi.color-urgent: #0a0f14, #0a0f14, #0a0f14, #0a0f14, #0a0f14
+rofi.color-active: #0a0f14, #0a0f14, #0a0f14, #0a0f14, #888ba5
+rofi.color-window: #10151b, #888ba5, #888ba5, #888ba5, #0a0f14
+
+
+! --- Urxvt --- !
+URxvt.font: xft:Hack-Regular:size=8
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+URxvt.letterSpace: -1
+URxvt*scrollBar: False
+URxvt*depth: 32
+URxvt*background: [90]#0a0f14
+
+URxvt.perl-ext-common: default,url-select,clipboard
+
+URxvt.url-select.launcher: dmenulink
+URxvt.url-select.underline: false
+URxvt.keysym.M-u: perl:url-select:select_next
+
+URxvt.copyCommand: xclip -selection clipboard
+URxvt.pasteCommand: xclip -out -selection clipboard
+
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+
+! --- Xterm --- !
+XTerm*renderFont: true
+XTerm*font: xft:Hack-Regular:size=8
+
+XTerm*utf8: 2
+XTerm*locale: true
+XTerm*geometry: 140x40
+XTerm.termName: xterm-256color
+XTerm*BorderWidth: 0
+
+! turn off alt+n keys
+XTerm*vt100.metaSendsEscape: true
+
+XTerm.vt100.translations: #override \n\
+  Ctrl <Key> -: smaller-vt-font() \n\
+  Ctrl <Key> =: larger-vt-font() \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+

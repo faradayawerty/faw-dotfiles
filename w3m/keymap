@@ -1,0 +1,83 @@
+# --- movement --- #
+keymap	h	MOVE_LEFT
+keymap	j	MOVE_DOWN
+keymap	k	MOVE_UP
+keymap	l	MOVE_RIGHT
+
+keymap	J	NEXT_LINK
+keymap	K	PREV_LINK
+
+keymap	b	PREV_WORD
+keymap	B	PREV_WORD
+keymap	w	NEXT_WORD
+keymap	W	NEXT_WORD
+
+keymap	C-e	UP
+keymap	C-y	DOWN
+
+keymap	C-d	UP 12
+keymap	C-u	DOWN 12
+
+keymap	C-b	PREV_PAGE
+keymap	C-f	NEXT_PAGE
+
+keymap	gg	BEGIN
+keymap	G	END
+keymap	0	LINE_BEGIN
+keymap	$	LINE_END
+
+keymap	/	SEARCH
+keymap	?	SEARCH_BACK
+keymap	n	SEARCH_NEXT
+keymap	N	SEARCH_PREV
+
+
+# --- browsing --- #
+keymap	o	GOTO
+keymap	Q	QUIT
+keymap	r	RELOAD
+
+keymap	z	BACK
+
+keymap	H	HISTORY
+keymap	D	DOWNLOAD_LIST
+
+keymap	f	LINK_BEGIN
+keymap	F	MOVE_LIST_MENU
+
+keymap	s	GOTO 'https://duckduckgo.com/html'
+keymap	S	GOTO 'https://duckduckgo.com/'
+
+
+# --- actions on urls --- #
+keymap	u	EXTERN_LINK dmenulink
+keymap	U	EXTERN dmenulink
+
+keymap	c	PEEK_LINK
+keymap	C	PEEK
+
+
+# --- images --- #
+keymap	I	VIEW_IMAGE
+keymap	C-i	SAVE_IMAGE
+keymap	i	PEEK_IMG
+
+
+# --- bookmarks --- #
+keymap	m	BOOKMARK
+keymap	M	ADD_BOOKMARK
+
+
+# --- tabs --- #
+keymap	tt	TAB_LINK
+keymap	tn	NEW_TAB
+keymap	th	PREV_TAB
+keymap	tl	NEXT_TAB
+keymap	q	CLOSE_TAB
+
+
+# --- misc --- #
+keymap	E	EDIT_SCREEN
+keymap	O	OPTIONS
+
+

@@ -19,24 +19,17 @@
     # update the values of LINES and COLUMNS.
     shopt -s checkwinsize
 
-    # cd into directory by typing its name
-    #shopt -s autocd
-
     # disable ctrl+s, ctrl+q
     stty -ixon
+
+    # cd into directory by typing its name
+    #shopt -s autocd
 
     # vi mode
     #set -o vi
     #bind -m vi-insert "\C-l":clear-screen
 
 # --- ALIASES --- #
-    # enable color support of ls and also add handy aliases
-    if [ -x /usr/bin/dircolors ]; then
-        test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-        alias ls='ls --color=auto'
-        alias grep='grep --color=auto'
-    fi
-
     alias l='ls -Fh --color=auto --group-directories-first'
     alias ll='clear;ls -lFh --color=auto --group-directories-first'
     alias la='ls -aFh --color=auto --group-directories-first'
@@ -53,6 +46,8 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
+    alias fm=$FILE_MANAGER
+
     alias p='clear; python3 -ic "from math import *"'
     alias nf='clear; neofetch'
 
@@ -63,14 +58,4 @@
     function cd {
         builtin cd "$@" && l
     }
-
-# --- MISC --- #
-    # enable programmable completion features
-    if ! shopt -oq posix; then
-      if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-      elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-      fi
-    fi
 
