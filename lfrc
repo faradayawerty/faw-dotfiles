@@ -8,21 +8,23 @@ set scrolloff 10
 # set internal field separator (IFS)
 set ifs "\n"
 
+# set line numbers
+set number true
+
 map <enter> open
 cmd open shell
 
 map gh :cd ~
 
-map G :bottom
-map gg :top
+map gk :top
+map gj :bottom
 
 map e $$EDITOR $f
-map tev $tmux split-window -v $EDITOR $f
-map teh $tmux split-window -h $EDITOR $f
+map E $$TERMINAL -e $EDITOR $f &> /dev/null &
 
-map oi $sxiv $fx
-map om $mpv $fx
-map od $zathura $fx
+map oi $$IMAGE_VIEWER $fx &> /dev/null &
+map om $$MEDIA_VIEWER $fx &> /dev/null &
+map od $$DOCUMENT_VIEWER $fx &> /dev/null &
 
 map x $$f
 map X !$f

@@ -9,7 +9,7 @@
     HISTFILESIZE=1000
 
 # --- PROMPT --- #
-	PS1='\[\e[0;1;36m\]\u\[\e[0;1;31m\]@\[\e[0;1;36m\]\H\[\e[m\] \[\e[0;1;35m\]\W\[\e[m\] \[\e0'
+    PS1='\[\e[0;1;36m\]\u\[\e[0;1;31m\]@\[\e[0;1;36m\]\H\[\e[m\] \[\e[0;1;35m\]\W\[\e[m\] \[\e0'
 
 # --- OPTIONS --- #
     # append to the history file, don't overwrite it
@@ -35,7 +35,7 @@
     alias la='ls -aFh --color=auto --group-directories-first'
     alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
-	alias ydurls="$EDITOR ~/.local/share/downloadstuff/youtube-download"
+    alias ydurls="$EDITOR ~/.local/share/downloadstuff/youtube-download"
     alias yd240='youtube-dl --add-metadata -ic -f "bestvideo[height<=240]+bestaudio/best[height<=240]"'
     alias yd360='youtube-dl --add-metadata -ic -f "bestvideo[height<=360]+bestaudio/best[height<=360]"'
     alias yd480='youtube-dl --add-metadata -ic -f "bestvideo[height<=480]+bestaudio/best[height<=480]"'
@@ -46,9 +46,6 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
-    alias fm=$FILE_MANAGER
-
-    alias p='clear; python3 -ic "from math import *"'
     alias nf='clear; neofetch'
 
     alias mn='udisksctl mount -b'

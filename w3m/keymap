@@ -4,38 +4,33 @@ keymap	j	MOVE_DOWN
 keymap	k	MOVE_UP
 keymap	l	MOVE_RIGHT
 
+keymap	w	NEXT_WORD
+keymap	W	NEXT_WORD
+keymap	b	PREV_WORD
+keymap	B	PREV_WORD
+
 keymap	J	NEXT_LINK
 keymap	K	PREV_LINK
 
-keymap	b	PREV_WORD
-keymap	B	PREV_WORD
-keymap	w	NEXT_WORD
-keymap	W	NEXT_WORD
+keymap	gh	LINE_BEGIN
+keymap	gj	END
+keymap	gk	BEGIN
+keymap	gl	LINE_END
 
-keymap	C-e	UP
-keymap	C-y	DOWN
-
-keymap	C-d	UP 12
 keymap	C-u	DOWN 12
+keymap	C-d	UP 12
 
-keymap	C-b	PREV_PAGE
-keymap	C-f	NEXT_PAGE
-
-keymap	gg	BEGIN
-keymap	G	END
-keymap	0	LINE_BEGIN
-keymap	$	LINE_END
+keymap	C-p	DOWN
+keymap	C-n	UP
 
 keymap	/	SEARCH
-keymap	?	SEARCH_BACK
 keymap	n	SEARCH_NEXT
-keymap	N	SEARCH_PREV
 
 
 # --- browsing --- #
+keymap	r	RELOAD
 keymap	o	GOTO
 keymap	Q	QUIT
-keymap	r	RELOAD
 
 keymap	z	BACK
 
@@ -53,8 +48,8 @@ keymap	S	GOTO 'https://duckduckgo.com/'
 keymap	u	EXTERN_LINK dmenulink
 keymap	U	EXTERN dmenulink
 
-keymap	c	PEEK_LINK
-keymap	C	PEEK
+keymap	v	PEEK_LINK
+keymap	V	PEEK
 
 
 # --- images --- #
@@ -80,4 +75,13 @@ keymap	q	CLOSE_TAB
 keymap	E	EDIT_SCREEN
 keymap	O	OPTIONS
 
+
+# --- unbind --- #
+keymap	$	NULL
+keymap	0	NULL
+keymap	?	NULL
+keymap	G	NULL
+keymap	N	NULL
+keymap	C-f	NULL
+keymap	C-b	NULL
 

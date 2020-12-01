@@ -1,18 +1,20 @@
 #!/bin/bash
 
 export SHELL=bash
-export EDITOR=vis
+export EDITOR=kak
 export PAGER=w3m
 export DOWNLOADER=wget
 export RSS_READER=newsboat
 export TERMINAL_BROWSER=w3m
 export MUSIC_PLAYER=cmus
-export FILE_MANAGER=nnn
+export FILE_MANAGER=lf
 
 export MENU=dmenu
 export TERMINAL=st
 export BROWSER=chromium
 export IMAGE_VIEWER=sxiv
+export MEDIA_VIEWER=vlc
+export DOCUMENT_VIEWER=zathura
 
 export GOPATH=~/.go
 

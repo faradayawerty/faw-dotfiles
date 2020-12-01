@@ -8,20 +8,18 @@ bind-key k up
 bind-key J next-unread
 bind-key K prev-unread
 
-bind-key G end
 bind-key g home
-bind-key d pagedown
-bind-key u pageup
+bind-key G end
 
-unbind-key n
-unbind-key p
+bind-key u pageup
+bind-key d pagedown
 
 browser $TERMINAL_BROWSER
 
-color listnormal blue default
-color listfocus cyan black standout
+color listnormal default default
+color listfocus blue default standout
 color listnormal_unread yellow default
-color listfocus_unread yellow black standout
-color info green black
-color article blue default
+color listfocus_unread cyan black standout
+color info default blue
+color article default default
 
