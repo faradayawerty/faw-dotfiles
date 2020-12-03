@@ -9,7 +9,7 @@
     HISTFILESIZE=1000
 
 # --- PROMPT --- #
-    PS1='\[\e[0;1;36m\]\u\[\e[0;1;31m\]@\[\e[0;1;36m\]\H\[\e[m\] \[\e[0;1;35m\]\W\[\e[m\] \[\e0'
+    PS1='\[\e[0;1;36m\]\u\[\e[0;1;31m\]@\[\e[0;1;36m\]\H\[\e[m\] \[\e[0;1;32m\]\W\[\e[m\] \[\e0'
 
 # --- OPTIONS --- #
     # append to the history file, don't overwrite it

@@ -18,8 +18,8 @@ browser $TERMINAL_BROWSER
 
 color listnormal default default
 color listfocus blue default standout
-color listnormal_unread yellow default
-color listfocus_unread cyan black standout
+color listnormal_unread green default
+color listfocus_unread green black standout
 color info default blue
 color article default default
 

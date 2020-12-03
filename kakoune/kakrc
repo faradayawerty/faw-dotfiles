@@ -4,6 +4,13 @@ set global ui_options ncurses_set_title=false
 add-highlighter global/ number-lines
 
 
+# -- Plugins -- #
+
+    # kakboard
+    source ~/.config/kak/plugins/kakboard.kak
+    hook global WinCreate .* %{ kakboard-enable }
+
+
 # -- Visuals -- #
 
     # For Code

@@ -1,5 +1,5 @@
 # interpreter for shell commands
-set shell bash
+set shell /bin/sh
 set shellopts '-eu'
 
 # leave some space at the top and the bottom of the screen
@@ -8,20 +8,25 @@ set scrolloff 10
 # set internal field separator (IFS)
 set ifs "\n"
 
-# set line numbers
 set number true
+
+set ratios 1:2:2
 
 map <enter> open
 cmd open shell
 
 map gh :cd ~
 
+map gg
 map gk :top
 map gj :bottom
 
 map e $$EDITOR $f
 map E $$TERMINAL -e $EDITOR $f &> /dev/null &
 
+map ow $$TERMINAL_BROWSER $fx
+
+map oW $$BROWSER $fx &> /dev/null &
 map oi $$IMAGE_VIEWER $fx &> /dev/null &
 map om $$MEDIA_VIEWER $fx &> /dev/null &
 map od $$DOCUMENT_VIEWER $fx &> /dev/null &
