@@ -8,7 +8,7 @@ set scrolloff 10
 # set internal field separator (IFS)
 set ifs "\n"
 
-set number true
+set relativenumber true
 
 set ratios 1:2:2
 
@@ -23,14 +23,14 @@ map gj :bottom
 
 
 map e $$EDITOR $f
-map i $$IMAGE_VIEWER $fx
-map m $$MEDIA_VIEWER $fx
-map b $$DOCUMENT_VIEWER $fx
+map oi $$IMAGE_VIEWER $fx
+map om $$MEDIA_PLAYER $fx
+map od $$DOCUMENT_VIEWER $fx
 
-map E $$TERMINAL -e $EDITOR $f &> /dev/null &
-map I $$IMAGE_VIEWER $fx &> /dev/null &
-map M $$MEDIA_VIEWER $fx &> /dev/null &
-map B $$DOCUMENT_VIEWER $fx &> /dev/null &
+map oE $$TERMINAL -e $EDITOR $f &> /dev/null &
+map oI $$IMAGE_VIEWER $fx &> /dev/null &
+map oM $$MEDIA_PLAYER $fx &> /dev/null &
+map oD $$DOCUMENT_VIEWER $fx &> /dev/null &
 
 map x $$f
 map X !$f

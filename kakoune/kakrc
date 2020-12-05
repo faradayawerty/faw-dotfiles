@@ -1,7 +1,8 @@
 # -- General -- #
 set global tabstop 8
+set global indentwidth 0
 set global ui_options ncurses_set_title=false
-add-highlighter global/ number-lines
+add-highlighter global/ number-lines -relative
 
 
 # -- Plugins -- #

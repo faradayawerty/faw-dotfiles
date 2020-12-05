@@ -4,17 +4,17 @@ export SHELL=bash
 export EDITOR=kak
 export PAGER=w3m
 export DOWNLOADER=wget
-export RSS_READER=newsboat
 export TERMINAL_BROWSER=w3m
-export MUSIC_PLAYER=cmus
 export FILE_MANAGER=lf
+#export RSS_READER=newsboat
+#export MUSIC_PLAYER=cmus
 
 export MENU=dmenu
 export TERMINAL=st
 export BROWSER=chromium
-export IMAGE_VIEWER=sxiv
-export MEDIA_VIEWER=vlc
-export DOCUMENT_VIEWER=zathura
+export MEDIA_PLAYER=vlc
+#export IMAGE_VIEWER=sxiv
+#export DOCUMENT_VIEWER=zathura
 
 export GOPATH=~/.go
 
