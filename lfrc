@@ -15,22 +15,20 @@ set ratios 1:2:2
 map <enter> open
 cmd open shell
 
-map gh :cd ~
-
 map gg
+map G
+
 map gk :top
 map gj :bottom
 
+map gh :cd ~
 
 map e $$EDITOR $f
-map oi $$IMAGE_VIEWER $fx
-map om $$MEDIA_PLAYER $fx
-map od $$DOCUMENT_VIEWER $fx
+map E $$TERMINAL -e $EDITOR $f &> /dev/null &
 
-map oE $$TERMINAL -e $EDITOR $f &> /dev/null &
-map oI $$IMAGE_VIEWER $fx &> /dev/null &
-map oM $$MEDIA_PLAYER $fx &> /dev/null &
-map oD $$DOCUMENT_VIEWER $fx &> /dev/null &
+map oi $$IMAGE_VIEWER $fx &> /dev/null &
+map om $$MEDIA_PLAYER $fx &> /dev/null &
+map od $$DOCUMENT_VIEWER $fx &> /dev/null &
 
 map x $$f
 map X !$f

@@ -51,8 +51,13 @@
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
 
+
 # --- FUNCTIONS --- #
     function cd {
         builtin cd "$@" && l
+    }
+
+    function aur {
+        git clone https://aur.archlinux.org/$1.git
     }
 

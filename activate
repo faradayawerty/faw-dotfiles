@@ -3,8 +3,8 @@
 mkdir -p ~/.config
 mkdir -p ~/.config/kak
 mkdir -p ~/.config/lf
-mkdir -p ~/.w3m
 mkdir -p ~/.newsboat
+mkdir -p ~/.w3m
 
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath bash_profile) ~/.bash_profile

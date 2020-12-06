@@ -6,15 +6,14 @@ export PAGER=w3m
 export DOWNLOADER=wget
 export TERMINAL_BROWSER=w3m
 export FILE_MANAGER=lf
-#export RSS_READER=newsboat
-#export MUSIC_PLAYER=cmus
+export NEWS_READER=newsboat
+export MEDIA_PLAYER=vlc
 
 export MENU=dmenu
 export TERMINAL=st
 export BROWSER=chromium
-export MEDIA_PLAYER=vlc
-#export IMAGE_VIEWER=sxiv
-#export DOCUMENT_VIEWER=zathura
+export DOCUMENT_VIEWER=xreader
+export IMAGE_VIEWER=sxiv
 
 export GOPATH=~/.go
 
