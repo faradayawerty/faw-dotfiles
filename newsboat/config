@@ -1,15 +1,15 @@
 #auto-reload yes
 
-bind-key l open
 bind-key h quit
 bind-key j down
 bind-key k up
+bind-key l open
 
-bind-key n next-unread
-bind-key p prev-unread
+bind-key J next-unread
+bind-key K prev-unread
 
-bind-key K home
-bind-key J end
+bind-key U home
+bind-key D end
 
 bind-key u pageup
 bind-key d pagedown
@@ -17,9 +17,9 @@ bind-key d pagedown
 browser $TERMINAL_BROWSER
 
 color listnormal default default
-color listfocus blue default standout
-color listnormal_unread green default
-color listfocus_unread green black standout
-color info default blue
+color listfocus cyan black standout
+color listnormal_unread blue default
+color listfocus_unread blue black standout
+color info black cyan
 color article default default
 

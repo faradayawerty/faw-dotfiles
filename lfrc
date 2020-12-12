@@ -1,5 +1,5 @@
 # interpreter for shell commands
-set shell /bin/sh
+set shell /bin/bash
 set shellopts '-eu'
 
 # leave some space at the top and the bottom of the screen
@@ -15,6 +15,8 @@ set ratios 1:2:2
 map <enter> open
 cmd open shell
 
+map w
+
 map gg
 map G
 
@@ -24,11 +26,16 @@ map gj :bottom
 map gh :cd ~
 
 map e $$EDITOR $f
-map E $$TERMINAL -e $EDITOR $f &> /dev/null &
-
-map oi $$IMAGE_VIEWER $fx &> /dev/null &
-map om $$MEDIA_PLAYER $fx &> /dev/null &
-map od $$DOCUMENT_VIEWER $fx &> /dev/null &
+map oi $$IMAGE_VIEWER $fx
+map od $$DOCUMENT_VIEWER $fx
+map om ${{
+	if [ "$MEDIA_PLAYER" = "mpv" ]
+	then
+		mpv --no-audio-display $fx
+	else
+		$MEDIA_PLAYER $fx
+	fi
+}}
 
 map x $$f
 map X !$f
