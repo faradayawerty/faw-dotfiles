@@ -11,11 +11,7 @@ setxkbmap -layout us,ru -option grp:alt_shift_toggle
 xdotool mousemove 10000 10000
 
 # set root window name
-while true
-do
-	xsetroot -name "$(date +' %d.%m.%Y %H:%M ')"
-	sleep 30
-done &
+xsetroot -name " dwm "
 
 # start window manager
 exec dwm

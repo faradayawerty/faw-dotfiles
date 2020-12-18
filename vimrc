@@ -3,12 +3,12 @@
 	set showtabline=2
 	set foldignore=
 	set laststatus=1
-	set tabstop=4
-	set shiftwidth=4
+	set tabstop=8
+	set shiftwidth=8
 	set smarttab
 	set autoindent
 	set number
-	set norelativenumber
+	set relativenumber
 	set noswapfile 
 	set hlsearch
 	set incsearch
@@ -23,10 +23,6 @@
 	syntax on
 
 " shortcuts
-	noremap <cr> o<esc>
-	noremap <c-s> :w<cr>
-	noremap <tab> za
-
 	noremap K <nop>
 	noremap J <nop>
  
@@ -37,6 +33,10 @@
 	noremap <leader>f :find 
 	noremap <leader>p :set paste!<cr>
 	noremap <leader>c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
+
+	autocmd FileType cpp noremap <leader>r :!clear; g++ % && ./a.out<cr>
+	autocmd FileType go noremap <leader>r :!clear; go run %<cr>
+	autocmd FileType tex noremap <leader>r :!clear; pdflatex % && zathura %:r.pdf <cr>
 
 	" tabs
 	noremap tn :tabnew<cr>
@@ -75,13 +75,13 @@
 
 " appearance
 	highlight normal ctermfg=none
-	highlight visual ctermfg=black ctermbg=magenta
+	highlight visual ctermfg=black ctermbg=blue
 
-	highlight nontext ctermfg=magenta
-	highlight specialkey ctermfg=magenta
+	highlight nontext ctermfg=blue
+	highlight specialkey ctermfg=blue
 
-	highlight search cterm=none ctermfg=red ctermbg=none
-	highlight incsearch cterm=none ctermfg=red ctermbg=none
+	highlight search cterm=underline ctermfg=cyan ctermbg=none
+	highlight incsearch cterm=underline ctermfg=cyan ctermbg=none
 
 	highlight linenr term=none cterm=none ctermfg=none ctermbg=none
 	highlight cursorlinenr ctermfg=none ctermbg=none cterm=underline
@@ -89,10 +89,10 @@
 	highlight cursorline ctermfg=none ctermbg=none cterm=underline
 	highlight cursorcolumn ctermfg=none ctermbg=none cterm=none
 
-	highlight colorcolumn ctermbg=red
-	highlight folded ctermfg=magenta ctermbg=none
+	highlight colorcolumn ctermbg=cyan
+	highlight folded ctermfg=blue ctermbg=none
 
-	highlight TabLine ctermbg=none ctermfg=magenta cterm=none
-	highlight TabLineFill ctermbg=none ctermfg=magenta cterm=none
-	highlight TabLineSel ctermbg=magenta ctermfg=black cterm=none
+	highlight TabLine ctermbg=none ctermfg=blue cterm=none
+	highlight TabLineFill ctermbg=none ctermfg=blue cterm=none
+	highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
 

@@ -9,7 +9,7 @@
     HISTFILESIZE=1000
 
 # --- PROMPT --- #
-    PS1='\[\e[0;1;36m\]\u\[\e[0;1;31m\]@\[\e[0;1;36m\]\H\[\e[m\] \[\e[0;1;32m\]\W\[\e[m\] \[\e0'
+    PS1='\[\e[0;1;34m\]\u\[\e[0;1;36m\]@\[\e[0;1;34m\]\H\[\e[m\] \[\e[0;1;36m\]\W\[\e[m\] \[\e0'
 
 # --- OPTIONS --- #
     # append to the history file, don't overwrite it
@@ -46,8 +46,19 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
-    alias nf='clear; neofetch'
+    alias yt='pipe-viewer --resolution 360'
+    alias yt240='pipe-viewer --resolution 240'
+    alias yt360='pipe-viewer --resolution 360'
+    alias yt480='pipe-viewer --resolution 480'
+    alias yt720='pipe-viewer --resolution 720'
 
+    alias tm='tmux new-session -A -s'
+    alias nb='newsboat'
+    alias ht='htop'
+    alias pm='pulsemixer'
+    alias nf='clear; neofetch'
+    alias ww='w3m -B'
+    alias wt='torsocks w3m -B'
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
 

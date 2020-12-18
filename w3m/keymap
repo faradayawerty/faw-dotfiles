@@ -12,19 +12,25 @@ keymap	B	PREV_WORD
 keymap	J	NEXT_LINK
 keymap	K	PREV_LINK
 
-keymap	gh	LINE_BEGIN
-keymap	gj	END
-keymap	gk	BEGIN
-keymap	gl	LINE_END
+keymap	0	LINE_BEGIN
+keymap	^	LINE_BEGIN
+keymap	$	LINE_END
+
+keymap	G	END
+keymap	gg	BEGIN
 
 keymap	C-u	DOWN 12
 keymap	C-d	UP 12
 
-keymap	C-p	DOWN
-keymap	C-n	UP
+keymap	C-f	NEXT_PAGE
+keymap	C-b	PREV_PAGE
+
+keymap	C-y	DOWN
+keymap	C-e	UP
 
 keymap	/	SEARCH
 keymap	n	SEARCH_NEXT
+keymap	p	SEARCH_PREV
 
 
 # --- browsing --- #
@@ -45,8 +51,8 @@ keymap	S	GOTO 'https://duckduckgo.com/'
 
 
 # --- actions on urls --- #
-keymap	u	EXTERN_LINK dmenulink
-keymap	U	EXTERN dmenulink
+keymap	u	EXTERN_LINK 'tmux split-window -v -p20 exurl'
+keymap	U	EXTERN 'tmux split-window -v -p20 exurl'
 
 keymap	v	PEEK_LINK
 keymap	V	PEEK
@@ -77,11 +83,4 @@ keymap	O	OPTIONS
 
 
 # --- unbind --- #
-keymap	$	NULL
-keymap	0	NULL
-keymap	?	NULL
-keymap	G	NULL
-keymap	N	NULL
-keymap	C-f	NULL
-keymap	C-b	NULL
 

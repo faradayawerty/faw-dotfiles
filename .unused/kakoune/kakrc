@@ -41,16 +41,16 @@ add-highlighter global/ number-lines -relative
 
     # builtin faces
     	face global Default default,default
-    	face global PrimarySelection black,blue+fg
-    	face global SecondarySelection black,blue+fg
+    	face global PrimarySelection black,green+fg
+    	face global SecondarySelection black,green+fg
     	face global PrimaryCursor black,white+fg
     	face global SecondaryCursor black,white+fg
     	face global PrimaryCursorEol black,cyan+fg
     	face global SecondaryCursorEol black,cyan+fg
     	face global LineNumbers default,default
     	face global LineNumberCursor default,default+r
-    	face global MenuForeground default,blue
-    	face global MenuBackground blue,default
+    	face global MenuForeground default,green
+    	face global MenuBackground green,default
     	face global MenuInfo cyan
     	face global Information black,yellow
     	face global Error black,red

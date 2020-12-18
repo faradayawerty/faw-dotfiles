@@ -3,23 +3,25 @@
 source ~/.bashrc
 
 export SHELL=bash
-export EDITOR=kak
+export EDITOR=vim
+export FILE_MANAGER=vifm
 
 export PAGER=w3m
-export DOWNLOADER=aria2c
 export TERMINAL_BROWSER=w3m
-export FILE_MANAGER=lf
-export NEWS_READER=newsboat
+export DOWNLOADER=aria2c
+export MUSIC_PLAYER=cmus
 
 export MEDIA_PLAYER=mpv
 export IMAGE_VIEWER=sxiv
-export DOCUMENT_VIEWER=xreader
+export DOCUMENT_VIEWER=zathura
 
 export MENU=dmenu
 export TERMINAL=st
 export BROWSER=chromium
 
 export GOPATH=~/.go
+
+#export LS_COLORS="di=1;32:ex=1;33"
 
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
