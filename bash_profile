@@ -3,8 +3,8 @@
 source ~/.bashrc
 
 export SHELL=bash
-export EDITOR=vim
-export FILE_MANAGER=vifm
+export EDITOR=nvim
+export FILE_MANAGER=lf
 
 export PAGER=w3m
 export TERMINAL_BROWSER=w3m

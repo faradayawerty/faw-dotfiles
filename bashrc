@@ -46,7 +46,6 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
-    alias yt='pipe-viewer --resolution 360'
     alias yt240='pipe-viewer --resolution 240'
     alias yt360='pipe-viewer --resolution 360'
     alias yt480='pipe-viewer --resolution 480'
