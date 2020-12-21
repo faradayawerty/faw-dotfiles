@@ -51,8 +51,8 @@ keymap	S	GOTO 'https://duckduckgo.com/'
 
 
 # --- actions on urls --- #
-keymap	u	EXTERN_LINK 'tmux new-window -v -p 20 exurl'
-keymap	U	EXTERN 'tmux new-window -v -p 20 exurl'
+keymap	u	EXTERN_LINK exurl
+keymap	U	EXTERN exurl
 
 keymap	v	PEEK_LINK
 keymap	V	PEEK

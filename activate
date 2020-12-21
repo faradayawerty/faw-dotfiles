@@ -1,6 +1,6 @@
 #! /bin/bash
 
-mkdir -p ~/.config/lf
+# TODO: перейти на vis
 mkdir -p ~/.config/nvim
 
 mkdir -p ~/.newsboat
@@ -11,7 +11,6 @@ ln -snf $(realpath bash_profile) ~/.bash_profile
 ln -snf $(realpath xinitrc) ~/.xinitrc
 
 ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
-ln -snf $(realpath lf/lfrc) ~/.config/lf/lfrc
 
 ln -snf $(realpath w3m/keymap) ~/.w3m/keymap
 ln -snf $(realpath newsboat/config) ~/.newsboat/config

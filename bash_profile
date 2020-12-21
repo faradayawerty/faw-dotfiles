@@ -4,7 +4,7 @@ source ~/.bashrc
 
 export SHELL=bash
 export EDITOR=nvim
-export FILE_MANAGER=lf
+export FILE_MANAGER=rover
 
 export PAGER=w3m
 export TERMINAL_BROWSER=w3m

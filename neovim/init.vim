@@ -36,9 +36,9 @@
 	noremap <leader>p :set paste!<cr>
 	noremap <leader>c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
 
-	autocmd FileType cpp noremap <leader>r :!clear; g++ % && ./a.out<cr>
-	autocmd FileType go noremap <leader>r :!clear; go run %<cr>
-	autocmd FileType tex noremap <leader>r :!clear; pdflatex % && zathura %:r.pdf <cr>
+	"autocmd FileType cpp noremap <leader>r :!clear; g++ % && ./a.out<cr>
+	"autocmd FileType go noremap <leader>r :!clear; go run %<cr>
+	"autocmd FileType tex noremap <leader>r :!clear; pdflatex % && zathura %:r.pdf <cr>
 
 	" tabs
 	noremap tn :tabnew<cr>
