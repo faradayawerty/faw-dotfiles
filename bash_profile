@@ -6,8 +6,8 @@ export SHELL=bash
 export EDITOR=nvim
 export FILE_MANAGER=rover
 
-export PAGER=w3m
-export TERMINAL_BROWSER=w3m
+export PAGER=less
+export TERMINAL_BROWSER=links
 export DOWNLOADER=aria2c
 export MUSIC_PLAYER=cmus
 

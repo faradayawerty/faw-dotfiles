@@ -7,8 +7,6 @@ mkdir -p ~/.w3m
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath bash_profile) ~/.bash_profile
 ln -snf $(realpath xinitrc) ~/.xinitrc
-
 ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
-
 ln -snf $(realpath w3m/keymap) ~/.w3m/keymap
 

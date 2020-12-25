@@ -53,10 +53,10 @@
     alias nb='newsboat'
     alias ht='htop'
     alias pm='pulsemixer'
-    alias ww='w3m -B'
-    alias wt='torsocks w3m -B'
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
+    alias ww='$TERMINAL_BROWSER'
+    alias wt='torsocks $TERMINAL_BROWSER'
 
 
 # --- FUNCTIONS --- #
