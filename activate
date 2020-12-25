@@ -1,9 +1,7 @@
 #! /bin/bash
 
-# TODO: перейти на vis
+# TODO: move to vis
 mkdir -p ~/.config/nvim
-
-mkdir -p ~/.newsboat
 mkdir -p ~/.w3m
 
 ln -snf $(realpath bashrc) ~/.bashrc
@@ -13,5 +11,4 @@ ln -snf $(realpath xinitrc) ~/.xinitrc
 ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
 
 ln -snf $(realpath w3m/keymap) ~/.w3m/keymap
-ln -snf $(realpath newsboat/config) ~/.newsboat/config
 

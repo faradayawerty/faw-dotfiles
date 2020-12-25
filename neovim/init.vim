@@ -7,8 +7,8 @@
 	set shiftwidth=8
 	set smarttab
 	set autoindent
-	set number
-	set relativenumber
+	set nonumber
+	set norelativenumber
 	set noswapfile 
 	set hlsearch
 	set incsearch
@@ -29,9 +29,9 @@
 	noremap J <nop>
  
 	let mapleader=","
+	noremap <leader>n :set number!<cr>:set relativenumber!<cr>
 	noremap <leader>s :set spell! spelllang=en,ru<CR>
 	noremap <leader>w :set list!<cr>
-	noremap <leader>n :norm 
 	noremap <leader>f :find 
 	noremap <leader>p :set paste!<cr>
 	noremap <leader>c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>

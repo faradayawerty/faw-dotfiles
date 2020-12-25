@@ -35,7 +35,6 @@
     alias la='ls -aFh --color=auto --group-directories-first'
     alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
-    alias ydurls="$EDITOR ~/.local/share/downloadstuff/youtube-download"
     alias yd240='youtube-dl --add-metadata -ic -f "bestvideo[height<=240]+bestaudio/best[height<=240]"'
     alias yd360='youtube-dl --add-metadata -ic -f "bestvideo[height<=360]+bestaudio/best[height<=360]"'
     alias yd480='youtube-dl --add-metadata -ic -f "bestvideo[height<=480]+bestaudio/best[height<=480]"'
@@ -51,11 +50,9 @@
     alias yt480='pipe-viewer --resolution 480'
     alias yt720='pipe-viewer --resolution 720'
 
-    alias tm='tmux new-session -A -s'
     alias nb='newsboat'
     alias ht='htop'
     alias pm='pulsemixer'
-    alias nf='clear; neofetch'
     alias ww='w3m -B'
     alias wt='torsocks w3m -B'
     alias mn='udisksctl mount -b'
