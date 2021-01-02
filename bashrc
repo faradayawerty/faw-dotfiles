@@ -9,7 +9,7 @@
     HISTFILESIZE=1000
 
 # --- PROMPT --- #
-    PS1='\[\e[0;1;34m\]\u\[\e[0;1;36m\]@\[\e[0;1;34m\]\H\[\e[m\] \[\e[0;1;36m\]\W\[\e[m\] \[\e0'
+    PS1='\[\e[0;1;34m\]\u\[\e[0;1;31m\]@\[\e[0;1;34m\]\H\[\e[m\] \[\e[0;1;33m\]\W\[\e[m\] \[\e0'
 
 # --- OPTIONS --- #
     # append to the history file, don't overwrite it
@@ -45,18 +45,26 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
-    alias yt240='pipe-viewer --resolution 240'
-    alias yt360='pipe-viewer --resolution 360'
-    alias yt480='pipe-viewer --resolution 480'
-    alias yt720='pipe-viewer --resolution 720'
+    alias yt240='pipe-viewer -C --resolution 240'
+    alias yt360='pipe-viewer -C --resolution 360'
+    alias yt480='pipe-viewer -C --resolution 480'
+    alias yt720='pipe-viewer -C --resolution 720'
 
+    alias r='rover'
+    alias v='nvim'
+
+    alias nf='clear; neofetch'
+    alias uf='clear; ufetch'
     alias nb='newsboat'
     alias ht='htop'
     alias pm='pulsemixer'
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
-    alias ww='$TERMINAL_BROWSER'
-    alias wt='torsocks $TERMINAL_BROWSER'
+    alias ww='$TERMINAL_BROWSER duckduckgo.com'
+    alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com'
+
+    alias li='links -html-numbered-links 1'
+    alias lis='links -html-numbered-links 1 duckduckgo.com'
 
 
 # --- FUNCTIONS --- #

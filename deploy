@@ -1,5 +1,6 @@
 #! /bin/bash
 
+# why can't it also be in $HOME ??
 mkdir -p ~/.config/nvim
 ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
 
