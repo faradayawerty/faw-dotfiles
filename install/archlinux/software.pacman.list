@@ -1,0 +1,30 @@
+# -- text -- #
+neovim
+bash bash-completion
+zip unzip unrar atool
+newsboat tree htop ffmpeg imagemagick aria2 curl wget translate-shell youtube-dl libqalculate
+tor torsocks udisks2 openssh
+
+
+# -- graphical -- #
+xorg xorg-xinit
+xwallpaper xcompmgr maim xclip xdotool
+mpv vlc
+zathura zathura-djvu zathura-ps zathura-pdf-poppler poppler
+telegram-desktop transmission-gtk
+terminus-font noto-fonts noto-fonts-cjk noto-fonts-extra
+
+
+# -- sound -- #
+pulseaudio pulsemixer pulseaudio-alsa alsa-utils
+
+
+# -- programming languages -- #
+python python-pip
+go lua love fpc tcc jdk8-openjdk
+texlive-core texlive-lang
+
+
+# -- games -- #
+#wesnoth supertux supertuxkart
+

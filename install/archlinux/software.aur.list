@@ -1,0 +1,14 @@
+# -- text -- #
+pipe-viewer-git
+rover
+tty-clock
+
+
+# -- gui -- #
+ttf-mizutama-emoji # colorless emoji for terminal
+wps-office teams ttf-ms-fonts ttf-wps-fonts
+
+
+# -- games -- #
+dreamchess
+
