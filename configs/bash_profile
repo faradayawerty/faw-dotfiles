@@ -5,23 +5,19 @@ source ~/.bashrc
 export SHELL=bash
 export EDITOR=nvim
 export FILE_MANAGER=rover
-
 export PAGER=less
 export TERMINAL_BROWSER=links
 export DOWNLOADER=aria2c
 export MUSIC_PLAYER=cmus
-
 export MEDIA_PLAYER=mpv
 export IMAGE_VIEWER=sxiv
 export DOCUMENT_VIEWER=zathura
-
-export MENU=dmenu
-export TERMINAL=st
+export MENU="rofi -dmenu"
+export TERMINAL=xterm
 export BROWSER=chromium
-
-export GOPATH=~/.go
-
 #export LS_COLORS="di=1;32:ex=1;33"
+export GOPATH=~/.go
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"

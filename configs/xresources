@@ -1,0 +1,95 @@
+! --- Colorscheme --- !
+
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #111111
+*.color8:       #666666
+
+! red
+*.color1:       #d36265
+*.color9:       #ef8171
+
+! green
+*.color2:       #aece91
+*.color10:      #cfefb3
+
+! yellow
+*.color3:       #e7e18c
+*.color11:      #fff796
+
+! blue
+*.color4:       #5297cf
+*.color12:      #74b8ef
+
+! magenta
+*.color5:       #963c59
+*.color13:      #b85e7b
+
+! cyan
+*.color6:       #5e7175
+*.color14:      #a3babf
+
+! white
+*.color7:       #bebebe
+*.color15:      #ffffff
+
+
+! rofi settings
+rofi.color-normal: #111111, #5297cf, #111111, #5297cf, #111111
+rofi.color-urgent: #111111, #111111, #111111, #111111, #111111
+rofi.color-active: #111111, #111111, #111111, #111111, #5297cf
+rofi.color-window: #111111, #5297cf, #5297cf, #5297cf, #111111
+
+
+! --- Urxvt --- !
+URxvt.font: xft:Hack-Regular:size=8
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+URxvt.letterSpace: -1
+URxvt*scrollBar: False
+URxvt*depth: 32
+URxvt*background: [90]#0a0f14
+
+URxvt.perl-ext-common: default,url-select,clipboard
+
+URxvt.url-select.launcher: dmenulink
+URxvt.url-select.underline: false
+URxvt.keysym.M-u: perl:url-select:select_next
+
+URxvt.copyCommand: xclip -selection clipboard
+URxvt.pasteCommand: xclip -out -selection clipboard
+
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+
+! --- Xterm --- !
+XTerm*renderFont: true
+XTerm*font: xft:Hack-Regular:size=8
+
+XTerm*utf8: 1
+XTerm*locale: true
+XTerm*geometry: 140x40
+XTerm.termName: xterm-256color
+XTerm*BorderWidth: 0
+
+! turn off alt+n keys
+XTerm*vt100.metaSendsEscape: true
+
+XTerm.vt100.translations: #override \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+
+!Ctrl <Key> -: smaller-vt-font() \n\
+!Ctrl <Key> =: larger-vt-font()
+

@@ -1,6 +1,5 @@
 # -- text -- #
-neovim
-bash bash-completion
+bash bash-completion neovim
 zip unzip unrar atool
 newsboat tree htop ffmpeg imagemagick aria2 curl wget translate-shell youtube-dl libqalculate
 tor torsocks udisks2 openssh
@@ -8,18 +7,20 @@ tor torsocks udisks2 openssh
 
 # -- graphical -- #
 xorg xorg-xinit
-xwallpaper xcompmgr maim xclip xdotool
-mpv vlc
+i3-wm sbxkb xterm rofi
+xwallpaper xcompmgr maim xclip xdotool brightnessctl
+mpv vlc sxiv
 zathura zathura-djvu zathura-ps zathura-pdf-poppler poppler
-telegram-desktop transmission-gtk
-terminus-font noto-fonts noto-fonts-cjk noto-fonts-extra
+chromium telegram-desktop transmission-gtk
+ttf-hack noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
 
 
 # -- sound -- #
 pulseaudio pulsemixer pulseaudio-alsa alsa-utils
+cmus
 
 
-# -- programming languages -- #
+# -- programming tools -- #
 python python-pip
 go lua love fpc tcc jdk8-openjdk
 texlive-core texlive-lang
@@ -27,4 +28,12 @@ texlive-core texlive-lang
 
 # -- games -- #
 #wesnoth supertux supertuxkart
+
+
+# -- dependencies -- #
+#libxft # suckless st sxiv dwm
+#libxinerama libx11 # suckless dwm, links(graphics)
+#freetype2 # suckless dwm sxiv
+#desktop-file-utils hicolor-icon-theme imlib2 xdg-utils # suckless sxiv
+#libxt libtiff libpng libsvg libevent pcre xz gpm bzip2 # links
 
