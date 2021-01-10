@@ -249,8 +249,8 @@ bar {
 		bindsym $mod+s mode "session"
 
 		mode "open" {
-			bindsym b exec $guibrowser
-			bindsym m exec telegram-desktop
+			bindsym b exec $guibrowser; mode "default"
+			bindsym t exec telegram-desktop; mode "default"
 
 			bindsym Return mode "default"
 			bindsym Escape mode "default"
