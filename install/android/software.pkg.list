@@ -1,3 +1,15 @@
-vim w3m newsboat ranger cmus htop
+# -- main tools -- #
+neovim tmux bash
+
+
+# -- additional tools -- #
+newsboat cmus htop
+zip unzip unrar
+tree aria2 curl wget translate-shell qalc
+tor torsocks openssh
 ncurses-utils
+
+
+# -- programming tools -- #
+python
 

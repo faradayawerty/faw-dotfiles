@@ -1,20 +1,11 @@
 #! /bin/bash
 
-mkdir -p ~/.config/i3
-mkdir -p ~/.config/i3status
 mkdir -p ~/.config/nvim
-mkdir -p ~/.config/sxiv/exec
 mkdir -p ~/.newsboat
 
-ln -snf $(realpath wallpaper) ~/.wallpaper
-ln -snf $(realpath xinitrc) ~/.xinitrc
-ln -snf $(realpath xresources) ~/.Xresources
 ln -snf $(realpath tmux.conf) ~/.tmux.conf
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath bash_profile) ~/.bash_profile
 ln -snf $(realpath newsboat/config) ~/.newsboat/config
 ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
-ln -snf $(realpath i3/config) ~/.config/i3/config
-ln -snf $(realpath i3status/config) ~/.config/i3status/config
-ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
 
