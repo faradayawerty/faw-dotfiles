@@ -62,6 +62,8 @@
     alias um='udisksctl unmount -b'
     alias ww='$TERMINAL_BROWSER duckduckgo.com'
     alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com'
+    alias umremfs='umount ~/.ssh/remfs'
+    alias remfs='cd ~/.ssh/remfs'
 
     alias li='links -html-numbered-links 1'
     alias lis='links -html-numbered-links 1 duckduckgo.com'

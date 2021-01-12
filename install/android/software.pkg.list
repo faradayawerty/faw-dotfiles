@@ -6,10 +6,12 @@ neovim tmux bash
 newsboat cmus htop
 zip unzip unrar
 tree aria2 curl wget translate-shell qalc
-tor torsocks openssh
+tor torsocks openssh net-tools
 ncurses-utils
 
 
 # -- programming tools -- #
 python
+clang make
+
 

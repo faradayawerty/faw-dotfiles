@@ -4,7 +4,6 @@ mkdir -p ~/.config/i3
 mkdir -p ~/.config/i3status
 mkdir -p ~/.config/sxiv/exec
 
-ln -snf $(realpath wallpaper) ~/.wallpaper
 ln -snf $(realpath xinitrc) ~/.xinitrc
 ln -snf $(realpath xresources) ~/.Xresources
 ln -snf $(realpath i3/config) ~/.config/i3/config

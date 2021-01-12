@@ -11,6 +11,9 @@
 
 	show_marks yes
 
+	gaps inner 6
+	gaps outer 6
+
 
 # variables
 	set $terminal $TERMINAL
@@ -61,10 +64,10 @@
 	set_from_resource $white0 i3wm.color15 #aaaaaa
 
 	## class                border   bg       text        ind.        child_border
-	client.focused          $blue    $blue    $black      $red        $blue 
-	client.focused_inactive $black   $black   $blue       $black0     $black
-	client.unfocused        $black   $black   $blue       $black0     $black
-	client.placeholder      $black   $black   $blue       $red        $black
+	client.focused          $white0  $white   $black      $red        $white0
+	client.focused_inactive $black0  $black   $white      $black0     $black0
+	client.unfocused        $black0  $black   $white      $black0     $black0
+	client.placeholder      $black0  $black   $white      $red        $black0
 	client.urgent           $red     $red     $black      $red        $red
 	client.background       $black
 
@@ -132,6 +135,7 @@ bar {
 
 	# borders
 	#for_window [class="TelegramDesktop"] border pixel 2
+	for_window [class="Wps"] border pixel 2
 
 	# no focus
 	no_focus [class="mpv"]

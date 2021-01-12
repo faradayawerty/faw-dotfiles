@@ -2,12 +2,12 @@
 bash bash-completion neovim
 zip unzip unrar atool
 newsboat tree htop ffmpeg imagemagick aria2 curl wget translate-shell youtube-dl libqalculate
-tor torsocks udisks2 openssh
+tor torsocks udisks2 openssh sshfs net-tools
 
 
 # -- graphical -- #
 xorg xorg-xinit
-i3-wm sbxkb xterm rofi
+i3-wm i3status sbxkb xterm rofi
 xwallpaper xcompmgr maim xclip xdotool brightnessctl
 mpv vlc sxiv
 zathura zathura-djvu zathura-ps zathura-pdf-poppler poppler
