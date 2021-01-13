@@ -5,7 +5,7 @@ tty-clock
 
 
 # -- gui -- #
-#transset-df # for transparency
+transset-df # for transparency
 ttf-mizutama-emoji # colorless emoji for terminal
 wps-office teams ttf-ms-fonts ttf-wps-fonts
 

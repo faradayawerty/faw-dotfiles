@@ -64,10 +64,10 @@
 	set_from_resource $white0 i3wm.color15 #aaaaaa
 
 	## class                border   bg       text        ind.        child_border
-	client.focused          $white0  $white   $black      $red        $white0
-	client.focused_inactive $black0  $black   $white      $black0     $black0
-	client.unfocused        $black0  $black   $white      $black0     $black0
-	client.placeholder      $black0  $black   $white      $red        $black0
+	client.focused          $blue    $blue    $black      $red        $blue  
+	client.focused_inactive $black   $black   $white      $black0     $black
+	client.unfocused        $black   $black   $white      $black0     $black
+	client.placeholder      $black   $black   $white      $red        $black
 	client.urgent           $red     $red     $black      $red        $red
 	client.background       $black
 
@@ -75,9 +75,10 @@
 bar {
 	position top
 	font $fontname
-	status_command i3status
-	separator_symbol "|"
-	#tray_output none
+	status_command i3blocks
+	#status_command i3status
+	#separator_symbol " "
+	tray_output none
 
 	colors {
 		background  $black
@@ -95,20 +96,20 @@ bar {
 
 
 # autostart
-	# layout indicator (debian)
-	exec_always pkill fbxkb; fbxkb &
+	## layout indicator (debian)
+	#exec_always pkill fbxkb; fbxkb &
 
-	# layout indicator (archlinux)
-	exec_always pkill sbxkb; sbxkb &
+	## layout indicator (archlinux)
+	#exec_always pkill sbxkb; sbxkb &
 
 	# load xresources
 	exec_always xrdb ~/.Xresources
 
 	# set wallpaper
-	#exec_always xwallpaper --stretch ~/.wallpaper
+	exec_always xwallpaper --stretch ~/.wallpaper
 
 	# transparency
-	#exec [ -f ~/.wallpaper ] && xcompmgr &
+	exec [ -f ~/.wallpaper ] && xcompmgr &
 
 	# cursor theme and solid background color
 	exec xsetroot -cursor_name left_ptr -solid "$black"
@@ -126,8 +127,8 @@ bar {
 # window options
 
 	# transparency
-	#for_window [class="XTerm"] exec transset-df -a $transparency
-	#for_window [class="TelegramDesktop"] exec transset-df -a $transparency
+	for_window [class="XTerm"] exec transset-df -a $transparency
+	for_window [class="TelegramDesktop"] exec transset-df -a $transparency
 
 	# floating windows
 	for_window [class="Steam"] floating enable
