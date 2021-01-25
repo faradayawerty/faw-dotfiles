@@ -5,6 +5,8 @@ tty-clock
 
 
 # -- gui -- #
+#surf # tabless browser
+tor-browser
 transset-df # for transparency
 ttf-mizutama-emoji # colorless emoji for terminal
 wps-office teams ttf-ms-fonts ttf-wps-fonts

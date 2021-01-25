@@ -11,8 +11,8 @@ bind-key G end
 bind-key u pageup
 bind-key d pagedown
 
-bind-key n next-unread
-bind-key p prev-unread
+bind-key J next-unread
+bind-key K prev-unread
 
 browser $TERMINAL_BROWSER
 

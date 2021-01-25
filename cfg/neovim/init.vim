@@ -21,7 +21,7 @@
 	set guicursor=
 	"set paste
 	"set nocompatible
-	set clipboard=unnamed,unnamedplus
+	set clipboard=unnamed,unnamedplus " neovim only
 	syntax on
 
 " shortcuts

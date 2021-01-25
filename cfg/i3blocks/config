@@ -5,6 +5,10 @@ separator_block_width=1
 command=i3blocks_cmus
 interval=10
 
+[bandwidth]
+command=i3blocks_bandwidth
+interval=30
+
 [temperature]
 command=i3blocks_temp
 interval=10

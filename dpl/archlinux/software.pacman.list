@@ -7,11 +7,11 @@ tor torsocks udisks2 openssh sshfs net-tools
 
 # -- graphical -- #
 xorg xorg-xinit
-i3-wm i3status sbxkb xterm rofi
+i3-wm i3blocks xterm rofi
 xwallpaper xcompmgr maim xclip xdotool brightnessctl
 mpv vlc sxiv
 zathura zathura-djvu zathura-ps zathura-pdf-poppler poppler
-chromium telegram-desktop transmission-gtk
+telegram-desktop transmission-gtk
 ttf-hack noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
 
 

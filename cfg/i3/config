@@ -31,6 +31,9 @@
 	set $brightnessup brightnessctl set +10%
 	set $brightnessdown brightnessctl set 10%-
 
+	set $float_pos xdotool getactivewindow windowmove $(expr $(xrandr | grep '*' | awk '{print $1}' | cut -d "x" -f1) - 350) $( expr $(xrandr | grep '*' | awk '{print $1}' | cut -d "x" -f2) - 200)
+	set $float_resize xdotool getactivewindow windowsize 320 180
+
 	set $transparency 0.9
 
 	set $ws1 " 1 "
@@ -65,8 +68,8 @@
 
 	## class                border   bg       text        ind.        child_border
 	client.focused          $blue    $blue    $black      $red        $blue  
-	client.focused_inactive $black   $black   $white      $black0     $black
-	client.unfocused        $black   $black   $white      $black0     $black
+	client.focused_inactive $black   $black   $white      $black      $black
+	client.unfocused        $black   $black   $white      $black      $black
 	client.placeholder      $black   $black   $white      $red        $black
 	client.urgent           $red     $red     $black      $red        $red
 	client.background       $black
@@ -87,10 +90,10 @@ bar {
 
 		# class             border      bg          text
 		focused_workspace   $black      $blue       $black
-		inactive_workspace  $black      $black      $blue 
+		inactive_workspace  $black      $black      $white
 		active_workspace    $black      $blue       $black
 		urgent_workspace    $black      $red        $black
-		binding_mode        $black      $yellow     $black
+		binding_mode        $black      $magenta0   $black
 	}
 }
 
@@ -102,17 +105,17 @@ bar {
 	## layout indicator (archlinux)
 	#exec_always pkill sbxkb; sbxkb &
 
-	# load xresources
-	exec_always xrdb ~/.Xresources
+	# load x resources (do it in xinitrc)
+	#exec_always xrdb ~/.Xresources
 
 	# set wallpaper
-	exec_always xwallpaper --stretch ~/.wallpaper
+	#exec_always xwallpaper --stretch ~/.wallpaper
 
 	# transparency
-	exec [ -f ~/.wallpaper ] && xcompmgr &
+	#exec [ -f ~/.wallpaper ] && xcompmgr &
 
 	# cursor theme and solid background color
-	exec xsetroot -cursor_name left_ptr -solid "$black"
+	#exec xsetroot -cursor_name left_ptr -solid "$black"
 
 	# disable touchpad
 	exec xinput disable $(xinput list | grep -Eio '(touchpad|glidepoint)\s*id\=[0-9]{1,2}' | grep -Eo '[0-9]{1,2}')
@@ -121,7 +124,7 @@ bar {
 	exec xdotool mousemove 10000 10000
 
 	# keyboard layout
-	exec setxkbmap -layout us,ru -option grp:alt_shift_toggle
+	#exec setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
 
 # window options
@@ -135,11 +138,16 @@ bar {
 	for_window [class="Tor Browser"] floating enable
 
 	# borders
-	#for_window [class="TelegramDesktop"] border pixel 2
-	for_window [class="Wps"] border pixel 2
+	#for_window [class="TelegramDesktop"] border pixel 1
+	for_window [class="Wps"] border pixel 1
+	for_window [class="Surf"] border normal 2
+
+	# layout
+	for_window [class="Surf"] layout tabbed
+	#for_window [class="mpv"] floating enable; exec $float_resize; exec $float_pos
 
 	# no focus
-	no_focus [class="mpv"]
+	#no_focus [class="mpv"]
 
 
 # bindings
@@ -199,6 +207,7 @@ bar {
 		bindsym $mod+Shift+e exec dmenuemoji
 		bindsym $mod+Shift+u exec dmenuunicode
 		bindsym $mod+Shift+m exec dmenukaomoji
+		bindsym $mod+Shift+b exec dmenusurf
 
 	# touchpad
 		bindsym $mod+t exec touchpad_toggle
@@ -225,6 +234,7 @@ bar {
 			bindsym t layout tabbed; mode "default"
 			bindsym s layout stacking; mode "default"
 			bindsym n layout toggle split; mode "default"
+			bindsym m floating enable; sticky enable; exec $float_pos; exec $float_resize; mode "default"
 
 			bindsym Return mode "default"
 			bindsym Escape mode "default"
@@ -247,6 +257,7 @@ bar {
 			bindsym q exit
 			bindsym p exec systemctl poweroff
 			bindsym b exec systemctl reboot
+			bindsym l exec i3lock -c$black; mode "default"
 
 			bindsym Return mode "default"
 			bindsym Escape mode "default"
@@ -256,6 +267,7 @@ bar {
 		mode "open" {
 			bindsym b exec $guibrowser; mode "default"
 			bindsym t exec telegram-desktop; mode "default"
+			bindsym Shift+c exec $terminal -e "cal -y | less"; mode "default"
 
 			bindsym Return mode "default"
 			bindsym Escape mode "default"

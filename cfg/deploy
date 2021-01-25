@@ -3,10 +3,12 @@
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/htop
 mkdir -p ~/.newsboat
+mkdir -p ~/.w3m
 
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath bash_profile) ~/.bash_profile
 ln -snf $(realpath newsboat/config) ~/.newsboat/config
+ln -snf $(realpath w3m/keymap) ~/.w3m/keymap
 ln -snf $(realpath tmux.conf) ~/.tmux.conf
 ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
 ln -snf $(realpath htop/htoprc) ~/.config/htop/htoprc

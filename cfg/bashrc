@@ -60,8 +60,8 @@
     alias pm='pulsemixer'
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
-    alias ww='$TERMINAL_BROWSER duckduckgo.com'
-    alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com'
+    alias ww='$TERMINAL_BROWSER duckduckgo.com/html'
+    alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com/html'
     alias umremfs='umount ~/.ssh/remfs'
     alias remfs='cd ~/.ssh/remfs'
 
@@ -78,3 +78,7 @@
         git clone https://aur.archlinux.org/$1.git
     }
 
+
+# --- MISC --- #
+	# xterm transparency
+	[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" 0.9 >/dev/null
