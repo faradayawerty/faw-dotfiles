@@ -1,0 +1,12 @@
+#! /bin/bash
+
+ln -snf $(realpath xinitrc) ~/.xinitrc
+ln -snf $(realpath xresources) ~/.Xresources
+
+mkdir -p ~/.config/sxiv/exec
+ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
+
+cd dwm
+sudo make clean && make && sudo make install
+cd ..
+

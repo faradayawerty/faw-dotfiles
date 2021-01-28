@@ -15,7 +15,7 @@ export DOCUMENT_VIEWER=zathura
 export RUNMENU="rofi -show run"
 export DMENU="rofi -dmenu"
 export TERMINAL=xterm
-export BROWSER=chromium
+export BROWSER=surf
 
 export GOPATH=~/.go
 export _JAVA_AWT_WM_NONREPARENTING=1

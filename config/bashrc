@@ -65,9 +65,12 @@
     alias umremfs='umount ~/.ssh/remfs'
     alias remfs='cd ~/.ssh/remfs'
 
-    alias li='links -html-numbered-links 1'
-    alias lis='links -html-numbered-links 1 duckduckgo.com'
+    #alias li='links -html-numbered-links 1'
+    #alias lis='links -html-numbered-links 1 duckduckgo.com'
 
+    #alias tmd='tmux new-session -A -s default'
+    #alias tmt='tmux new-session -A -s tty'
+    #alias tms='tmux new-session -A -s ssh'
 
 # --- FUNCTIONS --- #
     function cd {
@@ -81,4 +84,5 @@
 
 # --- MISC --- #
 	# xterm transparency
-	[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" 0.9 >/dev/null
+	[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" 0.9 >/dev/null
+
