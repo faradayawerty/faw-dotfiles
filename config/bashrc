@@ -45,10 +45,10 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
-    alias yt240='pipe-viewer -C --resolution 240'
-    alias yt360='pipe-viewer -C --resolution 360'
-    alias yt480='pipe-viewer -C --resolution 480'
-    alias yt720='pipe-viewer -C --resolution 720'
+    alias yt240='tmux rename-window youtube; pipe-viewer -C --resolution 240'
+    alias yt360='tmux rename-window youtube; pipe-viewer -C --resolution 360'
+    alias yt480='tmux rename-window youtube; pipe-viewer -C --resolution 480'
+    alias yt720='tmux rename-window youtube; pipe-viewer -C --resolution 720'
 
     alias r='rover'
     alias v='nvim'
@@ -62,7 +62,6 @@
     alias um='udisksctl unmount -b'
     alias ww='$TERMINAL_BROWSER duckduckgo.com/html'
     alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com/html'
-    alias umremfs='umount ~/.ssh/remfs'
     alias remfs='cd ~/.ssh/remfs'
 
     #alias li='links -html-numbered-links 1'
