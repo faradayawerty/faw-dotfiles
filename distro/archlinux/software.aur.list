@@ -1,17 +1,18 @@
 # -- text -- #
 pipe-viewer-git
-rover
+#rover
+lf-bin
 tty-clock
 
 
 # -- gui -- #
-#surf # tabless browser
 tor-browser
 transset-df # for transparency
 ttf-mizutama-emoji # colorless emoji for terminal
-wps-office teams ttf-ms-fonts ttf-wps-fonts
+wps-office teams ttf-ms-fonts ttf-wps-fonts # some needed microsoft products
 
 
 # -- games -- #
 dreamchess-git
+
 

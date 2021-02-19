@@ -1,19 +1,10 @@
 #! /bin/bash
 
-ln -snf $(realpath xinitrc) ~/.xinitrc
-ln -snf $(realpath xresources) ~/.Xresources
-
-mkdir -p ~/.config/sxiv/exec
-ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
-
 mkdir -p ~/.config/qutebrowser
+mkdir -p ~/.config/sxiv/exec
+
+ln -snf $(realpath xinitrc) ~/.xinitrc
+#ln -snf $(realpath xresources) ~/.Xresources
+#ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
 ln -snf $(realpath qutebrowser/config.py) ~/.config/qutebrowser/config.py
-
-cd dwm
-sudo make clean && make && sudo make install
-cd ..
-
-#cd surf
-#sudo make clean && make && sudo make install
-#cd ..
 

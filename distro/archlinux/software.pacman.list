@@ -7,9 +7,8 @@ tor torsocks udisks2 openssh sshfs net-tools
 
 # -- graphical -- #
 xorg xorg-xinit
-i3-wm i3blocks xterm rofi
 xwallpaper xcompmgr maim xclip xdotool brightnessctl
-mpv vlc sxiv
+mpv vlc
 zathura zathura-djvu zathura-ps zathura-pdf-poppler poppler
 telegram-desktop transmission-gtk
 ttf-hack noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
@@ -22,18 +21,17 @@ cmus
 
 # -- programming tools -- #
 python python-pip
-go lua love fpc tcc jdk8-openjdk
+go lua love fpc tcc jdk11-openjdk jdk8-openjdk
 texlive-core texlive-lang
 
 
 # -- games -- #
-#wesnoth supertux supertuxkart
+#wesnoth supertux supertuxkart 0ad
 
 
 # -- dependencies -- #
-#libxft # suckless st sxiv dwm
-#libxinerama libx11 # suckless dwm, links(graphics)
-#freetype2 # suckless dwm sxiv
-#desktop-file-utils hicolor-icon-theme imlib2 xdg-utils # suckless sxiv
-#libxt libtiff libpng libsvg libevent pcre xz gpm bzip2 # links
+libxft libxinerama libx11 freetype2 # suckless dwm
+libxft # suckless st
+libxft libxinerama # suckless dmenu
+imlib2 desktop-file-utils xdg-utils gicolor-icon-theme libexif libxft # sxiv
 

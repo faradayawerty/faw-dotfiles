@@ -21,10 +21,11 @@ config.bind(',M7', 'hint links spawn mpv --ytdl-format="bestvideo[height<=?720]+
 #config.bind(',p', 'hint links run open --private {hint-url}')
 
 # general
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/html/?q={}', 'yt': 'https://www.youtube.com/results?search_query={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'w': 'https://wikipedia.org/w/index.php?search={}', 's': 'https://store.steampowered.com/search/?term={}', 'k': 'https://kinopoisk.ru/index.php?kp_query={}', 'dw': 'https://wiki.debian.org/FrontPage?action=fullsearch&context=180&value={}&titlesearch=Titles'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/html/?q={}', 'g': 'https://www.google.com.ar/search?q={}', 'y': 'https://yandex.ru/search/?text={}','yt': 'https://www.youtube.com/results?search_query={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'w': 'https://wikipedia.org/w/index.php?search={}', 's': 'https://store.steampowered.com/search/?term={}', 'k': 'https://kinopoisk.ru/index.php?kp_query={}', 'dw': 'https://wiki.debian.org/FrontPage?action=fullsearch&context=180&value={}&titlesearch=Titles'}
 config.load_autoconfig(False)
 
 config.set('completion.open_categories', ["searchengines", "quickmarks", "bookmarks", "history"])
+config.set('tabs.show', 'multiple')
 
 # privacy settings
 #config.set('content.webgl', False)
@@ -51,100 +52,124 @@ config.set('downloads.location.directory', '~')
 
 # colors
 color = {
-    'black': xresources['*.color0'],
-    'red': xresources['*.color1'],
-    'green': xresources['*.color2'],
-    'yellow' : xresources['*.color3'],
-    'blue': xresources['*.color4'],
-    'magenta': xresources['*.color5'],
-    'cyan': xresources['*.color6'],
-    'white': xresources['*.color7'],
+    #'background': xresources['*.background'],
+    #'foreground': xresources['*.foreground'],
 
-    'brightblack': xresources['*.color8'],
-    'brightred': xresources['*.color9'],
-    'brightgreen': xresources['*.color10'],
-    'brightyellow': xresources['*.color11'],
-    'brightblue': xresources['*.color12'],
-    'brightmagenta': xresources['*.color13'],
-    'brightcyan': xresources['*.color14'],
-    'brightwhite': xresources['*.color15']
+    #'black': xresources['*.color0'],
+    #'red': xresources['*.color1'],
+    #'green': xresources['*.color2'],
+    #'yellow' : xresources['*.color3'],
+    #'blue': xresources['*.color4'],
+    #'magenta': xresources['*.color5'],
+    #'cyan': xresources['*.color6'],
+    #'white': xresources['*.color7'],
+
+    #'brightblack': xresources['*.color8'],
+    #'brightred': xresources['*.color9'],
+    #'brightgreen': xresources['*.color10'],
+    #'brightyellow': xresources['*.color11'],
+    #'brightblue': xresources['*.color12'],
+    #'brightmagenta': xresources['*.color13'],
+    #'brightcyan': xresources['*.color14'],
+    #'brightwhite': xresources['*.color15']
+
+    'black': "#111111", 
+    'red': "#d36265", 
+    'green': "#aece91", 
+    'yellow': "#e7e18c", 
+    'blue': "#5297cf", 
+    'magenta': "#963c59", 
+    'cyan': "#5e7175", 
+    'white': "#bebebe", 
+
+    'brightblack': "#666666", 
+    'brightred': "#ef8171", 
+    'brightgreen': "#cfefb3", 
+    'brightyellow': "#fff796", 
+    'brightblue': "#74b8ef", 
+    'brightmagenta': "#b85e7b", 
+    'brightcyan': "#a3babf", 
+    'brightwhite': "#ffffff", 
+
+    'background': "#000000", 
+    'foreground': "#ffffff" 
 }
 
-c.colors.completion.category.bg = color['black']
+c.colors.completion.category.bg = color['background']
 c.colors.completion.category.border.bottom = color['black']
 c.colors.completion.category.border.top = color['black']
 c.colors.completion.category.fg = color['cyan']
-c.colors.completion.even.bg = color['black']
-c.colors.completion.odd.bg = color['black']
+c.colors.completion.even.bg = color['background']
+c.colors.completion.odd.bg = color['background']
 c.colors.completion.fg = color['blue']
 c.colors.completion.item.selected.border.bottom = color['black']
 c.colors.completion.item.selected.border.top = color['black']
 c.colors.completion.item.selected.bg = color['blue']
 c.colors.completion.item.selected.fg = color['black']
 c.colors.completion.match.fg = color['brightred']
-c.colors.completion.scrollbar.bg = color['black']
+c.colors.completion.scrollbar.bg = color['background']
 c.colors.completion.scrollbar.fg = color['blue']
 
-c.colors.downloads.bar.bg = color['black']
+c.colors.downloads.bar.bg = color['background']
 c.colors.downloads.error.bg = color['red']
-c.colors.downloads.error.fg = color['brightwhite']
+c.colors.downloads.error.fg = color['foreground']
 c.colors.downloads.stop.bg = color['blue']
-c.colors.downloads.stop.fg = color['brightwhite']
+c.colors.downloads.stop.fg = color['foreground']
 c.colors.downloads.start.bg = color['blue']
-c.colors.downloads.start.fg = color['brightwhite']
+c.colors.downloads.start.fg = color['foreground']
 c.colors.downloads.system.bg = 'rgb'
 
 #c.colors.hints.bg = color['blue']
 #c.colors.hints.fg = color['black']
 #c.colors.hints.match.fg = color['black']
 
-c.colors.keyhint.bg = color['black']
+c.colors.keyhint.bg = color['background']
 c.colors.keyhint.fg = color['blue']
 c.colors.keyhint.suffix.fg = color['blue']
 
 c.colors.messages.error.bg = color['red']
 c.colors.messages.error.border = color['red']
-c.colors.messages.error.fg = color['brightwhite']
+c.colors.messages.error.fg = color['foreground']
 c.colors.messages.info.bg = color['brightcyan']
 c.colors.messages.info.border = color['brightcyan']
 c.colors.messages.info.fg = color['black']
 c.colors.messages.warning.bg = color['brightred']
 c.colors.messages.warning.border = color['brightred']
-c.colors.messages.warning.fg = color['brightwhite']
+c.colors.messages.warning.fg = color['foreground']
 
-c.colors.prompts.bg = color['black']
+c.colors.prompts.bg = color['background']
 c.colors.prompts.border = '1px solid ' + color['black']
-c.colors.prompts.fg = color['brightwhite']
-c.colors.prompts.selected.bg = color['brightblack']
+c.colors.prompts.fg = color['foreground']
+c.colors.prompts.selected.bg = color['background']
 
 c.colors.statusbar.caret.bg = color['blue']
-c.colors.statusbar.caret.fg = color['brightwhite']
+c.colors.statusbar.caret.fg = color['foreground']
 c.colors.statusbar.caret.selection.bg = color['blue']
-c.colors.statusbar.caret.selection.fg = color['brightwhite']
-c.colors.statusbar.command.bg = color['black']
+c.colors.statusbar.caret.selection.fg = color['foreground']
+c.colors.statusbar.command.bg = color['background']
 c.colors.statusbar.command.fg = color['blue']
-c.colors.statusbar.command.private.bg = color['black']
+c.colors.statusbar.command.private.bg = color['background']
 c.colors.statusbar.command.private.fg = color['red']
 c.colors.statusbar.insert.bg = color['green']
 c.colors.statusbar.insert.fg = color['black']
-c.colors.statusbar.normal.bg = color['black']
+c.colors.statusbar.normal.bg = color['background']
 c.colors.statusbar.normal.fg = color['blue']
 c.colors.statusbar.passthrough.bg = color['blue']
-c.colors.statusbar.passthrough.fg = color['brightwhite']
-c.colors.statusbar.private.bg = color['black']
+c.colors.statusbar.passthrough.fg = color['foreground']
+c.colors.statusbar.private.bg = color['background']
 c.colors.statusbar.private.fg = color['red']
-c.colors.statusbar.progress.bg = color['white']
+c.colors.statusbar.progress.bg = color['foreground']
 c.colors.statusbar.url.error.fg = color['red']
 c.colors.statusbar.url.fg = color['green']
 c.colors.statusbar.url.hover.fg = color['brightcyan']
-c.colors.statusbar.url.success.http.fg = color['white']
+c.colors.statusbar.url.success.http.fg = color['foreground']
 c.colors.statusbar.url.success.https.fg = color['green']
 c.colors.statusbar.url.warn.fg = color['brightred']
 
-c.colors.tabs.bar.bg = color['brightblack']
-c.colors.tabs.even.bg = color['black']
+c.colors.tabs.bar.bg = color['background']
+c.colors.tabs.even.bg = color['background']
 c.colors.tabs.even.fg = color['blue']
-c.colors.tabs.odd.bg = color['black']
+c.colors.tabs.odd.bg = color['background']
 c.colors.tabs.odd.fg = color['blue']
 c.colors.tabs.indicator.error = color['red']
 c.colors.tabs.indicator.start = color['black']
@@ -155,4 +180,4 @@ c.colors.tabs.selected.even.fg = color['black']
 c.colors.tabs.selected.odd.bg = color['blue']
 c.colors.tabs.selected.odd.fg = color['black']
 
-# c.colors.webpage.bg = color['brightwhite']
+# c.colors.webpage.bg = color['foreground']

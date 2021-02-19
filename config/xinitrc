@@ -7,8 +7,12 @@ xwallpaper --stretch ~/.wallpaper
 # set keyboard layout
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
-# root window name
-xsetroot -name "dwm"
+# dwm status
+while true
+do
+	xsetroot -name " $(date +'%d %b %Y %a %H:%M') "
+	sleep 40
+done &
 
 # load x resources
 xrdb ~/.Xresources

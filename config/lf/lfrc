@@ -22,6 +22,8 @@ map gg :top
 map G :bottom
 
 map gh :cd ~
+map gsr :cd ~/Documents/school/reports
+map gss :cd ~/Documents/school/предметы
 
 map e $$EDITOR $f
 map oi $$IMAGE_VIEWER $fx
@@ -34,10 +36,6 @@ map om ${{
 		$MEDIA_PLAYER $fx
 	fi
 }}
-
-# tmux
-map tev $tmux split-window -v $EDITOR $f
-map teh $tmux split-window -h $EDITOR $f
 
 map x $$f
 map X !$f
