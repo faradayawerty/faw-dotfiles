@@ -1,3 +1,5 @@
+# last change 20 02 2021
+
 # -- text -- #
 bash bash-completion neovim
 zip unzip unrar atool
@@ -10,8 +12,8 @@ xorg xorg-xinit
 xwallpaper xcompmgr maim xclip xdotool brightnessctl
 mpv vlc
 zathura zathura-djvu zathura-ps zathura-pdf-poppler poppler
-telegram-desktop transmission-gtk
-ttf-hack noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
+qutebrowser telegram-desktop qbittorrent
+ttf-hack noto-fonts noto-fonts-cjk noto-fonts-extra
 
 
 # -- sound -- #

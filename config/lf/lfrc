@@ -15,15 +15,15 @@ set ratios 1:2:2
 map <enter> open
 cmd open shell
 
-map w
+map w $$SHELL
 map i
+map gg
+map G
 
-map gg :top
-map G :bottom
+map gk :top
+map gj :bottom
 
 map gh :cd ~
-map gsr :cd ~/Documents/school/reports
-map gss :cd ~/Documents/school/предметы
 
 map e $$EDITOR $f
 map oi $$IMAGE_VIEWER $fx

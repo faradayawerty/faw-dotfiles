@@ -16,8 +16,8 @@ keymap	0	LINE_BEGIN
 keymap	^	LINE_BEGIN
 keymap	$	LINE_END
 
-keymap	G	END
-keymap	gg	BEGIN
+keymap	gj	END
+keymap	gk	BEGIN
 
 keymap	C-u	DOWN 12
 keymap	C-d	UP 12
@@ -25,12 +25,12 @@ keymap	C-d	UP 12
 keymap	C-f	NEXT_PAGE
 keymap	C-b	PREV_PAGE
 
-keymap	C-y	DOWN
-keymap	C-e	UP
+keymap	C-j	DOWN
+keymap	C-k	UP
 
 keymap	/	SEARCH
 keymap	n	SEARCH_NEXT
-keymap	p	SEARCH_PREV
+keymap	M-n	SEARCH_PREV
 
 
 # --- browsing --- #

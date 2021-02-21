@@ -1,0 +1,8 @@
+#! /bin/bash
+cd config
+ln -snf $(realpath xinitrc) ~/.xinitrc
+
+#mkdir -p ~/.config/sxiv/exec
+#ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
+#ln -snf $(realpath xresources) ~/.Xresources
+

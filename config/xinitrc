@@ -14,9 +14,6 @@ do
 	sleep 40
 done &
 
-# load x resources
-xrdb ~/.Xresources
-
 # start window manager
 exec dwm
 

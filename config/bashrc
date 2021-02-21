@@ -58,7 +58,7 @@
     alias um='udisksctl unmount -b'
     alias ww='$TERMINAL_BROWSER duckduckgo.com/html'
     alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com/html'
-    alias remfs='cd ~/.ssh/remfs'
+    alias remfs='cd ~/.remfs'
     alias clcache='sudo sysctl vm.drop_caches=3'
 
     #alias li='links -html-numbered-links 1'
