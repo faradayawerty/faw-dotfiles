@@ -6,11 +6,12 @@ export SHELL=bash
 export FILE_MANAGER=lf
 export PAGER=less
 export DOWNLOADER=aria2c
+export SOUND_MIXER=alsamixer
 export MUSIC_PLAYER=cmus
 export MEDIA_PLAYER=mpv
 export IMAGE_VIEWER=sxiv
 export DOCUMENT_VIEWER=zathura
-export EDITOR=kak
+export EDITOR=nvim
 export TERMINAL=st
 export BROWSER=surf
 export NOJSBROWSER="links -g"
@@ -36,7 +37,7 @@ if [ -d "$GOPATH/bin" ] ; then
 fi
 
 # autostart x
-if [ -f ~/.xinitrc ] && systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && [ -z $TMUX ]; then
-    exec startx
-fi
+#if [ -f ~/.xinitrc ] && systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && [ -z $TMUX ]; then
+#    exec startx
+#fi
 

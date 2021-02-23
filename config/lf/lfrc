@@ -17,11 +17,9 @@ cmd open shell
 
 map w $$SHELL
 map i
-map gg
-map G
 
-map gk :top
-map gj :bottom
+map gg :top
+map G :bottom
 
 map gh :cd ~
 
