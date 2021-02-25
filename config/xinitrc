@@ -1,19 +1,22 @@
 # set wallpaper
-xwallpaper --stretch ~/.wallpaper
+#xwallpaper --stretch ~/.wallpaper
 
 # enable transparency
-[ -f ~/.wallpaper ] && xcompmgr &
+#[ -f ~/.wallpaper ] && xcompmgr &
 
 # set keyboard layout
-setxkbmap -layout us,ru -option grp:alt_shift_toggle
+setxkbmap -layout us,ru -option grp:alt_space_toggle
 
 # dwm status
-while true
-do
-	xsetroot -name " $(date +'%d %b %Y %a %H:%M') "
-	sleep 40
-done &
+#while true
+#do
+#	xsetroot -name " $(date +'%d %b %Y %a %H:%M') "
+#	sleep 40
+#done &
+
+# x resources
+xrdb ~/.Xresources
 
 # start window manager
-exec dwm
+exec fvwm
 

@@ -56,6 +56,7 @@
     alias xi='sudo xbps-install -S'
     alias xr='sudo xbps-remove -R'
     alias xq='xbps-query -Rs'
+    alias xu='sudo xbps-install -Syu'
 
     #alias ww='$TERMINAL_BROWSER duckduckgo.com/html'
     #alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com/html'
@@ -63,6 +64,7 @@
     #alias li='links -html-numbered-links 1'
     #alias lis='links -html-numbered-links 1 duckduckgo.com'
 
+    alias tm='tmux new-session -A -s default'
     #alias tmd='tmux new-session -A -s default'
     #alias tmt='tmux new-session -A -s tty'
     #alias tms='tmux new-session -A -s ssh'

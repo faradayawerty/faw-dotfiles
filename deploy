@@ -8,6 +8,7 @@ mkdir -p ~/.newsboat
 
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath bash_profile) ~/.bash_profile
+ln -snf $(realpath tmux.conf) ~/.tmux.conf
 ln -snf $(realpath newsboat/config) ~/.newsboat/config
 ln -snf $(realpath htop/htoprc) ~/.config/htop/htoprc
 ln -snf $(realpath lf/lfrc) ~/.config/lf/lfrc

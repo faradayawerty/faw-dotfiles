@@ -1,0 +1,9 @@
+sudo xbps-install -S perl-Unicode-String perl-JSON perl-LWP-Protocol-https perl-Module-Build perl-LWP perl-Text-CharWidth perl-Term-ReadLine-Gnu
+
+cd /tmp
+git clone https://github.com/trizen/pipe-viewer
+cd pipe-viewer
+
+sudo ./Build installdeps
+sudo ./Build install
+

@@ -6,20 +6,21 @@ export SHELL=bash
 export FILE_MANAGER=lf
 export PAGER=less
 export DOWNLOADER=aria2c
-export SOUND_MIXER=alsamixer
+export SOUND_MIXER=pulsemixer
+export YOUTUBE_VIEWER="pipe-viewer --resolution 240"
 export MUSIC_PLAYER=cmus
 export MEDIA_PLAYER=mpv
 export IMAGE_VIEWER=sxiv
 export DOCUMENT_VIEWER=zathura
 export EDITOR=nvim
-export TERMINAL=st
-export BROWSER=surf
+export TERMINAL=xterm
+export BROWSER=chromium
 export NOJSBROWSER="links -g"
 export TERMINAL_BROWSER=links
-export RUNMENU=dmenu_run
-export DMENU=dmenu
-#export RUNMENU="rofi -show run"
-#export DMENU="rofi -dmenu"
+#export RUNMENU=dmenu_run
+#export DMENU=dmenu
+export RUNMENU="rofi -show run"
+export DMENU="rofi -dmenu"
 
 export GOPATH=~/.go
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -35,9 +36,4 @@ fi
 if [ -d "$GOPATH/bin" ] ; then
     PATH="$GOPATH/bin:$PATH"
 fi
-
-# autostart x
-#if [ -f ~/.xinitrc ] && systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && [ -z $TMUX ]; then
-#    exec startx
-#fi
 

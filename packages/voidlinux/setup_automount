@@ -1,0 +1,4 @@
+sudo xbps-install -S autofs
+[ -z "$(grep media /etc/autofs/auto.master)" ] && su -c 'echo "/media  /etc/autofs/auto.media --timeout=10" >> /etc/autofs/auto.master'
+sudo cp .auto.media /etc/autofs/auto.media
+sudo ln -s /etc/sv/autofs /var/service/
