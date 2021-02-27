@@ -2,8 +2,12 @@
 cd config
 
 mkdir -p ~/.config/sxiv/exec
+mkdir -p ~/.config/i3
+mkdir -p ~/.config/i3status
 
+ln -snf $(realpath i3/config) ~/.config/i3/config
+ln -snf $(realpath i3status/config) ~/.config/i3status/config
+ln -snf $(realpath sxiv/exec/key-handler) ~/.config/sxiv/exec/key-handler
 ln -snf $(realpath xinitrc) ~/.xinitrc
 ln -snf $(realpath xresources) ~/.Xresources
-ln -snf $(realpath sxiv/exec/key-handler) ~/.config/sxiv/exec/key-handler
 

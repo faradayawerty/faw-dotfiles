@@ -1,11 +1,12 @@
 # set wallpaper
-#xwallpaper --stretch ~/.wallpaper
+xwallpaper --stretch ~/.wallpaper
 
 # enable transparency
-#[ -f ~/.wallpaper ] && xcompmgr &
+[ -f ~/.wallpaper ] && xcompmgr &
 
 # set keyboard layout
-setxkbmap -layout us,ru -option grp:alt_space_toggle
+#setxkbmap -layout us,ru -option grp:win_space_toggle
+setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
 # dwm status
 #while true
@@ -18,5 +19,5 @@ setxkbmap -layout us,ru -option grp:alt_space_toggle
 xrdb ~/.Xresources
 
 # start window manager
-exec fvwm
+exec i3
 
