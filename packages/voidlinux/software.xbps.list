@@ -15,7 +15,7 @@ texlive texlive-langcyrillic texlive-science
 go lua love fpc
 
 # -- graphical -- #
-xorg i3-gaps i3status xterm rofi
+xorg term rofi
 xwallpaper xcompmgr maim xclip
 font-hack-ttf noto-fonts-cjk noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji
 sxiv mpv vlc grafx2
@@ -32,7 +32,7 @@ dreamchess 0ad endless-sky xmoto
 #Cataclysm-DDA Cataclysm-DDA-tiles
 
 # -- build dependencies -- #
-#libXinerama-devel libXft-devel # suckless dwm
+libXinerama-devel libXft-devel # suckless dwm
 #pkg-config # suckless st
 #imlib2-devel libexif-devel giflib-devel # sxiv
 #gtk+3-devel webkit2gtk-devel # suckless surf

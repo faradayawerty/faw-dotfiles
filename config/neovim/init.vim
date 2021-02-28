@@ -88,7 +88,7 @@
 	highlight linenr term=none cterm=none ctermfg=none ctermbg=none
 	highlight cursorlinenr ctermfg=none ctermbg=none cterm=underline
 
-	highlight cursorline ctermfg=none ctermbg=none cterm=underline
+	highlight cursorline ctermfg=none ctermbg=none cterm=none
 	highlight cursorcolumn ctermfg=none ctermbg=none cterm=none
 
 	highlight colorcolumn ctermbg=cyan

@@ -35,6 +35,11 @@
     alias la='ls -aFh --color=auto --group-directories-first'
     alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
+    alias yt240='pipe-viewer --resolution 240'
+    alias yt360='pipe-viewer --resolution 360'
+    alias yt480='pipe-viewer --resolution 480'
+    alias yt720='pipe-viewer --resolution 720'
+
     alias yd240='youtube-dl --add-metadata -ic -f "bestvideo[height<=240]+bestaudio/best[height<=240]"'
     alias yd360='youtube-dl --add-metadata -ic -f "bestvideo[height<=360]+bestaudio/best[height<=360]"'
     alias yd480='youtube-dl --add-metadata -ic -f "bestvideo[height<=480]+bestaudio/best[height<=480]"'
@@ -45,11 +50,8 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
-    alias yt240='pipe-viewer --resolution 240'
-    alias yt360='pipe-viewer --resolution 360'
-    alias yt480='pipe-viewer --resolution 480'
-    alias yt720='pipe-viewer --resolution 720'
-
+    alias ht=htop
+    alias nb=newsboat
     alias nf='clear; neofetch'
     alias clcache='sudo sysctl vm.drop_caches=3'
 
