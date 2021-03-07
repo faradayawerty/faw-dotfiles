@@ -1,0 +1,11 @@
+# last change 06 03 2021
+
+# -- text -- #
+translate-shell
+
+# -- gui -- #
+telegram-desktop
+
+# -- programming -- #
+golang # because 1.11 is unsupported
+

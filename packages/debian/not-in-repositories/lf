@@ -1,0 +1,5 @@
+#!/bin/bash
+[ -x "$(command -v lf)" ] && echo lf already installed && exit
+sudo apt install libncurses-dev
+env CGO_ENABLED=0 GO111MODULE=on go get -u -ldflags="-s -w" github.com/gokcehan/lf
+

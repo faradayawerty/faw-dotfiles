@@ -26,8 +26,8 @@
     #shopt -s autocd
 
     # vi mode
-    #set -o vi
-    #bind -m vi-insert "\C-l":clear-screen
+    set -o vi
+    bind -m vi-insert "\C-l":clear-screen
 
 # --- ALIASES --- #
     alias l='ls -Fh --color=auto --group-directories-first'
@@ -35,10 +35,10 @@
     alias la='ls -aFh --color=auto --group-directories-first'
     alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
-    alias yt240='pipe-viewer --resolution 240'
-    alias yt360='pipe-viewer --resolution 360'
-    alias yt480='pipe-viewer --resolution 480'
-    alias yt720='pipe-viewer --resolution 720'
+    alias yt240="$YOUTUBE_VIEWER --resolution 240"
+    alias yt360="$YOUTUBE_VIEWER --resolution 360"
+    alias yt480="$YOUTUBE_VIEWER --resolution 480"
+    alias yt720="$YOUTUBE_VIEWER --resolution 720"
 
     alias yd240='youtube-dl --add-metadata -ic -f "bestvideo[height<=240]+bestaudio/best[height<=240]"'
     alias yd360='youtube-dl --add-metadata -ic -f "bestvideo[height<=360]+bestaudio/best[height<=360]"'
@@ -50,15 +50,15 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
+    alias r=ranger
+
     alias ht=htop
     alias nb=newsboat
     alias nf='clear; neofetch'
-    alias clcache='sudo sysctl vm.drop_caches=3'
+    alias pm=pulsemixer
 
-    alias xi='sudo xbps-install -S'
-    alias xr='sudo xbps-remove -R'
-    alias xq='xbps-query -Rs'
-    alias xu='sudo xbps-install -Syu'
+    alias mn='udisksctl mount -b'
+    alias um='udisksctl unmount -b'
 
     #alias ww='$TERMINAL_BROWSER duckduckgo.com/html'
     #alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com/html'
@@ -70,6 +70,19 @@
     #alias tmd='tmux new-session -A -s default'
     #alias tmt='tmux new-session -A -s tty'
     #alias tms='tmux new-session -A -s ssh'
+
+    alias xi='sudo xbps-install -S'
+    alias xr='sudo xbps-remove -R'
+    alias xq='xbps-query -Rs'
+    alias xu='sudo xbps-install -Syu'
+
+    alias ai='sudo apt install -y'
+    alias au='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+    alias ar='sudo apt purge -y'
+    alias as='apt search'
+
+    alias clcache='sudo sysctl vm.drop_caches=3'
+    alias todo='for i in {00..23}; do for j in 00 20 40; do echo "* $i:$j"; done; done'
 
 # --- FUNCTIONS --- #
     function cd {

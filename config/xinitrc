@@ -1,15 +1,15 @@
-# set wallpaper
-xwallpaper --stretch ~/.wallpaper
-
 # enable transparency
 #[ -f ~/.wallpaper ] && xcompmgr &
 
 # set keyboard layout
-#setxkbmap -layout us,ru -option grp:win_space_toggle
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
 # x resources
 xrdb ~/.Xresources
+
+# set wallpaper
+[ -f ~/.wallpaper ] && xwallpaper --stretch ~/.wallpaper
+[ -f ~/.wallpaper ] || xsetroot -solid "$(xrdb -query | grep background | awk '{print $2}')"
 
 # dwm status
 while true

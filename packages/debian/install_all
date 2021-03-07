@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd from-repositories
+for i in $(ls install_*)
+do
+	./$i
+done
+
+cd ..
+
+cd not-in-repositories
+for i in $(ls)
+do
+	./$i
+done
+

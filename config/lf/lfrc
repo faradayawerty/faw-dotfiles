@@ -13,7 +13,14 @@ set relativenumber true
 set ratios 1:2:2
 
 map <enter> open
-cmd open shell
+cmd open ${{
+    case $(xdg-mime query filetype $f) in
+        text/*) $EDITOR $fx ;;
+        image/png|image/jpeg|image/gif) $IMAGE_VIEWER $fx > /dev/null 2> /dev/null & ;;
+        audio/*) if [ "$MEDIA_PLAYER" = "mpv" ]; then mpv --no-audio-display $fx; else $MEDIA_PLAYER $fx; fi ;;
+        *) for F in $fx; do xdg-open $F > /dev/null 2> /dev/null & done ;;
+    esac
+}}
 
 map w $$SHELL
 map i
@@ -24,16 +31,16 @@ map G :bottom
 map gh :cd ~
 
 map e $$EDITOR $f
-map oi $$IMAGE_VIEWER $fx
-map od $$DOCUMENT_VIEWER $fx
-map om ${{
-	if [ "$MEDIA_PLAYER" = "mpv" ]
-	then
-		mpv --no-audio-display $fx
-	else
-		$MEDIA_PLAYER $fx
-	fi
-}}
+#map oi $$IMAGE_VIEWER $fx
+#map od $$DOCUMENT_VIEWER $fx
+#map om ${{
+#	if [ "$MEDIA_PLAYER" = "mpv" ]
+#	then
+#		mpv --no-audio-display $fx
+#	else
+#		$MEDIA_PLAYER $fx
+#	fi
+#}}
 
 map x $$f
 map X !$f

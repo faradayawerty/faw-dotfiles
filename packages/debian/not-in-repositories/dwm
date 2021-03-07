@@ -1,0 +1,7 @@
+#!/bin/sh
+sudo apt install xorg libxinerama-dev libxft-dev # dependencies for dwm
+
+cd .dwm/src
+sudo make clean && make && sudo make install
+cd ../..
+

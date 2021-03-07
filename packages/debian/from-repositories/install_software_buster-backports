@@ -1,0 +1,4 @@
+# install apt packages
+sudo apt update
+sudo apt install -t buster-backports $(sed s/#.*// software.buster-backports.list | sed /^$/d)
+

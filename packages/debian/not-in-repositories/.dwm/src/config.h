@@ -45,11 +45,10 @@ static const Rule rules[] = {
 	{ "Mirosoft Teams - Preview",                   NULL,       NULL,       0x10,         1,           -1 },
 	{ "ru-turikhay-tlauncher-bootstrap-Bootstrap",  NULL,       NULL,       0x20,         1,           -1 },
 	{ "Steam",                                      NULL,       NULL,       0x20,         1,           -1 },
-	{ NULL,                                         NULL,       "tmux",     0x01,         0,           -1 },
 };
 
 /* layout(s) */
-static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
@@ -122,7 +121,7 @@ static Key keys[] = {
 	//APP_SHORTCUT(XK_s, "$TERMINAL -e $SOUND_MIXER"),
 	//APP_SHORTCUT(XK_w, "$TERMINAL -e $TERMINAL_BROWSER"),
 	//APP_SHORTCUT(XK_f, "$TERMINAL -e $FILE_MANAGER"),
-	//APP_SHORTCUT(XK_y, "$TERMINAL -e $YOUTUBE_VIEWER"),
+	//APP_SHORTCUT(XK_y, "$TERMINAL -e $YOUTUBE_VIEWER --resolution 240"),
 	//APP_SHORTCUT(XK_c, "$TERMINAL -e calcurse"),
 	//APP_SHORTCUT(XK_h, "$TERMINAL -e htop"),
 	//APP_SHORTCUT(XK_n, "$TERMINAL -e newsboat"),

@@ -1,4 +1,0 @@
-sdb1 -fstype=auto,async,nodev,user,noexec,nosuid,umask=002 :/dev/sdb1
-sdc1 -fstype=auto,async,nodev,user,noexec,nosuid,umask=002 :/dev/sdc1
-mmcblk0p1 -fstype=auto,async,nodev,user,noexec,nosuid,umask=002 :/dev/mmcblk0p1
-
