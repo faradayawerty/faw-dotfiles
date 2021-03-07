@@ -52,19 +52,19 @@ dwm.selbgcolor: #5297cf
 dwm.selfgcolor: #000000
 
 ! --- UXterm --- !
-UXTerm*renderFont: true
-UXTerm*font: xft:Hack-Regular:size=8
+XTerm*renderFont: true
+XTerm*font: xft:Hack-Regular:size=8
 
-UXTerm*utf8: 1
-UXTerm*locale: true
-UXTerm*geometry: 140x40
-UXTerm.termName: xterm-256color
-UXTerm*BorderWidth: 0
+XTerm*utf8: 1
+XTerm*locale: true
+XTerm*geometry: 140x40
+XTerm.termName: xterm-256color
+XTerm*BorderWidth: 0
 
 ! turn off alt+n keys
-UXTerm*vt100.metaSendsEscape: true
+XTerm*vt100.metaSendsEscape: true
 
-UXTerm.vt100.translations: #override \n\
+XTerm.vt100.translations: #override \n\
   Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
   Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
 

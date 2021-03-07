@@ -2,7 +2,9 @@
 cd config
 
 mkdir -p ~/.config/sxiv/exec
+mkdir -p ~/.config/qutebrowser
 
+ln -snf $(realpath qutebrowser/config.py) ~/.config/qutebrowser/config.py
 ln -snf $(realpath sxiv/exec/key-handler) ~/.config/sxiv/exec/key-handler
 ln -snf $(realpath xinitrc) ~/.xinitrc
 ln -snf $(realpath xresources) ~/.Xresources
