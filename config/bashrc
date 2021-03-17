@@ -26,8 +26,8 @@
     #shopt -s autocd
 
     # vi mode
-    set -o vi
-    bind -m vi-insert "\C-l":clear-screen
+    #set -o vi
+    #bind -m vi-insert "\C-l":clear-screen
 
 # --- ALIASES --- #
     alias l='ls -Fh --color=auto --group-directories-first'
@@ -50,26 +50,18 @@
     alias mpv360='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?360]+bestaudio/best"'
     alias mpv240='mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?240]+bestaudio/best"'
 
-    alias r=ranger
-
     alias ht=htop
     alias nb=newsboat
-    alias nf='clear; neofetch'
+    alias nf='clear; neofetch --ascii_distro'
     alias pm=pulsemixer
 
     alias mn='udisksctl mount -b'
     alias um='udisksctl unmount -b'
 
-    #alias ww='$TERMINAL_BROWSER duckduckgo.com/html'
-    #alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com/html'
-
-    #alias li='links -html-numbered-links 1'
-    #alias lis='links -html-numbered-links 1 duckduckgo.com'
+    alias ww='$TERMINAL_BROWSER duckduckgo.com/html'
+    alias wt='torsocks $TERMINAL_BROWSER duckduckgo.com/html'
 
     alias tm='tmux new-session -A -s default'
-    #alias tmd='tmux new-session -A -s default'
-    #alias tmt='tmux new-session -A -s tty'
-    #alias tms='tmux new-session -A -s ssh'
 
     alias xi='sudo xbps-install -S'
     alias xr='sudo xbps-remove -R'

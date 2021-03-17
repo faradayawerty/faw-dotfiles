@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd from-repositories
+cd repo
 for i in $(ls install_*)
 do
 	./$i
@@ -8,7 +8,7 @@ done
 
 cd ..
 
-cd not-in-repositories
+cd nonrepo
 for i in $(ls)
 do
 	./$i

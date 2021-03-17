@@ -4,8 +4,11 @@
 translate-shell
 
 # -- gui -- #
-telegram-desktop
+luakit telegram-desktop
 
 # -- programming -- #
 golang # because 1.11 is unsupported
+
+# -- games -- #
+minetest # because it's easier to install mods
 

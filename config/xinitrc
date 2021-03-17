@@ -1,5 +1,5 @@
 # enable transparency
-#[ -f ~/.wallpaper ] && xcompmgr &
+[ -f ~/.wallpaper ] && xcompmgr &
 
 # set keyboard layout
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
@@ -11,13 +11,13 @@ xrdb ~/.Xresources
 [ -f ~/.wallpaper ] && xwallpaper --stretch ~/.wallpaper
 [ -f ~/.wallpaper ] || xsetroot -solid "$(xrdb -query | grep background | awk '{print $2}')"
 
-# dwm status
-while true
-do
-	xsetroot -name " $(date +'%a %b %d %H:%M') "
-	sleep 20s
-done &
+## dwm status
+#while true
+#do
+#	xsetroot -name " $(date +'%a %b %d %H:%M') "
+#	sleep 20s
+#done &
 
 # start window manager
-exec dwm
+exec i3
 

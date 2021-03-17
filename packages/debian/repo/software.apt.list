@@ -4,16 +4,14 @@
 neovim tmux bash-completion
 zip unzip rar unrar atool
 neofetch tree ffmpeg imagemagick aria2 acpi pandoc curl
-tty-clock htop newsboat qalc links
+tty-clock htop newsboat qalc w3m
 tor torsocks udisks2 openssh-server
-#translate-shell # better with backports
 
 # -- gui -- #
-xorg rofi xterm
-sxiv mpv vlc zathura zathura-djvu zathura-ps chromium grafx2
+xorg i3-wm i3status fbxkb rofi xterm
+sxiv mpv vlc zathura zathura-djvu zathura-ps grafx2 qbittorrent
 xwallpaper xclip maim xcompmgr
-fonts-hack fonts-noto
-#telegram-desktop # better with backports
+fonts-hack fonts-noto ttf-mscorefonts-installer
 
 # -- sound -- #
 pulseaudio pulsemixer alsa-utils alsa-tools
@@ -25,6 +23,5 @@ golang-1.14 love fpc openjdk-11-jdk
 texlive-base texlive-lang-cyrillic
 
 # -- games -- #
-dreamchess minetest
-#wesnoth supertuxkart supertux warzone2100 freeciv oolite endless-sky crawl-tiles 
+dreamchess
 

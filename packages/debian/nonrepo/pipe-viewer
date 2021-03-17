@@ -1,3 +1,5 @@
+#!/bin/bash
+
 [ -x "$(command -v pipe-viewer)" ] && echo pipe-viewer already installed && exit
 
 sudo apt update
