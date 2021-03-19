@@ -1,19 +1,10 @@
-# deprecated
-
-# -- main tools -- #
-neovim tmux bash
-
-
-# -- additional tools -- #
-newsboat cmus htop
+# last update 17 03 2021
+neovim tmux
+w3m
+bash-completion
+cmus htop
 zip unzip unrar
-tree aria2 curl wget translate-shell qalc
-tor torsocks openssh net-tools
-ncurses-utils
-
-
-# -- programming tools -- #
+neofetch tree aria2 curl wget
+tor torsocks openssh
 python
-clang make
-
 
