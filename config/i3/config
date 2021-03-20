@@ -11,6 +11,9 @@
 
 	show_marks yes
 
+	gaps inner 10
+	gaps outer 5
+
 
 # variables
 	set $terminal $TERMINAL
@@ -31,7 +34,7 @@
 	#set $brightnessup ???
 	#set $brightnessdown ???
 
-	set $transparency 0.85
+	set $transparency 0.9
 
 	set $ws1 " 1 "
 	set $ws2 " 2 "
@@ -45,6 +48,9 @@
 
 
 # colors
+	set_from_resource $foreground i3wm.fireground #ffffff
+	set_from_resource $background i3wm.background #000000
+
 	set_from_resource $black i3wm.color0 #000000
 	set_from_resource $red i3wm.color1 #440000
 	set_from_resource $green i3wm.color2 #004400
@@ -80,9 +86,9 @@ bar {
 	#tray_output none
 
 	colors {
-		background  $black
-		statusline  $blue 
-		separator   $blue
+		background  $background
+		statusline  $foreground
+		separator   $foreground
 
 		# class             border      bg          text
 		focused_workspace   $black      $blue       $black
@@ -103,9 +109,9 @@ bar {
 
 # window options
 	# transparency
-	for_window [class="XTerm"] exec transset -a $transparency
-	for_window [class="TelegramDesktop"] exec transset -a $transparency
-	for_window [class="Zathura"] exec transset -a $transparency
+	for_window [class="XTerm"] exec transset-df -a $transparency
+	for_window [class="TelegramDesktop"] exec transset-df -a $transparency
+	for_window [class="Zathura"] exec transset-df -a $transparency
 
 	# floating windows
 	for_window [class="Steam"] floating enable

@@ -1,3 +1,5 @@
+# last change 20 02 2021
+
 # -- text -- #
 pipe-viewer-git
 lf-bin
@@ -7,8 +9,9 @@ tty-clock
 # -- gui -- #
 tor-browser
 transset-df # for transparency
-ttf-mizutama-emoji # colorless emoji for terminal
-wps-office teams ttf-ms-fonts ttf-wps-fonts # some needed microsoft products
+wps-office ttf-ms-fonts ttf-wps-fonts # microsoft office
+#teams # for remote-learning
+#ttf-mizutama-emoji # colorless emoji for terminal
 
 
 # -- games -- #

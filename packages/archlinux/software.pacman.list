@@ -1,19 +1,19 @@
-# last change 20 02 2021
+# last change 20 03 2021
 
 # -- text -- #
-bash bash-completion neovim
+bash bash-completion neovim tmux
 zip unzip unrar atool
-newsboat tree htop ffmpeg imagemagick aria2 curl wget translate-shell youtube-dl libqalculate
+newsboat tree htop ffmpeg imagemagick aria2 curl wget translate-shell youtube-dl libqalculate neofetch
 tor torsocks udisks2 openssh sshfs net-tools
 
 
 # -- graphical -- #
-xorg xorg-xinit
+xorg xorg-xinit xterm i3-gaps i3status rofi
 xwallpaper xcompmgr maim xclip xdotool brightnessctl
-mpv vlc
+sxiv mpv vlc
 zathura zathura-djvu zathura-ps zathura-pdf-poppler poppler
-qutebrowser telegram-desktop qbittorrent
-ttf-hack noto-fonts noto-fonts-cjk noto-fonts-extra
+chromium telegram-desktop qbittorrent
+ttf-hack noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
 
 
 # -- sound -- #
@@ -32,8 +32,8 @@ texlive-core texlive-lang
 
 
 # -- dependencies -- #
-libxft libxinerama libx11 freetype2 # suckless dwm
-libxft # suckless st
-libxft libxinerama # suckless dmenu
-imlib2 desktop-file-utils xdg-utils gicolor-icon-theme libexif libxft # sxiv
+#libxft libxinerama libx11 freetype2 # suckless dwm
+#libxft # suckless st
+#libxft libxinerama # suckless dmenu
+#imlib2 desktop-file-utils xdg-utils gicolor-icon-theme libexif libxft # sxiv
 
