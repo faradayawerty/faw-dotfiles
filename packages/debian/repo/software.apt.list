@@ -8,7 +8,7 @@ tty-clock htop newsboat qalc w3m
 tor torsocks udisks2 openssh-server
 
 # -- gui -- #
-xorg i3-wm i3status fbxkb rofi xterm
+xorg rofi xterm
 sxiv mpv vlc zathura zathura-djvu zathura-ps grafx2 qbittorrent
 xwallpaper xclip maim xcompmgr
 fonts-hack fonts-noto ttf-mscorefonts-installer

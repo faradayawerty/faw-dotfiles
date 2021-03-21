@@ -1,3 +1,8 @@
+" plugins
+call plug#begin('~/.vim/plugged')
+	Plug 'fxn/vim-monochrome'
+call plug#end()
+
 " basic configuration
 	set path+=**
 	set showtabline=1
@@ -7,7 +12,7 @@
 	set shiftwidth=8
 	set smarttab
 	set autoindent
-	set nonumber
+	set number
 	set norelativenumber
 	set noswapfile 
 	set hlsearch
@@ -21,7 +26,7 @@
 	set guicursor=
 	"set paste
 	"set nocompatible
-	set clipboard=unnamed,unnamedplus " neovim only
+	set clipboard=unnamed,unnamedplus " system clipboard - neovim only
 	syntax on
 
 " shortcuts
@@ -29,12 +34,13 @@
 	noremap J <nop>
  
 	let mapleader=","
-	noremap <leader>n :set number!<cr>:set relativenumber!<cr>
-	noremap <leader>s :set spell! spelllang=en,ru<CR>
+	noremap <leader>S :set spell! spelllang=en,ru<CR>
 	noremap <leader>w :set list!<cr>
-	noremap <leader>f :find 
 	noremap <leader>p :set paste!<cr>
 	noremap <leader>c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
+
+	" tmux integration
+	noremap <leader>s :$!tmux split-window -v -p30<cr>
 
 	"autocmd FileType cpp noremap <leader>r :!clear; g++ % && ./a.out<cr>
 	"autocmd FileType go noremap <leader>r :!clear; go run %<cr>
@@ -76,25 +82,27 @@
 		augroup END
 
 " appearance
-	highlight normal ctermfg=none
-	highlight visual ctermfg=black ctermbg=blue
+	colorscheme monochrome
 
-	highlight nontext ctermfg=blue
-	highlight specialkey ctermfg=blue
+	"highlight normal ctermfg=none
+	"highlight visual ctermfg=black ctermbg=blue
 
-	highlight search cterm=underline ctermfg=cyan ctermbg=none
-	highlight incsearch cterm=underline ctermfg=cyan ctermbg=none
+	"highlight nontext ctermfg=blue
+	"highlight specialkey ctermfg=blue
 
-	highlight linenr term=none cterm=none ctermfg=none ctermbg=none
-	highlight cursorlinenr ctermfg=none ctermbg=none cterm=underline
+	"highlight search cterm=underline ctermfg=cyan ctermbg=none
+	"highlight incsearch cterm=underline ctermfg=cyan ctermbg=none
 
-	highlight cursorline ctermfg=none ctermbg=none cterm=none
-	highlight cursorcolumn ctermfg=none ctermbg=none cterm=none
+	"highlight linenr term=none cterm=none ctermfg=none ctermbg=none
+	"highlight cursorlinenr ctermfg=none ctermbg=none cterm=underline
 
-	highlight colorcolumn ctermbg=cyan
-	highlight folded ctermfg=blue ctermbg=none
+	"highlight cursorline ctermfg=none ctermbg=none cterm=none
+	"highlight cursorcolumn ctermfg=none ctermbg=none cterm=none
 
-	highlight TabLine ctermbg=none ctermfg=blue cterm=none
-	highlight TabLineFill ctermbg=none ctermfg=blue cterm=none
-	highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
+	"highlight colorcolumn ctermbg=cyan
+	"highlight folded ctermfg=blue ctermbg=none
+
+	"highlight TabLine ctermbg=none ctermfg=blue cterm=none
+	"highlight TabLineFill ctermbg=none ctermfg=blue cterm=none
+	"highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
 

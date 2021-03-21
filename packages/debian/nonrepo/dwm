@@ -1,0 +1,3 @@
+sudo apt build-dep dwm
+cd .dwm/src
+sudo make clean && make && sudo make install
