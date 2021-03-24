@@ -16,10 +16,10 @@ bind-key K prev-unread
 
 browser $TERMINAL_BROWSER
 
-color listnormal default default
+color listnormal blue default
 color listfocus blue default standout
-color listnormal_unread blue default
-color listfocus_unread cyan default standout
+color listnormal_unread white default
+color listfocus_unread white default standout
 color info blue default
 color article default default
 

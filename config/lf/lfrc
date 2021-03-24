@@ -8,7 +8,7 @@ set scrolloff 10
 # set internal field separator (IFS)
 set ifs "\n"
 
-set relativenumber true
+set number true
 
 set ratios 1:2:2
 

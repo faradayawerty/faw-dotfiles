@@ -1,55 +1,55 @@
 ! --- Colorscheme --- !
 
 ! special
-*foreground:   #ffffff
-*background:   #000000
-*cursorColor:  #ffffff
+*.foreground:   #c0c5ce
+*.background:   #15181d
+*.cursorColor:  #c0c5ce
 
 ! black
-*color0:       #111111
-*color8:       #666666
+*.color0:       #2b303b
+*.color8:       #65737e
 
 ! red
-*color1:       #d36265
-*color9:       #ef8171
+*.color1:       #bf616a
+*.color9:       #bf616a
 
 ! green
-*color2:       #aece91
-*color10:      #cfefb3
+*.color2:       #a3be8c
+*.color10:      #a3be8c
 
 ! yellow
-*color3:       #e7e18c
-*color11:      #fff796
+*.color3:       #ebcb8b
+*.color11:      #ebcb8b
 
 ! blue
-*color4:       #5297cf
-*color12:      #74b8ef
+*.color4:       #8fa1b3
+*.color12:      #8fa1b3
 
 ! magenta
-*color5:       #963c59
-*color13:      #b85e7b
+*.color5:       #b48ead
+*.color13:      #b48ead
 
 ! cyan
-*color6:       #5e7175
-*color14:      #a3babf
+*.color6:       #96b5b4
+*.color14:      #96b5b4
 
 ! white
-*color7:       #bebebe
-*color15:      #ffffff
+*.color7:       #c0c5ce
+*.color15:      #eff1f5
 
 ! rofi color settings
-rofi.color-normal: #111111, #5297cf, #111111, #5297cf, #111111
-rofi.color-urgent: #111111, #111111, #111111, #111111, #111111
-rofi.color-active: #111111, #111111, #111111, #111111, #5297cf
-rofi.color-window: #111111, #5297cf, #5297cf, #5297cf, #111111
+rofi.color-normal: #2b303b, #c0c5ce, #2b303b, #c0c5ce, #2b303b
+rofi.color-urgent: #2b303b, #2b303b, #2b303b, #2b303b, #2b303b
+rofi.color-active: #2b303b, #2b303b, #2b303b, #2b303b, #c0c5ce
+rofi.color-window: #2b303b, #c0c5ce, #c0c5ce, #c0c5ce, #2b303b
 
-!! dwm color settings
-!dwm.normbordercolor: #111111
-!dwm.normbgcolor: #000000
-!dwm.normfgcolor: #5297cf
-!dwm.selbordercolor: #5297cf
-!dwm.selbgcolor: #5297cf
-!dwm.selfgcolor: #000000
+! dwm color settings
+dwm.normbordercolor: #65737e
+dwm.normbgcolor: #15181d
+dwm.normfgcolor: #8fa1b3
+dwm.selbordercolor: #c0c5ce
+dwm.selbgcolor: #8fa1b3
+dwm.selfgcolor: #2b303b
 
 ! --- UXterm --- !
 XTerm*renderFont: true

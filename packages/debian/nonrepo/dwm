@@ -1,3 +1,6 @@
 sudo apt build-dep dwm
-cd .dwm/src
+cd /tmp
+git clone https://github.com/faradayawerty/dwm-fork
+cd dwm-fork/src
 sudo make clean && make && sudo make install
+

@@ -16,8 +16,6 @@ export EDITOR=nvim
 export TERMINAL=xterm
 export BROWSER=chromium
 export TERMINAL_BROWSER=w3m
-#export RUNMENU=dmenu_run
-#export DMENU=dmenu
 export RUNMENU="rofi -show run"
 export DMENU="rofi -dmenu"
 
