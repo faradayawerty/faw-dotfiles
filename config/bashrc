@@ -90,5 +90,5 @@
 
 # --- MISC --- #
 	# xterm transparency
-	#[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 >/dev/null
+	[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 >/dev/null
 

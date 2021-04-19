@@ -1,22 +1,42 @@
-! derp
-#define cfg #ffffff
-#define cbg #000000
-#define c00 #111111
-#define c08 #666666
-#define c01 #d36265
-#define c09 #ef8171
-#define c02 #aece91
-#define c10 #cfefb3
-#define c03 #e7e18c
-#define c11 #fff796
-#define c04 #5297cf
-#define c12 #74b8ef
-#define c05 #963c59
-#define c13 #b85e7b
-#define c06 #5e7175
-#define c14 #a3babf
-#define c07 #bebebe
+! for lib
+#define cfg #c5c8c6
+#define cbg #1d1f21
+#define c00 #1d1f21
+#define c08 #969896
+#define c01 #cc6666
+#define c09 #cc6666
+#define c02 #b5bd68
+#define c10 #b5bd68
+#define c03 #f0c674
+#define c11 #f0c674
+#define c04 #81a2be
+#define c12 #81a2be
+#define c05 #b294bb
+#define c13 #b294bb
+#define c06 #8abeb7
+#define c14 #8abeb7
+#define c07 #c5c8c6
 #define c15 #ffffff
+
+!! derp
+!#define cfg #ffffff
+!#define cbg #000000
+!#define c00 #111111
+!#define c08 #666666
+!#define c01 #d36265
+!#define c09 #ef8171
+!#define c02 #aece91
+!#define c10 #cfefb3
+!#define c03 #e7e18c
+!#define c11 #fff796
+!#define c04 #5297cf
+!#define c12 #74b8ef
+!#define c05 #963c59
+!#define c13 #b85e7b
+!#define c06 #5e7175
+!#define c14 #a3babf
+!#define c07 #bebebe
+!#define c15 #ffffff
 
 ! nord
 !#define cfg #c0c5ce
