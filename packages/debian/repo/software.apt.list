@@ -20,7 +20,7 @@ cmus
 # -- languages -- #
 python python3 python-pip python3-pip
 golang-1.14 love fpc openjdk-11-jdk
-texlive-base texlive-lang-cyrillic
+texlive-base texlive-lang-cyrillic mathtex
 
 # -- games -- #
 dreamchess

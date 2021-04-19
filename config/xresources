@@ -1,59 +1,85 @@
-! --- Colorscheme --- !
+! derp
+#define cfg #ffffff
+#define cbg #000000
+#define c00 #111111
+#define c08 #666666
+#define c01 #d36265
+#define c09 #ef8171
+#define c02 #aece91
+#define c10 #cfefb3
+#define c03 #e7e18c
+#define c11 #fff796
+#define c04 #5297cf
+#define c12 #74b8ef
+#define c05 #963c59
+#define c13 #b85e7b
+#define c06 #5e7175
+#define c14 #a3babf
+#define c07 #bebebe
+#define c15 #ffffff
 
-! special
-*.foreground:   #c0c5ce
-*.background:   #15181d
-*.cursorColor:  #c0c5ce
+! nord
+!#define cfg #c0c5ce
+!#define cbg #15181c
+!#define c00 #2b303b
+!#define c08 #65737e
+!#define c01 #bf616a
+!#define c09 #bf616a
+!#define c02 #a3be8c
+!#define c10 #a3be8c
+!#define c03 #ebcb8b
+!#define c11 #ebcb8b
+!#define c04 #8fa1b3
+!#define c12 #8fa1b3
+!#define c05 #b48ead
+!#define c13 #b48ead
+!#define c06 #96b5b4
+!#define c14 #96b5b4
+!#define c07 #c0c5ce
+!#define c15 #eff1f5
 
-! black
-*.color0:       #2b303b
-*.color8:       #65737e
+*color0: c00
+*color1: c01
+*color2: c02
+*color3: c03
+*color4: c04
+*color5: c05
+*color6: c06
+*color7: c07
+*color8: c08
+*color9: c09
+*color10: c10
+*color11: c11
+*color12: c12
+*color13: c13
+*color14: c14
+*color15: c15
 
-! red
-*.color1:       #bf616a
-*.color9:       #bf616a
+*background: cbg
+*foreground: cfg
+*cursorColor: cfg
 
-! green
-*.color2:       #a3be8c
-*.color10:      #a3be8c
+rofi.color-normal: cbg, c04, cbg, c04, cbg
+rofi.color-urgent: cbg, cbg, cbg, cbg, cbg
+rofi.color-active: cbg, cbg, cbg, cbg, c04
+rofi.color-window: cbg, c04, c04, c04, cbg
 
-! yellow
-*.color3:       #ebcb8b
-*.color11:      #ebcb8b
+dwm.normbgcolor: cbg
+dwm.normfgcolor: c04
+dwm.selbgcolor: c04
+dwm.selfgcolor: cbg
+dwm.normbordercolor: c00
+dwm.selbordercolor: c04
 
-! blue
-*.color4:       #8fa1b3
-*.color12:      #8fa1b3
-
-! magenta
-*.color5:       #b48ead
-*.color13:      #b48ead
-
-! cyan
-*.color6:       #96b5b4
-*.color14:      #96b5b4
-
-! white
-*.color7:       #c0c5ce
-*.color15:      #eff1f5
-
-! rofi color settings
-rofi.color-normal: #2b303b, #c0c5ce, #2b303b, #c0c5ce, #2b303b
-rofi.color-urgent: #2b303b, #2b303b, #2b303b, #2b303b, #2b303b
-rofi.color-active: #2b303b, #2b303b, #2b303b, #2b303b, #c0c5ce
-rofi.color-window: #2b303b, #c0c5ce, #c0c5ce, #c0c5ce, #2b303b
-
-! dwm color settings
-dwm.normbordercolor: #65737e
-dwm.normbgcolor: #15181d
-dwm.normfgcolor: #8fa1b3
-dwm.selbordercolor: #c0c5ce
-dwm.selbgcolor: #8fa1b3
-dwm.selfgcolor: #2b303b
-
-! --- UXterm --- !
 XTerm*renderFont: true
-XTerm*font: xft:Hack-Regular:size=8
+XTerm*faceName: Hack-Regular
+XTerm*faceSize: 8
+XTerm*faceSize1: 6
+XTerm*faceSize2: 8
+XTerm*faceSize3: 10
+XTerm*faceSize4: 12
+XTerm*faceSize5: 14
+XTerm*faceSize6: 16
 
 XTerm*utf8: 1
 XTerm*locale: true
@@ -67,35 +93,6 @@ XTerm*vt100.metaSendsEscape: true
 XTerm.vt100.translations: #override \n\
   Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
   Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>K: smaller-vt-font() \n\
+  Ctrl Shift <Key>J: larger-vt-font()
 
-!Ctrl <Key> -: smaller-vt-font() \n\
-!Ctrl <Key> =: larger-vt-font()
-
-
-!! --- Urxvt --- !
-!URxvt.font: xft:Hack-Regular:size=8
-!Xft.autohint: 0
-!Xft.lcdfilter: lcddefault
-!Xft.hintstyle: hintslight
-!Xft.hinting: 1
-!Xft.antialias: 1
-!Xft.rgba: rgb
-!URxvt.letterSpace: -1
-!URxvt*scrollBar: False
-!URxvt*depth: 32
-!URxvt*background: [90]#0a0f14
-!
-!URxvt.perl-ext-common: default,url-select,clipboard
-!
-!URxvt.url-select.launcher: dmenulink
-!URxvt.url-select.underline: false
-!URxvt.keysym.M-u: perl:url-select:select_next
-!
-!URxvt.copyCommand: xclip -selection clipboard
-!URxvt.pasteCommand: xclip -out -selection clipboard
-!
-!URxvt.clipboard.autocopy: true
-!URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-!URxvt.iso14755: false
-!URxvt.iso14755_52: false
-!

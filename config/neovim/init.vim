@@ -21,7 +21,7 @@
 	set guicursor=
 	"set paste
 	"set nocompatible
-	set clipboard=unnamed,unnamedplus " system clipboard - neovim only
+	set clipboard=unnamed,unnamedplus " xorg '+' clipboard - neovim only
 	syntax on
 
 " shortcuts
@@ -40,12 +40,6 @@
 	"autocmd FileType cpp noremap <leader>r :!clear; g++ % && ./a.out<cr>
 	"autocmd FileType go noremap <leader>r :!clear; go run %<cr>
 	"autocmd FileType tex noremap <leader>r :!clear; pdflatex % && zathura %:r.pdf <cr>
-
-	" tabs
-	noremap tn :tabnew<cr>
-	noremap te :tabedit 
-	noremap tl :tabnext<cr>
-	noremap th :tabprevious<cr>
 
 	" clipboard
 	"vnoremap <c-c> "yy <Bar> :call system('xclip -selection clipboard', @y)<cr>
