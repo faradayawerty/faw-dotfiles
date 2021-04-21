@@ -1,4 +1,5 @@
-# last change 20 02 2021
+# 20 02 2021
+# 19 04 2021
 
 # -- text -- #
 pipe-viewer-git
@@ -8,13 +9,13 @@ tty-clock
 
 # -- gui -- #
 tor-browser
-transset-df # for transparency
 wps-office ttf-ms-fonts ttf-wps-fonts # microsoft office
+#transset-df # for transparency
 #teams # for remote-learning
 #ttf-mizutama-emoji # colorless emoji for terminal
 
 
 # -- games -- #
-dreamchess-git
+#dreamchess-git
 
 

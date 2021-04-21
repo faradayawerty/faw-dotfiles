@@ -18,7 +18,6 @@ export BROWSER=chromium
 export TERMINAL_BROWSER=w3m
 export RUNMENU="rofi -show run"
 export DMENU="rofi -dmenu"
-export TRANSPARENCY_COMMAND="transset -a -t 0.9"
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps
 
