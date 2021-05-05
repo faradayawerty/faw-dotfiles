@@ -91,6 +91,6 @@
 
 # --- MISC --- #
 	# xterm transparency
-	[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && [ "$(command -v transset)" ] && transset --id "$WINDOWID" 0.9 >/dev/null
-	[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && [ "$(command -v transset-df)" ] && transset-df --id "$WINDOWID" 0.9 >/dev/null
+#	[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && [ "$(command -v transset)" ] && transset --id "$WINDOWID" 0.9 >/dev/null
+#	[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && [ "$(command -v transset-df)" ] && transset-df --id "$WINDOWID" 0.9 >/dev/null
 

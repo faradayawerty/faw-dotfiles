@@ -89,7 +89,7 @@ bar {
 
 		# class             border      bg          text
 		focused_workspace   $black      $blue       $black
-		inactive_workspace  $black      $black      $white
+		inactive_workspace  $background $black      $white
 		active_workspace    $black      $blue       $black
 		urgent_workspace    $black      $red        $black
 		binding_mode        $black      $magenta0   $black
@@ -103,9 +103,9 @@ bar {
 
 # window options
 	# transparency
-	for_window [class="XTerm"] exec transset-df -a $transparency
-	for_window [class="TelegramDesktop"] exec transset-df -a $transparency
-	for_window [class="Zathura"] exec transset-df -a $transparency
+	for_window [class="XTerm"] exec transset -a $transparency
+	for_window [class="TelegramDesktop"] exec transset -a $transparency
+	for_window [class="Zathura"] exec transset -a $transparency
 
 	# floating windows
 	for_window [class="Steam"] floating enable
