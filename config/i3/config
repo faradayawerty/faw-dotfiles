@@ -1,0 +1,241 @@
+# general
+	set $mod Mod4
+	floating_modifier $mod
+
+	set $fontname xft:Hack 8
+	font $fontname
+
+	title_align left
+	default_border pixel 1
+	default_floating_border pixel 1
+
+	show_marks yes
+
+
+# variables
+	set $terminal $TERMINAL
+	set $guibrowser $BROWSER
+	set $launcher $RUNMENU
+
+	set $poweroff systemctl poweroff
+	set $reboot systemctl reboot
+
+	set $music_next cmus-remote -n
+	set $music_prev cmus-remote -r
+	set $music_pause cmus-remote -u
+
+	set $volume_inc exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+	set $volume_dec exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+	set $volume_mute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
+	#set $brightnessup ???
+	#set $brightnessdown ???
+
+	set $transparency 0.9
+
+	set $ws1 " 1 "
+	set $ws2 " 2 "
+	set $ws3 " 3 "
+	set $ws4 " 4 "
+	set $ws5 " 5 "
+	set $ws6 " 6 "
+	set $ws7 " 7 "
+	set $ws8 " 8 "
+	set $ws9 " 9 "
+
+
+# colors
+	set_from_resource $foreground i3wm.fireground #ffffff
+	set_from_resource $background i3wm.background #000000
+
+	set_from_resource $black i3wm.color0 #000000
+	set_from_resource $red i3wm.color1 #440000
+	set_from_resource $green i3wm.color2 #004400
+	set_from_resource $yellow i3wm.color3 #444400
+	set_from_resource $blue i3wm.color4 #000044
+	set_from_resource $magenta i3wm.color5 #440044
+	set_from_resource $cyan i3wm.color6 #004444
+	set_from_resource $white i3wm.color7 #444444
+
+	set_from_resource $black0 i3wm.color8 #111111
+	set_from_resource $red0 i3wm.color9 #aa1111
+	set_from_resource $green0 i3wm.color10 #11aa11
+	set_from_resource $yellow0 i3wm.color11 #aaaa11
+	set_from_resource $blue0 i3wm.color12 #1111aa
+	set_from_resource $magenta0 i3wm.color13 #aa11aa
+	set_from_resource $cyan0 i3wm.color14 #11aaaa
+	set_from_resource $white0 i3wm.color15 #aaaaaa
+
+	## class                border   bg       text        ind.        child_border
+	client.focused          $blue    $blue    $black      $red        $blue  
+	client.focused_inactive $black   $black   $white      $black      $black
+	client.unfocused        $black   $black   $white      $black      $black
+	client.placeholder      $black   $black   $white      $red        $black
+	client.urgent           $red     $red     $black      $red        $red
+	client.background       $black
+
+
+bar {
+	position top
+	font $fontname
+	status_command i3status
+	separator_symbol " "
+	#tray_output none
+
+	colors {
+		background  $background
+		statusline  $foreground
+		separator   $foreground
+
+		# class             border      bg          text
+		focused_workspace   $black      $blue       $black
+		inactive_workspace  $black      $black      $white
+		active_workspace    $black      $blue       $black
+		urgent_workspace    $black      $red        $black
+		binding_mode        $black      $magenta0   $black
+	}
+}
+
+
+# autostart
+	# layout indicator
+	exec_always pkill fbxkb; fbxkb &
+
+# window options
+	# transparency
+	for_window [class="XTerm"] exec transset-df -a $transparency
+	for_window [class="TelegramDesktop"] exec transset-df -a $transparency
+	for_window [class="Zathura"] exec transset-df -a $transparency
+
+	# floating windows
+	for_window [class="Steam"] floating enable
+	for_window [class="Tor Browser"] floating enable
+
+	# borders
+	for_window [class="Wps"] border pixel 1
+
+	# no focus
+	#no_focus [class="mpv"]
+
+
+# bindings
+	# workspaces
+	bindsym $mod+1 workspace $ws1
+	bindsym $mod+2 workspace $ws2
+	bindsym $mod+3 workspace $ws3
+	bindsym $mod+4 workspace $ws4
+	bindsym $mod+5 workspace $ws5
+	bindsym $mod+6 workspace $ws6
+	bindsym $mod+7 workspace $ws7
+	bindsym $mod+8 workspace $ws8
+	bindsym $mod+9 workspace $ws9
+
+	bindsym $mod+Shift+1 move container to workspace $ws1
+	bindsym $mod+Shift+2 move container to workspace $ws2
+	bindsym $mod+Shift+3 move container to workspace $ws3
+	bindsym $mod+Shift+4 move container to workspace $ws4
+	bindsym $mod+Shift+5 move container to workspace $ws5
+	bindsym $mod+Shift+6 move container to workspace $ws6
+	bindsym $mod+Shift+7 move container to workspace $ws7
+	bindsym $mod+Shift+8 move container to workspace $ws8
+	bindsym $mod+Shift+9 move container to workspace $ws9
+
+	# window management
+	bindsym $mod+h focus left
+	bindsym $mod+j focus down
+	bindsym $mod+k focus up
+	bindsym $mod+l focus right
+
+	bindsym $mod+Shift+h move left 20 px
+	bindsym $mod+Shift+j move down 20 px
+	bindsym $mod+Shift+k move up 20 px
+	bindsym $mod+Shift+l move right 20 px
+
+	bindsym $mod+w kill
+
+	# windows
+	bindsym $mod+q split v
+	bindsym $mod+e split h
+
+	bindsym $mod+c focus child
+	bindsym $mod+p focus parent
+
+	bindsym $mod+space focus mode_toggle
+	bindsym $mod+Shift+space floating toggle
+
+	bindsym $mod+f fullscreen toggle
+	bindsym $mod+d border toggle
+
+	# launch applications
+	bindsym $mod+Return exec $terminal
+	bindsym $mod+Shift+Return exec $terminal -e tmux new-session -A -s default
+	bindsym $mod+Shift+o exec $launcher
+
+	# dmenu
+	bindsym $mod+Control+e exec dmenuemoji
+	bindsym $mod+Control+u exec dmenuunicode
+	bindsym $mod+Control+k exec dmenukaomoji
+
+	# touchpad
+		bindsym $mod+t exec touchpad_toggle
+
+	# screenshot
+		bindsym Print exec takescreenshot
+
+	# media keys
+		bindsym XF86AudioPlay exec $music_pause
+		bindsym XF86AudioNext exec $music_next
+		bindsym XF86AudioPrev exec $music_prev
+
+	# brightness keys
+		#bindsym XF86MonBrightnessUp exec $brightnessup
+		#bindsym XF86MonBrightnessDown exec $brightnessdown
+
+	# volume keys
+		bindsym XF86AudioRaiseVolume $volume_inc
+		bindsym XF86AudioLowerVolume $volume_dec
+		bindsym XF86AudioMute $volume_mute
+
+	# modes
+	mode "layout" {
+		bindsym t layout tabbed; mode "default"
+		bindsym s layout stacking; mode "default"
+		bindsym n layout toggle split; mode "default"
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+	}
+	bindsym $mod+a mode "layout"
+
+	mode "resize" {
+		bindsym h resize shrink width 20 px or 5 ppt
+		bindsym j resize grow height 20 px or 5 ppt
+		bindsym k resize shrink height 20 px or 5 ppt
+		bindsym l resize grow width 20 px or 5 ppt
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+	}
+	bindsym $mod+r mode "resize"
+
+	mode "i3 session" {
+		bindsym p exec $poweroff
+		bindsym b exec $reboot
+		bindsym r restart
+		bindsym q exit
+		bindsym l exec i3lock -c$black; mode "default"
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+	}
+	bindsym $mod+s mode "i3 session"
+
+	mode "open" {
+		bindsym b exec $guibrowser; mode "default"
+		bindsym t exec telegram-desktop; mode "default"
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+	}
+	bindsym $mod+o mode "open"
+

@@ -5,10 +5,10 @@ neovim tmux bash-completion
 zip unzip rar unrar atool
 neofetch tree ffmpeg imagemagick aria2 acpi pandoc curl
 tty-clock htop newsboat qalc w3m
-tor torsocks udisks2 openssh-server
+tor torsocks udisks2 openssh-server vnstat
 
 # -- gui -- #
-xorg rofi xterm
+xorg rofi i3-wm i3status fbxkb xinput xterm
 sxiv mpv vlc zathura zathura-djvu zathura-ps grafx2 qbittorrent
 xwallpaper xclip maim xcompmgr
 fonts-hack fonts-noto ttf-mscorefonts-installer
@@ -20,7 +20,9 @@ cmus
 # -- languages -- #
 python python3 python-pip python3-pip
 golang-1.14 love fpc openjdk-11-jdk
-texlive-base texlive-lang-cyrillic mathtex
+texlive-base texlive-xetex texlive-lang-cyrillic
+texlive-fonts-recommended texlive-extra-utils texlive-latex-extra
+mathtex
 
 # -- games -- #
 dreamchess

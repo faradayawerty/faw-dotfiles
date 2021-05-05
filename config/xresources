@@ -1,62 +1,22 @@
-! for lib
-#define cfg #c5c8c6
-#define cbg #1d1f21
-#define c00 #1d1f21
-#define c08 #969896
-#define c01 #cc6666
-#define c09 #cc6666
-#define c02 #b5bd68
-#define c10 #b5bd68
-#define c03 #f0c674
-#define c11 #f0c674
-#define c04 #81a2be
-#define c12 #81a2be
-#define c05 #b294bb
-#define c13 #b294bb
-#define c06 #8abeb7
-#define c14 #8abeb7
-#define c07 #c5c8c6
+! derp
+#define cfg #ffffff
+#define cbg #000000
+#define c00 #111111
+#define c01 #d36265
+#define c02 #aece91
+#define c03 #e7e18c
+#define c04 #5297cf
+#define c05 #963c59
+#define c06 #5e7175
+#define c07 #bebebe
+#define c08 #666666
+#define c09 #ef8171
+#define c10 #cfefb3
+#define c11 #fff796
+#define c12 #74b8ef
+#define c13 #b85e7b
+#define c14 #a3babf
 #define c15 #ffffff
-
-!! derp
-!#define cfg #ffffff
-!#define cbg #000000
-!#define c00 #111111
-!#define c08 #666666
-!#define c01 #d36265
-!#define c09 #ef8171
-!#define c02 #aece91
-!#define c10 #cfefb3
-!#define c03 #e7e18c
-!#define c11 #fff796
-!#define c04 #5297cf
-!#define c12 #74b8ef
-!#define c05 #963c59
-!#define c13 #b85e7b
-!#define c06 #5e7175
-!#define c14 #a3babf
-!#define c07 #bebebe
-!#define c15 #ffffff
-
-! nord
-!#define cfg #c0c5ce
-!#define cbg #15181c
-!#define c00 #2b303b
-!#define c08 #65737e
-!#define c01 #bf616a
-!#define c09 #bf616a
-!#define c02 #a3be8c
-!#define c10 #a3be8c
-!#define c03 #ebcb8b
-!#define c11 #ebcb8b
-!#define c04 #8fa1b3
-!#define c12 #8fa1b3
-!#define c05 #b48ead
-!#define c13 #b48ead
-!#define c06 #96b5b4
-!#define c14 #96b5b4
-!#define c07 #c0c5ce
-!#define c15 #eff1f5
 
 *color0: c00
 *color1: c01
