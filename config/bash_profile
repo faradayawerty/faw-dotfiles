@@ -2,22 +2,22 @@
 
 source ~/.bashrc
 
-export SHELL=bash
-export FILE_MANAGER=lf
-export PAGER=less
-export DOWNLOADER=aria2c
+export EDITOR=nvim
+export TERMINAL_BROWSER=w3m
+export FILE_MANAGER=rover
+export DOWNLOADER=wget
+export MUSIC_PLAYER=cmus
 export SOUND_MIXER=pulsemixer
 export YOUTUBE_VIEWER=pipe-viewer
-export MUSIC_PLAYER=cmus
-export MEDIA_PLAYER=mpv
-export IMAGE_VIEWER=sxiv
-export DOCUMENT_VIEWER=zathura
-export EDITOR=nvim
-export TERMINAL=xterm
+export PAGER=less
+
+export TERMINAL=st
 export BROWSER=chromium
-export TERMINAL_BROWSER=w3m
-export RUNMENU="rofi -show run"
-export DMENU="rofi -dmenu"
+export RUNMENU=dmenu_run
+export DMENU=dmenu
+export IMAGE_VIEWER=sxiv
+export MEDIA_PLAYER=mpv
+export DOCUMENT_VIEWER=zathura
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps
 
@@ -26,10 +26,6 @@ mkdir -p $GOPATH
 mkdir -p $GOPATH/bin
 mkdir -p $GOPATH/src
 mkdir -p $GOPATH/pkg
-
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
 
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"

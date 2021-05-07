@@ -4,20 +4,17 @@
 # set keyboard layout
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
-# x resources
-xrdb ~/.Xresources
-
 # set wallpaper
 [ -f ~/.wallpaper ] && xwallpaper --stretch ~/.wallpaper
-[ -f ~/.wallpaper ] || xsetroot -solid "$(xrdb -query | grep background | awk '{print $2}')"
+[ -f ~/.wallpaper ] || xsetroot -solid "#060608"
 
-## dwm status
-#while true
-#do
-#	xsetroot -name " $(date +'%a %b %d %H:%M') "
-#	sleep 20s
-#done &
+# dwm status
+while true
+do
+	xsetroot -name " $(date +'%a %b %d %H:%M') "
+	sleep 20s
+done &
 
 # start window manager
-exec i3
+exec dwm
 

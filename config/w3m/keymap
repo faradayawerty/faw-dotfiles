@@ -71,7 +71,7 @@ keymap	q	CLOSE_TAB
 
 
 # --- external programs --- #
-keymap	i	SAVE_IMAGE
+keymap i SAVE_IMAGE
 keymap I PEEK_IMG
 keymap x EXTERN_LINK 'exurl'
 keymap X EXTERN 'exurl'

@@ -3,11 +3,10 @@
 # -- text -- #
 translate-shell
 
+# -- programming -- #
+
 # -- gui -- #
 telegram-desktop
-
-# -- programming -- #
-golang # because 1.11 is unsupported
 
 # -- games -- #
 minetest # because it's easier to install mods
