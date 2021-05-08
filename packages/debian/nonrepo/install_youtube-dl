@@ -1,8 +1,0 @@
-#!/bin/bash
-
-[ -x "$(command -v youtube-dl)" ] && echo youtube-dl already installed && exit
-
-sudo apt update
-sudo apt install -y python3-pip
-pip3 install youtube-dl
-

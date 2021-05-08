@@ -79,6 +79,10 @@ function aur {
 	git clone https://aur.archlinux.org/$1.git
 }
 
+function weather {
+	curl wttr.in/$1
+}
+
 # --- MISC --- #
 # xterm transparency
 #[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && [ "$(command -v transset)" ] && transset --id "$WINDOWID" 0.9 >/dev/null

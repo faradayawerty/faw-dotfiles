@@ -1,8 +1,0 @@
-echo "don't forget to add source code repos in sources.list !"
-
-sudo apt build-dep dwm
-cd /tmp
-git clone https://github.com/faradayawerty/dwm-fork
-cd dwm-fork/src
-sudo make clean && make && sudo make install
-

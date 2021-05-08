@@ -12,7 +12,7 @@ export YOUTUBE_VIEWER=pipe-viewer
 export PAGER=less
 
 export TERMINAL=st
-export BROWSER=chromium
+export BROWSER=surf
 export RUNMENU=dmenu_run
 export DMENU=dmenu
 export IMAGE_VIEWER=sxiv
