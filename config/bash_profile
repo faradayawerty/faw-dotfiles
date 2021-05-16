@@ -13,10 +13,10 @@ export PAGER=less
 
 export TERMINAL=st
 export BROWSER=surf
-export RUNMENU=dmenu_run
 export DMENU=dmenu
-export IMAGE_VIEWER=sxiv
+export RUNMENU=dmenu_run
 export MEDIA_PLAYER=mpv
+export IMAGE_VIEWER=sxiv
 export DOCUMENT_VIEWER=zathura
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps

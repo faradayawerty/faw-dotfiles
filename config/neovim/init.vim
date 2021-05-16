@@ -1,28 +1,28 @@
 " basic configuration
-	set path+=**
-	set showtabline=1
-	set foldignore=
-	set laststatus=1
-	set tabstop=8
-	set shiftwidth=8
-	set smarttab
-	set autoindent
-	set number
-	set norelativenumber
-	set noswapfile 
-	set hlsearch
-	set incsearch
-	set linebreak
-	set background=dark
-	set foldmethod=indent
-	set nofoldenable
-	set cursorline
-	set noexpandtab
-	set guicursor=
-	"set paste
-	"set nocompatible
-	set clipboard=unnamed,unnamedplus " xorg '+' clipboard - neovim only
-	syntax on
+set path+=**
+set showtabline=1
+set foldignore=
+set laststatus=1
+set tabstop=8
+set shiftwidth=8
+set smarttab
+set autoindent
+set number
+set norelativenumber
+set noswapfile 
+set hlsearch
+set incsearch
+set linebreak
+set background=dark
+set foldmethod=indent
+set nofoldenable
+set cursorline
+set noexpandtab
+set guicursor=
+"set paste
+"set nocompatible
+set clipboard=unnamed,unnamedplus " xorg '+' clipboard - neovim only
+syntax on
 
 " shortcuts
 	noremap K <nop>
@@ -81,7 +81,7 @@
 	highlight incsearch cterm=underline ctermfg=cyan ctermbg=none
 
 	highlight linenr term=none cterm=none ctermfg=none ctermbg=none
-	highlight cursorlinenr ctermfg=none ctermbg=none cterm=underline
+	highlight cursorlinenr ctermfg=black ctermbg=blue cterm=none
 
 	highlight cursorline ctermfg=none ctermbg=none cterm=none
 	highlight cursorcolumn ctermfg=none ctermbg=none cterm=bold

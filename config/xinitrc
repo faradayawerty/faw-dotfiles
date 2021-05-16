@@ -11,7 +11,10 @@ setxkbmap -layout us,ru -option grp:alt_shift_toggle
 # dwm status
 while true
 do
-	xsetroot -name " $(date +'%a %b %d %H:%M') "
+	block_date=$(date +'%a %b %d %H:%M')
+	block_temp=$(acpi -t | head -n1 | awk '{print $4}')
+	block_memr=$(free -h | grep Mem | awk '{print $3 "/" $2}')
+	xsetroot -name " $block_memr | $block_temp °C | $block_date "
 	sleep 20s
 done &
 

@@ -2,7 +2,6 @@
 cd config
 
 mkdir -p ~/.w3m
-mkdir -p ~/.config/htop
 mkdir -p ~/.config/nvim
 
 ln -snf $(realpath bashrc) ~/.bashrc
@@ -10,6 +9,5 @@ ln -snf $(realpath tmux.conf) ~/.tmux.conf
 ln -snf $(realpath w3m/config) ~/.w3m/config
 ln -snf $(realpath w3m/keymap) ~/.w3m/keymap
 ln -snf $(realpath bash_profile) ~/.bash_profile
-ln -snf $(realpath htop/htoprc) ~/.config/htop/htoprc
 ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
 

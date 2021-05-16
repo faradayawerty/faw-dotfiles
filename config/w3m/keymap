@@ -19,11 +19,6 @@ keymap	C-u	DOWN 12
 keymap	C-b	PREV_PAGE
 keymap	C-f	NEXT_PAGE
 
-#keymap	gh	LINE_BEGIN
-#keymap	gj	END
-#keymap	gk	BEGIN
-#keymap	gl	LINE_END
-
 keymap	gg	BEGIN
 keymap	G	END
 keymap	0	LINE_BEGIN
@@ -48,7 +43,7 @@ keymap z BACK
 keymap f LINK_BEGIN
 keymap F MOVE_LIST_MENU
 
-keymap	c	PEEK
+keymap	p	PEEK
 keymap O OPTIONS
 
 # --- bookmarks --- #
@@ -78,8 +73,6 @@ keymap X EXTERN 'exurl'
 keymap u EXTERN_LINK 'tmux split-pane -v -p20 exurl'
 keymap U EXTERN 'tmux split-pane -v -p20 exurl'
 keymap E EDIT_SCREEN
-keymap y EXTERN_LINK 'copytoclipboard'
-keymap Y EXTERN 'copytoclipboard'
 
 
 # --- unbind keys --- #
@@ -97,6 +90,8 @@ keymap ";" NULL
 
 
 
+#keymap y EXTERN_LINK 'copytoclipboard'
+#keymap Y EXTERN 'copytoclipboard'
 #keymap i VIEW_IMAGE
 #keymap	C-@	MARK
 #keymap	C-a	LINE_BEGIN
