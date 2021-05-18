@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # --- VARS --- #
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
 
@@ -44,6 +47,8 @@ alias l='ls -Fh --color=auto --group-directories-first'
 alias ll='clear;ls -lFh --color=auto --group-directories-first'
 alias la='ls -aFh --color=auto --group-directories-first'
 alias lla='clear;ls -laFh --color=auto --group-directories-first'
+
+alias todo='for i in {00..23}; do for j in 00 20 40; do echo "$i:$j"; done; done'
 
 # --- FUNCTIONS --- #
 function cd {

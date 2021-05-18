@@ -22,7 +22,7 @@ set guicursor=
 "set paste
 "set nocompatible
 set clipboard=unnamed,unnamedplus " xorg '+' clipboard - neovim only
-syntax on
+syntax off
 
 " shortcuts
 	noremap K <nop>
