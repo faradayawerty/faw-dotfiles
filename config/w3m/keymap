@@ -55,10 +55,10 @@ keymap S GOTO 'https://duckduckgo.com/' # search
 
 
 # --- tabs --- #
-keymap	t TAB_LINK
+keymap	tt TAB_LINK
 keymap	T NEW_TAB
-keymap	gT PREV_TAB
-keymap	gt NEXT_TAB
+keymap	th PREV_TAB
+keymap	tl NEXT_TAB
 
 keymap	q	CLOSE_TAB
 

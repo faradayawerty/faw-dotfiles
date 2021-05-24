@@ -1,12 +1,12 @@
-# enable transparency
+# enable transparency if there's a wallpaper
 [ -f ~/.wallpaper ] && xcompmgr &
 
 # set keyboard layout
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
 # set wallpaper
-[ -f ~/.wallpaper ] && xwallpaper --stretch ~/.wallpaper
-[ -f ~/.wallpaper ] || xsetroot -solid "#060608"
+[ -f ~/.wallpaper ] && xwallpaper --zoom ~/.wallpaper
+[ -f ~/.wallpaper ] || xsetroot -solid "#040406"
 
 # dwm status
 while true

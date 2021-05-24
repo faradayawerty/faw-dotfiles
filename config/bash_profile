@@ -5,19 +5,20 @@ source ~/.bashrc
 export EDITOR=nvim
 export TERMINAL_BROWSER=w3m
 export FILE_MANAGER=rover
-export DOWNLOADER=wget
+export DOWNLOADER=aria2c
 export MUSIC_PLAYER=cmus
+export NEWS_READER=newsboat
 export SOUND_MIXER=pulsemixer
 export YOUTUBE_VIEWER=pipe-viewer
 export PAGER=less
 
 export TERMINAL=st
-export BROWSER=surf
+export BROWSER=chromium
+export OPEN=xdg-open
 export DMENU=dmenu
 export RUNMENU=dmenu_run
 export MEDIA_PLAYER=mpv
 export IMAGE_VIEWER=sxiv
-export DOCUMENT_VIEWER=zathura
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps
 

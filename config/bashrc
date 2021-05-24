@@ -34,14 +34,21 @@ stty -ixon
 
 # --- ALIASES --- #
 alias v="$EDITOR"
+alias d="$DOWNLOADER"
 alias r="$FILE_MANAGER"
+alias nb="$NEWS_READER"
+alias cm="$MUSIC_PLAYER"
+alias pm="$SOUND_MIXER"
 alias ww="$TERMINAL_BROWSER duckduckgo.com/html"
 alias wt="torsocks $TERMINAL_BROWSER duckduckgo.com/html"
-alias pm="$SOUND_MIXER"
 alias ht='htop'
-alias nb='newsboat'
-alias nf='clear; neofetch --ascii_distro'
-alias tm='tmux new-session -A -s default'
+alias nf='clear; neofetch'
+alias mk='sudo make clean && make && sudo make install'
+
+alias gpp="git add .; git commit -m '-'; git push"
+alias ga="git add ."
+alias gc="git commit -m '-'"
+alias gp="git push"
 
 alias l='ls -Fh --color=auto --group-directories-first'
 alias ll='clear;ls -lFh --color=auto --group-directories-first'
@@ -73,8 +80,18 @@ function yt {
 	[ "$o" = "d" ] && youtube-dl --add-metadata -ic -f "bestvideo[height<=$q]+bestaudio/best[height<=$q]" $@
 }
 
-# --- MISC --- #
-# xterm transparency
-#[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && [ "$(command -v transset)" ] && transset --id "$WINDOWID" 0.9 >/dev/null
-#[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && [ "$(command -v transset-df)" ] && transset-df --id "$WINDOWID" 0.9 >/dev/null
+function fd {
+	dirname="$(dirname $(fzf))"
+	cd $dirname
+}
+
+function fe {
+	filename="$(fzf)"
+	$EDITOR $filename
+}
+
+function fo {
+	filename="$(fzf)"
+	$OPEN $filename
+}
 

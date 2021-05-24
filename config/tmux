@@ -1,6 +1,6 @@
 # general configuration
-set-option -g prefix C-x
-bind C-x send-prefix
+set-option -g prefix M-w
+bind M-w send-prefix
 set-option -g escape-time 0
 set -g mouse off
 set -g base-index 1
@@ -13,10 +13,6 @@ set -g pane-base-index 1
 
 # don't automatically rename windows
 set-window-option -g automatic-rename on
-
-# enable transparency in xterm
-#if-shell '[ -n "$XTERM_VERSION" ] && [ "$(command -v transset-df)" ]' 'run-shell "transset-df -a 0.9 >/dev/null"'
-#if-shell '[ -n "$XTERM_VERSION" ] && [ "$(command -v transset)" ]' 'run-shell "transset -a 0.9 >/dev/null"'
 
 # some colors
 set-option -g message-style fg=blue,bg=black
@@ -40,30 +36,33 @@ set -g window-status-separator ''
 set-option -g history-limit 250000
 
 # keybindings
+unbind '"'
+unbind '%'
+unbind ']'
+
 set-window-option -g mode-keys vi
 set -g status-keys vi
+
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi V send-keys -X select-line
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
+bind-key -T copy-mode-vi Escape send-keys -X stop-selection
+bind-key ] run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
+
+bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; split-window -v -p20 "linkgrabber /tmp/tmux-buffer"
+bind-key U capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n url "linkgrabber /tmp/tmux-buffer"
 
 bind-key r source-file ~/.tmux.conf \; display "Configuration Reloaded!"
 bind-key b set-option status
 bind-key c new-window -c "#{pane_current_path}"
 
-bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; split-window -v -p20 "linkgrabber /tmp/tmux-buffer"
-bind-key U capture-pane \; save-buffer /tmp/tmux-buffer \; new-window "linkgrabber /tmp/tmux-buffer"
-
-bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
-bind-key ] run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
-
-unbind '"'
-unbind '%'
-
 bind-key '_' split-window -v -c "#{pane_current_path}"
 bind-key '|' split-window -h -c "#{pane_current_path}"
 
-bind-key -n M-q split-window -v -c "#{pane_current_path}"
-bind-key -n M-e split-window -h -c "#{pane_current_path}"
+bind-key -n M-- split-window -v -c "#{pane_current_path}"
+bind-key -n M-\ split-window -h -c "#{pane_current_path}"
 
-bind-key -n M-w kill-pane
+bind-key -n M-q kill-pane
 bind-key -n M-space next-layout
 
 # movement
