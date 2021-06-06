@@ -1,15 +1,15 @@
 # general configuration
-set-option -g prefix M-w
-bind M-w send-prefix
+set-option -g prefix M-g
+bind M-g send-prefix
 set-option -g escape-time 0
 set -g mouse off
 set -g base-index 1
 set -g pane-base-index 1
 
 # fix cursor shape
-#set -g default-terminal 'tmux-256color'
-#set -ga terminal-overrides ',*:Tc' # 256 color
-#set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
+set -g default-terminal 'tmux-256color'
+set -ga terminal-overrides ',*:Tc' # 256 color
+set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
 
 # don't automatically rename windows
 set-window-option -g automatic-rename on
@@ -39,16 +39,17 @@ set-option -g history-limit 250000
 unbind '"'
 unbind '%'
 unbind ']'
+unbind '['
 
-set-window-option -g mode-keys vi
-set -g status-keys vi
+#set -g status-keys vi
+#set-window-option -g mode-keys vi
+#bind-key -T copy-mode-vi v send-keys -X begin-selection
+#bind-key -T copy-mode-vi V send-keys -X select-line
+#bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
+#bind-key -T copy-mode-vi Escape send-keys -X stop-selection
+#bind-key ] run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
 
-bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi V send-keys -X select-line
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
-bind-key -T copy-mode-vi Escape send-keys -X stop-selection
-bind-key ] run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
-
+bind-key e capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n copy "$EDITOR /tmp/tmux-buffer"
 bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; split-window -v -p20 "linkgrabber /tmp/tmux-buffer"
 bind-key U capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n url "linkgrabber /tmp/tmux-buffer"
 
@@ -81,10 +82,10 @@ bind-key J resize-pane -D 5
 bind-key K resize-pane -U 5
 bind-key L resize-pane -R 15
 
-bind-key -n C-M-h resize-pane -L 15
-bind-key -n C-M-j resize-pane -D 5
-bind-key -n C-M-k resize-pane -U 5
-bind-key -n C-M-l resize-pane -R 15
+bind-key -n M-H resize-pane -L 15
+bind-key -n M-J resize-pane -D 5
+bind-key -n M-K resize-pane -U 5
+bind-key -n M-L resize-pane -R 15
 
 # create new window by pressing the number keys
 unbind 0

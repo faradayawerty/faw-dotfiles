@@ -10,8 +10,8 @@ keymap K PREV_LINK
 keymap	b	PREV_WORD
 keymap	w	NEXT_WORD
 
-keymap	C-e	UP
-keymap	C-y	DOWN
+#keymap	C-e	UP
+#keymap	C-y	DOWN
 
 keymap	C-d	UP 12
 keymap	C-u	DOWN 12
@@ -19,15 +19,15 @@ keymap	C-u	DOWN 12
 keymap	C-b	PREV_PAGE
 keymap	C-f	NEXT_PAGE
 
-keymap	gg	BEGIN
-keymap	G	END
-keymap	0	LINE_BEGIN
-keymap	$	LINE_END
+keymap	gk	BEGIN
+keymap	gj	END
+keymap	gh	LINE_BEGIN
+keymap	gl	LINE_END
 
 keymap	/	SEARCH
-keymap	?	SEARCH_BACK
+keymap	M-/	SEARCH_BACK
 keymap	n   SEARCH_NEXT
-keymap  N   SEARCH_PREV
+keymap  M-n   SEARCH_PREV
 
 
 # --- browsing --- #
