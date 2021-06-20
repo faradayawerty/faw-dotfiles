@@ -3,9 +3,9 @@ cd config
 
 mkdir -p ~/.w3m
 mkdir -p ~/.newsboat
-mkdir -p ~/.config/kak
+mkdir -p ~/.config/nvim
 
-ln -snf $(realpath kakrc) ~/.config/kak/kakrc
+ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
 
 ln -snf $(realpath w3m/config) ~/.w3m/config
 ln -snf $(realpath w3m/keymap) ~/.w3m/keymap

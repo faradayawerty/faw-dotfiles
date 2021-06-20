@@ -4,6 +4,9 @@
 # set keyboard layout
 setxkbmap -layout us,ru -option grp:win_space_toggle
 
+# load xresources
+xrdb ~/.Xresources
+
 # set wallpaper
 [ -f ~/.wallpaper ] && xwallpaper --stretch ~/.wallpaper
 [ -f ~/.wallpaper ] || xsetroot -solid "#040406"

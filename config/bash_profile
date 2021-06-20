@@ -2,7 +2,7 @@
 
 source ~/.bashrc
 
-export EDITOR=kak
+export EDITOR=nvim
 export PAGER=less
 export TERMINAL_BROWSER=w3m
 export FILE_MANAGER=rover
@@ -22,7 +22,19 @@ export IMAGE_VIEWER=sxiv
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps
 
-export GOPATH=~/.go
+export DEVPATH=~/dev
+export GOPATH=$DEVPATH/lang_go
+export CPATH=$DEVPATH/lang_c
+export CPATH=$DEVPATH/lang_cpp
+export PYPATH=$DEVPATH/lang_py
+export LUAPATH=$DEVPATH/lang_lua
+export JAVAPATH=$DEVPATH/lang_java
+
+mkdir -p $CPATH
+mkdir -p $PYPATH
+mkdir -p $LUAPATH
+mkdir -p $JAVAPATH
+
 mkdir -p $GOPATH
 mkdir -p $GOPATH/bin
 mkdir -p $GOPATH/src
