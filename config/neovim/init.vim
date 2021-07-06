@@ -58,12 +58,12 @@ augroup END
 
 " appearance
 " ----------
-highlight TabLine ctermbg=none ctermfg=grey cterm=none
-highlight TabLineFill ctermbg=none ctermfg=grey cterm=none
-highlight TabLineSel ctermbg=black ctermfg=white cterm=none
+highlight TabLine ctermbg=black ctermfg=blue cterm=none
+highlight TabLineFill ctermbg=black ctermfg=blue cterm=none
+highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
 
 highlight normal ctermfg=none
-highlight visual ctermfg=black ctermbg=blue
+highlight visual ctermfg=black ctermbg=white
 
 highlight nontext ctermfg=blue
 highlight specialkey ctermfg=blue
@@ -83,9 +83,9 @@ highlight folded ctermfg=blue ctermbg=none
 " plugins
 " -------
 call plug#begin(stdpath('data') . '/plugged')
-	Plug 'jiangmiao/auto-pairs'
 	Plug 'justmao945/vim-clang'
 	Plug 'artur-shaik/vim-javacomplete2'
+	Plug 'https://github.com/davisdude/vim-love-docs'
 call plug#end()
 
 " clang complete

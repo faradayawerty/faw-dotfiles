@@ -1,0 +1,25 @@
+! --- Xterm ---
+XTerm*renderFont: true
+XTerm*faceName: Hack-Regular
+XTerm*faceSize: 8
+XTerm*faceSize1: 6
+XTerm*faceSize2: 8
+XTerm*faceSize3: 10
+XTerm*faceSize4: 12
+XTerm*faceSize5: 14
+XTerm*faceSize6: 16
+XTerm*utf8: 2
+XTerm*locale: true
+XTerm*geometry: 140x40
+XTerm.termName: xterm-256color
+XTerm*BorderWidth: 0
+
+! turn off alt+n keys
+XTerm*vt100.metaSendsEscape: true
+
+XTerm.vt100.translations: #override \n\
+  Ctrl Shift <Key> k: smaller-vt-font() \n\
+  Ctrl Shift <Key> j: larger-vt-font() \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
