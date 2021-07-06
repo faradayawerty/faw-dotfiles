@@ -1,0 +1,15 @@
+#! /bin/bash
+
+mkdir -p ~/.local/bin
+mkdir -p ~/.local/share
+
+for i in $(ls bin)
+do
+	ln -snf $(realpath bin/$i) ~/.local/bin/$i
+done
+
+for i in $(ls share)
+do
+	ln -snf $(realpath share/$i) ~/.local/share/$i
+done
+

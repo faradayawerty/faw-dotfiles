@@ -1,0 +1,6 @@
+#!/bin/bash
+
+[ -z "$DMENU" ] && DMENU=dmenu
+
+dmenu_path | $DMENU "$@" | ${SHELL:-"/bin/sh"} &
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+back="$(xrdb -query | grep -m1 color0: | awk '{print $2}')"
+fore="$(xrdb -query | grep -m1 color4: | awk '{print $2}')"
+
+[ -z "$back" ] && back="#000000"
+[ -z "$fore" ] && fore="#11aa11"
+
+dmenu -fn "Hack-Regular:size=8" -nf "$fore" -nb "$back" -sf "$back" -sb "$fore" "$@"
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+[ -z "$BROWSER" ] && BROWSER=surf
+[ -z "$DMENU" ] && DMENU=dmenu
+[ -z "$SEARCH_ENGINE" ] && SEARCH_ENGINE="https://www.google.com/search?q="
+
+[ -z "$DIR_NAME" ] && DIR_NAME=~/.cache
+[ -z "$FILE_NAME" ] && FILE_NAME=dmenu_search_history
+
+mkdir -p $DIR_NAME
+[ -f $DIR_NAME/$FILE_NAME ] || echo -e "suckless software\n" > $DIR_NAME/$FILE_NAME
+
+search="$(sort -u $DIR_NAME/$FILE_NAME | sed '/^$/d' | $DMENU -p search)"
+echo "$search" >> $DIR_NAME/$FILE_NAME
+
+url="$SEARCH_ENGINE$search"
+[ -z "$search" ] || $BROWSER "$url"
+

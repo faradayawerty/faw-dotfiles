@@ -1,0 +1,33 @@
+#!/bin/bash
+
+[ -z "$@" ] && exit
+
+select ch in terminal_browser graphical_browser downloader media_viewer youtube-dl
+do
+	[ "$ch" = "graphical_browser" ] && $BROWSER "$@"
+	[ "$ch" = "terminal_browser" ] && $TERMINAL_BROWSER "$@"
+	[ "$ch" = "downloader" ] && $DOWNLOADER "$@"
+
+	if [ "$ch" = "media_viewer" ]; then
+		if [ "$MEDIA_PLAYER" = "mpv" ]; then
+			select qu in 240 360 480 720
+			do
+				mpv --ytdl-format="bestvideo[height<=?$qu]+bestaudio/best" "$@"
+				exit
+			done
+		else
+			$MEDIA_PLAYER "$@"
+		fi
+	fi
+
+	if [ "$ch" = "youtube-dl" ]; then
+		select qu in 240 360 480 720
+		do
+			youtube-dl --add-metadata -ic -f "bestvideo[height<=$qu]+bestaudio/best[height<=$qu]" "$@"
+			exit
+		done
+	fi
+
+	exit
+done
+

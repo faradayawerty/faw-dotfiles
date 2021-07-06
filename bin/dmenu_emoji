@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# launches dmenu to select an emoji and copy it to clipboard
+#
+#
+# file with emoji by default should be located in ~/.local/share/dmenuemoji/
+# and named emoji.list
+#
+# but you can change it by launching the script like so
+# emoji_list=path/to/emoji.list dmenuemoji
+
+
+[ -z $emoji_list ] && emoji_list=~/.local/share/dmenuemoji/emoji.list
+[ -z $DMENU ] && DMENU=dmenu
+
+# grab character using dmenu
+character=$(cat $emoji_list | $DMENU "$@" -l 24 | cut -d " " -f 1)
+
+# copy character to clipboard
+echo -n $character | xclip -selection clipboard
+echo -n $character | xclip -selection clipboard
+echo -n $character | xclip -selection clipboard
+

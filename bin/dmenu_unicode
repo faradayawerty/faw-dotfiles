@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# launches dmenu to select a unicode character and copy it to clipboard
+#
+#
+# file with unicode characters by default should be
+# located in ~/.local/share/dmenuunicode/ and named unicode.list
+#
+# but you can change it by launching the script like so
+# unicode_list=path/to/unicode.list dmenuunicode
+
+
+# set variables
+[ -z $unicode_list ] && unicode_list=~/.local/share/dmenuunicode/unicode.list
+[ -z $DMENU ] && DMENU=dmenu
+
+
+# grab character using dmenu
+character=$(cat $unicode_list | $DMENU "$@" -l 24 | cut -d " " -f 1)
+
+
+# copy character to clipboard
+echo -n $character | xclip -selection clipboard
+echo -n $character | xclip -selection clipboard
+echo -n $character | xclip -selection clipboard
+

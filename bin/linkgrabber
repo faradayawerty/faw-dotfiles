@@ -1,0 +1,8 @@
+#!/bin/bash
+regex='(((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]'
+select link in $(cat "$@" | grep -Po "$regex")
+do
+	exurl "$link"
+	exit
+done
+

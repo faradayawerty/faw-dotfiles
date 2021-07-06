@@ -1,0 +1,16 @@
+#!/bin/bash
+
+[ -z "$DMENU" ] && DMENU=dmenu
+
+[ -z "$POWEROFF_COMMAND" ] && POWEROFF_COMMAND="systemctl poweroff"
+[ -z "$REBOOT_COMMAND" ] && REBOOT_COMMAND="systemctl reboot"
+[ -z "$LOGOUT_COMMAND" ] && LOGOUT_COMMAND="pkill xinit"
+
+cmd="$(echo -e 'poweroff\nreboot\nlogout' | $DMENU)"
+
+[ "$cmd" = "poweroff" ] && $POWEROFF_COMMAND
+[ "$cmd" = "reboot" ] && $REBOOT_COMMAND
+[ "$cmd" = "logout" ] && $LOGOUT_COMMAND
+
+[ -z "$cmd" ] || echo ok | $DMENU -p "can't $cmd"
+
