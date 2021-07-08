@@ -1,0 +1,6 @@
+#!/bin/bash
+
+acpi -t | while read line ; do
+   echo -n "{TH$(echo $line | cut -d' ' -f2- | sed 's/ degrees /°/g')}"
+done
+

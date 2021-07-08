@@ -8,8 +8,8 @@ do
 	ln -snf $(realpath bin/$i) ~/.local/bin/$i
 done
 
-for i in $(ls share)
+for i in $(ls bin/share)
 do
-	ln -snf $(realpath share/$i) ~/.local/share/$i
+	ln -snf $(realpath bin/share/$i) ~/.local/share/$i
 done
 

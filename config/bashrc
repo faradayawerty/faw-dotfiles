@@ -106,3 +106,5 @@ function fo {
 	$OPEN $filename
 }
 
+[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" >/dev/null
+

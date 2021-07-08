@@ -16,10 +16,7 @@ wal -R -n
 # dwm status
 while true
 do
-	block_date=$(date +'%a %b %d %H:%M')
-	block_temp=$(acpi -t | head -n1 | awk '{print $4}')
-	block_memr=$(free -h | grep Mem | awk '{print $3 "/" $2}')
-	xsetroot -name " $block_memr | $block_temp °C | $block_date "
+	xsetroot -name " $(panel_bat)   $(panel_temp)   $(panel_mem)   $(panel_date) "
 	sleep 20s
 done &
 

@@ -82,11 +82,11 @@ highlight folded ctermfg=blue ctermbg=none
 
 " plugins
 " -------
-call plug#begin(stdpath('data') . '/plugged')
-	Plug 'justmao945/vim-clang'
-	Plug 'artur-shaik/vim-javacomplete2'
-	Plug 'https://github.com/davisdude/vim-love-docs'
-call plug#end()
+"call plug#begin(stdpath('data') . '/plugged')
+"	Plug 'justmao945/vim-clang'
+"	Plug 'artur-shaik/vim-javacomplete2'
+"	Plug 'https://github.com/davisdude/vim-love-docs'
+"call plug#end()
 
 " clang complete
 let g:clang_auto = 0
