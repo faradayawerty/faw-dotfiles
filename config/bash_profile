@@ -13,7 +13,7 @@ export SOUND_MIXER=pulsemixer
 export YOUTUBE_VIEWER=pipe-viewer
 
 export TERMINAL=xterm
-export BROWSER=chromium-browser
+export BROWSER=chromium
 export OPEN=xdg-open
 export DMENU=dmenu_xrdb
 export RUNMENU=dmenu_launch
