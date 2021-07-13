@@ -1,0 +1,15 @@
+#!/bin/bash
+
+[ -x "$(command -v pipe-viewer)" ] && echo pipe-viewer already installed && exit
+
+sudo apt update
+sudo apt install -y perl libwww-perl liblwp-protocol-https-perl libdata-dump-perl libjson-perl libmodule-build-perl libterm-readline-gnu-perl
+
+cd /tmp
+git clone https://github.com/trizen/pipe-viewer
+cd pipe-viewer
+
+perl Build.PL
+sudo ./Build installdeps
+sudo ./Build install
+
