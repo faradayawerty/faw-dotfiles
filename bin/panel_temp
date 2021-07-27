@@ -1,6 +1,11 @@
 #!/bin/bash
 
+first=true
+
 acpi -t | while read line ; do
-   echo -n "{TH$(echo $line | cut -d' ' -f2- | sed 's/ degrees /°/g')}"
+   [ "$first" = "false" ] && echo -n " | "
+   [ "$first" = "true" ] && first=false
+
+   echo -n "TH$(echo $line | cut -d' ' -f2- | sed 's/ degrees /°/g')"
 done
 

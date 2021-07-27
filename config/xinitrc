@@ -16,7 +16,7 @@ wal -R -n
 # dwm status
 while true
 do
-	xsetroot -name " $(panel_bat)   $(panel_temp)   $(panel_mem)   $(panel_date) "
+	xsetroot -name " [$(panel_bat)]   [$(panel_temp)]   [$(panel_mem)]   [$(panel_date)] "
 	sleep 20s
 done &
 
