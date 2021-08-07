@@ -1,0 +1,490 @@
+##
+##     ____                     __                                _____
+##    / __/___ __________ _____/ /___ ___  __   _________  ____  / __(_)___ _
+##   / /_/ __ `/ ___/ __ `/ __  / __ `/ / / /  / ___/ __ \/ __ \/ /_/ / __ `/
+##  / __/ /_/ / /  / /_/ / /_/ / /_/ / /_/ /  / /__/ /_/ / / / / __/ / /_/ /
+## /_/  \__,_/_/   \__,_/\__,_/\__,_/\__, /   \___/\____/_/ /_/_/ /_/\__, /
+##                                  /____/                          /____/
+##
+## last change: 06 aug 2021
+##
+##   # TODO
+##   * [ ] dropdown terminal
+##   * [x] change right panel colors, add transparency
+##   * [ ] launching windows with mouse (selecting window size before launch)
+##   * [ ] left titlebars
+##   * [ ] move things to ~/.fvwm
+##
+##
+
+
+
+
+##   ___  ____ _   __(_)________  ____  ____ ___  ___  ____  / /_
+##  / _ \/ __ \ | / / / ___/ __ \/ __ \/ __ `__ \/ _ \/ __ \/ __/
+## /  __/ / / / |/ / / /  / /_/ / / / / / / / / /  __/ / / / /_
+## \___/_/ /_/|___/_/_/   \____/_/ /_/_/ /_/ /_/\___/_/ /_/\__/
+
+# default programs
+SetEnv terminal $TERMINAL
+SetEnv launcher $RUNMENU
+
+# appearance settings
+SetEnv colorBackground $[X_COLOR_BACKGROUND]
+SetEnv colorMain $[X_COLOR_BLACK]
+SetEnv colorBlack $[X_COLOR_BLACK]
+SetEnv colorWhite $[X_COLOR_BRIGHTWHITE]
+SetEnv colorBlue $[X_COLOR_BLUE]
+SetEnv colorCyan $[X_COLOR_CYAN]
+
+## default colors
+# colorMain #003c3c
+# colorBlack #000000
+# colorBlue #1a6e99
+# colorCyan #006c6c
+# colorWhite #ffffff
+
+SetEnv fontMain "xft:Sans:Bold:size=8:antialias=True"
+SetEnv fontIconman "xft:Sans:Bold:size=7:antialias=True"
+
+
+
+
+##     ____                 __  _
+##    / __/_  ______  _____/ /_(_)___  ____  _____
+##   / /_/ / / / __ \/ ___/ __/ / __ \/ __ \/ ___/
+##  / __/ /_/ / / / / /__/ /_/ / /_/ / / / (__  )
+## /_/  \__,_/_/ /_/\___/\__/_/\____/_/ /_/____/
+
+# Start Function
+DestroyFunc StartFunction
+AddToFunc   StartFunction
++ I Test (x xwallpaper, f $[HOME]/.wallpaper) Exec exec xwallpaper --stretch ~/.wallpaper
++ I TestRc (NoMatch) Exec exec xsetroot -solid "$[colorBackground]"
++ I Module FvwmEvent EventNewDesk
++ I Module FvwmEvent EventNewPage
++ I Module FvwmButtons RightPanel
+
+DestroyFunc IconManClick
+AddToFunc   IconManClick
++ I ThisWindow (Raised, !Shaded, !Iconic, CurrentPage) Iconify
++ I TestRc (Match) Break
++ I ThisWindow WindowShade off
++ I ThisWindow Iconify off
++ I ThisWindow Raise
++ I ThisWindow (AcceptsFocus) FlipFocus
+
+DestroyFunc ToggleTitle
+AddToFunc   ToggleTitle
++ I ThisWindow (State 1) WindowStyle Title
++ I TestRc (Match) State 1 False
++ I TestRc (Match) Break
++ I WindowStyle !Title
++ I State 1 True
+
+DestroyFunc ChangeDesk
+AddToFunc   ChangeDesk
++ I SendToModule FvwmButtons ChangeButton desk0 Colorset 10
++ I SendToModule FvwmButtons ChangeButton desk1 Colorset 10
++ I SendToModule FvwmButtons ChangeButton desk2 Colorset 10
++ I SendToModule FvwmButtons ChangeButton desk3 Colorset 10
++ I SendToModule FvwmButtons ChangeButton desk$0 Colorset 11
+
+# Mouse Bindings Functions
+DestroyFunc RaiseMoveX
+AddToFunc RaiseMoveX
++ I Raise
++ M $0
++ D $1
+DestroyFunc RaiseMove
+AddToFunc RaiseMove
++ I Raise
++ M $0
+
+DestroyFunc Focus-Previous
+AddToFunc Focus-Previous
++ I All ($0, Focused) FlipFocus $1
++ I TestRc (NoMatch) Prev ($0, AcceptsFocus) FlipFocus $1
+
+
+
+
+##     __    _           ___                 
+##    / /_  (_)___  ____/ (_)___  ____ ______
+##   / __ \/ / __ \/ __  / / __ \/ __ `/ ___/
+##  / /_/ / / / / / /_/ / / / / / /_/ (__  ) 
+## /_.___/_/_/ /_/\__,_/_/_/ /_/\__, /____/  
+##                             /____/        
+
+# General Keybindings
+Silent Key Return A 4 Exec exec $[terminal]
+Silent Key O A 4 Exec exec $[launcher]
+Silent Key Print A N Exec exec takescreenshot
+Silent Key E A 4 Exec exec dmenu_emoji
+Silent Key U A 4 Exec exec dmenu_unicode
+Silent Key R A 4S Restart
+Silent Key Q A 4S Quit
+Silent Key Menu A A Menu MenuFvwmRoot
+Silent Key Escape A 4 Menu MenuFvwmRoot
+Silent Key Tab A M WindowList Root c c NoDeskSort, SelectOnRelease
+Silent Key q A 4 Close
+Silent Key h A 4C WindowList (Iconic) Root c c NoDeskSort, SelectOnRelease
+Silent Key k A 4C Maximize
+Silent Key l A 4C Iconify
+
+# Desktop Keys
+Key 1 A 4 GotoDesk 0 0
+Key 2 A 4 GotoDesk 0 1
+Key 3 A 4 GotoDesk 0 2
+Key 4 A 4 GotoDesk 0 3
+
+# Volume Keys
+Key XF86AudioMute A N Exec exec volman mute
+Key XF86AudioRaiseVolume A N Exec exec volman up
+Key XF86AudioLowerVolume A N Exec exec volman down
+
+# Pager bindings
+Key h A 4 GotoPage -1p +0p
+Key j A 4 GotoPage +0p +1p
+Key k A 4 GotoPage +0p -1p
+Key l A 4 GotoPage +1p +0p
+
+Key h A 4S MoveToPage -1p +0p
+Key j A 4S MoveToPage +0p +1p
+Key k A 4S MoveToPage +0p -1p
+Key l A 4S MoveToPage +1p +0p
+
+# Window Buttons
+Mouse 1 1 A Menu MenuWindowOps Delete
+Mouse 1 2 A Close
+Mouse 1 4 A Maximize
+Mouse 1 6 A Iconify
+
+# Titlebar Buttons
+Mouse 1	T    A RaiseMoveX Move Maximize
+Mouse 1	FS   A RaiseMove Resize
+Mouse 4	T    A WindowShade True
+Mouse 5	T    A WindowShade False
+Mouse 1	R    A Menu MenuFvwmRoot
+Mouse 2	R    A WindowList
+Mouse 3	R    A Menu MenuWindowOpsLong
+Mouse 1	I    A RaiseMoveX Move "Iconify off"
+Mouse 3	T    A Menu MenuWindowOps
+Mouse 3 I    A Menu MenuIconOps
+
+
+
+
+##    ____ ___  ___  ____  __  _______
+##   / __ `__ \/ _ \/ __ \/ / / / ___/
+##  / / / / / /  __/ / / / /_/ (__  ) 
+## /_/ /_/ /_/\___/_/ /_/\__,_/____/  
+
+MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
+MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
+MenuStyle * TrianglesSolid, TrianglesUseFore
+MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
+MenuStyle * Font $[fontMain]
+
+# Root Menu
+DestroyMenu MenuFvwmRoot
+AddToMenu   MenuFvwmRoot "Fvwm" Title
++ "Run" Exec exec $[launcher]
++ "Term" Exec exec $[terminal]
++ "" Nop
++ "XDG Menu" Popup XDGMenu
++ "" Nop
++ "Refresh" Refresh
++ "Restart" Restart
++ "Quit" Quit
+
+# Generate XDGMenu
+PipeRead "fvwm-menu-desktop -e"
+
+# Window Operations Menus
+DestroyMenu MenuWindowOps
+AddToMenu   MenuWindowOps
++ "Move"      Move
++ "Resize"    Resize
++ "Iconify"   Iconify
++ "Maximize"  Maximize
++ "Shade"     WindowShade
++ "Stick"     Stick
++ "" Nop
++ "Close"     Close
++ "More..."   Menu MenuWindowOpsLong This 0 0
+
+DestroyMenu MenuWindowOpsLong
+AddToMenu   MenuWindowOpsLong
++ "Move"                Move
++ "Resize"              Resize
++ "(De)Iconify"         Iconify
++ "(Un)Maximize"        Maximize
++ "(Un)Shade"           WindowShade
++ "(Un)Sticky"		Stick
++ "(No)TitleBar"	Pick (CirculateHit) ToggleTitle
++ "" Nop
++ "Close"               Close
++ "Destroy"             Destroy
++ "" Nop
++ "Raise"		Raise
++ "Lower"		Lower
++ "" Nop
++ "StaysOnTop"          Pick (CirculateHit) Layer 0 6
++ "StaysPut"            Pick (CirculateHit) Layer 0 4
++ "StaysOnBottom"       Pick (CirculateHit) Layer 0 2
++ "" Nop
++ "Identify"            Module FvwmIdent
+
+DestroyMenu MenuIconOps
+AddToMenu   MenuIconOps
++ "(De)Iconify"         Iconify
++ "(Un)Maximize"        Maximize
++ "(Un)Shade"           WindowShade
++ "(Un)Sticky"		Stick
++ "(No)TitleBar"	Pick (CirculateHit) ToggleTitle
++ "" Nop
++ "Close"               Close
++ "Destroy"             Destroy
++ "" Nop
++ "Raise"		Raise
++ "Lower"		Lower
++ "" Nop
++ "StaysOnTop"          Pick (CirculateHit) Layer 0 6
++ "StaysPut"            Pick (CirculateHit) Layer 0 4
++ "StaysOnBottom"       Pick (CirculateHit) Layer 0 2
++ "" Nop
++ "Identify"            Module FvwmIdent
+
+
+
+
+##     __         __                _                 
+##    / /_  ___  / /_  ____ __   __(_)___  __  _______
+##   / __ \/ _ \/ __ \/ __ `/ | / / / __ \/ / / / ___/
+##  / /_/ /  __/ / / / /_/ /| |/ / / /_/ / /_/ / /    
+## /_.___/\___/_/ /_/\__,_/ |___/_/\____/\__,_/_/     
+
+Style * SloppyFocus, MouseFocusClickRaises
+
+DesktopName 0 Main
+DesktopName 1 Desk1
+DesktopName 2 Desk2
+DesktopName 3 Desk3
+DesktopSize 3x3
+
+EdgeScroll 100 100
+EdgeResistance 100
+EdgeThickness 1
+Style * EdgeMoveDelay 350, EdgeMoveResistance 350
+
+# EwmhBaseStruts [left] [right] [top] [bottom]
+# Reserves space along the edge(s) of the Screen that will not
+# be covered when maximizing or placing windows.
+EwmhBaseStruts 0 120 0 0
+
+ClickTime 250
+MoveThreshold 3
+
+# Window Placement
+Style * PositionPlacement center, GrabFocus, !UsePPosition
+
+# Sets all windows to OpaqueMove (vs a wired frame) and  windows will
+# snap to each other and the edge of the screen.
+OpaqueMoveSize unlimited
+Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
+
+
+
+
+##   ____ _____  ____  ___  ____ __________ _____  ________ 
+##  / __ `/ __ \/ __ \/ _ \/ __ `/ ___/ __ `/ __ \/ ___/ _ \
+## / /_/ / /_/ / /_/ /  __/ /_/ / /  / /_/ / / / / /__/  __/
+## \__,_/ .___/ .___/\___/\__,_/_/   \__,_/_/ /_/\___/\___/ 
+##     /_/   /_/                                            
+
+DefaultFont $[fontMain]
+
+# Window Decorations
+TitleStyle Centered Height 18 -- Flat
+ButtonStyle All ActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 15x15@3 -- Flat
+ButtonStyle All ToggledActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 15x15@3 -- Flat
+ButtonStyle All ActiveDown Vector 5 20x20@4 20x80@3 80x80@3 80x20@3 20x20@3 -- Flat
+ButtonStyle All ToggledActiveDown Vector 5 20x20@4 20x80@3 80x80@3 80x20@3 20x20@3 -- Flat
+ButtonStyle All ToggledInactive Vector 5 47x47@3 57x53@3 53x53@3 53x47@3 47x47@3 -- Flat
+ButtonStyle All Inactive Vector 5 47x47@3 57x53@3 53x53@3 53x47@3 47x47@3 -- Flat
+AddButtonStyle 1 Active Vector 5 45x45@3 55x45@3 55x55@3 45x55@3 45x45@3
+AddButtonStyle 2 Active Vector 4 35x35@3 65x65@3 65x35@4 35x65@3
+AddButtonStyle 4 Active Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 30x70@3 30x50@4 50x50@3 50x70@3
+AddButtonStyle 4 ToggledActiveUp Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 30x70@3 50x30@4 50x50@3 70x50@3
+AddButtonStyle 6 Active Vector 5 35x60@3 65x60@3 65x50@3 35x50@3 35x60@3
+ButtonStyle All - Clear
+ButtonStyle 1 - MwmDecorMenu
+ButtonStyle 4 - MwmDecorMax
+ButtonStyle 6 - MwmDecorMin
+
+# Color Sets
+Colorset 0  fg $[colorWhite], bg $[colorMain], hi, sh, Plain, NoShape
+Colorset 1  fg $[colorBlack], bg #8f9f8f, hi, sh, Plain, NoShape
+Colorset 2  fg $[colorWhite], bg $[colorBlue], hi, sh, Plain, NoShape
+Colorset 3  fg black, bg #4d4d4d, hi #676767, sh #303030, Plain, NoShape
+Colorset 4  fg black, bg #2d2d2d, hi #474747, sh #101010, Plain, NoShape
+Colorset 5  fg $[colorBlack], bg $[colorWhite], hi, sh, Plain, NoShape
+Colorset 6  fg $[colorWhite], bg #2d2d2d, hi, sh, Plain, NoShape
+Colorset 7  fg grey30, bg $[colorWhite], hi, sh, Plain, NoShape
+Colorset 8  fg $[colorWhite], bg $[colorMain], hi, sh, Plain, NoShape
+Colorset 10 RootTransparent, fg $[colorWhite], bg $[colorMain], hi #aaaaaa, sh #999999, Tint $[colorMain] 70, bgTint $[colorMain] 70, NoShape
+Colorset 11 fg $[colorWhite], bg $[colorBlue], hi $[colorWhite], sh $[colorWhite], Plain, NoShape
+Colorset 12 fg #2d2d2d, bg $[colorWhite], hi, sh, Plain, NoShape
+Colorset 13 fg $[colorWhite], bg $[colorCyan], hi, sh, Plain, NoShape
+Colorset 14 RootTransparent, fg #555555, bg $[colorMain], hi #aaaaaa, sh #999999, Tint $[colorMain] 70, bgTint $[colorMain] 70, NoShape
+
+# WindowShade
+Style * WindowShadeScrolls, WindowShadeSteps 10
+
+# Decor Styles
+Style * BorderWidth 5, HandleWidth 5, MWMButtons, FvwmBorder, FirmBorder
+Style * Colorset 1, HilightColorset 2
+Style * BorderColorset 3, HilightBorderColorset 4
+
+# Disable Icons from appearing on desktop.
+# Comment this out or use Style * Icon to get the icons back.
+Style * !Icon
+
+# Window Specific Styles
+Style RightPanel !Title, !Borders, !Handles, Sticky, WindowListSkip, NeverFocus
+Style FvwmIdent WindowListSkip
+
+
+
+
+##                         __      __         
+##    ____ ___  ____  ____/ /_  __/ /__  _____
+##   / __ `__ \/ __ \/ __  / / / / / _ \/ ___/
+##  / / / / / / /_/ / /_/ / /_/ / /  __(__  ) 
+## /_/ /_/ /_/\____/\__,_/\__,_/_/\___/____/  
+
+# FvwmIdent
+#
+# FvwmIdent is a module that can be used to get the various info about
+# a window. One use is getting the class/resource/name of a window.
+DestroyModuleConfig FvwmIdent:*
+*FvwmIdent: Colorset 10
+*FvwmIdent: Font $[fontMain]
+
+# FvwmBanner
+#
+# This displays the Fvwm Logo for 5 seconds. This is displayed
+# when fvwm starts.
+DestroyModuleConfig FvwmBanner:*
+*FvwmBanner: NoDecor
+*FvwmBanner: Timeout 5
+
+# FvwmScript
+#
+# FvwmScript is a module that allows one to write custom desktop
+# widgets and various other tools. This config uses two FvwmScripts.
+#   - DateTime - uses the output of "date" to display the date/time
+#     on the RightPanel.
+#   - Quit - This is a popup that asks for quit confirmation before
+#     quitting fvwm.
+DestroyModuleConfig FvwmScript:*
+*FvwmScript: DefaultColorset 10
+
+# FvwmPager
+#
+# This module displays the location of the windows on the various Pages
+# and Desks. This is setup to show only the Pages on the current Desk.
+DestroyModuleConfig FvwmPager:*
+*FvwmPager: Colorset * 10
+*FvwmPager: HilightColorset * 13
+*FvwmPager: BalloonColorset * 10
+*FvwmPager: WindowColorsets 10 11
+*FvwmPager: Font None
+*FvwmPager: Balloons All
+*FvwmPager: BalloonFont $[fontMain]
+*FvwmPager: BallonYOffset +2
+*FvwmPager: Window3dBorders
+*FvwmPager: MiniIcons
+
+# FvwmIconMan
+#
+# FvwmIconMan is a powerful tool to list and manage windows. This
+# is used as the window list in the panel or taskbar.
+DestroyModuleConfig FvwmIconMan:*
+*FvwmIconMan: UseWinList true
+*FvwmIconMan: ButtonGeometry 120x20
+*FvwmIconMan: ManagerGeometry 1x1
+*FvwmIconMan: Colorset 10
+*FvwmIconMan: Foreground $[colorWhite]
+*FvwmIconMan: FocusColorset 11
+*FvwmIconMan: IconColorset 14
+*FvwmIconMan: FocusAndSelectColorset 12
+*FvwmIconMan: SelectColorset 12
+*FvwmIconMan: IconAndSelectColorset 12
+*FvwmIconMan: DrawIcons never
+
+*FvwmIconMan: ReliefThickness 0
+*FvwmIconMan: Format "%c"
+*FvwmIconMan: Font $[fontIconman]
+*FvwmIconMan: Action Mouse 0 A ret
+*FvwmIconMan: Action Mouse 1 A sendcommand IconManClick
+*FvwmIconMan: Action Mouse 3 A sendcommand "Menu MenuIconOps"
+*FvwmIconMan: Resolution global
+*FvwmIconMan: Tips needed
+*FvwmIconMan: Sort name
+
+# FvwmButtons - RightPanel
+#
+# FvwmButtons is a powerful module that can be used to build custom
+# panels and docks. This config uses FvwmButtons to build the RightPanel.
+# The panel contains buttons to switch desks, FvwmPager, a system tray,
+# FvwmIconMan (list of running windows), and a clock.
+#
+# Note - To use the system tray you must have "stalonetray" installed.
+DestroyModuleConfig RightPanel:*
+*RightPanel: Geometry 120x$[vp.height]-0+0
+*RightPanel: Colorset 10
+*RightPanel: Rows $[vp.height]
+*RightPanel: Columns 120
+*RightPanel: Frame 0
+*RightPanel: Font $[fontMain]
+#*RightPanel: (120x45, Icon "fvwm-logo-small.png", Frame 0)
+*RightPanel: (120x5, Frame 0)
+*RightPanel: (10x20, Frame 0)
+*RightPanel: (25x20, Id desk0, Title "1", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 12, Frame 0)
+*RightPanel: (25x20, Id desk1, Title "2", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 12, Frame 0)
+*RightPanel: (25x20, Id desk2, Title "3", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 12, Frame 0)
+*RightPanel: (25x20, Id desk3, Title "4", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 12, Frame 0)
+*RightPanel: (10x20, Frame 0)
+*RightPanel: (5x80, Frame 0)
+*RightPanel: (110x80, Swallow FvwmPager 'Module FvwmPager *', Frame 0)
+*RightPanel: (5x80, Frame 0)
+*RightPanel: (120x5, Frame 0)
+Test (x stalonetray) *RightPanel: (120x20, Swallow(NoClose,UseOld) stalonetray 'Exec exec stalonetray --config "$[FVWM_DATADIR]/default-config/.stalonetrayrc"', Frame 0)
+Test (x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-225)), Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
+Test (!x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-205)),Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
+*RightPanel: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime',Frame 0)
+*RightPanel: (120x5, Frame 0)
+
+# FvwmEvent
+#
+# FvwmEvent is a module that can run an action or function
+# on specific events. This instance changes which desk number
+# is highlighted when the desk is changed.
+DestroyModuleConfig EventNewDesk:*
+*EventNewDesk: PassID
+*EventNewDesk: new_desk ChangeDesk
+
+DestroyModuleConfig EventNewPage:*
+*EventNewPage: new_page "Focus-Previous CurrentPage NoWarp"
+
+# FvwmForm
+#
+# FvwmForm is a module that can be used to build a GUI
+# form. Used with fvwm-menu-desktop-config.fpl.
+# This sets the default colorsets.
+*FvwmFormDefault: Colorset 10
+*FvwmFormDefault: ItemColorset 13
+
+

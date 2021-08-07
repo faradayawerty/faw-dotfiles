@@ -1,25 +1,38 @@
-! --- Xterm ---
-XTerm*renderFont: true
-XTerm*faceName: Hack-Regular
-XTerm*faceSize: 6
-XTerm*faceSize1: 3
-XTerm*faceSize2: 6
-XTerm*faceSize3: 9
-XTerm*faceSize4: 12
-XTerm*faceSize5: 15
-XTerm*faceSize6: 18
-XTerm*utf8: 2
-XTerm*locale: true
-XTerm*geometry: 140x40
-XTerm.termName: xterm-256color
-XTerm*BorderWidth: 0
+! --- Urxvt ---
+URxvt.font: xft:Hack-Regular:size=6
+URxvt.scrollBar: false
+URxvt.geometry: 220x65
 
-! turn off alt+n keys
-XTerm*vt100.metaSendsEscape: true
+!! transparency
+URxvt*depth: 32
 
-XTerm.vt100.translations: #override \n\
+!! less wide font
+URxvt.letterSpace: -1
+
+
+! --- UXterm ---
+UXTerm*renderFont: true
+UXTerm*faceName: Hack-Regular
+UXTerm*faceSize: 6
+UXTerm*faceSize1: 3
+UXTerm*faceSize2: 6
+UXTerm*faceSize3: 9
+UXTerm*faceSize4: 12
+UXTerm*faceSize5: 15
+UXTerm*faceSize6: 18
+UXTerm*utf8: 2
+UXTerm*locale: true
+UXTerm*geometry: 200x60
+UXTerm.termName: xterm-256color
+UXTerm*BorderWidth: 0
+
+!! turn off alt+n keys
+UXTerm*vt100.metaSendsEscape: true
+
+UXTerm.vt100.translations: #override \n\
   Ctrl Shift <Key> k: smaller-vt-font() \n\
   Ctrl Shift <Key> j: larger-vt-font() \n\
   Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
   Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
 

@@ -12,7 +12,7 @@ export NEWS_READER=newsboat
 export SOUND_MIXER=pulsemixer
 export YOUTUBE_VIEWER=pipe-viewer
 
-export TERMINAL=xterm
+export TERMINAL=uxterm
 export BROWSER=chromium
 export OPEN=xdg-open
 export DMENU=dmenu_xrdb
@@ -20,7 +20,7 @@ export RUNMENU=dmenu_launch
 export MEDIA_PLAYER=mpv
 export IMAGE_VIEWER=sxiv
 
-export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps
+export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 
 export DEVPATH=~/dev
 export GOPATH=$DEVPATH/lang_go
@@ -29,6 +29,25 @@ export CPATH=$DEVPATH/lang_cpp
 export PYPATH=$DEVPATH/lang_py
 export LUAPATH=$DEVPATH/lang_lua
 export JAVAPATH=$DEVPATH/lang_java
+
+export X_COLOR_BACKGROUND="#2b303b"
+export X_COLOR_FOREGROUND="#c0c5ce"
+export X_COLOR_BLACK="#2b303b"
+export X_COLOR_RED="#bf616a"
+export X_COLOR_GREEN="#a3be8c"
+export X_COLOR_YELLOW="#ebcb8b"
+export X_COLOR_BLUE="#8fa1b3"
+export X_COLOR_MAGENTA="#b48ead"
+export X_COLOR_CYAN="#96b5b4"
+export X_COLOR_WHITE="#c0c5ce"
+export X_COLOR_BRIGHTBLACK="#65737e"
+export X_COLOR_BRIGHTRED="#bf616a"
+export X_COLOR_BRIGHTGREEN="#a3be8c"
+export X_COLOR_BRIGHTYELLOW="#ebcb8b"
+export X_COLOR_BRIGHTBLUE="#8fa1b3"
+export X_COLOR_BRIGHTMAGENTA="#b48ead"
+export X_COLOR_BRIGHTCYAN="#96b5b4"
+export X_COLOR_BRIGHTWHITE="#eff1f5"
 
 mkdir -p $CPATH
 mkdir -p $PYPATH

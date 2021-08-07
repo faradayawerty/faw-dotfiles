@@ -54,6 +54,21 @@ alias ll='clear;ls -lFh --color=auto --group-directories-first'
 alias la='ls -aFh --color=auto --group-directories-first'
 alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
+alias yt240="$YOUTUBE_VIEWER --resolution 240"
+alias yt360="$YOUTUBE_VIEWER --resolution 360"
+alias yt480="$YOUTUBE_VIEWER --resolution 480"
+alias yt720="$YOUTUBE_VIEWER --resolution 720"
+
+alias mpv240="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?240]+bestaudio/best'"
+alias mpv360="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?360]+bestaudio/best'"
+alias mpv480="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?480]+bestaudio/best'"
+alias mpv720="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?720]+bestaudio/best'"
+
+alias yd240="youtube-dl --add-metadata -ic -f 'bestvideo[height<=240]+bestaudio/best[height<=240]'"
+alias yd360="youtube-dl --add-metadata -ic -f 'bestvideo[height<=360]+bestaudio/best[height<=360]'"
+alias yd480="youtube-dl --add-metadata -ic -f 'bestvideo[height<=480]+bestaudio/best[height<=480]'"
+alias yd720="youtube-dl --add-metadata -ic -f 'bestvideo[height<=720]+bestaudio/best[height<=720]'"
+
 # --- FUNCTIONS --- #
 function tm {
 	session_name="$@"
@@ -81,30 +96,6 @@ function wth {
 	curl wttr.in/$1
 }
 
-function yt {
-	[ -z "$1" ] && echo -e "usage:\nyt <v|w|d> <quality> <link>"
-
-	q="$1" && shift
-	o="$1" && shift
-	[ "$o" = "v" ] && $YOUTUBE_VIEWER --resolution $q
-	[ "$o" = "w" ] && mpv --geometry=25%x25%-10-10 --ytdl-format="bestvideo[height<=?$q]+bestaudio/best" $@
-	[ "$o" = "d" ] && youtube-dl --add-metadata -ic -f "bestvideo[height<=$q]+bestaudio/best[height<=$q]" $@
-}
-
-function fd {
-	dirname="$(dirname $(fzf))"
-	cd $dirname
-}
-
-function fe {
-	filename="$(fzf)"
-	$EDITOR $filename
-}
-
-function fo {
-	filename="$(fzf)"
-	$OPEN $filename
-}
-
-[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" >/dev/null
+# xterm transparency using transset
+[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 >/dev/null
 

@@ -1,25 +1,39 @@
-# enable transparency if there's a wallpaper
-[ -f ~/.wallpaper ] && xcompmgr &
-
-# set keyboard layout
+# --- General --- #
 setxkbmap -layout us,ru -option grp:win_space_toggle
-
-# load xresources
 xrdb ~/.Xresources
 
-# set colorscheme
-wal -R -n
+# load xresources colors from environment variables
+echo "*background:	$X_COLOR_BACKGROUND" | xrdb -merge
+echo "*foreground:	$X_COLOR_FOREGROUND" | xrdb -merge
+echo "*cursorColor:	$X_COLOR_FOREGROUND" | xrdb -merge
+echo "*color0:	$X_COLOR_BLACK" | xrdb -merge
+echo "*color8:	$X_COLOR_BRIGHTBLACK" | xrdb -merge
+echo "*color1:	$X_COLOR_RED" | xrdb -merge
+echo "*color9:	$X_COLOR_BRIGHTRED" | xrdb -merge
+echo "*color2:	$X_COLOR_GREEN" | xrdb -merge
+echo "*color10:	$X_COLOR_BRIGHTGREEN" | xrdb -merge
+echo "*color3:	$X_COLOR_YELLOW" | xrdb -merge
+echo "*color11:	$X_COLOR_BRIGHTYELLOW" | xrdb -merge
+echo "*color4:	$X_COLOR_BLUE" | xrdb -merge
+echo "*color12:	$X_COLOR_BRIGHTBLUE" | xrdb -merge
+echo "*color5:	$X_COLOR_MAGENTA" | xrdb -merge
+echo "*color13:	$X_COLOR_BRIGHTMAGENTA" | xrdb -merge
+echo "*color6:	$X_COLOR_CYAN" | xrdb -merge
+echo "*color14:	$X_COLOR_BRIGHTCYAN" | xrdb -merge
+echo "*color7:	$X_COLOR_WHITE" | xrdb -merge
+echo "*color15:	$X_COLOR_BRIGHTWHITE" | xrdb -merge
+echo "URxvt*background: [90]$X_COLOR_BACKGROUND" | xrdb -merge # urxvt transparent background
 
-# set wallpaper
+# --- Dwm Only --- #
+[ -f ~/.wallpaper ] && xcompmgr &
 [ -f ~/.wallpaper ] && xwallpaper --stretch ~/.wallpaper
-
+[ -f ~/.wallpaper ] || xsetroot -solid "$X_COLOR_BLACK"
+	
 # dwm status
-while true
-do
+while true; do
 	xsetroot -name " [$(panel_bat)]   [$(panel_temp)]   [$(panel_mem)]   [$(panel_date)] "
 	sleep 20s
 done &
 
-# start window manager
 exec dwm
 

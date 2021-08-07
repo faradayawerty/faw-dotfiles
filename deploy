@@ -15,3 +15,6 @@ ln -snf $(realpath tmux) ~/.tmux.conf
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath bash_profile) ~/.bash_profile
 
+cd neovim
+./install_vimplug
+

@@ -7,3 +7,5 @@ ln -snf $(realpath xinitrc) ~/.xinitrc
 ln -snf $(realpath xresources) ~/.Xresources
 ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
 
+ln -snf $(realpath fvwm) ~/.fvwm
+

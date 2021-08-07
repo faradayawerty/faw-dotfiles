@@ -21,6 +21,7 @@ set cursorline
 set noexpandtab
 set guicursor=
 set clipboard=unnamed,unnamedplus " use xorg clipboard by default - neovim only
+set mouse=a
 syntax on
 
 
@@ -63,7 +64,7 @@ highlight TabLineFill ctermbg=black ctermfg=blue cterm=none
 highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
 
 highlight normal ctermfg=none
-highlight visual ctermfg=black ctermbg=white
+highlight visual ctermfg=black ctermbg=blue
 
 highlight nontext ctermfg=blue
 highlight specialkey ctermfg=blue
@@ -82,11 +83,11 @@ highlight folded ctermfg=blue ctermbg=none
 
 " plugins
 " -------
-"call plug#begin(stdpath('data') . '/plugged')
-"	Plug 'justmao945/vim-clang'
-"	Plug 'artur-shaik/vim-javacomplete2'
-"	Plug 'https://github.com/davisdude/vim-love-docs'
-"call plug#end()
+call plug#begin(stdpath('data') . '/plugged')
+	Plug 'justmao945/vim-clang'
+	Plug 'artur-shaik/vim-javacomplete2'
+	Plug 'https://github.com/davisdude/vim-love-docs'
+call plug#end()
 
 " clang complete
 let g:clang_auto = 0
