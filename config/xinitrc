@@ -28,7 +28,7 @@ echo "URxvt*background: [90]$X_COLOR_0" | xrdb -merge # urxvt transparent backgr
 # --- Dwm Only --- #
 [ -f ~/.wallpaper ] && xcompmgr &
 [ -f ~/.wallpaper ] && xwallpaper --zoom ~/.wallpaper
-[ -f ~/.wallpaper ] || xsetroot -solid "$X_COLOR_BLACK"
+[ -f ~/.wallpaper ] || xsetroot -solid "$X_COLOR_0"
 	
 # dwm status
 while true; do
