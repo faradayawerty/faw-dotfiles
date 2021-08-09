@@ -1,0 +1,44 @@
+# --- general --- #
+add-highlighter global/ number-lines
+#add-highlighter global/ column 80 default,blue
+#add-highlighter global/ show-whitespaces
+set global ui_options ncurses_enable_mouse=false ncurses_status_on_top=false
+set global indentwidth 0
+set global aligntab true
+set global tabstop 6
+
+# --- keys --- #
+hook global NormalKey y|d|c %{ nop %sh{ ## clipboard integration
+	printf %s "$kak_main_reg_dquote" | xclip -i -selection clipboard >&- 2>&-
+}}
+
+# --- appearance --- #
+face global MenuBackground yellow,default
+face global MenuForeground black,yellow
+face global PrimarySelection black,blue
+face global SecondarySelection black,cyan
+
+# --- dev --- #
+hook global WinSetOption filetype=(c|cpp) %{ ## enable C/C++ completion with clang
+	clang-enable-autocomplete
+	clang-enable-diagnostics
+}
+
+hook global BufWritePost .*\.(c|cpp) %{
+	clang-parse
+}
+
+hook global WinSetOption filetype=go %{
+	#go-enable-autocomplete
+}
+
+hook global BufWritePost .*\.go %{
+	go-format
+}
+
+# --- plugins --- #
+nop %sh{
+	mkdir -p "$kak_config/autoload"
+	ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"
+}
+

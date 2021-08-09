@@ -9,11 +9,11 @@ do
     "y")
         echo -n "$(realpath $file)" | xclip -selection clipboard ;;
     "Y")
-	xclip -selection clipboard -t image/png -i $(realpath $file) ;;
+        xclip -selection clipboard -t image/png -i $(realpath $file) ;;
     "b")
-        xwallpaper --stretch "$file"; cp "$file" ~/.wallpaper ;;
+        xwallpaper --zoom "$file"; cp "$file" ~/.wallpaper ;;
     "t")
-        wal -i "$file" -n ;;
+        schemer_set_theme $file ;;
     esac
 done
 

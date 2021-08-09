@@ -1,32 +1,33 @@
 # --- General --- #
 setxkbmap -layout us,ru -option grp:win_space_toggle
 xrdb ~/.Xresources
+xset b off
 
 # load xresources colors from environment variables
-echo "*background:	$X_COLOR_BACKGROUND" | xrdb -merge
-echo "*foreground:	$X_COLOR_FOREGROUND" | xrdb -merge
-echo "*cursorColor:	$X_COLOR_FOREGROUND" | xrdb -merge
-echo "*color0:	$X_COLOR_BLACK" | xrdb -merge
-echo "*color8:	$X_COLOR_BRIGHTBLACK" | xrdb -merge
-echo "*color1:	$X_COLOR_RED" | xrdb -merge
-echo "*color9:	$X_COLOR_BRIGHTRED" | xrdb -merge
-echo "*color2:	$X_COLOR_GREEN" | xrdb -merge
-echo "*color10:	$X_COLOR_BRIGHTGREEN" | xrdb -merge
-echo "*color3:	$X_COLOR_YELLOW" | xrdb -merge
-echo "*color11:	$X_COLOR_BRIGHTYELLOW" | xrdb -merge
-echo "*color4:	$X_COLOR_BLUE" | xrdb -merge
-echo "*color12:	$X_COLOR_BRIGHTBLUE" | xrdb -merge
-echo "*color5:	$X_COLOR_MAGENTA" | xrdb -merge
-echo "*color13:	$X_COLOR_BRIGHTMAGENTA" | xrdb -merge
-echo "*color6:	$X_COLOR_CYAN" | xrdb -merge
-echo "*color14:	$X_COLOR_BRIGHTCYAN" | xrdb -merge
-echo "*color7:	$X_COLOR_WHITE" | xrdb -merge
-echo "*color15:	$X_COLOR_BRIGHTWHITE" | xrdb -merge
-echo "URxvt*background: [90]$X_COLOR_BACKGROUND" | xrdb -merge # urxvt transparent background
+echo "*background:	$X_COLOR_0" | xrdb -merge
+echo "*foreground:	$X_COLOR_7" | xrdb -merge
+echo "*cursorColor:	$X_COLOR_7" | xrdb -merge
+echo "*color0:	$X_COLOR_0" | xrdb -merge
+echo "*color1:	$X_COLOR_1" | xrdb -merge
+echo "*color2:	$X_COLOR_2" | xrdb -merge
+echo "*color3:	$X_COLOR_3" | xrdb -merge
+echo "*color4:	$X_COLOR_4" | xrdb -merge
+echo "*color5:	$X_COLOR_5" | xrdb -merge
+echo "*color6:	$X_COLOR_6" | xrdb -merge
+echo "*color7:	$X_COLOR_7" | xrdb -merge
+echo "*color8:	$X_COLOR_8" | xrdb -merge
+echo "*color9:	$X_COLOR_9" | xrdb -merge
+echo "*color10:	$X_COLOR_10" | xrdb -merge
+echo "*color11:	$X_COLOR_11" | xrdb -merge
+echo "*color12:	$X_COLOR_12" | xrdb -merge
+echo "*color13:	$X_COLOR_13" | xrdb -merge
+echo "*color14:	$X_COLOR_14" | xrdb -merge
+echo "*color15:	$X_COLOR_15" | xrdb -merge
+echo "URxvt*background: [90]$X_COLOR_0" | xrdb -merge # urxvt transparent background
 
 # --- Dwm Only --- #
 [ -f ~/.wallpaper ] && xcompmgr &
-[ -f ~/.wallpaper ] && xwallpaper --stretch ~/.wallpaper
+[ -f ~/.wallpaper ] && xwallpaper --zoom ~/.wallpaper
 [ -f ~/.wallpaper ] || xsetroot -solid "$X_COLOR_BLACK"
 	
 # dwm status

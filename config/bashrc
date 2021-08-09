@@ -33,21 +33,13 @@ stty -ixon
 #bind -m vi-insert "\C-l":clear-screen
 
 # --- ALIASES --- #
-alias v="$EDITOR"
-alias r="$FILE_MANAGER"
-alias d="$DOWNLOADER"
-alias nb="$NEWS_READER"
-alias pm="$SOUND_MIXER"
-alias ww="$TERMINAL_BROWSER duckduckgo.com/html"
-alias wt="torsocks $TERMINAL_BROWSER duckduckgo.com/html"
-alias ht='htop'
 alias nf='clear; neofetch'
 alias mk='sudo make clean && make && sudo make install'
-
 alias gpp="git add .; git commit -m '-'; git push"
 alias ga="git add ."
 alias gc="git commit -m '-'"
 alias gp="git push"
+alias gP='git pull'
 
 alias l='ls -Fh --color=auto --group-directories-first'
 alias ll='clear;ls -lFh --color=auto --group-directories-first'

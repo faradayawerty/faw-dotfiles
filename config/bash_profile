@@ -2,23 +2,38 @@
 
 source ~/.bashrc
 
+if [ -f ~/.colorscheme.sh ]; then
+	source ~/.colorscheme.sh
+else
+	# default colorscheme
+	export X_COLOR_0="#2b303b"
+	export X_COLOR_1="#bf616a"
+	export X_COLOR_2="#a3be8c"
+	export X_COLOR_3="#ebcb8b"
+	export X_COLOR_4="#8fa1b3"
+	export X_COLOR_5="#b48ead"
+	export X_COLOR_6="#96b5b4"
+	export X_COLOR_7="#c0c5ce"
+	export X_COLOR_8="#65737e"
+	export X_COLOR_9="#bf616a"
+	export X_COLOR_10="#a3be8c"
+	export X_COLOR_11="#ebcb8b"
+	export X_COLOR_12="#8fa1b3"
+	export X_COLOR_13="#b48ead"
+	export X_COLOR_14="#96b5b4"
+	export X_COLOR_15="#eff1f5"
+fi
+
 export EDITOR=nvim
-export PAGER=less
+export PAGER=w3m
 export TERMINAL_BROWSER=w3m
-export FILE_MANAGER=rover
-export DOWNLOADER=aria2c
-export MUSIC_PLAYER=cmus
-export NEWS_READER=newsboat
-export SOUND_MIXER=pulsemixer
 export YOUTUBE_VIEWER=pipe-viewer
 
 export TERMINAL=uxterm
 export BROWSER=chromium
-export OPEN=xdg-open
-export DMENU=dmenu_xrdb
+export DMENU=rofi_xrdb
 export RUNMENU=dmenu_launch
 export MEDIA_PLAYER=mpv
-export IMAGE_VIEWER=sxiv
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 
@@ -29,25 +44,6 @@ export CPATH=$DEVPATH/lang_cpp
 export PYPATH=$DEVPATH/lang_py
 export LUAPATH=$DEVPATH/lang_lua
 export JAVAPATH=$DEVPATH/lang_java
-
-export X_COLOR_BACKGROUND="#2b303b"
-export X_COLOR_FOREGROUND="#c0c5ce"
-export X_COLOR_BLACK="#2b303b"
-export X_COLOR_RED="#bf616a"
-export X_COLOR_GREEN="#a3be8c"
-export X_COLOR_YELLOW="#ebcb8b"
-export X_COLOR_BLUE="#8fa1b3"
-export X_COLOR_MAGENTA="#b48ead"
-export X_COLOR_CYAN="#96b5b4"
-export X_COLOR_WHITE="#c0c5ce"
-export X_COLOR_BRIGHTBLACK="#65737e"
-export X_COLOR_BRIGHTRED="#bf616a"
-export X_COLOR_BRIGHTGREEN="#a3be8c"
-export X_COLOR_BRIGHTYELLOW="#ebcb8b"
-export X_COLOR_BRIGHTBLUE="#8fa1b3"
-export X_COLOR_BRIGHTMAGENTA="#b48ead"
-export X_COLOR_BRIGHTCYAN="#96b5b4"
-export X_COLOR_BRIGHTWHITE="#eff1f5"
 
 mkdir -p $CPATH
 mkdir -p $PYPATH
@@ -67,5 +63,7 @@ if [ -d "$GOPATH/bin" ] ; then
     PATH="$GOPATH/bin:$PATH"
 fi
 
-if [ -f ~/.xinitrc ] && [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z "$TMUX" ]]; then exec startx; fi
+if [ -f ~/.xinitrc ] && [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z "$TMUX" ]]; then
+	exec startx
+fi
 

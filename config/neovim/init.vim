@@ -1,3 +1,21 @@
+" plugins
+" -------
+call plug#begin(stdpath('data') . '/plugged')
+	Plug 'justmao945/vim-clang'
+	Plug 'artur-shaik/vim-javacomplete2'
+	Plug 'https://github.com/davisdude/vim-love-docs'
+call plug#end()
+
+" clang complete
+let g:clang_auto = 0
+let g:clang_check_syntax_auto = 1
+let g:clang_verbose_pmenu = 1
+let g:clang_cpp_completeopt = 'longest,menuone'
+
+" java complete
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+let g:JavaComplete_ClosingBrace = 1
+
 " basic configuration
 " -------------------
 set path+=**
@@ -22,7 +40,7 @@ set noexpandtab
 set guicursor=
 set clipboard=unnamed,unnamedplus " use xorg clipboard by default - neovim only
 set mouse=a
-syntax on
+syntax on " syntax highlighting
 
 
 " shortcuts
@@ -59,44 +77,27 @@ augroup END
 
 " appearance
 " ----------
-highlight TabLine ctermbg=black ctermfg=blue cterm=none
-highlight TabLineFill ctermbg=black ctermfg=blue cterm=none
-highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
+colorscheme pablo
 
-highlight normal ctermfg=none
-highlight visual ctermfg=black ctermbg=blue
-
-highlight nontext ctermfg=blue
-highlight specialkey ctermfg=blue
-
-highlight search cterm=underline ctermfg=cyan ctermbg=none
-highlight incsearch cterm=underline ctermfg=cyan ctermbg=none
-
-highlight linenr term=none cterm=none ctermfg=none ctermbg=none
-highlight cursorlinenr ctermfg=none ctermbg=none cterm=underline
-
+"highlight TabLine ctermbg=black ctermfg=blue cterm=none
+"highlight TabLineFill ctermbg=black ctermfg=blue cterm=none
+"highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
+"
+"highlight normal ctermfg=none
+highlight visual ctermfg=none ctermbg=none cterm=reverse
+"
+"highlight nontext ctermfg=magenta
+"highlight specialkey ctermfg=blue
+"
+"highlight search cterm=underline ctermfg=cyan ctermbg=none
+"highlight incsearch cterm=underline ctermfg=cyan ctermbg=none
+"
+"highlight linenr term=none cterm=none ctermfg=none ctermbg=none
+"highlight cursorlinenr ctermfg=none ctermbg=none cterm=underline
+"
 highlight cursorline ctermfg=none ctermbg=none cterm=none
-highlight cursorcolumn ctermfg=none ctermbg=none cterm=bold
-
-highlight colorcolumn ctermbg=cyan
-highlight folded ctermfg=blue ctermbg=none
-
-" plugins
-" -------
-call plug#begin(stdpath('data') . '/plugged')
-	Plug 'justmao945/vim-clang'
-	Plug 'artur-shaik/vim-javacomplete2'
-	Plug 'https://github.com/davisdude/vim-love-docs'
-call plug#end()
-
-" clang complete
-let g:clang_auto = 0
-let g:clang_check_syntax_auto = 1
-let g:clang_verbose_pmenu = 1
-let g:clang_cpp_completeopt = 'longest,menuone'
-
-" java complete
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-let g:JavaComplete_ClosingBrace = 1
-
-
+"highlight cursorcolumn ctermfg=none ctermbg=none cterm=bold
+"
+"highlight colorcolumn ctermbg=cyan
+"highlight folded ctermfg=blue ctermbg=none
+"
