@@ -16,6 +16,7 @@ let g:clang_cpp_completeopt = 'longest,menuone'
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 let g:JavaComplete_ClosingBrace = 1
 
+
 " basic configuration
 " -------------------
 set path+=**

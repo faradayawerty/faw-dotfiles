@@ -33,8 +33,11 @@ stty -ixon
 #bind -m vi-insert "\C-l":clear-screen
 
 # --- ALIASES --- #
-alias nf='clear; neofetch'
 alias mk='sudo make clean && make && sudo make install'
+
+alias mn='pmount'
+alias um='pumount'
+
 alias gpp="git add .; git commit -m '-'; git push"
 alias ga="git add ."
 alias gc="git commit -m '-'"
@@ -89,5 +92,5 @@ function wth {
 }
 
 # xterm transparency using transset
-[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 >/dev/null
+[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.975 >/dev/null
 

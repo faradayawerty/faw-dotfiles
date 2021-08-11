@@ -1,20 +1,10 @@
 #!/bin/bash
 
-export EDITOR=nvim
-export PAGER=w3m
-export TERMINAL_BROWSER=w3m
-export DOWNLOADER=aria2c
-
-export TERMINAL=uxterm
-export BROWSER=chromium
-export DMENU=rofi_xrdb
-export RUNMENU=dmenu_launch
-export MEDIA_PLAYER=mpv
-
 if [ -f ~/.colorscheme.sh ]; then
 	source ~/.colorscheme.sh
 else
 	# default colorscheme
+	# ocean.dark from terminal.sexy
 	export X_COLOR_0="#2b303b"
 	export X_COLOR_1="#bf616a"
 	export X_COLOR_2="#a3be8c"
@@ -34,6 +24,17 @@ else
 	export X_COLOR_BG="#2b303b"
 	export X_COLOR_FG="#c0c5ce"
 fi
+
+export EDITOR=nvim
+export PAGER=w3m
+export TERMINAL_BROWSER=w3m
+export DOWNLOADER=aria2c
+
+export TERMINAL=uxterm
+export BROWSER=chromium
+export DMENU=rofi_xrdb
+export RUNMENU=dmenu_launch
+export MEDIA_PLAYER=mpv
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 
