@@ -33,6 +33,6 @@ URxvt.geometry: 220x65
 URxvt*depth: 32
 
 !! less wide font
-URxvt.letterSpace: -1
+!URxvt.letterSpace: -1
 
 

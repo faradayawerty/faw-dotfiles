@@ -46,10 +46,10 @@ alias ll='clear;ls -lFh --color=auto --group-directories-first'
 alias la='ls -aFh --color=auto --group-directories-first'
 alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
-alias yt240="$YOUTUBE_VIEWER --resolution 240"
-alias yt360="$YOUTUBE_VIEWER --resolution 360"
-alias yt480="$YOUTUBE_VIEWER --resolution 480"
-alias yt720="$YOUTUBE_VIEWER --resolution 720"
+alias pv240="pipe-viewer --resolution 240"
+alias pv360="pipe-viewer --resolution 360"
+alias pv480="pipe-viewer --resolution 480"
+alias pv720="pipe-viewer --resolution 720"
 
 alias mpv240="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?240]+bestaudio/best'"
 alias mpv360="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?360]+bestaudio/best'"

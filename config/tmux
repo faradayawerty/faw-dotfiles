@@ -7,7 +7,7 @@ set -g base-index 1
 set -g pane-base-index 1
 
 # fix cursor shape
-set -g default-terminal 'tmux-256color'
+#set -g default-terminal 'tmux-256color'
 set -ga terminal-overrides ',*:Tc' # 256 color
 set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
 
@@ -76,11 +76,6 @@ bind-key H resize-pane -L 15
 bind-key J resize-pane -D 5
 bind-key K resize-pane -U 5
 bind-key L resize-pane -R 15
-
-bind-key -n M-C-h resize-pane -L 15
-bind-key -n M-C-j resize-pane -D 5
-bind-key -n M-C-k resize-pane -U 5
-bind-key -n M-C-l resize-pane -R 15
 
 # create new window by pressing the number keys
 unbind 0

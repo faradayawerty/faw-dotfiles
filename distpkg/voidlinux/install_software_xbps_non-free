@@ -1,3 +1,4 @@
 # install pacman packages
+sudo xbps-install -S void-repo-nonfree void-repo-multilib-nonfree
 sudo xbps-install -S $(sed s/#.*// software.xbps.non-free.list | sed /^$/d)
 

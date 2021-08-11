@@ -1,0 +1,37 @@
+
+"$TERMINAL"
+	Mod4+Shift+Return
+
+"$RUNMENU"
+	Mod4+o
+
+
+"dmenu_emoji"
+	Mod4+e
+
+"dmenu_unicode"
+	Mod4+u
+
+"dmenu_kaomoji"
+	Mod4+Shift+u
+
+"dmenu_surf"
+	Mod4+b
+
+"dmenu_search"
+	Mod4+Shift+b
+
+
+"volman up"
+	XF86AudioRaiseVolume
+
+"volman down"
+	XF86AudioLowerVolume
+
+"volman mute"
+	XF86AudioMute
+
+
+"takescreenshot"
+	Print
+

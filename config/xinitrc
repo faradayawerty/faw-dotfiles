@@ -1,12 +1,21 @@
 # --- General --- #
+
+# set layout
 setxkbmap -layout us,ru -option grp:win_space_toggle
-xrdb ~/.Xresources
+
+# disable bell
 xset b off
 
-# load xresources colors from environment variables
-echo "*background:	$X_COLOR_0" | xrdb -merge
-echo "*foreground:	$X_COLOR_7" | xrdb -merge
-echo "*cursorColor:	$X_COLOR_7" | xrdb -merge
+# keybindings
+xbindkeys &
+
+# load general xresourcces
+xrdb ~/.Xresources
+
+# merge xresources colors from environment variables
+echo "*background:	$X_COLOR_BG" | xrdb -merge
+echo "*foreground:	$X_COLOR_FG" | xrdb -merge
+echo "*cursorColor:	$X_COLOR_FG" | xrdb -merge
 echo "*color0:	$X_COLOR_0" | xrdb -merge
 echo "*color1:	$X_COLOR_1" | xrdb -merge
 echo "*color2:	$X_COLOR_2" | xrdb -merge
@@ -23,7 +32,9 @@ echo "*color12:	$X_COLOR_12" | xrdb -merge
 echo "*color13:	$X_COLOR_13" | xrdb -merge
 echo "*color14:	$X_COLOR_14" | xrdb -merge
 echo "*color15:	$X_COLOR_15" | xrdb -merge
-echo "URxvt*background: [90]$X_COLOR_0" | xrdb -merge # urxvt transparent background
+echo "URxvt*background: [90]$X_COLOR_BG" | xrdb -merge # urxvt transparent background
+
+
 
 # --- Dwm Only --- #
 [ -f ~/.wallpaper ] && xcompmgr &
@@ -32,9 +43,11 @@ echo "URxvt*background: [90]$X_COLOR_0" | xrdb -merge # urxvt transparent backgr
 	
 # dwm status
 while true; do
-	xsetroot -name " [$(panel_bat)]   [$(panel_temp)]   [$(panel_mem)]   [$(panel_date)] "
+	xsetroot -name " ($(panel_bat))   ($(panel_temp))   ($(panel_mem))   ($(panel_date)) "
 	sleep 20s
 done &
 
 exec dwm
+
+
 

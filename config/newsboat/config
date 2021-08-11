@@ -10,9 +10,9 @@ bind-key J next-unread
 bind-key K prev-unread
 
 color listnormal default default
-color listfocus black yellow standout bold
+color listfocus yellow default standout bold
 color listnormal_unread blue default
-color listfocus_unread yellow default bold
+color listfocus_unread yellow default standout bold
 color info red black bold
 color article white default bold
 

@@ -1,43 +1,24 @@
 # last change 17 05 2021
 
 # -- command-line -- #
-neovim tmux
-rover htop newsboat qalculate
-ffmpeg ImageMagick
-bash-completion neofetch tree pmount acpi
-youtube-dl pipe-viewer translate-shell
-w3m tor torsocks 
-aria2 wget curl
-zip unzip
+neovim tmux rover htop newsboat qalculate
+zip unzip bash-completion neofetch tree pmount acpi
+youtube-dl pipe-viewer translate-shell w3m tor torsocks aria2 curl
 
 # -- programming -- #
 gcc make patch
-#openjdk11
-#python3 python3-pip
-#go lua love fpc
-#texlive texlive-langcyrillic texlive-science
 
 # -- graphical -- #
-xorg
-xwallpaper xcompmgr maim xclip
+xorg xterm xwallpaper xcompmgr maim xclip rofi
 font-hack-ttf noto-fonts-cjk noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji
-sxiv mpv grafx2
-zathura poppler poppler-utils zathura-pdf-poppler zathura-djvu
-torbrowser-launcher qbittorrent
-telegram-desktop
+sxiv mpv zathura poppler poppler-utils zathura-pdf-poppler zathura-djvu
+chromium torbrowser-launcher qbittorrent telegram-desktop
 
 # -- sound -- #
-pulseaudio pulsemixer
-alsa-utils alsa-plugins-pulseaudio
+#pulseaudio pulsemixer alsa-utils alsa-plugins-pulseaudio
+pipewire alsa-utils
 cmus
-
-# -- games -- #
-#dreamchess 0ad endless-sky xmoto
-#Cataclysm-DDA Cataclysm-DDA-tiles
 
 # -- build dependencies -- #
 libXinerama-devel libXft-devel # suckless dwm
-pkg-config # suckless st
-imlib2-devel libexif-devel giflib-devel # sxiv
-gcr gcr-devel gtk+3 gtk+3-devel webkit2gtk webkit2gtk-devel # suckless surf
 
