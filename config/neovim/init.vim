@@ -1,20 +1,20 @@
 " plugins
 " -------
 call plug#begin(stdpath('data') . '/plugged')
-	Plug 'justmao945/vim-clang'
-	Plug 'artur-shaik/vim-javacomplete2'
-	Plug 'https://github.com/davisdude/vim-love-docs'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	"Plug 'vim-scripts/javacomplete'
+	"Plug 'artur-shaik/vim-javacomplete2'
+	"Plug 'https://github.com/davisdude/vim-love-docs'
 call plug#end()
 
-" clang complete
-let g:clang_auto = 0
-let g:clang_check_syntax_auto = 1
-let g:clang_verbose_pmenu = 1
-let g:clang_cpp_completeopt = 'longest,menuone'
+" coc.nvim
+" for coc-java write :CocInstall coc-java
 
-" java complete
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-let g:JavaComplete_ClosingBrace = 1
+"" clang complete
+"let g:clang_auto = 0
+"let g:clang_check_syntax_auto = 1
+"let g:clang_verbose_pmenu = 1
+"let g:clang_cpp_completeopt = 'longest,menuone'
 
 
 " basic configuration
@@ -41,6 +41,7 @@ set noexpandtab
 set guicursor=
 set clipboard=unnamed,unnamedplus " use xorg clipboard by default - neovim only
 set mouse=a
+set colorcolumn=80
 syntax on " syntax highlighting
 
 
@@ -80,9 +81,9 @@ augroup END
 " ----------
 colorscheme pablo
 
-"highlight TabLine ctermbg=black ctermfg=blue cterm=none
-"highlight TabLineFill ctermbg=black ctermfg=blue cterm=none
-"highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
+highlight TabLine ctermbg=black ctermfg=blue cterm=none
+highlight TabLineFill ctermbg=black ctermfg=blue cterm=none
+highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
 "
 "highlight normal ctermfg=none
 highlight visual ctermfg=none ctermbg=none cterm=reverse

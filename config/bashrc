@@ -92,5 +92,5 @@ function wth {
 }
 
 # xterm transparency using transset
-[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.975 >/dev/null
+[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.95 >/dev/null
 
