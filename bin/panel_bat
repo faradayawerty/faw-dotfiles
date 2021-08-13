@@ -9,3 +9,5 @@ acpi | while read line ; do
    echo -n "BAT$(echo $line | cut -d, -f 1-2 | cut -d' ' -f2-)"
 done
 
+[ -z "$(acpi)" ] && echo ?
+
