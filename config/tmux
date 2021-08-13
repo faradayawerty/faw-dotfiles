@@ -26,13 +26,13 @@ set-option -g status on
 set-option -g status-position top
 set -g status-style bg=black,fg=blue
 set -g status-left ''
-set -g status-right '#[fg=black,bg=blue] #(panel_bat) #[fg=black,bg=cyan] #(panel_temp) #[fg=black,bg=blue] #(panel_mem) #[fg=black,bg=cyan] #(panel_date) #[fg=black,bg=blue] #S '
+set -g status-right ' #[fg=black,bg=blue] #S '
 set -g status-right-length 64
-setw -g window-status-format '#[fg=black,bg=green] #I #[fg=black,bg=blue] #W '
-setw -g window-status-current-format '#[fg=black,bg=yellow] #I #[fg=black,bg=cyan] #W '
-#setw -g window-status-format '#[fg=default,bg=default] #I:#W '
-#setw -g window-status-current-format '#[fg=black,bg=blue] #I:#W '
-set -g window-status-separator ' '
+#setw -g window-status-format '#[fg=black,bg=green] #I #[fg=black,bg=blue] #W '
+#setw -g window-status-current-format '#[fg=black,bg=yellow] #I #[fg=black,bg=cyan] #W '
+setw -g window-status-format '#[fg=default,bg=default] #I:#W '
+setw -g window-status-current-format '#[fg=black,bg=blue] #I:#W '
+set -g window-status-separator ''
 set-option -g history-limit 250000
 
 # keybindings

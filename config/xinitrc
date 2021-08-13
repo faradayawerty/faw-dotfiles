@@ -42,11 +42,11 @@ echo "URxvt*background: [90]$X_COLOR_BG" | xrdb -merge # urxvt transparent backg
 [ -f ~/.wallpaper ] || xsetroot -solid "$X_COLOR_0"
 	
 # dwm status
-#while true; do
-#	xsetroot -name " ($(panel_bat))   ($(panel_temp))   ($(panel_mem))   ($(panel_date)) "
-#	sleep 20s
-#done &
-xsetroot -name " $(whoami)@$(hostname) "
+while true; do
+	xsetroot -name " [$(panel_bat)]  [$(panel_temp)]  [$(panel_mem)]  [$(panel_date)] "
+	sleep 20s
+done &
+#xsetroot -name " $(whoami)@$(hostname) "
 
 exec dwm
 
