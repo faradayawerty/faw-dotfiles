@@ -6,6 +6,6 @@ acpi -t | while read line ; do
    [ "$first" = "false" ] && echo -n " | "
    [ "$first" = "true" ] && first=false
 
-   echo -n "TH$(echo $line | cut -d' ' -f2- | sed 's/ degrees /°/g')"
+   echo -n "$(echo $line | awk '{print "TH"$2, $4 "°"}')"
 done
 

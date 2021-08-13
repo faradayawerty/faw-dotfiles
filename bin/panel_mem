@@ -1,4 +1,5 @@
 #!/bin/bash
 
-echo "$(free -h | head -n2 | tail -n1 | awk '{print $3 "/" $2}')"
+#echo "$(free -h | head -n2 | tail -n1 | awk '{print $3 "/" $2}')"
+echo "$(free -h | head -n2 | tail -n1 | awk '{print $3}')"
 
