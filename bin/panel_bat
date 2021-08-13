@@ -9,5 +9,5 @@ acpi | while read line ; do
    echo -n "BAT$(echo $line | cut -d, -f 1-2 | cut -d' ' -f2-)"
 done
 
-[ "$first" = "true" ] && echo no battery
+[ "$first" = "true" ] && echo ?
 

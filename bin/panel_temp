@@ -9,3 +9,5 @@ acpi -t | while read line ; do
    echo -n "$(echo $line | awk '{print "TH"$2, $4 "°"}')"
 done
 
+[ "$first" = "true" ] && echo ?
+
