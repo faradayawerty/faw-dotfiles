@@ -5,6 +5,7 @@ mkdir -p ~/.local/share
 
 for i in $(ls bin)
 do
+	[ "$i" = "share" ] && continue
 	ln -snf $(realpath bin/$i) ~/.local/bin/$i
 done
 

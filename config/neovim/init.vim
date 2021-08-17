@@ -102,4 +102,4 @@ highlight cursorline ctermfg=none ctermbg=none cterm=none
 "
 "highlight colorcolumn ctermbg=cyan
 "highlight folded ctermfg=blue ctermbg=none
-"
+

@@ -17,22 +17,6 @@ face global PrimarySelection black,blue
 face global SecondarySelection black,cyan
 
 # --- dev --- #
-hook global WinSetOption filetype=(c|cpp) %{ ## enable C/C++ completion with clang
-	clang-enable-autocomplete
-	clang-enable-diagnostics
-}
-
-hook global BufWritePost .*\.(c|cpp) %{
-	clang-parse
-}
-
-hook global WinSetOption filetype=go %{
-	#go-enable-autocomplete
-}
-
-hook global BufWritePost .*\.go %{
-	go-format
-}
 
 # --- plugins --- #
 nop %sh{
@@ -40,5 +24,13 @@ nop %sh{
 	ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"
 }
 
+# enable clipboard
 hook global WinCreate .* %{ kakboard-enable }
+
+# --- kakoune lsp --- #
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(python|go|c|cpp|java) %{
+    lsp-enable-window
+}
+
 

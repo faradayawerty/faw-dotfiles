@@ -6,6 +6,9 @@
 	Mod4+o
 
 
+"dmenu_tmux"
+	Mod4+t
+
 "dmenu_emoji"
 	Mod4+e
 
@@ -31,6 +34,14 @@
 "volman mute"
 	XF86AudioMute
 
+"cmus-remote -u"
+	Mod4+backslash
+
+"cmus-remote -r"
+	Mod4+bracketleft
+
+"cmus-remote -n"
+	Mod4+bracketright
 
 "takescreenshot"
 	Print
