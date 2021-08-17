@@ -1,7 +1,7 @@
 # last change 12 08 2021
 
 # -- command-line -- #
-neovim tmux rover htop newsboat qalculate
+kak kak-lsp tmux rover htop newsboat qalculate pass
 zip unzip bash-completion neofetch tree pmount acpi ffmpeg
 youtube-dl pipe-viewer translate-shell w3m tor torsocks aria2 curl net-tools
 
@@ -13,7 +13,7 @@ openjdk11 openjdk11-doc
 
 # -- graphical -- #
 xorg xterm xwallpaper xcompmgr maim xclip rofi
-font-hack-ttf noto-fonts-cjk noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji
+font-hack-ttf font-sarasa-gothic noto-fonts-emoji
 sxiv mpv zathura poppler poppler-utils zathura-pdf-poppler zathura-djvu
 chromium torbrowser-launcher qbittorrent telegram-desktop
 

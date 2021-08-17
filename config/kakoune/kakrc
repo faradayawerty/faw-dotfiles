@@ -1,16 +1,14 @@
 # --- general --- #
 add-highlighter global/ number-lines
-#add-highlighter global/ column 80 default,blue
-#add-highlighter global/ show-whitespaces
 set global ui_options ncurses_enable_mouse=false ncurses_status_on_top=false
 set global indentwidth 0
 set global aligntab true
 set global tabstop 6
 
+#add-highlighter global/ column 80 default,blue
+#add-highlighter global/ show-whitespaces
+
 # --- keys --- #
-hook global NormalKey y|d|c %{ nop %sh{ ## clipboard integration
-	printf %s "$kak_main_reg_dquote" | xclip -i -selection clipboard >&- 2>&-
-}}
 
 # --- appearance --- #
 face global MenuBackground yellow,default
@@ -41,4 +39,6 @@ nop %sh{
 	mkdir -p "$kak_config/autoload"
 	ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"
 }
+
+hook global WinCreate .* %{ kakboard-enable }
 

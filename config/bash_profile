@@ -25,7 +25,7 @@ else
 	export X_COLOR_FG="#c0c5ce"
 fi
 
-export EDITOR=nvim
+export EDITOR=kak
 export PAGER=w3m
 export TERMINAL_BROWSER=w3m
 export DOWNLOADER=aria2c

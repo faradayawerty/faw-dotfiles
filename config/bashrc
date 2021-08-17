@@ -33,6 +33,7 @@ stty -ixon
 #bind -m vi-insert "\C-l":clear-screen
 
 # --- ALIASES --- #
+alias please="sudo"
 alias mk='sudo make clean && make && sudo make install'
 
 alias mn='pmount'
