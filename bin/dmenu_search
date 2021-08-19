@@ -11,7 +11,7 @@ mkdir -p $DIR_NAME
 [ -z "$SEARCH_ENGINE" ] && SEARCH_ENGINE="https://www.google.com/search?q="
 [ -z "$SEARCH_ENGINE_YOUTUBE" ] && SEARCH_ENGINE_YOUTUBE="https://www.youtube.com/search?q="
 
-search="$(sort -u $DIR_NAME/$FILE_NAME | sed '/^$/d' | $DMENU -p search)"
+search="$(sort -ur $DIR_NAME/$FILE_NAME | sed '/^$/d' | $DMENU -p search)"
 echo "$search" >> $DIR_NAME/$FILE_NAME
 
 search_engine="$SEARCH_ENGINE"

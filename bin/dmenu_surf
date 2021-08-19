@@ -8,7 +8,7 @@
 mkdir -p $DIR_NAME
 [ -f $DIR_NAME/$FILE_NAME ] || echo -e "suckless.org\n" > $DIR_NAME/$FILE_NAME
 
-url="$(sort -u $DIR_NAME/$FILE_NAME | sed '/^$/d' | $DMENU -p url)"
+url="$(sort -ur $DIR_NAME/$FILE_NAME | sed '/^$/d' | $DMENU -p url)"
 echo "$url" >> $DIR_NAME/$FILE_NAME
 
 [ -z "$url" ] || $BROWSER "$url"

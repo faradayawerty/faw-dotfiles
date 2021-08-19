@@ -17,14 +17,14 @@ mkdir -p ~/.newsboat
 ln -snf $(realpath newsboat/config) ~/.newsboat/config
 
 
-mkdir -p ~/.config/nvim
-ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
-./neovim/install_vimplug
+#mkdir -p ~/.config/nvim
+#ln -snf $(realpath neovim/init.vim) ~/.config/nvim/init.vim
+#./neovim/install_vimplug
 
 
-#mkdir -p ~/.config/kak/autoload/
-#ln -snf $(realpath kakoune/kakrc) ~/.config/kak/kakrc
-#ln -snf $(realpath kakoune/kak-lsp) ~/.config/kak-lsp
-#cp kakoune/autoload/* ~/.config/kak/autoload/
+mkdir -p ~/.config/kak/autoload/
+ln -snf $(realpath kakoune/kakrc) ~/.config/kak/kakrc
+ln -snf $(realpath kakoune/kak-lsp) ~/.config/kak-lsp
+cp kakoune/autoload/* ~/.config/kak/autoload/
 
 

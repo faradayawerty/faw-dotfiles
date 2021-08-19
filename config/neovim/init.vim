@@ -2,9 +2,6 @@
 " -------
 call plug#begin(stdpath('data') . '/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	"Plug 'vim-scripts/javacomplete'
-	"Plug 'artur-shaik/vim-javacomplete2'
-	"Plug 'https://github.com/davisdude/vim-love-docs'
 call plug#end()
 
 " coc.nvim

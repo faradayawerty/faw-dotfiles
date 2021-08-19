@@ -1,8 +1,6 @@
 #!/bin/bash
 
-default_binary_path=/bin
-
 [ -z "$DMENU" ] && DMENU=dmenu
 
-ls $default_binary_path | $DMENU "$@" | ${SHELL:-"/bin/sh"} &
+dmenu_paths | $DMENU "$@" | ${SHELL:-"/bin/sh"} &
 

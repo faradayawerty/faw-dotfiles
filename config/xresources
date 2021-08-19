@@ -2,10 +2,10 @@
 UXTerm*renderFont: true
 UXTerm*faceName: Hack-Regular
 UXTerm*faceSize: 6
-UXTerm*faceSize1: 3
-UXTerm*faceSize2: 4
-UXTerm*faceSize3: 5
-UXTerm*faceSize4: 6
+UXTerm*faceSize1: 4
+UXTerm*faceSize2: 5
+UXTerm*faceSize3: 6
+UXTerm*faceSize4: 7
 UXTerm*faceSize5: 8
 UXTerm*faceSize6: 12
 UXTerm*utf8: 2

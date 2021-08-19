@@ -30,7 +30,8 @@ hook global WinCreate .* %{ kakboard-enable }
 # --- kakoune lsp --- #
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(python|go|c|cpp|java) %{
-    lsp-enable-window
+	lsp-enable-window
+	lsp-auto-hover-enable
 }
 
 

@@ -9,7 +9,7 @@ youtube-dl pipe-viewer translate-shell w3m tor torsocks aria2 curl net-tools
 clang gcc make patch
 python python3 python-pip python3-pip python3-language-server
 openjdk11 openjdk11-doc
-nodejs
+go gopls
 
 # -- graphical -- #
 xorg xterm xwallpaper xcompmgr maim xclip rofi
