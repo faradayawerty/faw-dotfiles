@@ -1,14 +1,12 @@
 # --- general --- #
 add-highlighter global/ number-lines
-set global ui_options ncurses_enable_mouse=false ncurses_status_on_top=false
+set global ui_options ncurses_enable_mouse=true ncurses_status_on_top=false
 set global indentwidth 0
 set global aligntab true
 set global tabstop 6
 
 #add-highlighter global/ column 80 default,blue
 #add-highlighter global/ show-whitespaces
-
-# --- keys --- #
 
 # --- appearance --- #
 face global MenuBackground yellow,default
@@ -31,7 +29,7 @@ hook global WinCreate .* %{ kakboard-enable }
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(python|go|c|cpp|java) %{
 	lsp-enable-window
+	set global lsp_hover_max_lines 20
 	lsp-auto-hover-enable
 }
-
 

@@ -25,6 +25,6 @@ ln -snf $(realpath newsboat/config) ~/.newsboat/config
 mkdir -p ~/.config/kak/autoload/
 ln -snf $(realpath kakoune/kakrc) ~/.config/kak/kakrc
 ln -snf $(realpath kakoune/kak-lsp) ~/.config/kak-lsp
-cp kakoune/autoload/* ~/.config/kak/autoload/
+cp -r kakoune/autoload/* ~/.config/kak/autoload/
 
 
