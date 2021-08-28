@@ -10,18 +10,16 @@ keymap K PREV_LINK
 keymap	b	PREV_WORD
 keymap	w	NEXT_WORD
 
-keymap	C-e	UP
-keymap	C-y	DOWN
-
 keymap	C-d	UP 12
 keymap	C-u	DOWN 12
 
 keymap	C-b	PREV_PAGE
 keymap	C-f	NEXT_PAGE
 
-keymap	gg	BEGIN
+keymap	g	BEGIN
 keymap	G	END
 keymap	0	LINE_BEGIN
+keymap	^	LINE_BEGIN
 keymap	$	LINE_END
 
 keymap	/	SEARCH
@@ -35,7 +33,7 @@ keymap	o	GOTO
 keymap	Q	QUIT
 keymap	r	RELOAD
 
-keymap H HISTORY
+keymap C-h HISTORY
 keymap D DOWNLOAD_LIST
 
 keymap z BACK
@@ -57,8 +55,8 @@ keymap S GOTO 'https://duckduckgo.com/' # search
 # --- tabs --- #
 keymap	tt TAB_LINK
 keymap	T NEW_TAB
-keymap	gt NEXT_TAB
-keymap	gT PREV_TAB
+keymap	tl NEXT_TAB
+keymap	th PREV_TAB
 
 keymap	q	CLOSE_TAB
 

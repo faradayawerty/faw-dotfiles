@@ -4,7 +4,7 @@ back="$(xrdb -query | grep -m1 color0: | awk '{print $2}')"
 fore="$(xrdb -query | grep -m1 color4: | awk '{print $2}')"
 
 [ -z "$back" ] && back="#000000"
-[ -z "$fore" ] && fore="#11aa11"
+[ -z "$fore" ] && fore="#00aaff"
 
 rofi "$@" -dmenu \
 	-color-window "$back, $fore, $fore" \

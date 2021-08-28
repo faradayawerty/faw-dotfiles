@@ -1,6 +1,0 @@
-#!/bin/bash
-
-schemer2 -format img::colors -in $@ | awk '{ printf("export X_COLOR_%d=\"%s\"\n", NR - 1, $0) }' > ~/.colorscheme.sh
-echo 'export X_COLOR_BG=$X_COLOR_0' >> ~/.colorscheme.sh
-echo 'export X_COLOR_FG=$X_COLOR_7' >> ~/.colorscheme.sh
-

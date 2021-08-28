@@ -33,17 +33,14 @@ stty -ixon
 #bind -m vi-insert "\C-l":clear-screen
 
 # --- ALIASES --- #
-alias please="sudo"
+alias v=vis
+alias r=rover
+
 alias mk='sudo make clean && make && sudo make install'
+alias gpp="git add .; git commit -m '-'; git push"
 
 alias mn='pmount'
 alias um='pumount'
-
-alias gpp="git add .; git commit -m '-'; git push"
-alias ga="git add ."
-alias gc="git commit -m '-'"
-alias gp="git push"
-alias gP='git pull'
 
 alias l='ls -Fh --color=auto --group-directories-first'
 alias ll='clear;ls -lFh --color=auto --group-directories-first'
@@ -93,5 +90,5 @@ function wth {
 }
 
 # xterm transparency using transset
-[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.95 >/dev/null
+#[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.95 >/dev/null
 
