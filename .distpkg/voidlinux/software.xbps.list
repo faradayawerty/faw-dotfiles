@@ -12,14 +12,12 @@ openjdk11 openjdk11-doc
 go gopls
 
 # -- graphical -- #
-xorg xterm xwallpaper xcompmgr maim xclip rofi
-font-hack-ttf font-sarasa-gothic noto-fonts-emoji
+xorg xwallpaper xcompmgr maim xclip
 sxiv mpv zathura poppler poppler-utils zathura-pdf-poppler zathura-djvu
-chromium torbrowser-launcher qbittorrent telegram-desktop
+#chromium torbrowser-launcher qbittorrent telegram-desktop
 
 # -- sound -- #
-pipewire alsa-utils
-cmus
+pipewire alsa-utils cmus
 
 # -- build dependencies -- #
 libXinerama-devel libXft-devel # suckless dwm
