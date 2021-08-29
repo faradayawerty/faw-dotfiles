@@ -7,4 +7,5 @@
 echo "$@" > /tmp/exurl_command
 $EDITOR /tmp/exurl_command
 $SHELL -i -c "$(cat /tmp/exurl_command)"
+read
 

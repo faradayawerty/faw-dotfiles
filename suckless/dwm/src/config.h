@@ -57,7 +57,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_emoji") },
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("dmenu_unicode") },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("dmenu_kaomoji") },
-	{ 0,                            XK_Print,     spawn,       SHCMD("takescreenshot") },
+
+	{ 0,                            XK_Print,     spawn,       SHCMD("dir=~/.screenshots; name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png; mkdir -p $dir; maim -s $name; xclip -selection clipboard -t image/png -i $name") },
 
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("amixer set Master 5%+") },
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("amixer set Master 5%-") },

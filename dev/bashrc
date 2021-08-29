@@ -1,42 +1,18 @@
 #!/bin/bash
 
-# --- VARS --- #
-# If not running interactively, don't do anything
+# if not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-# don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
-
-# for setting history length see HISTSIZE and HISTFILESIZE
-HISTSIZE=255
-HISTFILESIZE=1023
-
-# --- PROMPT --- #
-PS1="\[\e[0;1;34m\][\[\e[m\]\[\e[0;1;33m\]\W\[\e[m\]\[\e[0;1;34m\]]\[\e[m\] "
-
-# --- OPTIONS --- #
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
 
 # disable ctrl+s, ctrl+q
 stty -ixon
 
-# cd into directory by typing its name
-#shopt -s autocd
+PS1="\[\e[0;1;34m\][\[\e[m\]\[\e[0;1;33m\]\W\[\e[m\]\[\e[0;1;34m\]]\[\e[m\] "
 
-# vi mode
-#set -o vi
-#bind -m vi-insert "\C-l":clear-screen
-
-# --- ALIASES --- #
+alias tm='tmux new-session -A -s default'
 alias r=rover
 
 alias mk='sudo make clean && make && sudo make install'
-alias gpp="git add .; git commit -m '-'; git push"
+alias gp="git add .; git commit -m '-'; git push"
 
 alias mn='pmount'
 alias um='pumount'
@@ -61,11 +37,8 @@ alias yd360="youtube-dl --add-metadata -ic -f 'bestvideo[height<=360]+bestaudio/
 alias yd480="youtube-dl --add-metadata -ic -f 'bestvideo[height<=480]+bestaudio/best[height<=480]'"
 alias yd720="youtube-dl --add-metadata -ic -f 'bestvideo[height<=720]+bestaudio/best[height<=720]'"
 
-# --- FUNCTIONS --- #
-function tm {
-	session_name="$@"
-	[ -z "$session_name" ] && session_name=default
-	tmux new-session -A -s $session_name
+function cd {
+	builtin cd "$@" && l
 }
 
 function todo {
@@ -75,19 +48,4 @@ function todo {
 		done
 	done
 }
-
-function cd {
-	builtin cd "$@" && l
-}
-
-function aur {
-	git clone https://aur.archlinux.org/$1.git
-}
-
-function wth {
-	curl wttr.in/$1
-}
-
-# xterm transparency using transset
-#[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.95 >/dev/null
 
