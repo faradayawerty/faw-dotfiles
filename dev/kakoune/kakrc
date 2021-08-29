@@ -1,31 +1,24 @@
-# --- general --- #
-add-highlighter global/ number-lines
 set global ui_options ncurses_enable_mouse=true ncurses_status_on_top=false
 set global indentwidth 0
 set global aligntab true
 set global tabstop 6
 
-#add-highlighter global/ column 80 default,blue
+add-highlighter global/ number-lines
+add-highlighter global/ column 80 default,blue
 #add-highlighter global/ show-whitespaces
 
-# --- appearance --- #
 face global MenuBackground yellow,default
 face global MenuForeground black,yellow
 face global PrimarySelection black,blue
 face global SecondarySelection black,cyan
 
-# --- dev --- #
-
-# --- plugins --- #
 nop %sh{
 	mkdir -p "$kak_config/autoload"
 	ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"
 }
 
-# enable clipboard
 hook global WinCreate .* %{ kakboard-enable }
 
-# --- kakoune lsp --- #
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(python|go|c|cpp|java) %{
 	lsp-enable-window
