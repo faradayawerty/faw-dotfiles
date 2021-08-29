@@ -7,7 +7,7 @@
 character=$(cat $list | $DMENU "$@" -l 24 | cut -d " " -f 1)
 
 # copy character to clipboard
-echo -n $character | xclip -selection clipboard
-echo -n $character | xclip -selection clipboard
-echo -n $character | xclip -selection clipboard
+echo -n $character | xclip
+echo -n $character | xclip
+echo -n $character | xclip
 

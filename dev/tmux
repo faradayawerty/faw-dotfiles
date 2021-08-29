@@ -38,16 +38,13 @@ set-option -g history-limit 250000
 # keybindings
 unbind '"'
 unbind '%'
-unbind '['
-unbind ']'
 
-#set -g status-keys vi
-#set-window-option -g mode-keys vi
-#bind-key -T copy-mode-vi v send-keys -X begin-selection
-#bind-key -T copy-mode-vi V send-keys -X select-line
-#bind-key -T copy-mode-vi Escape send-keys -X stop-selection
+set -g status-keys vi
+set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi V send-keys -X select-line
+bind-key -T copy-mode-vi Escape send-keys -X stop-selection
 
-bind-key e capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n copy "$EDITOR /tmp/tmux-buffer"
 bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; split-window -v -p20 "linkgrabber /tmp/tmux-buffer"
 bind-key U capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n url "linkgrabber /tmp/tmux-buffer"
 
