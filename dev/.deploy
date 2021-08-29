@@ -2,24 +2,17 @@
 
 # deploy my terminal development environment
 
-cd dev
-
-
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath bash_profile) ~/.bash_profile
 
-
 ln -snf $(realpath tmux) ~/.tmux.conf
-
 
 mkdir -p ~/.w3m
 ln -snf $(realpath w3m/config) ~/.w3m/config
 ln -snf $(realpath w3m/keymap) ~/.w3m/keymap
 
-
 mkdir -p ~/.config/kak/autoload/
 ln -snf $(realpath kakoune/kakrc) ~/.config/kak/kakrc
 ln -snf $(realpath kakoune/kak-lsp) ~/.config/kak-lsp
 cp -r kakoune/autoload/* ~/.config/kak/autoload/
-
 

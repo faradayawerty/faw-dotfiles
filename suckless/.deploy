@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for i in $(ls); do
+	cd $i/src
+	sudo make clean && make && sudo make install
+	cd ../..
+done
+
+mkdir -p ~/.config/sxiv/exec
+ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
+
