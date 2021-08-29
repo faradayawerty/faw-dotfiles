@@ -57,10 +57,8 @@ keymap	tt TAB_LINK
 keymap	T NEW_TAB
 keymap	tl NEXT_TAB
 keymap	th PREV_TAB
-
 keymap	q	CLOSE_TAB
-
-#keymap C-t TAB_MENU
+keymap C-t TAB_MENU
 
 
 # --- external programs --- #

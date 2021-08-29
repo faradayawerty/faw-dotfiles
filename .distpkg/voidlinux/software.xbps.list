@@ -13,8 +13,7 @@ go gopls
 
 # -- graphical -- #
 xorg xwallpaper xcompmgr maim xclip
-sxiv mpv zathura poppler poppler-utils zathura-pdf-poppler zathura-djvu
-#chromium torbrowser-launcher qbittorrent telegram-desktop
+mpv zathura poppler poppler-utils zathura-pdf-poppler zathura-djvu
 
 # -- sound -- #
 pipewire alsa-utils cmus

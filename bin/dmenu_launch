@@ -1,6 +1,0 @@
-#!/bin/bash
-
-[ -z "$DMENU" ] && DMENU=dmenu
-
-dmenu_paths | $DMENU "$@" | ${SHELL:-"/bin/sh"} &
-

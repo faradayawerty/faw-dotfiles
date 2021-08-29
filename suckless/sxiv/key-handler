@@ -12,8 +12,6 @@ do
         xclip -selection clipboard -t image/png -i $(realpath $file) ;;
     "b")
         xwallpaper --zoom "$file" ;;
-    "t")
-        schemer_set_theme $file ;;
     esac
 done
 

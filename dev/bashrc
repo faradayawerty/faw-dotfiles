@@ -33,7 +33,6 @@ stty -ixon
 #bind -m vi-insert "\C-l":clear-screen
 
 # --- ALIASES --- #
-alias v=vis
 alias r=rover
 
 alias mk='sudo make clean && make && sudo make install'

@@ -50,16 +50,13 @@ static const Layout layouts[] = {
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("$TERMINAL") },
-	{ MODKEY,                       XK_o,      spawn,          SHCMD("$RUNMENU") },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st") },
+	{ MODKEY,                       XK_o,      spawn,          SHCMD("dmenu_run") },
 
-	{ MODKEY,                       XK_b,      spawn,          SHCMD("dmenu_surf") },
-	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("dmenu_search") },
-
+	// quality of life bash scripts
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_emoji") },
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("dmenu_unicode") },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("dmenu_kaomoji") },
-
 	{ 0,                            XK_Print,     spawn,       SHCMD("takescreenshot") },
 
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("amixer set Master 5%+") },

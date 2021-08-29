@@ -16,7 +16,7 @@
 # grab character using dmenu
 character=$(cat $emoji_list | $DMENU "$@" -l 24 | cut -d " " -f 1)
 
-# copy character to clipboard
+# copy character to clipboard using xclip
 echo -n $character | xclip -selection clipboard
 echo -n $character | xclip -selection clipboard
 echo -n $character | xclip -selection clipboard

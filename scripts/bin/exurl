@@ -1,0 +1,29 @@
+#!/bin/bash
+
+[ -z "$@" ] && exit
+
+select ch in w3m chromium aria2c mpv youtube-dl
+do
+	[ "$ch" = "chromium" ] && chromium "$@"
+	[ "$ch" = "w3m" ] && w3m "$@"
+	[ "$ch" = "aria2c" ] && aria2c "$@"
+
+	if [ "$ch" = "mpv" ]; then
+		select qu in 240 360 480 720
+		do
+			mpv --ytdl-format="bestvideo[height<=?$qu]+bestaudio/best" "$@"
+			exit
+		done
+	fi
+
+	if [ "$ch" = "youtube-dl" ]; then
+		select qu in 240 360 480 720
+		do
+			youtube-dl --add-metadata -ic -f "bestvideo[height<=$qu]+bestaudio/best[height<=$qu]" "$@"
+			exit
+		done
+	fi
+
+	exit
+done
+
