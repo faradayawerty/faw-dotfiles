@@ -1,154 +1,55 @@
-# --- movement --- #
 keymap	h	MOVE_LEFT
 keymap	j	MOVE_DOWN
 keymap	k	MOVE_UP
 keymap	l	MOVE_RIGHT
-
-keymap J NEXT_LINK
-keymap K PREV_LINK
-
+keymap	J	NEXT_LINK
+keymap	K	PREV_LINK
 keymap	b	PREV_WORD
 keymap	w	NEXT_WORD
-
 keymap	C-d	UP 12
 keymap	C-u	DOWN 12
-
 keymap	C-b	PREV_PAGE
 keymap	C-f	NEXT_PAGE
-
 keymap	gk	BEGIN
 keymap	gj	END
 keymap	gh	LINE_BEGIN
 keymap	gl	LINE_END
-
 keymap	/	SEARCH
 keymap	M-/	SEARCH_BACK
 keymap	n	SEARCH_NEXT
 keymap	M-n	SEARCH_PREV
-
-
-# --- browsing --- #
 keymap	o	GOTO
 keymap	Q	QUIT
 keymap	r	RELOAD
-
-keymap C-h HISTORY
-keymap D DOWNLOAD_LIST
-
-keymap z BACK
-
-keymap f LINK_BEGIN
-keymap F MOVE_LIST_MENU
-
+keymap	C-h	HISTORY
+keymap	D	DOWNLOAD_LIST
+keymap	z	BACK
+keymap	f	LINK_BEGIN
+keymap	F	MOVE_LIST_MENU
 keymap	p	PEEK
-keymap O OPTIONS
-
-# --- bookmarks --- #
+keymap	O	OPTIONS
+keymap	s	GOTO 'https://duckduckgo.com/html' # search
+keymap	S	GOTO 'https://duckduckgo.com/' # search
 keymap	m	BOOKMARK
 keymap	M	ADD_BOOKMARK
 
-keymap s GOTO 'https://duckduckgo.com/html' # search
-keymap S GOTO 'https://duckduckgo.com/' # search
-
-
-# --- tabs --- #
-keymap	tt TAB_LINK
-keymap	T NEW_TAB
-keymap	tl NEXT_TAB
-keymap	th PREV_TAB
+keymap	tt	TAB_LINK
+keymap	T	NEW_TAB
+keymap	tl	NEXT_TAB
+keymap	th	PREV_TAB
 keymap	q	CLOSE_TAB
-keymap C-t TAB_MENU
+keymap	C-t	TAB_MENU
 
+keymap	i	SAVE_IMAGE
+keymap	I	PEEK_IMG
+keymap	x	EXTERN_LINK 'exurl'
+keymap	X	EXTERN 'exurl'
+keymap	u	EXTERN_LINK 'tmux split-pane -v -p20 exurl'
+keymap	U	EXTERN 'tmux split-pane -v -p20 exurl'
+keymap	E	EDIT_SCREEN
 
-# --- external programs --- #
-keymap i SAVE_IMAGE
-keymap I PEEK_IMG
-keymap x EXTERN_LINK 'exurl'
-keymap X EXTERN 'exurl'
-keymap u EXTERN_LINK 'tmux split-pane -v -p20 exurl'
-keymap U EXTERN 'tmux split-pane -v -p20 exurl'
-keymap E EDIT_SCREEN
-
-
-# --- unbind keys --- #
-keymap W NULL
-keymap B NULL
-keymap : NULL
-keymap ";" NULL
-
-
-
-
-
-
-
-
-
-
-#keymap y EXTERN_LINK 'copytoclipboard'
-#keymap Y EXTERN 'copytoclipboard'
-#keymap i VIEW_IMAGE
-#keymap	C-@	MARK
-#keymap	C-a	LINE_BEGIN
-#keymap	C-b	MOVE_LEFT
-#keymap	C-e	LINE_END
-#keymap	C-f	MOVE_RIGHT
-#keymap	C-g	LINE_INFO
-#keymap	C-j	GOTO_LINK
-#keymap	C-k	COOKIE
-#keymap	C-l	REDRAW
-#keymap	C-m	GOTO_LINK
-#keymap	C-n	MOVE_DOWN
-#keymap	C-p	MOVE_UP
-#keymap	C-r	ISEARCH_BACK
-#keymap	C-s	ISEARCH
-#keymap	C-u	PREV_LINK
-#keymap	C-w	WRAP_TOGGLE
-#keymap	C-z	SUSPEND
-#
-#keymap	!	SHELL
-#keymap	\"	REG_MARK
-#keymap	#	PIPE_SHELL
-#keymap	(	UNDO
-#keymap	)	REDO
-#keymap	,	LEFT
-#keymap	.	RIGHT
-#keymap	:	MARK_URL
-#keymap	";"	MARK_WORD
-#keymap	<	SHIFT_LEFT
-#keymap	=	INFO
-#keymap	>	SHIFT_RIGHT
-#keymap	@	READ_SHELL
-#keymap	E	EDIT
-#keymap	F	FRAME
-#keymap	H	HELP
-#keymap	L	LIST
-#keymap	S	SAVE_SCREEN
-#keymap	V	LOAD
-#keymap	Z	CENTER_H
-#keymap	a	SAVE_LINK
-#keymap	c	PEEK
-#keymap	m	MOUSE_TOGGLE
-#keymap	r	VERSION
-#keymap	v	VIEW
-#keymap	z	CENTER_V
-#keymap	|	PIPE_BUF
-#
-#keymap	M-C-j	SAVE_LINK
-#keymap	M-C-m	SAVE_LINK
-#
-#keymap	M-:	MARK_MID
-#keymap	M-<	BEGIN
-#keymap	M->	END
-#keymap	M-M	EXTERN_LINK
-#keymap	M-W	DICT_WORD_AT
-#keymap	M-c	COMMAND
-#keymap	M-e	EDIT_SCREEN
-#keymap	M-k	DEFINE_KEY
-#keymap	M-n	NEXT_MARK
-#keymap	M-o	SET_OPTION
-#keymap	M-p	PREV_MARK
-#keymap	M-s	SAVE
-#keymap	M-u	GOTO_RELATIVE
-#keymap	M-w	DICT_WORD
+keymap	W	NULL
+keymap	B	NULL
+keymap	:	NULL
+keymap	";"	NULL
 
