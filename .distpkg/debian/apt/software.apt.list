@@ -1,7 +1,7 @@
 # last change 28 08 2021
 
 # -- text -- #
-kakoune tmux w3m htop newsboat qalc bash bash-completion
+kakoune tmux w3m htop newsboat qalc bash-completion
 tty-clock neofetch tree acpi mlocate pmount zip unzip rar unrar
 ffmpeg imagemagick pandoc poppler-utils tor torsocks openssh-server aria2 curl
 
@@ -11,11 +11,9 @@ clang python3 python3-pip
 # -- gui -- #
 xorg xterm xwallpaper xcompmgr xclip maim
 mpv zathura zathura-pdf-poppler zathura-djvu
-#chromium torbrowser-launcher telegram-desktop
 
 # -- fonts -- #
-fonts-liberation fonts-symbola
-ttf-mscorefonts-installer
+fonts-liberation fonts-symbola ttf-mscorefonts-installer
 
 # -- sound -- #
 pulseaudio pulsemixer alsa-utils alsa-tools cmus 
