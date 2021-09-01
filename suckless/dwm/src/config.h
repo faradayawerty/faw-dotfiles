@@ -1,16 +1,16 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int gappx     = 8;        /* gap pixel between windows */
-static const char *fonts[]          = { "monospace:size=12" };
+static const char *fonts[]          = { "monospace:size=10" };
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { "#ffffff", "#000000", "#666666" },
-	[SchemeSel]  = { "#000000", "#74b8ef", "#74b8ef"  },
+	[SchemeSel]  = { "#000000", "#a3babf", "#ef8171"  },
 };
 
 /* tagging */
@@ -58,13 +58,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("dmenu_unicode") },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("dmenu_kaomoji") },
 
-	{ 0,                            XK_Print,     spawn,       SHCMD("dir=~/.screenshots; name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png; mkdir -p $dir; maim -s $name; xclip -selection clipboard -t image/png -i $name") },
+	{ 0,                            XK_Print,  spawn,       SHCMD("dir=~/.screenshots; name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png; mkdir -p $dir; maim -s $name; xclip -selection clipboard -t image/png -i $name") },
 
-	{ 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("amixer set Master 5%+") },
-	{ 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("amixer set Master 5%-") },
-	{ 0,              XF86XK_AudioMute,        spawn,          SHCMD("amixer -q set Master toggle") },
-
-	{ MODKEY,                       XK_c,      spawn,          SHCMD("[ -z \"$(pgrep xcompmgr)\" ] && (xcompmgr&) || pkill xcompmgr") },
+	{ 0,          XF86XK_AudioRaiseVolume,     spawn,          SHCMD("amixer set Master 5%+") },
+	{ 0,          XF86XK_AudioLowerVolume,     spawn,          SHCMD("amixer set Master 5%-") },
+	{ 0,          XF86XK_AudioMute,            spawn,          SHCMD("amixer -q set Master toggle") },
+	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("xbacklight -inc 10") },
+	{ 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("xbacklight -dec 10") },
 
 	{ MODKEY,                       XK_p,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

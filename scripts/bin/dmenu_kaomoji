@@ -4,10 +4,10 @@
 [ -z $DMENU ] && DMENU=dmenu
 
 # grab character using dmenu
-character=$(cat $list | $DMENU "$@" -l 24 | cut -d " " -f 1)
+character=$(cat $list | $DMENU "$@" -l 24 | cut -d "%" -f 1)
 
 # copy character to clipboard
-echo -n $character | xclip -sel clip
-echo -n $character | xclip -sel clip
-echo -n $character | xclip -sel clip
+echo -en $character | xclip -sel clip
+echo -en $character | xclip -sel clip
+echo -en $character | xclip -sel clip
 

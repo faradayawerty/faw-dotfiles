@@ -4,7 +4,7 @@ set global aligntab true
 set global tabstop 6
 
 add-highlighter global/ number-lines
-add-highlighter global/ column 80 default,blue
+#add-highlighter global/ column 80 default,blue
 #add-highlighter global/ show-whitespaces
 
 face global MenuBackground yellow,default
