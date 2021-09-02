@@ -10,14 +10,17 @@ keymap	C-d	UP 12
 keymap	C-u	DOWN 12
 keymap	C-b	PREV_PAGE
 keymap	C-f	NEXT_PAGE
-keymap	gk	BEGIN
-keymap	gj	END
-keymap	gh	LINE_BEGIN
-keymap	gl	LINE_END
+
+keymap	gg	BEGIN
+keymap	G	END
+keymap	0	LINE_BEGIN
+keymap	$	LINE_END
+
 keymap	/	SEARCH
 keymap	M-/	SEARCH_BACK
 keymap	n	SEARCH_NEXT
 keymap	M-n	SEARCH_PREV
+
 keymap	o	GOTO
 keymap	Q	QUIT
 keymap	r	RELOAD

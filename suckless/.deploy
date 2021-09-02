@@ -6,6 +6,6 @@ for i in $(ls); do
 	cd ../..
 done
 
-mkdir -p ~/.config/sxiv/exec
-ln -snf $(realpath sxiv/cfg/key-handler) ~/.config/sxiv/exec/key-handler
+ln -snf $(realpath vis/cfg) ~/.config/vis
+ln -snf $(realpath sxiv/cfg) ~/.config/sxiv
 
