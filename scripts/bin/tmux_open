@@ -1,9 +1,0 @@
-#!/bin/bash
-
-[ -z "$EDITOR" ] && EDITOR=vi
-[ -z "$SHELL" ] && SHELL=vi
-[ -z "@$" ] && exit
-
-echo "$@" > /tmp/tmuxopen_filename
-tmux split-window -v -p20 '$EDITOR /tmp/tmuxopen_filename; $SHELL -i -c "$(cat /tmp/tmuxopen_filename)"'
-
