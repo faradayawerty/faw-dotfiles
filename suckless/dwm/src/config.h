@@ -9,8 +9,8 @@ static const unsigned int gappx     = 8;        /* gap pixel between windows */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { "#ffffff", "#000000", "#666666" },
-	[SchemeSel]  = { "#000000", "#a3babf", "#ef8171"  },
+	[SchemeNorm] = { "#ffffff", "#000000", "#7f7f7f" },
+	[SchemeSel]  = { "#000000", "#00cdcd", "#00cdcd"  },
 };
 
 /* tagging */

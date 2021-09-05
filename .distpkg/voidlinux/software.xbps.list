@@ -1,26 +1,20 @@
-# last change 02 09 2021
+# last change 04 09 2021
 
-# -- command-line -- #
-tmux htop newsboat qalculate pass
-zip unzip bash-completion neofetch tree pmount acpi ffmpeg cmus tty-clock
-youtube-dl pipe-viewer translate-shell w3m tor torsocks aria2 curl net-tools
+# -- main tools for dev -- #
+bash vim tmux links gcc make patch
 
-# -- programming -- #
-gcc make patch
-#python python3 python-pip python3-pip python3-language-server
-#openjdk11 openjdk11-doc
-#go gopls
+# -- command-line tools -- #
+htop qalculate pass zip unzip bash-completion neofetch tree pmount acpi ffmpeg
+cmus tty-clock translate-shell tor torsocks aria2 curl net-tools
+newsboat youtube-dl pipe-viewer
 
 # -- graphical -- #
 xorg xwallpaper xcompmgr maim xclip
 mpv zathura poppler poppler-utils zathura-pdf-poppler zathura-djvu
 liberation-fonts-ttf
 
-
-
 # -- build dependencies -- #
 libXinerama-devel libXft-devel # suckless dwm
 pkg-config # suckless st
 imlib2-devel libexif-devel giflib-devel # sxiv
-lua-devel lua-lpeg libtermkey-devel ncurses-devel # vis dependencies
 
