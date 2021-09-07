@@ -1,0 +1,90 @@
+bind M-g send-prefix
+set-option -g prefix M-g
+
+set-option -g escape-time 0
+set -g mouse off
+set -g base-index 1
+set -g pane-base-index 1
+
+set -g default-terminal 'st-256color'
+set -ga terminal-overrides ',*:Tc' # 256 color
+set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
+
+set-window-option -g automatic-rename on
+
+set-option -g message-style fg=brightcyan,bg=black
+set-option -g message-command-style fg=brightcyan,bg=black
+set-option -g mode-style fg=black,bg=brightcyan
+set -g pane-border-style fg=brightcyan
+set -g pane-active-border-style fg=brightcyan,bg=brightcyan
+
+set-option -g status on
+set-option -g status-position top
+set -g status-style bg=black,fg=brightcyan
+set -g status-left ''
+set -g status-right ' #[fg=black,bg=brightcyan] #S '
+set -g status-right-length 16
+setw -g window-status-format '#[fg=default,bg=default] #I:#W '
+setw -g window-status-current-format '#[fg=black,bg=brightcyan] #I:#W '
+set -g window-status-separator ''
+set-option -g history-limit 250000
+
+unbind '"'
+unbind '%'
+
+set -g status-keys vi
+set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi V send-keys -X select-line
+bind-key -T copy-mode-vi Escape send-keys -X stop-selection
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
+
+bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; split-window -v -p20 "linkgrabber /tmp/tmux-buffer"
+bind-key U capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n url "linkgrabber /tmp/tmux-buffer"
+
+bind-key r source-file ~/.tmux.conf \; display "Configuration Reloaded!"
+bind-key b set-option status
+bind-key c new-window -c "#{pane_current_path}"
+
+bind-key '_' split-window -v -c "#{pane_current_path}"
+bind-key '|' split-window -h -c "#{pane_current_path}"
+
+bind-key -n M-q kill-pane
+bind-key -n M-space next-layout
+
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+bind-key -n M-h select-pane -L
+bind-key -n M-j select-pane -D
+bind-key -n M-k select-pane -U
+bind-key -n M-l select-pane -R
+
+bind-key H resize-pane -L 15
+bind-key J resize-pane -D 5
+bind-key K resize-pane -U 5
+bind-key L resize-pane -R 15
+
+unbind 0
+bind-key 1 if-shell 'tmux select-window -t :1' '' 'new-window -t :1'
+bind-key 2 if-shell 'tmux select-window -t :2' '' 'new-window -t :2'
+bind-key 3 if-shell 'tmux select-window -t :3' '' 'new-window -t :3'
+bind-key 4 if-shell 'tmux select-window -t :4' '' 'new-window -t :4'
+bind-key 5 if-shell 'tmux select-window -t :5' '' 'new-window -t :5'
+bind-key 6 if-shell 'tmux select-window -t :6' '' 'new-window -t :6'
+bind-key 7 if-shell 'tmux select-window -t :7' '' 'new-window -t :7'
+bind-key 8 if-shell 'tmux select-window -t :8' '' 'new-window -t :8'
+bind-key 9 if-shell 'tmux select-window -t :9' '' 'new-window -t :9'
+
+bind-key -n M-1 if-shell 'tmux select-window -t :1' '' 'new-window -t :1'
+bind-key -n M-2 if-shell 'tmux select-window -t :2' '' 'new-window -t :2'
+bind-key -n M-3 if-shell 'tmux select-window -t :3' '' 'new-window -t :3'
+bind-key -n M-4 if-shell 'tmux select-window -t :4' '' 'new-window -t :4'
+bind-key -n M-5 if-shell 'tmux select-window -t :5' '' 'new-window -t :5'
+bind-key -n M-6 if-shell 'tmux select-window -t :6' '' 'new-window -t :6'
+bind-key -n M-7 if-shell 'tmux select-window -t :7' '' 'new-window -t :7'
+bind-key -n M-8 if-shell 'tmux select-window -t :8' '' 'new-window -t :8'
+bind-key -n M-9 if-shell 'tmux select-window -t :9' '' 'new-window -t :9'
+

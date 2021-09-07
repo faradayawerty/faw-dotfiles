@@ -9,8 +9,8 @@ static const unsigned int gappx     = 8;        /* gap pixel between windows */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { "#ffffff", "#000000", "#7f7f7f" },
-	[SchemeSel]  = { "#000000", "#00cdcd", "#00cdcd"  },
+	[SchemeNorm] = { "#c5c8c6", "#1d1f21", "#707870" },
+	[SchemeSel]  = { "#1d1f21", "#8abeb7", "#8abeb7"  },
 };
 
 /* tagging */
@@ -63,8 +63,8 @@ static Key keys[] = {
 	{ 0,          XF86XK_AudioRaiseVolume,     spawn,          SHCMD("amixer set Master 5%+") },
 	{ 0,          XF86XK_AudioLowerVolume,     spawn,          SHCMD("amixer set Master 5%-") },
 	{ 0,          XF86XK_AudioMute,            spawn,          SHCMD("amixer -q set Master toggle") },
-	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("xbacklight -inc 10") },
-	{ 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("xbacklight -dec 10") },
+	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("brightman inc 0.1") },
+	{ 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("brightman dec 0.1") },
 
 	{ MODKEY,                       XK_p,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

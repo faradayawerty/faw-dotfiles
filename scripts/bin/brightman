@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# depends on xrandr and bc
+
+monitor=$(xrandr | grep ' connected' | cut -d' ' -f1)
+brightness=$(xrandr --verbose | grep 'Brightness' | head -n1 | cut -d' ' -f2)
+
+[ "$1" = "get" ] && echo $brightness
+[ "$1" = "set" ] && xrandr --output $monitor --brightness $2
+[ "$1" = "inc" ] && xrandr --output $monitor --brightness $(echo $brightness + $2 | bc)
+[ "$1" = "dec" ] && xrandr --output $monitor --brightness $(echo $brightness - $2 | bc)
+
+pkill panel_sleep
+

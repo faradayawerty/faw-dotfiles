@@ -1,0 +1,37 @@
+
+#snippet_support = true
+#verbosity = 1
+
+
+[server]
+timeout = 600 # seconds = 10 minutes
+
+
+[language.c_cpp]
+filetypes = ["c", "cpp"]
+roots = ["compile_commands.json", ".clangd"]
+command = "clangd"
+
+
+[language.python]
+filetypes = ["python"]
+roots = ["requirements.txt", "setup.py", ".git", ".hg"]
+command = "pyls"
+offset_encoding = "utf-8"
+
+
+[language.java]
+filetypes = ["java"]
+roots = [".git", "mvnw", "gradlew"]
+command = "eclipse.jdt.lsp"
+
+
+[language.go]
+filetypes = ["go"]
+roots = ["Gopkg.toml", "go.mod", ".git", ".hg"]
+command = "gopls"
+offset_encoding = "utf-8"
+
+
+
+

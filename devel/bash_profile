@@ -1,0 +1,22 @@
+#!/bin/bash
+
+export EDITOR=kak
+export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
+export GOPATH=~/devel/lang_go
+
+mkdir -p $GOPATH
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$GOPATH/bin" ] ; then
+    PATH="$GOPATH/bin:$PATH"
+fi
+
+source ~/.bashrc
+
+if [ -f ~/.xinitrc ] && [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z "$TMUX" ]]; then
+	exec startx
+fi
+

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+[[ $- != *i* ]] && return # if not running interactively, don't do anything
+
+stty -ixon # disable ctrl+s, ctrl+q
+
+PS1="\[\e[0;1;34m\][\[\e[m\]\[\e[0;1;33m\]\W\[\e[m\]\[\e[0;1;34m\]]\[\e[m\] "
+
+alias r=rover
+alias tm='tmux new-session -A -s default'
+
+alias mk='sudo make clean && make && sudo make install'
+alias gp="git add .; git commit -m '-'; git push"
+
+alias mn='pmount'
+alias um='pumount'
+
+alias l='ls -Fh --color=auto --group-directories-first'
+alias ll='clear;ls -lFh --color=auto --group-directories-first'
+alias la='ls -aFh --color=auto --group-directories-first'
+alias lla='clear;ls -laFh --color=auto --group-directories-first'
+
+alias pv240="pipe-viewer --resolution 240"
+alias pv360="pipe-viewer --resolution 360"
+alias pv480="pipe-viewer --resolution 480"
+alias pv720="pipe-viewer --resolution 720"
+
+alias mpv240="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?240]+bestaudio/best'"
+alias mpv360="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?360]+bestaudio/best'"
+alias mpv480="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?480]+bestaudio/best'"
+alias mpv720="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?720]+bestaudio/best'"
+
+alias yd240="youtube-dl --add-metadata -ic -f 'bestvideo[height<=240]+bestaudio/best[height<=240]'"
+alias yd360="youtube-dl --add-metadata -ic -f 'bestvideo[height<=360]+bestaudio/best[height<=360]'"
+alias yd480="youtube-dl --add-metadata -ic -f 'bestvideo[height<=480]+bestaudio/best[height<=480]'"
+alias yd720="youtube-dl --add-metadata -ic -f 'bestvideo[height<=720]+bestaudio/best[height<=720]'"
+
+function cd {
+	builtin cd "$@" && l
+}
+
+function todo {
+	for i in {00..23}; do
+		for j in 00 20 40; do
+			echo "$i:$j"
+		done
+	done
+}
+

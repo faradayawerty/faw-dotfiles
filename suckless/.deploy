@@ -6,6 +6,5 @@ for i in $(ls); do
 	cd ../..
 done
 
-ln -snf $(realpath vis/cfg) ~/.config/vis
 ln -snf $(realpath sxiv/cfg) ~/.config/sxiv
 

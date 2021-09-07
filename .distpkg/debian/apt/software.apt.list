@@ -1,20 +1,14 @@
-# last change 28 08 2021
+# last change 05 09 2021
+
+# -- dev -- #
+kakoune tmux links
 
 # -- text -- #
-kakoune tmux w3m htop newsboat qalc bash-completion
-tty-clock neofetch tree acpi mlocate pmount zip unzip rar unrar
-ffmpeg imagemagick pandoc poppler-utils tor torsocks openssh-server aria2 curl
-
-# -- languages -- #
-clang python3 python3-pip
+bash-completion acpi pmount aria2 curl newsboat youtube-dl cmus
 
 # -- gui -- #
-xorg xterm xwallpaper xcompmgr xclip maim
-mpv zathura zathura-pdf-poppler zathura-djvu
+xorg xwallpaper xcompmgr xclip maim mpv
 
 # -- fonts -- #
 fonts-liberation fonts-symbola ttf-mscorefonts-installer
-
-# -- sound -- #
-pulseaudio pulsemixer alsa-utils alsa-tools cmus 
 

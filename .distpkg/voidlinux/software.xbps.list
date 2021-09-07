@@ -1,7 +1,7 @@
 # last change 04 09 2021
 
 # -- main tools for dev -- #
-bash vim tmux links gcc make patch
+bash kakoune kak-lsp tmux links gcc make patch
 
 # -- command-line -- #
 bash-completion pmount acpi aria2 curl cmus 

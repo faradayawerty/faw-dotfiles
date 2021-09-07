@@ -1,0 +1,3 @@
+#!/bin/bash
+echo B: $(xrandr --verbose | grep 'Brightness' | head -n1 | cut -d' ' -f2)
+

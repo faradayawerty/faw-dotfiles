@@ -1,0 +1,8 @@
+#! /bin/bash
+
+ln -snf $(realpath bash_profile) ~/.bash_profile
+ln -snf $(realpath bashrc) ~/.bashrc
+ln -snf $(realpath tmux) ~/.tmux.conf
+
+./kakoune/.deploy
+
