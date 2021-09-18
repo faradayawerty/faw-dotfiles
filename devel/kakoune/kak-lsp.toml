@@ -1,6 +1,6 @@
 
-#snippet_support = true
-#verbosity = 1
+snippet_support = true
+verbosity = 1
 
 [server]
 timeout = 600 # seconds = 10 minutes

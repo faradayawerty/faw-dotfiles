@@ -4,13 +4,11 @@
 bash kakoune kak-lsp tmux links gcc make patch
 
 # -- command-line -- #
-bash-completion pmount acpi aria2 curl cmus 
-ffmpeg newsboat youtube-dl pipe-viewer
+bash-completion pmount acpi aria2 curl cmus ffmpeg newsboat youtube-dl pipe-viewer
 
 # -- graphical -- #
 xorg xwallpaper xcompmgr maim xclip mpv liberation-fonts-ttf
 
 # -- build dependencies for suckless -- #
-libXinerama-devel libXft-devel pkg-config imlib2-devel libexif-devel
-giflib-devel ncurses-devel
+libXinerama-devel libXft-devel pkg-config imlib2-devel libexif-devel giflib-devel ncurses-devel
 
