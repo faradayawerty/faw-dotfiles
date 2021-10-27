@@ -6,14 +6,15 @@ stty -ixon # disable ctrl+s, ctrl+q
 
 PS1="\[\e[0;1;34m\][\[\e[m\]\[\e[0;1;33m\]\W\[\e[m\]\[\e[0;1;34m\]]\[\e[m\] "
 
-alias r='rover'
 alias tm='tmux new-session -A -s default'
-
 alias mk='sudo make clean && make && sudo make install'
 alias gp="git add .; git commit -m '-'; git push"
-
 alias mn='pmount'
 alias um='pumount'
+
+alias gtodo="tmux rename-window todo; rover ~/drive/notes/todo/$(date +'%Y/%m')"
+alias gfood="rover ~/drive/notes/food/$(date +'%Y')"
+alias gservers="cd ~/drive/stuff/games/minecraft/servers/"
 
 alias l='ls -Fh --color=auto --group-directories-first'
 alias ll='clear;ls -lFh --color=auto --group-directories-first'
