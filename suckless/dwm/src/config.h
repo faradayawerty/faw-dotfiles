@@ -6,11 +6,11 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int gappx     = 8;        /* gap pixel between windows */
-static const char *fonts[]          = { "Liberation Mono:pixelsize=12:antialias=true:autohint=true" };
+static const char *fonts[]          = { "Liberation Mono:pixelsize=16:antialias=true:autohint=true" };
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { "#c5c8c6", "#1d1f21", "#707870" },
-	[SchemeSel]  = { "#1d1f21", "#8abeb7", "#8abeb7"  },
+	[SchemeSel]  = { "#1d1f21", "#cc6666", "#cc6666"  },
 };
 
 /* tagging */

@@ -12,20 +12,20 @@ set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
 
 set-window-option -g automatic-rename on
 
-set-option -g message-style fg=brightcyan,bg=black
-set-option -g message-command-style fg=brightcyan,bg=black
-set-option -g mode-style fg=black,bg=brightcyan
-set -g pane-border-style fg=brightcyan
-set -g pane-active-border-style fg=brightcyan,bg=brightcyan
+set-option -g message-style fg=brightyellow,bg=black
+set-option -g message-command-style fg=brightyellow,bg=black
+set-option -g mode-style fg=black,bg=brightyellow
+set -g pane-border-style fg=brightyellow
+set -g pane-active-border-style fg=brightyellow,bg=brightyellow
 
 set-option -g status on
 set-option -g status-position top
-set -g status-style bg=black,fg=brightcyan
+set -g status-style bg=black,fg=brightyellow
 set -g status-left ''
-set -g status-right ' #[fg=black,bg=brightcyan] #S '
+set -g status-right ' #[fg=black,bg=brightyellow] #S '
 set -g status-right-length 16
 setw -g window-status-format '#[fg=default,bg=default] #I:#W '
-setw -g window-status-current-format '#[fg=black,bg=brightcyan] #I:#W '
+setw -g window-status-current-format '#[fg=black,bg=brightyellow] #I:#W '
 set -g window-status-separator ''
 set-option -g history-limit 250000
 
