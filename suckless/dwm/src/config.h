@@ -51,7 +51,7 @@ static const Layout layouts[] = {
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st") },
-	{ MODKEY,                       XK_o,      spawn,          SHCMD("dmenu_run") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run") },
 
 	// quality of life bash scripts
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_emoji") },
@@ -63,6 +63,9 @@ static Key keys[] = {
 	{ 0,          XF86XK_AudioRaiseVolume,     spawn,          SHCMD("amixer set Master 5%+") },
 	{ 0,          XF86XK_AudioLowerVolume,     spawn,          SHCMD("amixer set Master 5%-") },
 	{ 0,          XF86XK_AudioMute,            spawn,          SHCMD("amixer -q set Master toggle") },
+
+	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("xbacklight -inc 5") },
+	{ 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("xbacklight -dec 5") },
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

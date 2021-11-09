@@ -16,11 +16,6 @@ roots = ["requirements.txt", "setup.py", ".git", ".hg"]
 command = "pyls"
 offset_encoding = "utf-8"
 
-[language.java]
-filetypes = ["java"]
-roots = [".git", "mvnw", "gradlew"]
-command = "eclipse.jdt.lsp"
-
 [language.go]
 filetypes = ["go"]
 roots = ["Gopkg.toml", "go.mod", ".git", ".hg"]

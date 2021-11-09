@@ -2175,7 +2175,7 @@ main(int argc, char *argv[])
 	 * 
 	 * need to have panel_bat, panel_temp, panel_mem, panel_date in $PATH
 	 */
-	system("while true; do\nxsetroot -name \" [$(panel_bat)]  [$(panel_temp)]  [$(panel_mem)]  [$(panel_date)] \"\nsleep 20s\ndone &");
+	system("while true; do\nxsetroot -name \" [$(panel_bat)] [$(panel_temp)] [$(panel_mem)] [$(panel_date)] \"\nsleep 20s\ndone &");
 
 	run();
 	cleanup();
