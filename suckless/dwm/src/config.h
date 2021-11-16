@@ -50,7 +50,8 @@ static const Layout layouts[] = {
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st") },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st -e tmux new-session -A -s default") },
+	{ MODKEY,                       XK_t,      spawn,          SHCMD("st") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run") },
 
 	// quality of life bash scripts
@@ -58,14 +59,19 @@ static Key keys[] = {
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("dmenu_unicode") },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("dmenu_kaomoji") },
 
+	{ MODKEY|ControlMask,           XK_t,      spawn,          SHCMD("telegram-desktop") },
+	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("chromium") },
+	{ MODKEY|ControlMask,           XK_s,      spawn,          SHCMD("steam") },
+	{ MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("java -jar ~/Downloads/TL.jar") },
+
 	{ 0,                            XK_Print,  spawn,       SHCMD("dir=~/.screenshots; name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png; mkdir -p $dir; maim -s $name; xclip -selection clipboard -t image/png -i $name") },
 
 	{ 0,          XF86XK_AudioRaiseVolume,     spawn,          SHCMD("amixer set Master 5%+") },
 	{ 0,          XF86XK_AudioLowerVolume,     spawn,          SHCMD("amixer set Master 5%-") },
 	{ 0,          XF86XK_AudioMute,            spawn,          SHCMD("amixer -q set Master toggle") },
 
-	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("xbacklight -inc 5") },
-	{ 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("xbacklight -dec 5") },
+	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("brightnessctl set +11%") },
+	{ 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("brightnessctl set 11%-") },
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

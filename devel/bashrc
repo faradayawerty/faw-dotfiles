@@ -13,8 +13,7 @@ alias gpp="git add .; git commit -m '-'; git push"
 alias mn='pmount'
 alias um='pumount'
 
-alias gtodo="rover ~/drive/notes/todo/$(date +'%Y/%m')"
-alias gfood="rover ~/drive/notes/food/$(date +'%Y')"
+alias gtodo="rover ~/drive/notes/todo.d/$(date +'%Y/%m')"
 alias gservers="cd ~/drive/stuff/games/minecraft/servers/"
 
 alias l='ls -Fh --color=auto --group-directories-first'

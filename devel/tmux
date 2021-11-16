@@ -67,6 +67,12 @@ bind-key J resize-pane -D 5
 bind-key K resize-pane -U 5
 bind-key L resize-pane -R 15
 
+bind-key -n M-f7 if-shell 'tmux select-window -t :7' '' 'new-window -t :7 cmus'
+bind-key -n M-f8 if-shell 'tmux select-window -t :8' '' 'new-window -t :8 newsboat'
+
+bind-key f7 if-shell 'tmux select-window -t :7' '' 'new-window -t :7 cmus'
+bind-key f8 if-shell 'tmux select-window -t :8' '' 'new-window -t :8 newsboat'
+
 unbind 0
 bind-key 1 if-shell 'tmux select-window -t :1' '' 'new-window -t :1'
 bind-key 2 if-shell 'tmux select-window -t :2' '' 'new-window -t :2'
