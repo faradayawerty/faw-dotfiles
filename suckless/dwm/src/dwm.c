@@ -2170,7 +2170,6 @@ main(int argc, char *argv[])
 	/* run some startup commands */
 	system("xsetroot -solid \"#000000\"");
 	system("setxkbmap -layout us,ru -option grp:win_space_toggle");
-	system("xwallpaper --zoom ~/.wallpapers/\"$(ls ~/.wallpapers | shuf | head -n1)\"");
 
 	/* run panel scripts
 	 * 
