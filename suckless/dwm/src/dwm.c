@@ -1292,8 +1292,8 @@ resizeclient(Client *c, int x, int y, int w, int h)
 		gapincr = gapoffset = 0;
 	} else {
 		/* Remove border and gap if layout is monocle or only one client */
-		//if (c->mon->lt[c->mon->sellt]->arrange == monocle || n == 1) {
-		if(False) {
+		if (c->mon->lt[c->mon->sellt]->arrange == monocle || n == 1) {
+		//if(False) {
 			gapoffset = 0;
 			gapincr = -2 * borderpx;
 			wc.border_width = 0;
@@ -2175,7 +2175,7 @@ main(int argc, char *argv[])
 	 * 
 	 * need to have panel_bat, panel_temp, panel_mem, panel_date in $PATH
 	 */
-	system("while true; do\nxsetroot -name \" $(panel_bat)  $(panel_temp)  $(panel_mem)  $(panel_date) \"\nsleep 20s\ndone &");
+	system("while true; do\nxsetroot -name \"[$(panel_bat)][$(panel_temp)][$(panel_mem)][$(panel_date)]\"\nsleep 20s\ndone &");
 
 	run();
 	cleanup();
