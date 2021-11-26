@@ -56,12 +56,8 @@ static Key keys[] = {
 
 	{ MODKEY|ControlMask,           XK_Return, spawn,          SHCMD("st -e tmux new-session -A -s default") },
 
-	{ MODKEY|ControlMask,           XK_h,      spawn,          SHCMD("st -e htop") },
-	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("st -e links") },
-	{ MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("st -e cmus") },
-	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("st -e rover") },
 	{ MODKEY|ControlMask,           XK_q,      spawn,          SHCMD("st -e qalc") },
-	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("st -e tty-clock -csC4") },
+	{ MODKEY|ControlMask,           XK_c,      spawn,          SHCMD("st -e tty-clock -csC4") },
 
 	{ MODKEY|ControlMask,           XK_t,      spawn,          SHCMD("telegram-desktop") },
 	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("chromium") },
