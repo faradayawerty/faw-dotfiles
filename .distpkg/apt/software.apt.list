@@ -8,8 +8,8 @@ newsboat cmus htop tty-clock fzf aria2 curl youtube-dl
 acpi neofetch tree mlocate pmount zip unzip rar unrar bash-completion
 
 # -- gui -- #
-xorg bspwm xterm sxiv mpv
-suckless-tools xwallpaper xcompmgr xclip maim sxhkd
+xorg xterm mpv
+xwallpaper xcompmgr xclip maim
 
 # -- fonts -- #
 fonts-liberation fonts-symbola ttf-mscorefonts-installer
