@@ -1295,8 +1295,8 @@ resizeclient(Client *c, int x, int y, int w, int h)
 		if (c->mon->lt[c->mon->sellt]->arrange == monocle || n == 1) {
 		//if(False) {
 			gapoffset = 0;
-			gapincr = -2 * borderpx;
-			wc.border_width = 0;
+			gapincr = 0 * borderpx;
+			//wc.border_width = 0;
 		} else {
 			gapoffset = gappx;
 			gapincr = 2 * gappx;
