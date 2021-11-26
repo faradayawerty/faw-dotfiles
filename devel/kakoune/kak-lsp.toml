@@ -1,5 +1,5 @@
 
-snippet_support = true
+snippet_support = false
 verbosity = 1
 
 [server]

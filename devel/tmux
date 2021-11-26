@@ -12,20 +12,20 @@ set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
 
 set-window-option -g automatic-rename on
 
-set-option -g message-style fg=brightyellow,bg=black
-set-option -g message-command-style fg=brightyellow,bg=black
-set-option -g mode-style fg=black,bg=brightyellow
-set -g pane-border-style fg=brightyellow
-set -g pane-active-border-style fg=brightyellow,bg=brightyellow
+set-option -g message-style fg=brightblue,bg=black
+set-option -g message-command-style fg=brightblue,bg=black
+set-option -g mode-style fg=black,bg=brightblue
+set -g pane-border-style fg=brightblue
+set -g pane-active-border-style fg=brightblue,bg=brightblue
 
 set-option -g status on
 set-option -g status-position top
-set -g status-style bg=black,fg=brightyellow
+set -g status-style bg=black,fg=brightblue
 set -g status-left ''
-set -g status-right ' #[fg=black,bg=brightyellow] #S '
+set -g status-right ' #[fg=black,bg=brightblue] #S '
 set -g status-right-length 16
 setw -g window-status-format '#[fg=default,bg=default] #I:#W '
-setw -g window-status-current-format '#[fg=black,bg=brightyellow] #I:#W '
+setw -g window-status-current-format '#[fg=black,bg=brightblue] #I:#W '
 set -g window-status-separator ''
 set-option -g history-limit 250000
 
@@ -36,8 +36,8 @@ set -g status-keys vi
 set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi V send-keys -X select-line
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
 bind-key -T copy-mode-vi Escape send-keys -X stop-selection
-bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
 
 bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; split-window -v -p20 "linkgrabber /tmp/tmux-buffer"
 bind-key U capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n url "linkgrabber /tmp/tmux-buffer"
@@ -50,7 +50,6 @@ bind-key '_' split-window -v -c "#{pane_current_path}"
 bind-key '|' split-window -h -c "#{pane_current_path}"
 
 bind-key -n M-q kill-pane
-bind-key -n M-space next-layout
 
 bind-key h select-pane -L
 bind-key j select-pane -D
@@ -66,12 +65,6 @@ bind-key H resize-pane -L 15
 bind-key J resize-pane -D 5
 bind-key K resize-pane -U 5
 bind-key L resize-pane -R 15
-
-bind-key -n M-f7 if-shell 'tmux select-window -t :7' '' 'new-window -t :7 cmus'
-bind-key -n M-f8 if-shell 'tmux select-window -t :8' '' 'new-window -t :8 newsboat'
-
-bind-key f7 if-shell 'tmux select-window -t :7' '' 'new-window -t :7 cmus'
-bind-key f8 if-shell 'tmux select-window -t :8' '' 'new-window -t :8 newsboat'
 
 unbind 0
 bind-key 1 if-shell 'tmux select-window -t :1' '' 'new-window -t :1'

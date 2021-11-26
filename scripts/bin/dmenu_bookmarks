@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[ -z "$bookmarks" ] && bookmarks=~/.local/share/dmenubookmarks/bm.txt
+[ -z "$DMENU" ] && DMENU=dmenu
+
+link=$(cat $bookmarks | sed '/^$/d' | $DMENU "$@")
+[ -z "$link" ] || chromium "http://$link"
+

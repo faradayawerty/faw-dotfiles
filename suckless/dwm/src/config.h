@@ -2,15 +2,16 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const unsigned int gappx     = 8;        /* gap pixel between windows */
+static const unsigned int gappx     = 4;        /* gap pixel between windows */
 static const char *fonts[]          = { "Liberation Mono:pixelsize=16:antialias=true:autohint=true" };
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { "#c5c8c6", "#1d1f21", "#707870" },
-	[SchemeSel]  = { "#1d1f21", "#cc6666", "#cc6666"  },
+	[SchemeNorm] = { "#bebebe", "#000000", "#666666" },
+	[SchemeSel]  = { "#000000", "#74b8ef", "#74b8ef"  },
 };
 
 /* tagging */
@@ -50,21 +51,29 @@ static const Layout layouts[] = {
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st -e tmux new-session -A -s default") },
-	{ MODKEY,                       XK_t,      spawn,          SHCMD("st") },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run") },
 
+	{ MODKEY|ControlMask,           XK_Return, spawn,          SHCMD("st -e tmux new-session -A -s default") },
+
+	{ MODKEY|ControlMask,           XK_h,      spawn,          SHCMD("st -e htop") },
+	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("st -e links") },
+	{ MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("st -e cmus") },
+	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("st -e rover") },
+	{ MODKEY|ControlMask,           XK_q,      spawn,          SHCMD("st -e qalc") },
+	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("st -e tty-clock -csC4") },
+
+	{ MODKEY|ControlMask,           XK_t,      spawn,          SHCMD("telegram-desktop") },
+	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("chromium") },
+	{ MODKEY|ControlMask|ShiftMask, XK_b,      spawn,          SHCMD("torbrowser-launcher") },
+
 	// quality of life bash scripts
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_bookmarks") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_emoji") },
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("dmenu_unicode") },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("dmenu_kaomoji") },
 
-	{ MODKEY|ControlMask,           XK_t,      spawn,          SHCMD("telegram-desktop") },
-	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("chromium") },
-	{ MODKEY|ControlMask,           XK_s,      spawn,          SHCMD("steam") },
-	{ MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("java -jar ~/Downloads/TL.jar") },
-
-	{ 0,                            XK_Print,  spawn,       SHCMD("dir=~/.screenshots; name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png; mkdir -p $dir; maim -s $name; xclip -selection clipboard -t image/png -i $name") },
+	{ 0,                            XK_Print,  spawn,          SHCMD("dir=~/.screenshots; name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png; mkdir -p $dir; maim -s $name; xclip -selection clipboard -t image/png -i $name") },
 
 	{ 0,          XF86XK_AudioRaiseVolume,     spawn,          SHCMD("amixer set Master 5%+") },
 	{ 0,          XF86XK_AudioLowerVolume,     spawn,          SHCMD("amixer set Master 5%-") },
@@ -83,7 +92,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_s,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },

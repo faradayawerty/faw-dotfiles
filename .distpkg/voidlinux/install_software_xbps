@@ -1,3 +1,0 @@
-# install pacman packages
-sudo xbps-install -S $(sed s/#.*// software.xbps.list | sed /^$/d)
-

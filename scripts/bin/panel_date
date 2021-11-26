@@ -1,5 +1,5 @@
 #!/bin/bash
 
-date +'%Ww %a %b %d %H:%M'
+date +'%a %b %d %H:%M'
 #date +'%H:%M'
 

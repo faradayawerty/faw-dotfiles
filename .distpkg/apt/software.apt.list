@@ -1,0 +1,16 @@
+# last change 23 11 2021
+
+# -- dev -- #
+kakoune tmux links
+
+# -- text -- #
+newsboat cmus htop tty-clock fzf aria2 curl youtube-dl
+acpi neofetch tree mlocate pmount zip unzip rar unrar bash-completion
+
+# -- gui -- #
+xorg bspwm xterm sxiv mpv
+suckless-tools xwallpaper xcompmgr xclip maim sxhkd
+
+# -- fonts -- #
+fonts-liberation fonts-symbola ttf-mscorefonts-installer
+
