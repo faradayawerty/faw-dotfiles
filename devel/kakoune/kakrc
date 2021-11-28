@@ -1,6 +1,6 @@
 
-# -- general -- #
-
+# -- general  -- #
+# 
 set global ui_options ncurses_enable_mouse=true ncurses_status_on_top=false
 set global indentwidth 0
 set global aligntab true
@@ -8,14 +8,13 @@ set global tabstop 6
 
 add-highlighter global/ number-lines
 #add-highlighter global/ show-whitespaces
-#add-highlighter global/ column 80 default,blue
+#add-highlighter global/ column 80 default,red
 
+face global Whitespace white,default
 face global MenuBackground yellow,default
 face global MenuForeground black,yellow
 face global PrimarySelection black,cyan
 face global SecondarySelection black,magenta
-
-
 
 
 # -- plugins -- #

@@ -1,5 +1,5 @@
 # install apt packages
 echo "don't forget to enable contrib and non-free !"
 sudo apt update
-sudo apt install $(sed s/#.*// software.apt.list | sed /^$/d)
+sudo apt install $(sed s/#.*// software | sed /^$/d)
 

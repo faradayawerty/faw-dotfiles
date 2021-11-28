@@ -5,7 +5,7 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const unsigned int gappx     = 4;        /* gap pixel between windows */
+static const unsigned int gappx     = 12;        /* gap pixel between windows */
 static const char *fonts[]          = { "Liberation Mono:pixelsize=16:antialias=true:autohint=true" };
 
 static const char *colors[][3]      = {

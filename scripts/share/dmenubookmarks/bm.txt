@@ -1,17 +1,10 @@
 api.invidious.io
-neocities.org
-github.com
-
 jonathanwhiting.com
 edith.reisen
-lukesmith.xyz
 raypeat.com
 www.avogado6.com
-
 www.parallelrealities.co.uk
 c-for-dummies.com
-learnyouahaskell.com
-
 libgen.is
 www.vyatsu.ru/studentu-1/spravochnaya-informatsiya/raspisanie.html
 

@@ -3,10 +3,10 @@
 first=true
 
 acpi -t | while read line ; do
-   [ "$first" = "false" ] && echo -n " | "
+   [ "$first" = "false" ] && echo -n ", "
    [ "$first" = "true" ] && first=false
 
-   echo -n "$(echo $line | awk '{print "TH"$2, $4 "°"}')"
+   echo -n "$(echo $line | awk '{print "TH"$2, $4}')"
 done
 
 [ -z "$(acpi -t)" ] && echo ?
