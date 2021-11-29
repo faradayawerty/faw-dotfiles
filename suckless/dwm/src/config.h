@@ -4,7 +4,7 @@
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 0;        /* 0 means bottom bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int gappx     = 4;        /* gap pixel between windows */
 static const char *fonts[]          = { "Liberation Mono:pixelsize=16:antialias=true:autohint=true" };
 
@@ -39,9 +39,9 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "[t]",      tile },    /* first entry is default */
+	{ "[f]",      NULL },    /* no layout function means floating behavior */
+	{ "[m]",      monocle },
 };
 
 /* key definitions */
@@ -66,9 +66,10 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_q,      spawn,          SHCMD("st -e qalc") },
 	{ MODKEY|ControlMask,           XK_c,      spawn,          SHCMD("st -e tty-clock -csC4") },
 
+	{ MODKEY|ControlMask|ShiftMask, XK_b,      spawn,          SHCMD("torbrowser-launcher") },
 	{ MODKEY|ControlMask,           XK_t,      spawn,          SHCMD("telegram-desktop") },
 	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("chromium") },
-	{ MODKEY|ControlMask|ShiftMask, XK_b,      spawn,          SHCMD("torbrowser-launcher") },
+	{ MODKEY|ControlMask,           XK_o,      spawn,          SHCMD("wps") }, // my office
 
 	// quality of life bash scripts
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_bookmarks") },

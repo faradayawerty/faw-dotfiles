@@ -12,7 +12,7 @@ set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
 
 set-window-option -g automatic-rename on
 
-set-option -g message-style fg=brightblue,bg=black
+set-option -g message-style fg=blue
 set-option -g message-command-style fg=brightblue,bg=black
 set-option -g mode-style fg=black,bg=brightblue
 set -g pane-border-style fg=brightblue
@@ -22,11 +22,11 @@ set-option -g status on
 set-option -g status-position top
 set -g status-style fg=brightblue
 set -g status-left ''
-set -g status-right '#[fg=black,bg=blue] #(panel_mem) #[fg=black,bg=magenta] #(panel_temp) #[fg=black,bg=blue] #(panel_bat) #[fg=black,bg=magenta] #(panel_date) '
-set -g status-right-length 128
-setw -g window-status-format '#[fg=black,bg=cyan] #I #[fg=black,bg=blue] #W '
-setw -g window-status-current-format '#[fg=black,bg=red] #I #[fg=black,bg=magenta] #W '
-set -g window-status-separator ' '
+set -g status-right ' #[fg=black,bg=brightblue] #S '
+set -g status-right-length 16
+setw -g window-status-format '#[fg=default,bg=default] #I:#W '
+setw -g window-status-current-format '#[fg=black,bg=brightblue] #I:#W '
+set -g window-status-separator ''
 set-option -g history-limit 250000
 
 unbind '"'
@@ -38,6 +38,7 @@ bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi V send-keys -X select-line
 bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
 bind-key -T copy-mode-vi Escape send-keys -X stop-selection
+unbind-key -T copy-mode-vi Enter
 
 bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; split-window -v -p20 "linkgrabber /tmp/tmux-buffer"
 bind-key U capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n url "linkgrabber /tmp/tmux-buffer"
