@@ -1,12 +1,19 @@
-" plugins
+
 call plug#begin('~/.vim/plugged')
 	Plug 'fxn/vim-monochrome'
+	Plug 'christoomey/vim-system-copy'
 	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
 
-colorscheme monochrome
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
 
 if executable('clangd')
     au User lsp_setup call lsp#register_server({
@@ -16,6 +23,12 @@ if executable('clangd')
         \ })
 endif
 
+let g:system_copy#copy_command='xclip -sel clipboard'
+let g:system_copy#paste_command='xclip -sel clipboard -o'
+let g:system_copy_silent = 1
+
+colorscheme monochrome
+syntax on
 set path+=**
 set showtabline=1
 set foldignore=
@@ -36,22 +49,19 @@ set nofoldenable
 set cursorline
 set noexpandtab
 set paste
-set guicursor=
-syntax on
-
+set ttimeout
+set ttimeoutlen=10
 set listchars=tab:>-,space:·,eol:~
-
 set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 let mapleader=","
 noremap <leader>S :set spell! spelllang=en,ru<CR>
 noremap <leader>w :set list!<cr>
 noremap <leader>p :set paste!<cr>
 noremap <leader>c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
-
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 " return to the same line you left off at
 augroup line_return

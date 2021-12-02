@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[ -z "$DMENU" ] && DMENU=dmenu
+
+choice="$(echo -e "reboot\nsuspend\npoweroff\nsuspend in 1 hour\npoweroff in 1 hour"| $DMENU "$@")"
+
+[ -z "$choice" ] && exit
+[ "$choice" = "suspend in 1 hour" ] && (sleep 1h && systemctl suspend)
+[ "$choice" = "poweroff in 1 hour" ] && (sleep 1h && systemctl poweroff)
+
+systemctl "$choice"
+

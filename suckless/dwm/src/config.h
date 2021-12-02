@@ -62,6 +62,7 @@ static Key keys[] = {
 
 	{ MODKEY|ControlMask,           XK_Return, spawn,          SHCMD("st -e tmux new-session -A -s default") },
 
+	{ MODKEY|ControlMask,           XK_f,      spawn,          SHCMD("st -e rover") },
 	{ MODKEY|ControlMask,           XK_h,      spawn,          SHCMD("st -e htop") },
 	{ MODKEY|ControlMask,           XK_q,      spawn,          SHCMD("st -e qalc") },
 	{ MODKEY|ControlMask,           XK_c,      spawn,          SHCMD("st -e tty-clock -csC4") },
@@ -72,10 +73,11 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_o,      spawn,          SHCMD("wps") }, // my office
 
 	// quality of life bash scripts
-	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_bookmarks") },
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_session") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_emoji") },
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("dmenu_unicode") },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("dmenu_kaomoji") },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("dmenu_bookmarks") },
 
 	{ 0,                            XK_Print,  spawn,          SHCMD("dir=~/.screenshots; name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png; mkdir -p $dir; maim -s $name; xclip -selection clipboard -t image/png -i $name") },
 

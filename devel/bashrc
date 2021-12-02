@@ -13,7 +13,6 @@ bind -m vi-insert 'Control-l: clear-screen'
 alias tmx='tmux new-session -A -s default'
 alias mki='sudo make clean && make && sudo make install'
 alias gpp="git add .; git commit -m '-'; git push"
-alias slp='sleep 1h && systemctl suspend'
 
 alias mn='pmount'
 alias um='pumount'

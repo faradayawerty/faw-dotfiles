@@ -6,7 +6,7 @@ acpi | while read line ; do
    [ "$first" = "false" ] && echo -n ", "
    [ "$first" = "true" ] && first=false
 
-   echo -n "BAT$(echo $line | cut -d, -f 1-2 | cut -d' ' -f2- | sed s/Discharging,/dis/ | sed s/Charging,/ch/ | sed s/Unkown,/unk/ | sed s/Full,/full/)"
+   echo -n "BAT$(echo $line | cut -d, -f 1-2 | cut -d' ' -f2- | sed s/Discharging,/dis/ | sed s/Charging,/ch/ | sed s/Unknown,/unk/ | sed s/Full,/full/)"
 done
 
 [ -z "$(acpi)" ] && echo ?
