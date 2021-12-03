@@ -5,7 +5,7 @@ vim tmux links
 
 # -- text -- #
 newsboat cmus htop tty-clock fzf qalc aria2 curl youtube-dl
-acpi neofetch tree mlocate pmount zip unzip rar unrar bash-completion
+vrms acpi neofetch tree mlocate pmount zip unzip rar unrar bash-completion
 
 # -- gui -- #
 xorg mpv xwallpaper xcompmgr xclip maim

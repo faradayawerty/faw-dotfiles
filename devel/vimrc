@@ -2,10 +2,18 @@
 call plug#begin('~/.vim/plugged')
 	Plug 'fxn/vim-monochrome'
 	Plug 'christoomey/vim-system-copy'
-	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'prabirshrestha/vim-lsp'
+	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
+
+if executable('eclipse-jdt-lsp')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'eclipse-jdt-lsp',
+        \ 'cmd': {server_info->['eclipse-jdt-lsp']},
+        \ 'allowlist': ['java'],
+        \ })
+endif
 
 if executable('pyls')
     au User lsp_setup call lsp#register_server({

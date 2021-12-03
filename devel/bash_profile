@@ -2,7 +2,7 @@
 
 export EDITOR=vim
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
-export GOPATH=~/devel/lang_go
+export GOPATH=~/Tech/devel/lang_go
 
 mkdir -p $GOPATH
 
