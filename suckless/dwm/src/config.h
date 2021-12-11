@@ -5,7 +5,7 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const unsigned int gappx     = 4;        /* gap pixel between windows */
+static const unsigned int gappx     = 8;        /* gap pixel between windows */
 static const char *fonts[]          = { "Liberation Mono:pixelsize=16:antialias=true:autohint=true" };
 
 static const char *colors[][3]      = {
@@ -77,7 +77,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_emoji") },
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("dmenu_unicode") },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("dmenu_kaomoji") },
-	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("dmenu_bookmarks") },
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("dmenu_surf") },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("dmenu_bookmarks") },
 
 	{ 0,                            XK_Print,  spawn,          SHCMD("dir=~/.screenshots; name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png; mkdir -p $dir; maim -s $name; xclip -selection clipboard -t image/png -i $name") },
 

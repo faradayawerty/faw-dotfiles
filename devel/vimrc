@@ -71,6 +71,8 @@ noremap <leader>w :set list!<cr>
 noremap <leader>p :set paste!<cr>
 noremap <leader>c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
 
+noremap gd :LspDefinition<cr>
+
 " return to the same line you left off at
 augroup line_return
 	au!
