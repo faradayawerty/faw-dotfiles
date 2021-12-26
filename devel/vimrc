@@ -7,14 +7,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
 
-if executable('eclipse-jdt-lsp')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'eclipse-jdt-lsp',
-        \ 'cmd': {server_info->['eclipse-jdt-lsp']},
-        \ 'allowlist': ['java'],
-        \ })
-endif
-
 if executable('pyls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pyls',
@@ -56,7 +48,8 @@ set foldmethod=indent
 set nofoldenable
 set cursorline
 set noexpandtab
-set paste
+set nocompatible
+set nopaste
 set ttimeout
 set ttimeoutlen=10
 set listchars=tab:>-,space:·,eol:~
@@ -65,11 +58,10 @@ set encoding=utf-8
 set termencoding=utf-8
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-let mapleader=","
-noremap <leader>S :set spell! spelllang=en,ru<CR>
-noremap <leader>w :set list!<cr>
-noremap <leader>p :set paste!<cr>
-noremap <leader>c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
+noremap ,S :set spell! spelllang=en,ru<CR>
+noremap ,w :set list!<cr>
+noremap ,p :set paste!<cr>
+noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
 
 noremap gd :LspDefinition<cr>
 

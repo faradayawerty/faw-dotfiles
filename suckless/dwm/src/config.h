@@ -67,7 +67,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_q,      spawn,          SHCMD("st -e qalc") },
 	{ MODKEY|ControlMask,           XK_c,      spawn,          SHCMD("st -e tty-clock -csC4") },
 
-	{ MODKEY|ControlMask|ShiftMask, XK_b,      spawn,          SHCMD("torbrowser-launcher") },
+	{ MODKEY|ControlMask,           XK_d,      spawn,          SHCMD("discord") },
 	{ MODKEY|ControlMask,           XK_t,      spawn,          SHCMD("telegram-desktop") },
 	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("chromium") },
 	{ MODKEY|ControlMask,           XK_o,      spawn,          SHCMD("wps") }, // my office

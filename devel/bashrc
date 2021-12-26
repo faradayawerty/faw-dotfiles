@@ -38,7 +38,7 @@ function cd {
 
 function todo {
 	for i in {00..23}; do
-		for j in 00 10 20 30 40 50; do
+		for j in 00 20 40; do
 			echo "$i:$j"
 		done
 	done
