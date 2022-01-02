@@ -1,4 +1,3 @@
-#! /bin/bash
 
 # load config files
 ln -snf $(realpath bash_profile) ~/.bash_profile

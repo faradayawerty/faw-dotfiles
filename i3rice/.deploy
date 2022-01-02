@@ -1,0 +1,8 @@
+
+mkdir -p ~/.config/i3
+mkdir -p ~/.config/sxiv/exec/
+
+ln -snf $(realpath xresources) ~/.Xresources
+ln -snf $(realpath i3_config) ~/.config/i3/config
+ln -snf $(realpath sxiv_key-handler) ~/.config/sxiv/exec/key-handler
+

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 # launches dmenu to select an emoji and copy it to clipboard
 #

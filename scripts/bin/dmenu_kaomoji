@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 [ -z $list ] && list=~/.local/share/dmenukaomoji/kaomoji.list
 [ -z $DMENU ] && DMENU=dmenu

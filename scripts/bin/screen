@@ -1,0 +1,8 @@
+
+dir=~/.screenshots
+name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png
+mkdir -p $dir
+
+maim -s $name
+xclip -selection clipboard -t image/png -i $name
+
