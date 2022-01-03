@@ -37,7 +37,8 @@ client.placeholder      $black        $black  $white  $black          $black
 client.background       $white
 
 bar {
-    status_command i3-panel
+    status_command i3panel
+    separator_symbol "|"
     position top
     colors {
         background $black
@@ -77,9 +78,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+Return exec $terminal
 bindsym $mod+Control+Return exec $terminal -e tmux new-session -A -s default
 
-bindsym $mod+Control+u exec DMENU="rofi -dmenu" dmenu_unicode
-bindsym $mod+Control+e exec DMENU="rofi -dmenu" dmenu_emoji
-bindsym $mod+Control+k exec DMENU="rofi -dmenu" dmenu_kaomoji
+bindsym $mod+u exec DMENU="rofi -dmenu" dmenu_unicode
+bindsym $mod+Shift+u exec DMENU="rofi -dmenu" dmenu_kaomoji
+bindsym $mod+Shift+e exec DMENU="rofi -dmenu" dmenu_emoji
+
 bindsym $mod+Control+b exec $browser
 bindsym $mod+Control+t exec telegram-desktop
 bindsym $mod+Control+h exec $terminal -e htop
@@ -100,6 +102,8 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+bindsym $mod+t exec transset -at 0.9
 
 bindsym $mod+e split h
 bindsym $mod+q split v

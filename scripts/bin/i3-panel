@@ -1,8 +1,0 @@
-
-echo " $(panel_bat)  $(panel_temp)  $(panel_mem)  $(panel_date) "
-
-while true; do
-	echo " $(panel_bat)  $(panel_temp)  $(panel_mem)  $(panel_date) "
-	sleep 20s
-done
-

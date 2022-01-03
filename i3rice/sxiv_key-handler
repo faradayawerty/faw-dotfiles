@@ -12,7 +12,7 @@ do
     "Y")
         xclip -selection clipboard -t image/png -i $(realpath $file) ;;
     "b")
-        xwallpaper --zoom "$file" ;;
+        cp "$file" ~/.wallpaper && xwallpaper --zoom "$file" ;;
     esac
 done
 
