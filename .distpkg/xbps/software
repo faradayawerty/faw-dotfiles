@@ -1,0 +1,24 @@
+
+# -- devel -- #
+vim tmux w3m
+bash bash-completion
+
+# -- text -- #
+htop tty-clock newsboat cmus fzf qalculate rover cmatrix
+acpi neofetch mlocate tree
+zip unzip
+
+# -- devel -- #
+gcc make patch clang openjdk8 python3
+
+# -- gui -- #
+xorg
+xwallpaper maim xclip xcompmgr
+mpv zathura chromium telegram-desktop
+
+# -- sound -- #
+pulseaudio pulsemixer alsa-plugins-pulseaudio alsa-utils
+
+# -- system -- #
+NetworkManager polkit
+
