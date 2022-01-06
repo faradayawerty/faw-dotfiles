@@ -12,9 +12,10 @@ zip unzip
 gcc make patch clang openjdk8 python3
 
 # -- gui -- #
-xorg
+xorg i3-gaps
 xwallpaper maim xclip xcompmgr
-mpv zathura chromium telegram-desktop
+xterm sxiv mpv zathura
+chromium telegram-desktop
 
 # -- sound -- #
 pulseaudio pulsemixer alsa-plugins-pulseaudio alsa-utils

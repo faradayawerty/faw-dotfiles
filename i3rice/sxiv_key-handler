@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+while read file
+do
+    case "$1" in
+    "d")
+        rm "$file" ;;
+    "i")
+        convert -channel RGB -negate "$file" "$file" ;;
+    "y")
+        echo -n "$(realpath $file)" | xclip -selection clipboard ;;
+    "Y")
+        xclip -selection clipboard -t image/png -i $(realpath $file) ;;
+    "b")
+        cp "$file" ~/.wallpaper && xwallpaper --zoom "$file" ;;
+    esac
+done
+
