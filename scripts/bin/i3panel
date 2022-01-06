@@ -2,7 +2,7 @@
 
 xrdb_color0="$(xrdb -query | grep color0: | head -n1 | cut -d# -f2)"
 xrdb_color4="$(xrdb -query | grep color4: | head -n1 | cut -d# -f2)"
-xrdb_color5="$(xrdb -query | grep color5: | head -n1 | cut -d# -f2)"
+xrdb_color6="$(xrdb -query | grep color6: | head -n1 | cut -d# -f2)"
 
 echo '{ "version": 1 }'
 
@@ -16,9 +16,9 @@ echo '[]'
 while :;
 do
 	echo ",[{\"name\":\"time\",\"full_text\":\" $(panel_date) \", \"color\": \"#$xrdb_color0\", \"background\" : \"#$xrdb_color4\", \"separator_block_width\": 1}, \
-		{\"name\":\"mem\",\"full_text\":\" $(panel_mem) \", \"color\": \"#$xrdb_color0\", \"background\" : \"#$xrdb_color5\", \"separator_block_width\": 1}, \
+		{\"name\":\"mem\",\"full_text\":\" $(panel_mem) \", \"color\": \"#$xrdb_color0\", \"background\" : \"#$xrdb_color6\", \"separator_block_width\": 1}, \
 		{\"name\":\"bat\",\"full_text\":\" $(panel_bat) \", \"color\": \"#$xrdb_color0\", \"background\" : \"#$xrdb_color4\", \"separator_block_width\": 1}, \
-		{\"name\":\"temp\",\"full_text\":\" $(panel_temp) \", \"color\": \"#$xrdb_color0\", \"background\" : \"#$xrdb_color5\", \"separator_block_width\": 1}]"
+		{\"name\":\"temp\",\"full_text\":\" $(panel_temp) \", \"color\": \"#$xrdb_color0\", \"background\" : \"#$xrdb_color6\", \"separator_block_width\": 1}]"
 	sleep 20s
 done
 
