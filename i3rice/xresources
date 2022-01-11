@@ -37,21 +37,21 @@
 *.color15:      #eff1f5
 
 ! --- Xterm --- !
-XTerm*renderFont: true
+UXTerm*renderFont: true
 
-XTerm*faceName: Monospace
-XTerm*faceSize: 12
+UXTerm*faceName: Monospace
+UXTerm*faceSize: 12
 
-XTerm*utf8: 2
-XTerm*locale: true
-XTerm*geometry: 140x40
-XTerm.termName: xterm-256color
-XTerm*BorderWidth: 0
+UXTerm*utf8: 2
+UXTerm*locale: true
+UXTerm*geometry: 140x40
+UXTerm.termName: xterm-256color
+UXTerm*BorderWidth: 0
 
 ! turn off alt+n keys
-XTerm*vt100.metaSendsEscape: true
+UXTerm*vt100.metaSendsEscape: true
 
-XTerm.vt100.translations: #override \n\
+UXTerm.vt100.translations: #override \n\
   Ctrl Shift <Key>K: smaller-vt-font() \n\
   Ctrl Shift <Key>J: larger-vt-font() \n\
   Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\

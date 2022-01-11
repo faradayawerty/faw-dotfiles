@@ -1,3 +1,0 @@
-
-echo " $(panel_bat)  $(panel_temp)  $(panel_mem)  $(panel_date) "
-
