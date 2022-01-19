@@ -39,7 +39,7 @@
 ! --- Xterm --- !
 UXTerm*renderFont: true
 
-UXTerm*faceName: Monospace
+UXTerm*faceName: Liberation Mono
 UXTerm*faceSize: 12
 
 UXTerm*utf8: 2

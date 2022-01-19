@@ -1,6 +1,8 @@
 #!/bin/bash
 
 export EDITOR=vim
+export DMENU="rofi -dmenu"
+
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 
 if [ -d "$HOME/.local/bin" ] ; then

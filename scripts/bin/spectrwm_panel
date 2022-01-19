@@ -1,0 +1,7 @@
+
+
+while true; do
+	panel
+	sleep 20s
+done
+

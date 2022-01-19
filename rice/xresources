@@ -1,0 +1,31 @@
+
+*.foreground: #eeeeee
+*.background: #000000
+
+! rofi settings
+!rofi.color-normal: #0a0f14, #4e5165, #0a0f14, #888ba5, #0a0f14
+!rofi.color-urgent: #0a0f14, #0a0f14, #0a0f14, #0a0f14, #0a0f14
+!rofi.color-active: #0a0f14, #0a0f14, #0a0f14, #0a0f14, #888ba5
+!rofi.color-window: #10151b, #888ba5, #888ba5, #888ba5, #0a0f14
+
+! --- Xterm --- !
+XTerm*renderFont: true
+
+XTerm*faceName: Monospace
+XTerm*faceSize: 12
+
+XTerm*utf8: 2
+XTerm*locale: true
+XTerm*geometry: 140x40
+XTerm.termName: xterm-256color
+XTerm*BorderWidth: 0
+
+! turn off alt+n keys
+XTerm*vt100.metaSendsEscape: true
+
+XTerm.vt100.translations: #override \n\
+  Ctrl Shift <Key>K: smaller-vt-font() \n\
+  Ctrl Shift <Key>J: larger-vt-font() \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+

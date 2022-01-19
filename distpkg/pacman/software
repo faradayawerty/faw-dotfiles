@@ -1,0 +1,19 @@
+# last update 18 01 2021
+
+# -- devel -- #
+vim tmux w3m
+
+# -- text -- #
+acpi wget aria2 neofetch htop cmus newsboat zip unzip fzf libqalculate
+
+# -- gui -- #
+xorg xorg-xinit spectrwm
+maim xclip xwallpaper xcompmgr
+xterm sxiv mpv rofi
+
+# -- audio -- #
+pulseaudio pulsemixer pulseaudio-alsa alsa-utils
+
+# -- fonts -- #
+ttf-liberation
+

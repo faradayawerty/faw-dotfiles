@@ -4,7 +4,7 @@
 
 stty -ixon # disable ctrl+s, ctrl+q
 
-PS1="\[\e[0;1;32m\][\[\e[m\]\[\e[0;1;33m\]\W\[\e[m\]\[\e[0;1;32m\]]\[\e[m\] "
+PS1="\[\e[0;1;34m\][\[\e[m\]\[\e[0;1;33m\]\W\[\e[m\]\[\e[0;1;34m\]]\[\e[m\] "
 
 set -o vi
 bind -m vi-command 'Control-l: clear-screen'
