@@ -55,3 +55,5 @@ function fd {
 	[ -z "$dir" ] || cd "$dir"
 }
 
+[ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 > /dev/null
+

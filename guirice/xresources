@@ -1,0 +1,62 @@
+
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #111111
+*.color8:       #666666
+
+! red
+*.color1:       #d36265
+*.color9:       #ef8171
+
+! green
+*.color2:       #aece91
+*.color10:      #cfefb3
+
+! yellow
+*.color3:       #e7e18c
+*.color11:      #fff796
+
+! blue
+*.color4:       #5297cf
+*.color12:      #74b8ef
+
+! magenta
+*.color5:       #963c59
+*.color13:      #b85e7b
+
+! cyan
+*.color6:       #5e7175
+*.color14:      #a3babf
+
+! white
+*.color7:       #bebebe
+*.color15:      #ffffff
+
+XTerm*renderFont: true
+XTerm*faceName: Monospace
+XTerm*faceSize:     13
+XTerm*faceSize1:    9
+XTerm*faceSize2:    13
+XTerm*faceSize3:    17
+XTerm*faceSize4:    21
+XTerm*faceSize5:    25
+XTerm*faceSize6:    29
+XTerm*utf8: 2
+XTerm*locale: true
+XTerm*geometry: 140x40
+XTerm*BorderWidth: 0
+XTerm.termName: xterm-256color
+
+! turn off alt+n keys
+XTerm*vt100.metaSendsEscape: true
+
+XTerm.vt100.translations: #override \n\
+  Ctrl Shift <Key>K: smaller-vt-font() \n\
+  Ctrl Shift <Key>J: larger-vt-font() \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+

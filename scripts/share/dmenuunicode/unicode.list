@@ -1,116 +1,117 @@
-⁺ superscript +
-⁻ superscript -
-⁼ superscript =
-⁽ superscript (
-⁾ superscript )
-ⁿ superscript n
-· dot
-◦ empty dot
-× cross
-§ paragraph
-₀ subscript 0
-₁ subscript 1
-₂ subscript 2
-₃ subscript 3
-₄ subscript 4
-₅ subscript 5
-₆ subscript 6
-₇ subscript 7
-₈ subscript 8
-₉ subscript 9
-₊ subscript +
-₋ subscript -
-₌ subscript =
-₍ subscript (
-₎ subscript )
-ₐ subscript a
-ₑ subscript e
-ₒ subscript o
-ₓ subscript x
-ₕ subscript h
-ₖ subscript k
-ₗ subscript l
-ₘ subscript m
-ₙ subscript n
-ₚ subscript p
-ₛ subscript s
-ₜ subscript t
-⁰ superscript 0
-¹ superscript 1
-² superscript 2
-³ superscript 3
-⁴ superscript 4
-⁵ superscript 5
-⁶ superscript 6
-⁷ superscript 7
-⁸ superscript 8
-⁹ superscript 9
-ᵃ superscript a
-ᵇ superscript b
-ᶜ superscript c
-ⁱ superscript i
-ʲ superscript j
-ᵏ superscript k
-ˣ superscript x
-ʸ superscript y
-ᶻ superscript z
-⁻ superscript minus -
-≈ almost equal or approximately equal
-≠ not equal
-≡ equivalent or congruent
-≤ less than or equal to
-⇒ implication
-⇔ equivalence
-± plus or minus +-
-∓ minus or plus -+
-√ square root
-Σ sigma
-∫ integral
-Δ delta
-π pi
-τ tau
-φ phi
-α alpha
-β beta
-γ gamma
-ρ rho
-ε epsilon
-Ɛ big epsilon
-ω omega
-Ω big omega
-μ mu
-λ lambda
-∞ infinity
-° degree
-✓ check mark
-♪ note
-← left arrow
-↑ up arrow
-→ right arrow
-↓ down arrow
-☭ communism
-∈ element
-Ø empty set
-⊥ perpendicular
-∧ logical and
-∨ logical or
-¬ logical not
-⊇ subset or equal
-⊃ subset
-⋂ set intersection
-∪ set union
-ℕ natural numbers
-ℤ integers
-ℚ rational numbers
-ℝ real numbers
-ℂ complex numbers
-∀ for all
-∃ there exists
-∇ nabla
-∂ partial del
-⌈ round up first
-⌉ round up second
-⌊ round down first
-⌋ round down second
-❤ heart
-— big long line
+⁺	superscript +
+⁻	superscript -
+⁼	superscript =
+⁽	superscript (
+⁾	superscript )
+ⁿ	superscript n
+·	dot
+◦	empty dot
+×	cross
+§	paragraph
+₀	subscript 0
+₁	subscript 1
+₂	subscript 2
+₃	subscript 3
+₄	subscript 4
+₅	subscript 5
+₆	subscript 6
+₇	subscript 7
+₈	subscript 8
+₉	subscript 9
+₊	subscript +
+₋	subscript -
+₌	subscript =
+₍	subscript (
+₎	subscript )
+ₐ	subscript a
+ₑ	subscript e
+ₒ	subscript o
+ₓ	subscript x
+ₕ	subscript h
+ₖ	subscript k
+ₗ	subscript l
+ₘ	subscript m
+ₙ	subscript n
+ₚ	subscript p
+ₛ	subscript s
+ₜ	subscript t
+⁰	superscript 0
+¹	superscript 1
+²	superscript 2
+³	superscript 3
+⁴	superscript 4
+⁵	superscript 5
+⁶	superscript 6
+⁷	superscript 7
+⁸	superscript 8
+⁹	superscript 9
+ᵃ	superscript a
+ᵇ	superscript b
+ᶜ	superscript c
+ⁱ	superscript i
+ʲ	superscript j
+ᵏ	superscript k
+ˣ	superscript x
+ʸ	superscript y
+ᶻ	superscript z
+⁻	superscript minus -
+≈	almost equal or approximately equal
+≠	not equal
+≡	equivalent or congruent
+≤	less than or equal to
+⇒	implication
+⇔	equivalence
+±	plus or minus +-
+∓	minus or plus -+
+√	square root
+Σ	sigma
+∫	integral
+Δ	delta
+π	pi
+τ	tau
+φ	phi
+α	alpha
+β	beta
+γ	gamma
+ρ	rho
+ε	epsilon
+Ɛ	big epsilon
+ω	omega
+Ω	big omega
+μ	mu
+λ	lambda
+∞	infinity
+°	degree
+✓	check mark
+♪	note
+←	left arrow
+↑	up arrow
+→	right arrow
+↓	down arrow
+☭	communism
+∈	element
+Ø	empty set
+⊥	perpendicular
+∧	logical and
+∨	logical or
+¬	logical not
+⊇	subset or equal
+⊃	subset
+⋂	set intersection
+∪	set union
+ℕ	natural numbers
+ℤ	integers
+ℚ	rational numbers
+ℝ	real numbers
+ℂ	complex numbers
+∀	for all
+∃	there exists
+∇	nabla
+∂	partial del
+⌈	round up first
+⌉	round up second
+⌊	round down first
+⌋	round down second
+❤	heart
+—	big long line
+¯\_(ツ)_/¯	shrug

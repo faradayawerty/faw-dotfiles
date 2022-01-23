@@ -6,13 +6,13 @@ set -g mouse off
 set -g base-index 1
 set -g pane-base-index 1
 
-#set -g default-terminal 'st-256color'
+set -g default-terminal 'xterm-256color'
 set -ga terminal-overrides ',*:Tc' # 256 color
 set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
 
 set-window-option -g automatic-rename on
 
-set-option -g message-style fg=blue
+set-option -g message-style fg=brightblue
 set-option -g message-command-style fg=brightblue,bg=black
 set-option -g mode-style fg=black,bg=brightblue
 set -g pane-border-style fg=brightblue
@@ -22,7 +22,7 @@ set-option -g status on
 set-option -g status-position top
 set -g status-style fg=brightblue
 set -g status-left ''
-set -g status-right ' #(panel_date) #[fg=black,bg=brightblue] #S '
+set -g status-right ' #[fg=black,bg=brightblue] #S '
 set -g status-right-length 128
 setw -g window-status-format '#[fg=default,bg=default] #I:#W '
 setw -g window-status-current-format '#[fg=black,bg=brightblue] #I:#W '

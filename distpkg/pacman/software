@@ -7,7 +7,7 @@ vim tmux w3m
 acpi wget aria2 neofetch htop cmus newsboat zip unzip fzf libqalculate
 
 # -- gui -- #
-xorg xorg-xinit spectrwm
+xorg xorg-xinit
 maim xclip xwallpaper xcompmgr
 xterm sxiv mpv rofi
 

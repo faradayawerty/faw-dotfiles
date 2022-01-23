@@ -8,24 +8,25 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'allowlist': ['python'],
-        \ })
+	au User lsp_setup call lsp#register_server({
+		\ 'name': 'pyls',
+		\ 'cmd': {server_info->['pyls']},
+		\ 'allowlist': ['python'],
+		\ })
 endif
 
 if executable('clangd')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd', '-background-index']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-        \ })
+	au User lsp_setup call lsp#register_server({
+		\ 'name': 'clangd',
+		\ 'cmd': {server_info->['clangd', '-background-index']},
+		\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+		\ })
 endif
 
 let g:system_copy#copy_command='xclip -sel clipboard'
 let g:system_copy#paste_command='xclip -sel clipboard -o'
 let g:system_copy_silent = 1
+let g:lsp_diagnostics_enabled = 0
 
 colorscheme monochrome
 syntax on
@@ -62,7 +63,6 @@ noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>
 noremap ,p :set paste!<cr>
 noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
-
 noremap gd :LspDefinition<cr>
 
 " return to the same line you left off at
@@ -82,4 +82,5 @@ highlight incsearch cterm=underline ctermbg=none
 highlight cursorline ctermfg=none ctermbg=none cterm=none
 highlight colorcolumn ctermbg=red
 highlight folded ctermfg=grey ctermbg=none
+highlight markdownError guifg=NONE guibg=black
 

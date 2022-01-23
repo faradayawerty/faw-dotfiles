@@ -16,7 +16,7 @@
 
 
 # grab character using dmenu
-character=$(cat $unicode_list | $DMENU "$@" -l 24 | cut -d " " -f 1)
+character=$(cat $unicode_list | $DMENU "$@" -l 24 | awk '{print $1}')
 
 
 # copy character to clipboard
