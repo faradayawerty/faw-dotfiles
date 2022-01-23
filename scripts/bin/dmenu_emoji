@@ -11,7 +11,7 @@
 
 
 [ -z $emoji_list ] && emoji_list=~/.local/share/dmenuemoji/emoji.list
-[ -z $DMENU ] && DMENU=dmenu
+[ -z "$DMENU" ] && DMENU=dmenu
 
 # grab character using dmenu
 character=$(cat $emoji_list | $DMENU "$@" -l 24 | cut -d " " -f 1)

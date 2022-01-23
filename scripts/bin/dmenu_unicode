@@ -12,7 +12,7 @@
 
 # set variables
 [ -z $unicode_list ] && unicode_list=~/.local/share/dmenuunicode/unicode.list
-[ -z $DMENU ] && DMENU=dmenu
+[ -z "$DMENU" ] && DMENU=dmenu
 
 
 # grab character using dmenu
