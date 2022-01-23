@@ -1,7 +1,5 @@
 
 ln -snf $(realpath xresources) ~/.Xresources
-ln -snf $(realpath spectrwm.conf) ~/.spectrwm.conf
-ln -snf $(realpath spectrwm_bindings.conf) ~/.spectrwm_bindings.conf
 
 mkdir -p ~/.config/sxiv/exec/
 ln -snf $(realpath sxiv_key-handler) ~/.config/sxiv/exec/key-handler
