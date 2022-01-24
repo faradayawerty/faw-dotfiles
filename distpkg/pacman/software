@@ -15,5 +15,5 @@ xterm sxiv mpv rofi
 pulseaudio pulsemixer pulseaudio-alsa alsa-utils
 
 # -- fonts -- #
-ttf-liberation
+ttf-hack
 
