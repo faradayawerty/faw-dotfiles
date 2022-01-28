@@ -37,8 +37,8 @@ set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi Escape send-keys -X stop-selection
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi V send-keys -X select-line
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
-bind-key -T copy-mode-vi Enter send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
 
 bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; split-window -v -p20 "linkgrabber /tmp/tmux-buffer"
 bind-key U capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n url "linkgrabber /tmp/tmux-buffer"
@@ -47,6 +47,7 @@ bind-key r source-file ~/.tmux.conf \; display "Configuration Reloaded!"
 bind-key b set-option status
 bind-key c new-window -c "#{pane_current_path}"
 
+bind-key '-' split-window -v -p20 -c "#{pane_current_path}"
 bind-key '_' split-window -v -c "#{pane_current_path}"
 bind-key '|' split-window -h -c "#{pane_current_path}"
 
