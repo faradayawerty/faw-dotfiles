@@ -4,7 +4,8 @@
 vim tmux w3m
 
 # -- text -- #
-acpi wget aria2 neofetch htop cmus newsboat zip unzip fzf libqalculate
+acpi wget aria2 youtube-dl neofetch htop cmus newsboat zip unzip fzf libqalculate
+ffmpeg imagemagick
 
 # -- gui -- #
 xorg xorg-xinit

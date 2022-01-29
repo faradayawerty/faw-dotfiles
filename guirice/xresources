@@ -38,8 +38,8 @@
 
 XTerm*renderFont: true
 XTerm*faceName: Hack-Regular
-XTerm*faceSize:     16
-XTerm*faceSize1:    8
+XTerm*faceSize:     14
+XTerm*faceSize1:    10
 XTerm*faceSize2:    12
 XTerm*faceSize3:    14
 XTerm*faceSize4:    16

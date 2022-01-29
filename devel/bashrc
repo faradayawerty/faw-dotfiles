@@ -18,6 +18,8 @@ alias gpp="git add .; git commit -m '-'; git push"
 alias mn='pmount'
 alias um='pumount'
 
+alias webcam="ffplay -vf hflip /dev/video0"
+
 alias l='ls -Fh --color=auto --group-directories-first'
 alias ll='clear;ls -lFh --color=auto --group-directories-first'
 alias la='ls -aFh --color=auto --group-directories-first'
