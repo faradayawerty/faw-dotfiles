@@ -10,10 +10,12 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # my directory structure
+mkdir -p ~/Pictures/images
+mkdir -p ~/Pictures/photo
+mkdir -p ~/Tech/gaming
 mkdir -p ~/Tech/devel
 mkdir -p ~/Downloads
 mkdir -p ~/Documents
-mkdir -p ~/Pictures
 mkdir -p ~/Music
 mkdir -p ~/Notes
 mkdir -p ~/Uni

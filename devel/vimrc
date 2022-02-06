@@ -1,6 +1,5 @@
 
 call plug#begin('~/.vim/plugged')
-	Plug 'fxn/vim-monochrome'
 	Plug 'christoomey/vim-system-copy'
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'prabirshrestha/asyncomplete.vim'
@@ -17,11 +16,10 @@ if executable('ccls')
       \ 'cmd': {server_info->['ccls']},
       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
       \ 'initialization_options': {'cache': {'directory': expand('/tmp/ccls-cache') }},
-      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'h', 'hpp'],
       \ })
 endif
 
-colorscheme monochrome
 syntax on
 set path+=**
 set showtabline=1
@@ -46,11 +44,10 @@ set nocompatible
 set nopaste
 set ttimeout
 set ttimeoutlen=10
-set listchars=tab:>-,space:·,eol:~
 set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+set listchars=tab:>-,space:·,eol:~
 
 noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>
@@ -58,12 +55,16 @@ noremap ,p :set paste!<cr>
 noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
 noremap gd :LspDefinition<cr>
 
+set t_Co=16
+colorscheme ron
+
 highlight TabLine ctermbg=none ctermfg=blue cterm=none
 highlight TabLineFill ctermbg=none ctermfg=grey cterm=none
 highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
 highlight search cterm=underline ctermbg=none
 highlight incsearch cterm=underline ctermbg=none
 highlight cursorline ctermfg=none ctermbg=none cterm=none
+highlight cursorlinenr cterm=bold
 highlight colorcolumn ctermbg=blue
 highlight folded ctermfg=grey ctermbg=none
 highlight markdownError guifg=NONE guibg=black

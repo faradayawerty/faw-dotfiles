@@ -14,11 +14,10 @@ alias nf='clear; neofetch'
 alias tmx='tmux new-session -A -s default'
 alias mki='sudo make clean && make && sudo make install'
 alias gpp="git add .; git commit -m '-'; git push"
+alias webcam="ffplay -vf hflip /dev/video0"
 
 alias mn='pmount'
 alias um='pumount'
-
-alias webcam="ffplay -vf hflip /dev/video0"
 
 alias l='ls -Fh --color=auto --group-directories-first'
 alias ll='clear;ls -lFh --color=auto --group-directories-first'
@@ -47,15 +46,7 @@ function todo {
 	done
 }
 
-function ff {
-	file="$(fzf)"
-	[ -z "$file" ] || $EDITOR "$file"
+function aurget {
+	git clone https://aur.archlinux.org/$1
 }
-
-function fd {
-	dir=$(dirname "$(fzf)")
-	[ -z "$dir" ] || cd "$dir"
-}
-
-[ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 > /dev/null
 

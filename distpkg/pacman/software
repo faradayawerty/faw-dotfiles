@@ -1,20 +1,19 @@
-# last update 18 01 2021
+# last update 31 01 2022
 
 # -- devel -- #
-vim tmux w3m
+bash bash-completion vim tmux
 
 # -- text -- #
-acpi wget aria2 youtube-dl neofetch htop cmus newsboat zip unzip fzf libqalculate
+acpi wget youtube-dl neofetch htop cmus newsboat zip unzip libqalculate
 ffmpeg imagemagick
 
 # -- gui -- #
-xorg xorg-xinit
-maim xclip xwallpaper xcompmgr
-xterm sxiv mpv rofi
+xorg xorg-xinit maim xclip xwallpaper xcompmgr brightnessctl rofi
+rxvt-unicode urxvt-perls mpv sxiv zathura zathura-pdf-mupdf zathura-djvu
 
 # -- audio -- #
 pulseaudio pulsemixer pulseaudio-alsa alsa-utils
 
 # -- fonts -- #
-ttf-hack
+ttf-hack 
 
