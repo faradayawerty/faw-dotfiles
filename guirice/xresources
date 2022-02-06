@@ -21,12 +21,12 @@
 *.color11:      #fae3a0
 
 ! blue
-*.color4:       #0b3452
+*.color4:       #046986
 *.color12:      #0f829d
 
 ! magenta
-*.color5:       #2d2031
-*.color13:      #87314e
+*.color5:       #963c59
+*.color13:      #b85e7b
 
 ! cyan
 *.color6:       #356579
@@ -35,7 +35,6 @@
 ! white
 *.color7:       #909090
 *.color15:      #fff0f0
-
 
 URxvt.depth: 32
 URxvt.background: [90]#101010

@@ -24,7 +24,7 @@ set -g status-style fg=brightblue
 set -g status-left ''
 set -g status-right ' #[fg=black,bg=brightblue] #S '
 set -g status-right-length 128
-setw -g window-status-format '#[fg=default,bg=default] #I:#W '
+setw -g window-status-format '#[fg=brightblue,bg=default] #I:#W '
 setw -g window-status-current-format '#[fg=black,bg=brightblue] #I:#W '
 set -g window-status-separator ''
 set-option -g history-limit 1023

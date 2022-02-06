@@ -8,7 +8,7 @@ acpi wget youtube-dl neofetch htop cmus newsboat zip unzip libqalculate
 ffmpeg imagemagick
 
 # -- gui -- #
-xorg xorg-xinit maim xclip xwallpaper xcompmgr brightnessctl rofi
+xorg xorg-xinit maim xclip xwallpaper picom brightnessctl rofi
 rxvt-unicode urxvt-perls mpv sxiv zathura zathura-pdf-mupdf zathura-djvu
 
 # -- audio -- #

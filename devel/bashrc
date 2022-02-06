@@ -11,6 +11,7 @@ bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
 alias nf='clear; neofetch'
+alias nb='newsboat'
 alias tmx='tmux new-session -A -s default'
 alias mki='sudo make clean && make && sudo make install'
 alias gpp="git add .; git commit -m '-'; git push"
@@ -24,15 +25,21 @@ alias ll='clear;ls -lFh --color=auto --group-directories-first'
 alias la='ls -aFh --color=auto --group-directories-first'
 alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
+alias pv="pipe-viewer --resolution 720"
+alias pv240="pipe-viewer --resolution 240"
+alias pv360="pipe-viewer --resolution 360"
+alias pv480="pipe-viewer --resolution 480"
+alias pv720="pipe-viewer --resolution 720"
+
 alias mpv240="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?240]+bestaudio/best'"
 alias mpv360="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?360]+bestaudio/best'"
 alias mpv480="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?480]+bestaudio/best'"
 alias mpv720="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?720]+bestaudio/best'"
 
-alias yd240="youtube-dl --add-metadata -ic -f 'bestvideo[height<=240]+bestaudio/best[height<=240]'"
-alias yd360="youtube-dl --add-metadata -ic -f 'bestvideo[height<=360]+bestaudio/best[height<=360]'"
-alias yd480="youtube-dl --add-metadata -ic -f 'bestvideo[height<=480]+bestaudio/best[height<=480]'"
-alias yd720="youtube-dl --add-metadata -ic -f 'bestvideo[height<=720]+bestaudio/best[height<=720]'"
+alias yd240="yt-dlp --add-metadata -ic -f 'bestvideo[height<=240]+bestaudio/best[height<=240]'"
+alias yd360="yt-dlp --add-metadata -ic -f 'bestvideo[height<=360]+bestaudio/best[height<=360]'"
+alias yd480="yt-dlp --add-metadata -ic -f 'bestvideo[height<=480]+bestaudio/best[height<=480]'"
+alias yd720="yt-dlp --add-metadata -ic -f 'bestvideo[height<=720]+bestaudio/best[height<=720]'"
 
 function cd {
 	builtin cd "$@" && l

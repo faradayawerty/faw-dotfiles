@@ -61,8 +61,8 @@ colorscheme ron
 highlight TabLine ctermbg=none ctermfg=blue cterm=none
 highlight TabLineFill ctermbg=none ctermfg=grey cterm=none
 highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
-highlight search cterm=underline ctermbg=none
-highlight incsearch cterm=underline ctermbg=none
+highlight search cterm=none ctermbg=none ctermfg=none
+highlight incsearch cterm=underline ctermbg=none ctermfg=red
 highlight cursorline ctermfg=none ctermbg=none cterm=none
 highlight cursorlinenr cterm=bold
 highlight colorcolumn ctermbg=blue
