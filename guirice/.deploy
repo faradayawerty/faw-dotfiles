@@ -4,3 +4,6 @@ ln -snf $(realpath xresources) ~/.Xresources
 mkdir -p ~/.config/sxiv/exec/
 ln -snf $(realpath sxiv_key-handler) ~/.config/sxiv/exec/key-handler
 
+cd scripts
+./.deploy
+
