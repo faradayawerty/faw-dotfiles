@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+	Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
 let g:system_copy#copy_command='xclip -sel clipboard'
@@ -14,11 +15,26 @@ if executable('ccls')
    au User lsp_setup call lsp#register_server({
       \ 'name': 'ccls',
       \ 'cmd': {server_info->['ccls']},
-      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
       \ 'initialization_options': {'cache': {'directory': expand('/tmp/ccls-cache') }},
       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'h', 'hpp'],
       \ })
 endif
+
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
+"if executable('omnisharp')
+"    au User lsp_setup call lsp#register_server({
+"        \ 'name': 'omnisharp',
+"        \ 'cmd': {server_info->['omnisharp', '-lsp']},
+"        \ 'allowlist': ['cs'],
+"        \ })
+"endif
 
 syntax on
 set path+=**
@@ -48,12 +64,14 @@ set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
 set listchars=tab:>-,space:·,eol:~
+set completeopt-=preview
 
 noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>
 noremap ,p :set paste!<cr>
 noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
 noremap gd :LspDefinition<cr>
+autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
 
 set t_Co=16
 colorscheme ron
