@@ -39,7 +39,7 @@
 URxvt.depth: 32
 URxvt.background: [90]#101010
 
-URxvt.font: xft:Hack-Regular:size=10
+URxvt.font: xft:Hack-Regular:pixelsize=16
 URxvt.scrollBar: false
 URxvt.perl-ext-common: clipboard,resize-font
 

@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+[ -z "$DMENU" ] && DMENU=dmenu
+
+resolution="$(xrandr | grep "^ .*" | awk '{ print $1 }' | $DMENU)"
+
+xrandr -s "$resolution"
+
+
