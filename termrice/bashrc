@@ -10,6 +10,7 @@ set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
+alias td='rover ~/Notes/todo'
 alias nf='clear; neofetch'
 alias tmx='tmux new-session -A -s default'
 alias mki='sudo make clean && make && sudo make install'
@@ -52,7 +53,5 @@ function todo {
 	done
 }
 
-function aurget {
-	git clone https://aur.archlinux.org/$1
-}
+[ -n "$XTERM_VERSION" ] && [ -z "$TMUX" ] && transset --id "$WINDOWID" 0.9 > /dev/null
 

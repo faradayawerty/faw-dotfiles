@@ -1,23 +1,18 @@
 bind M-g send-prefix
 set-option -g prefix M-g
-
 set-option -g escape-time 0
 set -g mouse off
 set -g base-index 1
 set -g pane-base-index 1
-
 set -g default-terminal 'xterm-256color'
 set -ga terminal-overrides ',*:Tc' # 256 color
 set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
-
 set-window-option -g automatic-rename on
-
 set-option -g message-style fg=brightblue
 set-option -g message-command-style fg=brightblue,bg=black
 set-option -g mode-style fg=black,bg=brightblue
 set -g pane-border-style fg=brightblue
 set -g pane-active-border-style fg=brightblue,bg=brightblue
-
 set-option -g status on
 set-option -g status-position top
 set -g status-style fg=brightblue
@@ -28,12 +23,14 @@ setw -g window-status-format '#[fg=brightblue,bg=default] #I:#W '
 setw -g window-status-current-format '#[fg=black,bg=brightblue] #I:#W '
 set -g window-status-separator ''
 set-option -g history-limit 1023
+set -g status-keys vi
+set-window-option -g mode-keys vi
+
+run '[ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 > /dev/null'
 
 unbind '"'
 unbind '%'
 
-set -g status-keys vi
-set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi Escape send-keys -X stop-selection
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi V send-keys -X select-line

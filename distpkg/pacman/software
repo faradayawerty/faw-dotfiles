@@ -4,7 +4,7 @@
 bash bash-completion vim tmux
 
 # -- text -- #
-acpi wget youtube-dl neofetch htop cmus newsboat zip unzip libqalculate
+acpi wget yt-dlp neofetch htop cmus newsboat zip unzip libqalculate
 ffmpeg imagemagick
 
 # -- gui -- #

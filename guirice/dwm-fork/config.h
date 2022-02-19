@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 0;        /* gaps between windows */
+static const unsigned int gappx     = 12;        /* gaps between windows */
 static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -60,11 +60,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("rofi -show run") },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("uxterm") },
 	{ MODKEY|ControlMask,           XK_Return, spawn,          SHCMD("uxterm -e tmux new-session -A -s default") },
-	{ MODKEY|ControlMask,           XK_c,      spawn,          SHCMD("uxterm -e tty-clock -csC4") },
-	{ MODKEY|ControlMask,           XK_h,      spawn,          SHCMD("uxterm -e htop") },
-	{ MODKEY|ControlMask,           XK_q,      spawn,          SHCMD("uxterm -e qalc") },
-	{ MODKEY|ControlMask,           XK_f,      spawn,          SHCMD("uxterm -e rover") },
-	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("uxterm -e pipe-viewer --resolution 720") },
 	{ MODKEY|ControlMask,           XK_t,      spawn,          SHCMD("telegram-desktop") },
 	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("chromium") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_emoji") },
@@ -79,6 +74,7 @@ static Key keys[] = {
 	{ 0,          XF86XK_AudioMute,            spawn,          SHCMD("amixer -q set Master toggle") },
 	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("brightnessctl set +5%") },
 	{ 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("brightnessctl set 5%-") },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("transset -a -t 0.9") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
