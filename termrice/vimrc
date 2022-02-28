@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
-	"Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
 let g:system_copy#copy_command='xclip -sel clipboard'
@@ -71,7 +70,6 @@ noremap ,w :set list!<cr>
 noremap ,p :set paste!<cr>
 noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
 noremap gd :LspDefinition<cr>
-"autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
 
 set t_Co=16
 colorscheme ron
