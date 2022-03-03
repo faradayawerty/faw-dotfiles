@@ -10,12 +10,15 @@ set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
-alias td='rover ~/Notes/todo'
+alias r='rover'
 alias nf='clear; neofetch'
 alias tmx='tmux new-session -A -s default'
 alias mki='sudo make clean && make && sudo make install'
 alias gpp="git add .; git commit -m '-'; git push"
 alias webcam="ffplay -vf hflip /dev/video0"
+
+alias ff='cd $(find . -not -path "*/.*" -type d | fzf)'
+alias FF='cd $(find . -type d | fzf)'
 
 alias mn='pmount'
 alias um='pumount'
@@ -25,11 +28,11 @@ alias ll='clear;ls -lFh --color=auto --group-directories-first'
 alias la='ls -aFh --color=auto --group-directories-first'
 alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
-alias pv="pipe-viewer --resolution 720"
-alias pv240="pipe-viewer --resolution 240"
-alias pv360="pipe-viewer --resolution 360"
-alias pv480="pipe-viewer --resolution 480"
-alias pv720="pipe-viewer --resolution 720"
+alias pv='tmux rename-window "youtube(720p)" && pipe-viewer --resolution 720'
+alias pv240='tmux rename-window "youtube(240p)" && pipe-viewer --resolution 240'
+alias pv360='tmux rename-window "youtube(360p)" && pipe-viewer --resolution 360'
+alias pv480='tmux rename-window "youtube(480p)" && pipe-viewer --resolution 480'
+alias pv720='tmux rename-window "youtube(720p)" && pipe-viewer --resolution 720'
 
 alias mpv240="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?240]+bestaudio/best'"
 alias mpv360="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?360]+bestaudio/best'"
@@ -54,4 +57,3 @@ function todo {
 }
 
 [ -n "$XTERM_VERSION" ] && [ -z "$TMUX" ] && transset --id "$WINDOWID" 0.9 > /dev/null
-

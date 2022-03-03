@@ -4,11 +4,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+	Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
 let g:system_copy#copy_command='xclip -sel clipboard'
 let g:system_copy#paste_command='xclip -sel clipboard -o'
 let g:system_copy_silent = 1
+let g:lsp_diagnostics_enabled = 0
 
 if executable('ccls')
    au User lsp_setup call lsp#register_server({
@@ -24,14 +26,6 @@ if executable('pyls')
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
         \ 'allowlist': ['python'],
-        \ })
-endif
-
-if executable('omnisharp')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'omnisharp',
-        \ 'cmd': {server_info->['omnisharp', '-lsp']},
-        \ 'allowlist': ['cs'],
         \ })
 endif
 
@@ -53,7 +47,7 @@ set linebreak
 set background=dark
 set foldmethod=indent
 set nofoldenable
-set cursorline
+set nocursorline
 set noexpandtab
 set nocompatible
 set nopaste
@@ -64,26 +58,7 @@ set encoding=utf-8
 set termencoding=utf-8
 set listchars=tab:>-,space:·,eol:~
 set completeopt-=preview
-
-noremap ,S :set spell! spelllang=en,ru<CR>
-noremap ,w :set list!<cr>
-noremap ,p :set paste!<cr>
-noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
-noremap gd :LspDefinition<cr>
-
 set t_Co=16
-colorscheme ron
-
-highlight TabLine ctermbg=none ctermfg=blue cterm=none
-highlight TabLineFill ctermbg=none ctermfg=grey cterm=none
-highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
-highlight search cterm=none ctermbg=none ctermfg=none
-highlight incsearch cterm=underline ctermbg=none ctermfg=red
-highlight cursorline ctermfg=none ctermbg=none cterm=none
-highlight cursorlinenr cterm=bold
-highlight colorcolumn ctermbg=blue
-highlight folded ctermfg=grey ctermbg=none
-highlight markdownError guifg=NONE guibg=black
 
 " return to the same line you left off at
 augroup line_return
@@ -93,4 +68,25 @@ augroup line_return
 		\	execute 'normal! g`"zvzz' |
 		\ endif
 augroup END
+
+colorscheme ron
+
+highlight TabLine ctermbg=none ctermfg=blue cterm=none
+highlight TabLineFill ctermbg=none ctermfg=grey cterm=none
+highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
+highlight search cterm=none ctermbg=none ctermfg=none
+highlight incsearch cterm=underline ctermbg=none ctermfg=red
+highlight cursorline ctermfg=none ctermbg=none cterm=none term=none
+highlight cursorlinenr cterm=bold
+highlight colorcolumn ctermbg=blue
+highlight folded ctermfg=grey ctermbg=none
+highlight markdownError guifg=NONE guibg=black
+
+noremap ,S :set spell! spelllang=en,ru<CR>
+noremap ,w :set list!<cr>
+noremap ,p :set paste!<cr>
+noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
+noremap gd :LspDefinition<cr>
+
+autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
 

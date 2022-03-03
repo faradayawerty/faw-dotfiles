@@ -4,6 +4,19 @@ ln -snf $(realpath xresources) ~/.Xresources
 mkdir -p ~/.config/sxiv/exec/
 ln -snf $(realpath sxiv_key-handler) ~/.config/sxiv/exec/key-handler
 
-cd scripts
-./.deploy
+mkdir -p ~/.local/bin
+mkdir -p ~/.local/share
+
+for i in $(ls scripts/bin)
+do
+     ln -snf $(realpath scripts/bin/$i) ~/.local/bin/$i
+done
+
+for i in $(ls scripts/share)
+do
+     ln -snf $(realpath scripts/share/$i) ~/.local/share/$i
+done
+
+cd dwm-fork
+sudo make clean && make && sudo make install
 

@@ -20,7 +20,6 @@ static const unsigned int alphas[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-//static const char *tags[] = { "1", "2" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -55,13 +54,15 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+static const char terminal[] = "uxterm";
+static const char browser[] = "chromium";
+static const char launcher[] = "rofi -show run";
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("rofi -show run") },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("uxterm") },
-	{ MODKEY|ControlMask,           XK_Return, spawn,          SHCMD("uxterm -e tmux new-session -A -s default") },
-	{ MODKEY|ControlMask,           XK_t,      spawn,          SHCMD("telegram-desktop") },
-	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("chromium") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD(launcher) },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD(terminal) },
+	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD(browser) },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_emoji") },
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("dmenu_unicode") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_resolution") },
@@ -113,9 +114,9 @@ static Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	{ ClkStatusText,        0,              Button1,        spawn,          SHCMD("uxterm") },
-	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD("chromium") },
-	{ ClkStatusText,        0,              Button3,        spawn,          SHCMD("rofi -show run") },
+	{ ClkStatusText,        0,              Button1,        spawn,          SHCMD(terminal) },
+	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD(browser) },
+	{ ClkStatusText,        0,              Button3,        spawn,          SHCMD(launcher) },
 	{ ClkWinTitle,          0,              Button2,        killclient,     {0} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
