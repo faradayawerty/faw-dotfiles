@@ -10,7 +10,6 @@ set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
-alias r='rover'
 alias nf='clear; neofetch'
 alias tmx='tmux new-session -A -s default'
 alias mki='sudo make clean && make && sudo make install'

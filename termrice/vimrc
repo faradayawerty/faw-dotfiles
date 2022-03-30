@@ -1,6 +1,7 @@
 
 call plug#begin('~/.vim/plugged')
 	Plug 'christoomey/vim-system-copy'
+	Plug 'fxn/vim-monochrome'
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -11,6 +12,7 @@ let g:system_copy#copy_command='xclip -sel clipboard'
 let g:system_copy#paste_command='xclip -sel clipboard -o'
 let g:system_copy_silent = 1
 let g:lsp_diagnostics_enabled = 0
+let g:monochrome_italic_comments = 1
 
 if executable('ccls')
    au User lsp_setup call lsp#register_server({
@@ -29,7 +31,23 @@ if executable('pyls')
         \ })
 endif
 
-syntax on
+" return to the same line you left off at
+augroup line_return
+	au!
+	au BufReadPost *
+		\ if line("'\"") > 0 && line("'\"") <= line("$") |
+		\	execute 'normal! g`"zvzz' |
+		\ endif
+augroup END
+
+noremap ,S :set spell! spelllang=en,ru<CR>
+noremap ,w :set list!<cr>
+noremap ,p :set paste!<cr>
+noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
+noremap gd :LspDefinition<cr>
+
+autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
+
 set path+=**
 set showtabline=1
 set foldignore=
@@ -58,35 +76,19 @@ set encoding=utf-8
 set termencoding=utf-8
 set listchars=tab:>-,space:·,eol:~
 set completeopt-=preview
-set t_Co=16
 
-" return to the same line you left off at
-augroup line_return
-	au!
-	au BufReadPost *
-		\ if line("'\"") > 0 && line("'\"") <= line("$") |
-		\	execute 'normal! g`"zvzz' |
-		\ endif
-augroup END
+syntax on
+set t_Co=256
+colorscheme monochrome
 
-colorscheme ron
-
-highlight TabLine ctermbg=none ctermfg=blue cterm=none
-highlight TabLineFill ctermbg=none ctermfg=grey cterm=none
-highlight TabLineSel ctermbg=blue ctermfg=black cterm=none
+highlight TabLine ctermfg=blue ctermbg=none cterm=none
+highlight TabLineFill ctermfg=blue ctermbg=none cterm=none
+highlight TabLineSel ctermfg=blue ctermbg=none cterm=reverse
 highlight search cterm=none ctermbg=none ctermfg=none
 highlight incsearch cterm=underline ctermbg=none ctermfg=red
 highlight cursorline ctermfg=none ctermbg=none cterm=none term=none
 highlight cursorlinenr cterm=bold
-highlight colorcolumn ctermbg=blue
+highlight colorcolumn ctermbg=red
 highlight folded ctermfg=grey ctermbg=none
 highlight markdownError guifg=NONE guibg=black
-
-noremap ,S :set spell! spelllang=en,ru<CR>
-noremap ,w :set list!<cr>
-noremap ,p :set paste!<cr>
-noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
-noremap gd :LspDefinition<cr>
-
-autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
 

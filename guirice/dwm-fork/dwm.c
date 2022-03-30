@@ -2219,7 +2219,7 @@ main(int argc, char *argv[])
 #endif /* __OpenBSD__ */
 	scan();
 
-	system("xsetroot -solid \"#101010\"");
+	system("xsetroot -solid \"#2b303b\"");
 	system("while true; do\nxsetroot -name \" $(dwm_panel) \"\nsleep 20s\ndone &");
 	system("setxkbmap -layout us,ru -option grp:win_space_toggle");
 	system("xrdb ~/.Xresources");

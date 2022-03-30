@@ -9,8 +9,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack-Regular:size=12" };
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { "#d2c5bc", "#101010", "#202020" },
-	[SchemeSel]  = { "#101010", "#0f829d", "#0f829d"  },
+	[SchemeNorm] = { "#c0c5ce", "#2b303b", "#65737e" },
+	[SchemeSel]  = { "#2b303b", "#8fa1b3", "#96b5b4"  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
