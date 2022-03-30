@@ -10,7 +10,7 @@ static const char *fonts[]          = { "Hack-Regular:size=12" };
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { "#c0c5ce", "#2b303b", "#65737e" },
-	[SchemeSel]  = { "#2b303b", "#8fa1b3", "#96b5b4"  },
+	[SchemeSel]  = { "#2b303b", "#8fa1b3", "#bf616a"  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
