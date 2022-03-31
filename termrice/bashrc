@@ -55,4 +55,5 @@ function todo {
 	done
 }
 
-[ -n "$XTERM_VERSION" ] && [ -z "$TMUX" ] && transset --id "$WINDOWID" 0.9 > /dev/null
+#[ -n "$XTERM_VERSION" ] && [ -z "$TMUX" ] && transset --id "$WINDOWID" 0.9 > /dev/null
+
