@@ -4,7 +4,7 @@ mkdir -p ~/.config/rofi
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
 
-ln -snf $(realpath config.rasi) ~/.config/rofi/config.rasi
+ln -snf $(realpath rofi.rasi) ~/.config/rofi/config.rasi
 ln -snf $(realpath xresources) ~/.Xresources
 ln -snf $(realpath sxiv_key-handler) ~/.config/sxiv/exec/key-handler
 

@@ -86,7 +86,7 @@ highlight TabLineFill ctermfg=blue ctermbg=none cterm=none
 highlight TabLineSel ctermfg=blue ctermbg=none cterm=reverse
 highlight search cterm=none ctermbg=none ctermfg=none
 highlight incsearch cterm=underline ctermbg=none ctermfg=red
-highlight cursorline ctermfg=none ctermbg=none cterm=none term=none
+highlight cursorline ctermfg=none ctermbg=none cterm=none
 highlight cursorlinenr cterm=bold
 highlight colorcolumn ctermbg=red
 highlight folded ctermfg=grey ctermbg=none
