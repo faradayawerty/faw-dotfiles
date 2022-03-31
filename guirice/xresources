@@ -38,13 +38,13 @@
 
 UXTerm*renderFont: true
 UXTerm*faceName: Hack-Regular
-UXTerm*faceSize:     14
-UXTerm*faceSize1:    10
-UXTerm*faceSize2:    12
-UXTerm*faceSize3:    14
-UXTerm*faceSize4:    16
-UXTerm*faceSize5:    20
-UXTerm*faceSize6:    24
+UXTerm*faceSize:     13
+UXTerm*faceSize1:    9
+UXTerm*faceSize2:    10
+UXTerm*faceSize3:    13
+UXTerm*faceSize4:    14
+UXTerm*faceSize5:    16
+UXTerm*faceSize6:    20
 UXTerm*utf8: 2
 UXTerm*locale: true
 UXTerm*geometry: 140x40
