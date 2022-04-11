@@ -1,4 +1,3 @@
-
 ! special
 *.foreground:   #c0c5ce
 *.background:   #2b303b
@@ -35,6 +34,13 @@
 ! white
 *.color7:       #c0c5ce
 *.color15:      #eff1f5
+
+dwm.normbordercolor: #65737e
+dwm.normbgcolor: #2b303b
+dwm.normfgcolor: #c0c5ce
+dwm.selbordercolor: #ebcb8b
+dwm.selbgcolor: #8fa1b3
+dwm.selfgcolor: #2b303b
 
 UXTerm*renderFont: true
 UXTerm*faceName: Hack-Regular

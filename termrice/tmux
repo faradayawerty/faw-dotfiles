@@ -1,3 +1,4 @@
+
 bind M-g send-prefix
 set-option -g prefix M-g
 set-option -g escape-time 0
@@ -8,18 +9,18 @@ set -g default-terminal 'xterm-256color'
 set -ga terminal-overrides ',*:Tc' # 256 color
 set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
 set-window-option -g automatic-rename on
-set-option -g message-style fg=brightblue
-set-option -g message-command-style fg=brightblue,bg=black
+set-option -g message-style fg=white
+set-option -g message-command-style fg=white,bg=black
 set-option -g mode-style fg=black,bg=brightblue
 set -g pane-border-style fg=brightblack
 set -g pane-active-border-style fg=yellow
 set-option -g status on
 set-option -g status-position top
-set -g status-style fg=brightblue
+set -g status-style fg=white
 set -g status-left ''
-set -g status-right ' #[fg=black,bg=brightblue] #S '
+set -g status-right ' #[fg=black,bg=blue] #S '
 set -g status-right-length 128
-setw -g window-status-format '#[fg=brightblue,bg=default] #I:#W '
+setw -g window-status-format '#[fg=white,bg=default] #I:#W '
 setw -g window-status-current-format '#[fg=black,bg=brightblue] #I:#W '
 set -g window-status-separator ''
 set-option -g history-limit 1023
@@ -32,8 +33,7 @@ unbind '%'
 bind-key -T copy-mode-vi Escape send-keys -X stop-selection
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi V send-keys -X select-line
-bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
-#bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
 
 bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; split-window -v -p20 "linkgrabber /tmp/tmux-buffer"
 bind-key U capture-pane -S- \; save-buffer /tmp/tmux-buffer \; new-window -n url "linkgrabber /tmp/tmux-buffer"

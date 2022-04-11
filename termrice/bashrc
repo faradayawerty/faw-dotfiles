@@ -11,7 +11,6 @@ bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
 alias nf='clear; neofetch'
-alias tmx='tmux new-session -A -s default'
 alias mki='sudo make clean && make && sudo make install'
 alias gpp="git add .; git commit -m '-'; git push"
 alias webcam="ffplay -vf hflip /dev/video0"
@@ -27,7 +26,7 @@ alias ll='clear;ls -lFh --color=auto --group-directories-first'
 alias la='ls -aFh --color=auto --group-directories-first'
 alias lla='clear;ls -laFh --color=auto --group-directories-first'
 
-alias pv='tmux rename-window "youtube(720p)" && pipe-viewer --resolution 720'
+alias pv='tmux rename-window "youtube(240)" && pipe-viewer --resolution 240'
 alias pv240='tmux rename-window "youtube(240p)" && pipe-viewer --resolution 240'
 alias pv360='tmux rename-window "youtube(360p)" && pipe-viewer --resolution 360'
 alias pv480='tmux rename-window "youtube(480p)" && pipe-viewer --resolution 480'
@@ -55,5 +54,5 @@ function todo {
 	done
 }
 
-#[ -n "$XTERM_VERSION" ] && [ -z "$TMUX" ] && transset --id "$WINDOWID" 0.9 > /dev/null
+[ -n "$(command -v transset)" ] && [ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 > /dev/null
 

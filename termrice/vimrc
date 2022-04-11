@@ -1,18 +1,19 @@
 
 call plug#begin('~/.vim/plugged')
-	Plug 'christoomey/vim-system-copy'
 	Plug 'fxn/vim-monochrome'
+	Plug 'christoomey/vim-system-copy'
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
 	Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
+let g:monochrome_italic_comments = 0
 let g:system_copy#copy_command='xclip -sel clipboard'
 let g:system_copy#paste_command='xclip -sel clipboard -o'
 let g:system_copy_silent = 1
 let g:lsp_diagnostics_enabled = 0
-let g:monochrome_italic_comments = 1
+let g:OmniSharp_server_use_mono = 1
 
 if executable('ccls')
    au User lsp_setup call lsp#register_server({
@@ -21,6 +22,14 @@ if executable('ccls')
       \ 'initialization_options': {'cache': {'directory': expand('/tmp/ccls-cache') }},
       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'h', 'hpp'],
       \ })
+endif
+
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls']},
+        \ 'allowlist': ['go'],
+        \ })
 endif
 
 if executable('pyls')
@@ -45,6 +54,7 @@ noremap ,w :set list!<cr>
 noremap ,p :set paste!<cr>
 noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
 noremap gd :LspDefinition<cr>
+noremap ,g :Goyo<cr>
 
 autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
 
@@ -74,16 +84,16 @@ set ttimeoutlen=10
 set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
-set listchars=tab:>-,space:·,eol:~
+set listchars=tab:>-,space:.,eol:~
 set completeopt-=preview
 set t_Co=256
 
 syntax on
 colorscheme monochrome
 
-highlight TabLine ctermfg=blue ctermbg=none cterm=none
+highlight TabLine ctermbg=none ctermfg=none cterm=none
 highlight TabLineFill ctermfg=blue ctermbg=none cterm=none
-highlight TabLineSel ctermfg=blue ctermbg=none cterm=reverse
+highlight TabLineSel ctermfg=black ctermbg=blue cterm=none
 highlight search cterm=none ctermbg=none ctermfg=none
 highlight incsearch cterm=underline ctermbg=none ctermfg=red
 highlight cursorline ctermfg=none ctermbg=none cterm=none

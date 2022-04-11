@@ -7,11 +7,20 @@ static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack-Regular:size=12" };
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { "#c0c5ce", "#2b303b", "#65737e" },
-	[SchemeSel]  = { "#2b303b", "#8fa1b3", "#ebcb8b"  },
+
+static char normbgcolor[]           = "#222222";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]           = "#bbbbbb";
+static char selfgcolor[]            = "#eeeeee";
+static char selbordercolor[]        = "#005577";
+static char selbgcolor[]            = "#005577";
+
+static char *colors[][3] = {
+       /*               fg           bg           border   */
+       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
+
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
 	[SchemeNorm] = { 0xffU, 0xd0, 0xffU },
@@ -108,6 +117,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("systemctl poweroff") },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("systemctl reboot") },
+	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 };
 
 /* button definitions */

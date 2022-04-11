@@ -4,9 +4,10 @@ mkdir -p ~/.config/rofi
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
 
-ln -snf $(realpath rofi.rasi) ~/.config/rofi/config.rasi
 ln -snf $(realpath xresources) ~/.Xresources
-ln -snf $(realpath sxiv_key-handler) ~/.config/sxiv/exec/key-handler
+ln -snf $(realpath xinitrc) ~/.xinitrc
+ln -snf $(realpath rofi/config.rasi) ~/.config/rofi/config.rasi
+ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
 
 for i in $(ls scripts/bin); do
      ln -snf $(realpath scripts/bin/$i) ~/.local/bin/$i

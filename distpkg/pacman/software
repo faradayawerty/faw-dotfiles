@@ -1,14 +1,14 @@
-# last update 28 02 2022
+# last update 11 04 2022
 
 # -- devel -- #
-bash bash-completion vim tmux links
+bash bash-completion kakoune tmux links
 
 # -- text -- #
 acpi wget yt-dlp neofetch htop cmus newsboat zip unzip libqalculate tree
 
 # -- gui -- #
 xorg xorg-xinit maim xclip brightnessctl rofi
-xterm mpv sxiv zathura zathura-pdf-mupdf zathura-djvu
+xterm mpv sxiv
 
 # -- audio -- #
 pulseaudio pulsemixer pulseaudio-alsa alsa-utils

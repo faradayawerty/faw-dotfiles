@@ -100,7 +100,8 @@ element-icon {
 }
 window {
     padding: 0;
-    border: 0;
+    border: 1;
+    border-color: var(nord13);
     background-color: var(background);
 }
 mainbox {

@@ -1,0 +1,6 @@
+
+setxkbmap -layout us,ru -option grp:win_space_toggle
+xrdb ~/.Xresources
+
+exec dwm
+
