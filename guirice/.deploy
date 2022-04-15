@@ -1,12 +1,10 @@
 
 mkdir -p ~/.config/sxiv/exec/
-mkdir -p ~/.config/rofi
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
 
 ln -snf $(realpath xresources) ~/.Xresources
 ln -snf $(realpath xinitrc) ~/.xinitrc
-ln -snf $(realpath rofi/config.rasi) ~/.config/rofi/config.rasi
 ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
 
 for i in $(ls scripts/bin); do

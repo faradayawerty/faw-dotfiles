@@ -1,6 +1,5 @@
 
 call plug#begin('~/.vim/plugged')
-	Plug 'fxn/vim-monochrome'
 	Plug 'christoomey/vim-system-copy'
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'prabirshrestha/asyncomplete.vim'
@@ -9,11 +8,11 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 let g:monochrome_italic_comments = 0
-let g:system_copy#copy_command='xclip -sel clipboard'
-let g:system_copy#paste_command='xclip -sel clipboard -o'
 let g:system_copy_silent = 1
 let g:lsp_diagnostics_enabled = 0
 let g:OmniSharp_server_use_mono = 1
+let g:system_copy#copy_command='xclip -sel clipboard'
+let g:system_copy#paste_command='xclip -sel clipboard -o'
 
 if executable('ccls')
    au User lsp_setup call lsp#register_server({
@@ -54,9 +53,10 @@ noremap ,w :set list!<cr>
 noremap ,p :set paste!<cr>
 noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
 noremap gd :LspDefinition<cr>
-noremap ,g :Goyo<cr>
 
 autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
+
+syntax on
 
 set path+=**
 set showtabline=1
@@ -72,12 +72,10 @@ set noswapfile
 set hlsearch
 set incsearch
 set linebreak
-set background=dark
 set foldmethod=indent
 set nofoldenable
 set nocursorline
 set noexpandtab
-set nocompatible
 set nopaste
 set ttimeout
 set ttimeoutlen=10
@@ -86,19 +84,30 @@ set encoding=utf-8
 set termencoding=utf-8
 set listchars=tab:>-,space:.,eol:~
 set completeopt-=preview
-set t_Co=256
 
-syntax on
-colorscheme monochrome
+if exists('$TMUX')
 
-highlight TabLine ctermbg=none ctermfg=none cterm=none
-highlight TabLineFill ctermfg=blue ctermbg=none cterm=none
-highlight TabLineSel ctermfg=black ctermbg=blue cterm=none
-highlight search cterm=none ctermbg=none ctermfg=none
-highlight incsearch cterm=underline ctermbg=none ctermfg=red
-highlight cursorline ctermfg=none ctermbg=none cterm=none
-highlight cursorlinenr cterm=bold
-highlight colorcolumn ctermbg=red
-highlight folded ctermfg=grey ctermbg=none
-highlight markdownError guifg=NONE guibg=black
+	set t_Co=16
+	set notermguicolors
+	set background=dark
+
+	colorscheme elflord
+
+	highlight Visual ctermfg=black ctermbg=cyan cterm=none
+	highlight search cterm=none ctermbg=none ctermfg=none
+	highlight incsearch cterm=underline ctermbg=none ctermfg=red
+	highlight cursorline ctermfg=none ctermbg=none cterm=none
+	highlight cursorlinenr cterm=bold
+	highlight TabLine ctermbg=none ctermfg=none cterm=none
+	highlight TabLineFill ctermfg=cyan ctermbg=none cterm=none
+	highlight TabLineSel ctermfg=black ctermbg=cyan cterm=none
+	highlight Pmenu ctermfg=black ctermbg=yellow cterm=none
+	highlight PmenuSel ctermfg=black ctermbg=yellow cterm=reverse
+	highlight PmenuSbar ctermfg=red ctermbg=black cterm=none
+	highlight PmenuThumb ctermfg=red ctermbg=black cterm=reverse
+	highlight colorcolumn ctermbg=red
+	highlight folded ctermfg=grey ctermbg=none
+	highlight markdownError guifg=NONE guibg=black
+
+endif
 
