@@ -11,12 +11,10 @@ bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
 alias nf='clear; neofetch'
+alias tmx='tmux new-session -A -s default'
 alias mki='sudo make clean && make && sudo make install'
 alias gpp="git add .; git commit -m '-'; git push"
 alias webcam="ffplay -vf hflip /dev/video0"
-
-alias ff='cd $(find . -not -path "*/.*" -type d | fzf)'
-alias FF='cd $(find . -type d | fzf)'
 
 alias mn='pmount'
 alias um='pumount'
