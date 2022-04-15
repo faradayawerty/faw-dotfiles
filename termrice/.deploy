@@ -1,10 +1,12 @@
 
 mkdir -p ~/.local/bin
+mkdir -p ~/.newsboat
 
 ln -snf $(realpath bash_profile) ~/.bash_profile
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath tmux) ~/.tmux.conf
 ln -snf $(realpath vimrc) ~/.vimrc
+ln -snf $(realpath newsboat) ~/.newsboat/config
 
 for i in $(ls scripts/bin); do
 	ln -snf $(realpath scripts/bin/$i) ~/.local/bin/$i
