@@ -19,10 +19,10 @@ alias webcam="ffplay -vf hflip /dev/video0"
 alias mn='pmount'
 alias um='pumount'
 
-alias l='exa'
-alias ll='clear; exa -l'
-alias la='exa -a'
-alias lla='clea; exa -la'
+alias l='ls'
+alias ll='clear; ls -l'
+alias la='ls -a'
+alias lla='clea; ls -la'
 
 alias pv='tmux rename-window "youtube(240)" && pipe-viewer --resolution 240'
 alias pv240='tmux rename-window "youtube(240p)" && pipe-viewer --resolution 240'

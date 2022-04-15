@@ -1,5 +1,5 @@
 
-[ -f ~/.wallpaper.jpg] && xcompmgr &
+[ -f ~/.wallpaper.jpg ] && xcompmgr &
 
 xwallpaper --stretch ~/.wallpaper.jpg
 setxkbmap -layout us,ru -option grp:win_space_toggle

@@ -11,17 +11,17 @@ set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
 set-window-option -g automatic-rename on
 set-option -g message-style fg=brightwhite
 set-option -g message-command-style fg=brightwhite,bg=black
-set-option -g mode-style fg=black,bg=brightyellow
+set-option -g mode-style fg=black,bg=brightgreen
 set -g pane-border-style fg=brightblack
-set -g pane-active-border-style fg=brightyellow
+set -g pane-active-border-style fg=brightgreen
 set-option -g status on
 set-option -g status-position top
 set -g status-style fg=brightwhite
 set -g status-left ''
-set -g status-right ' #[fg=black,bg=brightyellow] #S '
+set -g status-right ' #[fg=black,bg=brightgreen] #S '
 set -g status-right-length 128
 setw -g window-status-format '#[fg=brightwhite,bg=default] #I:#W '
-setw -g window-status-current-format '#[fg=black,bg=brightyellow] #I:#W '
+setw -g window-status-current-format '#[fg=black,bg=brightgreen] #I:#W '
 set -g window-status-separator ''
 set-option -g history-limit 1023
 set -g status-keys vi
