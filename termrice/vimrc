@@ -44,14 +44,11 @@ noremap gd :LspDefinition<cr>
 autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
 
 if exists('$TMUX')
-
 	set t_Co=16
 	set notermguicolors
 	set background=dark
-
 	syntax on
 	colorscheme elflord
-
 	highlight Visual ctermfg=black ctermbg=cyan cterm=none
 	highlight search cterm=none ctermbg=none ctermfg=none
 	highlight incsearch cterm=underline ctermbg=none ctermfg=red
@@ -67,7 +64,6 @@ if exists('$TMUX')
 	highlight colorcolumn ctermbg=red
 	highlight folded ctermfg=grey ctermbg=none
 	highlight markdownError guifg=NONE guibg=black
-
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -78,9 +74,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
-let g:monochrome_italic_comments = 0
-let g:system_copy_silent = 1
-let g:lsp_diagnostics_enabled = 0
+let g:system_copy_silent = 0
+let g:lsp_diagnostics_enabled = 1
 let g:OmniSharp_server_use_mono = 1
 
 if executable('xclip')
