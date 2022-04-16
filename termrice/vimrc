@@ -1,63 +1,4 @@
 
-call plug#begin('~/.vim/plugged')
-	Plug 'christoomey/vim-system-copy'
-	Plug 'prabirshrestha/vim-lsp'
-	Plug 'prabirshrestha/asyncomplete.vim'
-	Plug 'prabirshrestha/asyncomplete-lsp.vim'
-	Plug 'OmniSharp/omnisharp-vim'
-call plug#end()
-
-let g:monochrome_italic_comments = 0
-let g:system_copy_silent = 1
-let g:lsp_diagnostics_enabled = 0
-let g:OmniSharp_server_use_mono = 1
-let g:system_copy#copy_command='xclip -sel clipboard'
-let g:system_copy#paste_command='xclip -sel clipboard -o'
-
-if executable('ccls')
-   au User lsp_setup call lsp#register_server({
-      \ 'name': 'ccls',
-      \ 'cmd': {server_info->['ccls']},
-      \ 'initialization_options': {'cache': {'directory': expand('/tmp/ccls-cache') }},
-      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'h', 'hpp'],
-      \ })
-endif
-
-if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'gopls',
-        \ 'cmd': {server_info->['gopls']},
-        \ 'allowlist': ['go'],
-        \ })
-endif
-
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'allowlist': ['python'],
-        \ })
-endif
-
-" return to the same line you left off at
-augroup line_return
-	au!
-	au BufReadPost *
-		\ if line("'\"") > 0 && line("'\"") <= line("$") |
-		\	execute 'normal! g`"zvzz' |
-		\ endif
-augroup END
-
-noremap ,S :set spell! spelllang=en,ru<CR>
-noremap ,w :set list!<cr>
-noremap ,p :set paste!<cr>
-noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
-noremap gd :LspDefinition<cr>
-
-autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
-
-syntax on
-
 set path+=**
 set showtabline=1
 set foldignore=
@@ -85,12 +26,30 @@ set termencoding=utf-8
 set listchars=tab:>-,space:.,eol:~
 set completeopt-=preview
 
+" return to the same line you left off at
+augroup line_return
+	au!
+	au BufReadPost *
+		\ if line("'\"") > 0 && line("'\"") <= line("$") |
+		\	execute 'normal! g`"zvzz' |
+		\ endif
+augroup END
+
+noremap ,S :set spell! spelllang=en,ru<CR>
+noremap ,w :set list!<cr>
+noremap ,p :set paste!<cr>
+noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
+noremap gd :LspDefinition<cr>
+
+autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
+
 if exists('$TMUX')
 
 	set t_Co=16
 	set notermguicolors
 	set background=dark
 
+	syntax on
 	colorscheme elflord
 
 	highlight Visual ctermfg=black ctermbg=cyan cterm=none
@@ -109,5 +68,53 @@ if exists('$TMUX')
 	highlight folded ctermfg=grey ctermbg=none
 	highlight markdownError guifg=NONE guibg=black
 
+endif
+
+call plug#begin('~/.vim/plugged')
+	Plug 'christoomey/vim-system-copy'
+	Plug 'prabirshrestha/vim-lsp'
+	Plug 'prabirshrestha/asyncomplete.vim'
+	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+	Plug 'OmniSharp/omnisharp-vim'
+call plug#end()
+
+let g:monochrome_italic_comments = 0
+let g:system_copy_silent = 1
+let g:lsp_diagnostics_enabled = 0
+let g:OmniSharp_server_use_mono = 1
+
+if executable('xclip')
+	let g:system_copy#copy_command='xclip -sel clipboard'
+	let g:system_copy#paste_command='xclip -sel clipboard -o'
+endif
+
+if has("win32") || has("win16")
+	let g:system_copy#copy_command='clip'
+	let g:system_copy#paste_command='paste'
+endif
+
+if executable('ccls')
+   au User lsp_setup call lsp#register_server({
+      \ 'name': 'ccls',
+      \ 'cmd': {server_info->['ccls']},
+      \ 'initialization_options': {'cache': {'directory': expand('/tmp/ccls-cache') }},
+      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'h', 'hpp'],
+      \ })
+endif
+
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls']},
+        \ 'allowlist': ['go'],
+        \ })
+endif
+
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'allowlist': ['python'],
+        \ })
 endif
 
