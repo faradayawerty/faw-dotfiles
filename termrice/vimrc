@@ -58,8 +58,8 @@ if exists('$TMUX')
 	highlight cursorline ctermfg=none ctermbg=none cterm=none
 	highlight cursorlinenr cterm=bold
 	highlight TabLine ctermbg=none ctermfg=none cterm=none
-	highlight TabLineFill ctermfg=cyan ctermbg=none cterm=none
-	highlight TabLineSel ctermfg=black ctermbg=cyan cterm=none
+	highlight TabLineFill ctermfg=white ctermbg=none cterm=none
+	highlight TabLineSel ctermfg=black ctermbg=green cterm=none
 	highlight Pmenu ctermfg=black ctermbg=yellow cterm=none
 	highlight PmenuSel ctermfg=black ctermbg=yellow cterm=reverse
 	highlight PmenuSbar ctermfg=red ctermbg=black cterm=none
