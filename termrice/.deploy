@@ -2,7 +2,7 @@
 mkdir -p ~/.local/bin
 mkdir -p ~/.newsboat
 
-ln -snf $(realpath bash_profile) ~/.bash_profile
+ln -snf $(realpath bashprofile) ~/.bash_profile
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath tmux) ~/.tmux.conf
 ln -snf $(realpath vimrc) ~/.vimrc

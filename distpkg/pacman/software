@@ -7,8 +7,9 @@ bash bash-completion vim tmux links
 acpi wget yt-dlp neofetch htop cmus newsboat zip unzip libqalculate tree
 
 # -- gui -- #
-xorg xorg-xinit maim xclip brightnessctl rofi
-xterm mpv sxiv
+xorg xorg-xinit maim xclip brightnessctl rofi xcompmgr xwallpaper
+xterm mpv sxiv zathura zathura-pdf-mupdf zathura-djvu
+chromium
 
 # -- audio -- #
 pulseaudio pulsemixer pulseaudio-alsa alsa-utils

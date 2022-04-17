@@ -1,9 +1,18 @@
 
-[ -f ~/.wallpaper.jpg ] && xcompmgr &
-
-xwallpaper --stretch ~/.wallpaper.jpg
 setxkbmap -layout us,ru -option grp:win_space_toggle
+
+[ -f ~/.wallpaper.jpg ] && xcompmgr &
+xwallpaper --stretch ~/.wallpaper.jpg
+
 xrdb ~/.Xresources
+
+cat > "$HOME/.config/zathura/zathurarc" <<- CONF
+    set recolor
+    set recolor-darkcolor "$(xrdb -query | grep $1 foreground | awk '{print $2}' )"
+    set recolor-lightcolor "$(xrdb -query | grep $1 color0: | awk '{print $2}' )"
+    set default-bg "$(xrdb -query | grep $1 color0: | awk '{print $2}' )"
+    map i recolor
+CONF
 
 exec dwm
 

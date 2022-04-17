@@ -24,7 +24,6 @@ alias ll='clear; ls -p -l'
 alias la='ls -p -a'
 alias lla='clear; ls -p -la'
 
-alias pv='tmux rename-window "youtube(240)" && pipe-viewer --resolution 240'
 alias pv240='tmux rename-window "youtube(240p)" && pipe-viewer --resolution 240'
 alias pv360='tmux rename-window "youtube(360p)" && pipe-viewer --resolution 360'
 alias pv480='tmux rename-window "youtube(480p)" && pipe-viewer --resolution 480'
@@ -52,5 +51,5 @@ function todo {
 	done
 }
 
-[ -n "$(command -v transset)" ] && [ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 > /dev/null
+#[ -n "$(command -v transset)" ] && [ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 > /dev/null
 

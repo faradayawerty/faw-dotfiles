@@ -1,4 +1,13 @@
 
+call plug#begin('~/.vim/plugged')
+	Plug 'christoomey/vim-system-copy'
+	Plug 'mkitt/tabline.vim'
+	Plug 'prabirshrestha/vim-lsp'
+	Plug 'prabirshrestha/asyncomplete.vim'
+	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+	Plug 'OmniSharp/omnisharp-vim'
+call plug#end()
+
 set path+=**
 set showtabline=1
 set foldignore=
@@ -43,37 +52,6 @@ noremap gd :LspDefinition<cr>
 
 autocmd FileType cs noremap gd :OmniSharpGotoDefinition<cr>
 
-if exists('$TMUX')
-	set t_Co=16
-	set notermguicolors
-	set background=dark
-	syntax on
-	colorscheme elflord
-	highlight Visual ctermfg=black ctermbg=cyan cterm=none
-	highlight search cterm=none ctermbg=none ctermfg=none
-	highlight incsearch cterm=underline ctermbg=none ctermfg=red
-	highlight cursorline ctermfg=none ctermbg=none cterm=none
-	highlight cursorlinenr cterm=bold
-	highlight TabLine ctermbg=none ctermfg=none cterm=none
-	highlight TabLineFill ctermfg=white ctermbg=none cterm=none
-	highlight TabLineSel ctermfg=black ctermbg=green cterm=none
-	highlight Pmenu ctermfg=black ctermbg=yellow cterm=none
-	highlight PmenuSel ctermfg=black ctermbg=yellow cterm=reverse
-	highlight PmenuSbar ctermfg=red ctermbg=black cterm=none
-	highlight PmenuThumb ctermfg=red ctermbg=black cterm=reverse
-	highlight colorcolumn ctermbg=red
-	highlight folded ctermfg=grey ctermbg=none
-	highlight markdownError guifg=NONE guibg=black
-endif
-
-call plug#begin('~/.vim/plugged')
-	Plug 'christoomey/vim-system-copy'
-	Plug 'prabirshrestha/vim-lsp'
-	Plug 'prabirshrestha/asyncomplete.vim'
-	Plug 'prabirshrestha/asyncomplete-lsp.vim'
-	Plug 'OmniSharp/omnisharp-vim'
-call plug#end()
-
 let g:system_copy_silent = 0
 let g:lsp_diagnostics_enabled = 1
 let g:OmniSharp_server_use_mono = 1
@@ -88,11 +66,10 @@ if has("win32") || has("win16")
 	let g:system_copy#paste_command='paste'
 endif
 
-if executable('ccls')
+if executable('clangd')
    au User lsp_setup call lsp#register_server({
-      \ 'name': 'ccls',
-      \ 'cmd': {server_info->['ccls']},
-      \ 'initialization_options': {'cache': {'directory': expand('/tmp/ccls-cache') }},
+      \ 'name': 'clangd',
+      \ 'cmd': {server_info->['clangd']},
       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'h', 'hpp'],
       \ })
 endif
@@ -111,5 +88,28 @@ if executable('pyls')
         \ 'cmd': {server_info->['pyls']},
         \ 'allowlist': ['python'],
         \ })
+endif
+
+if exists('$TMUX')
+	set t_Co=16
+	set notermguicolors
+	set background=dark
+	syntax on
+	colorscheme elflord
+	highlight Visual ctermfg=black ctermbg=cyan cterm=none
+	highlight search cterm=none ctermbg=none ctermfg=none
+	highlight incsearch cterm=underline ctermbg=none ctermfg=red
+	highlight cursorline ctermfg=none ctermbg=none cterm=none
+	highlight cursorlinenr cterm=bold
+	highlight TabLine ctermbg=none ctermfg=none cterm=none
+	highlight TabLineFill ctermfg=white ctermbg=none cterm=none
+	highlight TabLineSel ctermfg=black ctermbg=green cterm=none
+	highlight Pmenu ctermfg=white ctermbg=darkgrey cterm=none
+	highlight PmenuSel ctermfg=white ctermbg=darkgrey cterm=reverse
+	highlight PmenuSbar ctermfg=white ctermbg=darkgrey cterm=none
+	highlight PmenuThumb ctermfg=white ctermbg=darkgrey cterm=reverse
+	highlight colorcolumn ctermbg=red
+	highlight folded ctermfg=grey ctermbg=none
+	highlight markdownError guifg=NONE guibg=black
 endif
 

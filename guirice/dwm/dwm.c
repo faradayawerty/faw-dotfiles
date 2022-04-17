@@ -2284,7 +2284,6 @@ main(int argc, char *argv[])
 #endif /* __OpenBSD__ */
 	scan();
 
-	system("xsetroot -solid \"#2b303b\"");
 	system("while true; do\nxsetroot -name \" $(dwm_panel) \"\nsleep 20s\ndone &");
 
 	run();

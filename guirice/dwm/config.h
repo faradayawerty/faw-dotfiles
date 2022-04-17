@@ -74,7 +74,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD(browser) },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_emoji") },
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("dmenu_unicode") },
-	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_resolution") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("dmenu_resolution") },
 	{ 0,                            XK_Print,  spawn,          SHCMD("screen") },
 	{ MODKEY,             XK_bracketleft,      spawn,          SHCMD("cmus-remote -r") },
 	{ MODKEY,             XK_bracketright,     spawn,          SHCMD("cmus-remote -n") },
