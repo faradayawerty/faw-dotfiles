@@ -1,6 +1,6 @@
 
 dir=~/Pictures/screenshots
-name=$dir/screenshot$(date +\"%d-%m-%H-%M-%S\").png
+name=$dir/screenshot$(date +"%d-%m-%H-%M-%S").png
 mkdir -p $dir
 
 maim -s $name

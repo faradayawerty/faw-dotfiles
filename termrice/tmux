@@ -1,7 +1,5 @@
 
-bind M-g send-prefix
 set -g prefix M-g
-
 set -g escape-time 0
 set -g mouse off
 set -g base-index 1
@@ -19,10 +17,11 @@ set -g status-position top
 set -g status-style fg=white
 set -g status-left ''
 set -g status-right ' #[fg=black,bg=green] #S '
-set -g status-right-length 128
+set -g status-right-length 256
 set -g window-status-separator ''
 set -g history-limit 1023
 set -g status-keys vi
+
 setw -g mode-keys vi
 setw -g automatic-rename on
 setw -g window-status-format '#[fg=white,bg=default] #I:#W '
@@ -30,6 +29,9 @@ setw -g window-status-current-format '#[fg=black,bg=green] #I:#W '
 
 unbind '"'
 unbind '%'
+unbind 0
+
+bind M-g send-prefix
 bind-key -T copy-mode-vi Escape send-keys -X stop-selection
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi V send-keys -X select-line
@@ -56,7 +58,6 @@ bind-key -n M-h select-pane -L
 bind-key -n M-j select-pane -D
 bind-key -n M-k select-pane -U
 bind-key -n M-l select-pane -R
-unbind 0
 bind-key 1 if-shell 'tmux select-window -t :1' '' 'new-window -t :1'
 bind-key 2 if-shell 'tmux select-window -t :2' '' 'new-window -t :2'
 bind-key 3 if-shell 'tmux select-window -t :3' '' 'new-window -t :3'

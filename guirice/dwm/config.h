@@ -84,6 +84,7 @@ static Key keys[] = {
 	{ 0,          XF86XK_AudioMute,            spawn,          SHCMD("amixer -q set Master toggle") },
 	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("brightnessctl set +5%") },
 	{ 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("brightnessctl set 5%-") },
+	{ MODKEY,                       XK_x,      spawn,          SHCMD("toggle_xcompmgr") },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("transset -a -t 0.9") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
