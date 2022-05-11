@@ -43,13 +43,28 @@ function cd {
 	builtin cd "$@" && l
 }
 
-function todo {
+function create-todo {
 	for i in {00..23}; do
 		for j in 00 20 40; do
 			echo "$i:$j"
 		done
 	done
 }
+
+function todo {
+	todo_dir=~/Notes/todo.d
+	general_todo_file=~/Notes/todo.md
+	tasks_file=~/Notes/tasks.md
+	mkdir -p $todo_dir
+	today_file=$todo_dir/$(date +'%Y-%m-%d')
+	next_day_file=$todo_dir/$(date -d '+1 day' +'%Y-%m-%d')
+	prev_day_file=$todo_dir/$(date -d '-1 day' +'%Y-%m-%d')
+	[ -f $today_file ] || create-todo > $today_file
+	[ -f $next_day_file ] || create-todo > $next_day_file
+	[ -f $prev_day_file ] || create-todo > $prev_day_file
+	vim -p $general_todo_file $tasks_file $prev_day_file $today_file $next_day_file
+}
+
 
 #[ -n "$(command -v transset)" ] && [ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 > /dev/null
 
