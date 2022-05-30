@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
 	Plug 'OmniSharp/omnisharp-vim'
+	Plug 'vim-skk/skk.vim'
 call plug#end()
 
 set path+=**
@@ -59,6 +60,7 @@ autocmd FileType tex set shiftwidth=2
 let g:system_copy_silent = 0
 let g:lsp_diagnostics_enabled = 1
 let g:OmniSharp_server_use_mono = 1
+let g:skk_large_jisyo = '/usr/share/skk/SKK-JISYO.L'
 
 if executable('xclip')
 	let g:system_copy#copy_command='xclip -sel clipboard'
@@ -99,8 +101,9 @@ if exists('$TMUX')
 	set notermguicolors
 	set background=dark
 	syntax on
-	colorscheme elflord
+	colorscheme torte
 	highlight Visual ctermfg=black ctermbg=cyan cterm=none
+	highlight LineNr ctermfg=yellow ctermbg=none cterm=none
 	highlight search cterm=none ctermbg=none ctermfg=none
 	highlight incsearch cterm=underline ctermbg=none ctermfg=red
 	highlight cursorline ctermfg=none ctermbg=none cterm=none

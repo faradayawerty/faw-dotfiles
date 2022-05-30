@@ -52,6 +52,7 @@ function create-todo {
 }
 
 function todo {
+	tmux rename-window 'todo'
 	todo_dir=~/Notes/todo.d
 	general_todo_file=~/Notes/todo.md
 	tasks_file=~/Notes/tasks.md
