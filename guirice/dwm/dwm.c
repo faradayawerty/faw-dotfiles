@@ -1064,11 +1064,11 @@ loadxrdb()
 				XRDB_LOAD_COLOR("dwm.background", normbgcolor);
 				XRDB_LOAD_COLOR("dwm.foreground", normfgcolor);
 
-				XRDB_LOAD_COLOR("dwm.color10", selbgcolor);
+				XRDB_LOAD_COLOR("dwm.color4", selbgcolor);
 				XRDB_LOAD_COLOR("dwm.color0", selfgcolor);
 
 				XRDB_LOAD_COLOR("dwm.color8", normbordercolor);
-				XRDB_LOAD_COLOR("dwm.color11", selbordercolor);
+				XRDB_LOAD_COLOR("dwm.color6", selbordercolor);
 			}
 
 		}

@@ -9,14 +9,14 @@ set -ga terminal-overrides ',*:Tc' # 256 color
 set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # cursor shape
 set -g message-style fg=white
 set -g message-command-style fg=white,bg=black
-set -g mode-style fg=black,bg=green
+set -g mode-style fg=black,bg=blue
 set -g pane-border-style fg=brightblack
-set -g pane-active-border-style fg=green
+set -g pane-active-border-style fg=blue
 set -g status on
 set -g status-position top
 set -g status-style fg=white
 set -g status-left ''
-set -g status-right ' #[fg=black,bg=green] #S '
+set -g status-right ' #[fg=black,bg=blue] #S '
 set -g status-right-length 256
 set -g window-status-separator ''
 set -g history-limit 1023
@@ -25,7 +25,7 @@ set -g status-keys vi
 setw -g mode-keys vi
 setw -g automatic-rename on
 setw -g window-status-format '#[fg=white,bg=default] #I:#W '
-setw -g window-status-current-format '#[fg=black,bg=green] #I:#W '
+setw -g window-status-current-format '#[fg=black,bg=blue] #I:#W '
 
 unbind '"'
 unbind '%'
