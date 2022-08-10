@@ -1,9 +1,10 @@
 
+mkdir -p ~/.Pictures
 mkdir -p ~/.config/sxiv/exec/
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
 
-ln -snf $(realpath wallpaper.jpg) ~/.wallpaper.jpg
+ln -snf $(realpath wallpaper.jpg) ~/Pictures/wallpaper.jpg
 ln -snf $(realpath xresources) ~/.Xresources
 ln -snf $(realpath xinitrc) ~/.xinitrc
 ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler

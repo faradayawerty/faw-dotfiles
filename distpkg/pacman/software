@@ -1,20 +1,24 @@
 # last update 31 05 2022
 
 # -- devel -- #
-bash bash-completion vim tmux links
+bash bash-completion vi tmux links
 
 # -- text -- #
 acpi wget yt-dlp neofetch htop cmus newsboat zip unzip libqalculate tree
+ffmpeg imagemagick
 
 # -- gui -- #
 xorg xorg-xinit maim xclip brightnessctl rofi xcompmgr xwallpaper
 xterm mpv sxiv zathura zathura-pdf-mupdf zathura-djvu
-fcitx fcitx-configtool fcitx-qt5 fcitx-qt6 fcitx-mozc
-chromium telegram-desktop
+chromium telegram-desktop krita
 
 # -- audio -- #
 pulseaudio pulsemixer pulseaudio-alsa alsa-utils
 
 # -- fonts -- #
 ttf-hack noto-fonts noto-fonts-extra noto-fonts-cjk noto-fonts-emoji
+
+# -- dev -- #
+kakoune kak-lsp
+clang python python-pip jdk8-openjdk jdk-openjdk go gopls lua lua-language-server
 

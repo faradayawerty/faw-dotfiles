@@ -1,0 +1,30 @@
+
+# -- general -- #
+set global indentwidth 0
+set global aligntab true
+set global tabstop 6
+
+add-highlighter global/ number-lines
+add-highlighter global/ show-whitespaces
+#add-highlighter global/ column 80 default,blue
+
+face global MenuBackground yellow,default
+face global MenuForeground black,yellow
+face global PrimarySelection black,cyan
+face global SecondarySelection black,magenta
+
+# -- plugins -- #
+nop %sh{
+	mkdir -p "$kak_config/autoload"
+	ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"
+}
+
+hook global WinCreate .* %{ kakboard-enable }
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
+	hook global WinSetOption filetype=(python|go|c|cpp|lua) %{
+	lsp-enable-window
+	lsp-auto-hover-enable
+	set global lsp_hover_max_lines 16
+}
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+mkdir -p ~/.config/kak
+ln -snf $(realpath kakrc) ~/.config/kak/kakrc
+
+mkdir -p ~/.config/kak-lsp
+ln -snf $(realpath kak-lsp.toml) ~/.config/kak-lsp/kak-lsp.toml
+
+mkdir -p ~/.config/kak/autoload
+cp -r autoload/* ~/.config/kak/autoload/
+
