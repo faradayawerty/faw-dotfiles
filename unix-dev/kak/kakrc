@@ -6,12 +6,13 @@ set global tabstop 6
 
 add-highlighter global/ number-lines
 add-highlighter global/ show-whitespaces
-#add-highlighter global/ column 80 default,blue
+add-highlighter global/ column 80 default,red
 
 face global MenuBackground yellow,default
 face global MenuForeground black,yellow
 face global PrimarySelection black,cyan
 face global SecondarySelection black,magenta
+face global Information yellow,default
 
 # -- plugins -- #
 nop %sh{
@@ -20,11 +21,4 @@ nop %sh{
 }
 
 hook global WinCreate .* %{ kakboard-enable }
-
-eval %sh{kak-lsp --kakoune -s $kak_session}
-	hook global WinSetOption filetype=(python|go|c|cpp|lua) %{
-	lsp-enable-window
-	lsp-auto-hover-enable
-	set global lsp_hover_max_lines 16
-}
 
