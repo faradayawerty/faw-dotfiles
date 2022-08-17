@@ -9,11 +9,3 @@ ln -snf $(realpath xresources) ~/.Xresources
 ln -snf $(realpath xinitrc) ~/.xinitrc
 ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
 
-for i in $(ls scripts/bin); do
-     ln -snf $(realpath scripts/bin/$i) ~/.local/bin/$i
-done
-
-for i in $(ls scripts/share); do
-     ln -snf $(realpath scripts/share/$i) ~/.local/share/$i
-done
-

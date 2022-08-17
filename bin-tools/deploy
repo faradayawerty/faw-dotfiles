@@ -1,0 +1,9 @@
+
+for i in $(ls bin); do
+	ln -snf $(realpath scripts/bin/$i) ~/.local/bin/$i
+done
+
+for i in $(ls share); do
+	ln -snf $(realpath scripts/share/$i) ~/.local/share/$i
+done
+

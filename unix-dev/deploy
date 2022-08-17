@@ -1,6 +1,6 @@
 
-mkdir -p ~/.config/kak/autoload
 mkdir -p ~/.local/bin
+mkdir -p ~/.config/kak/autoload
 
 cp -r kak/autoload/* ~/.config/kak/autoload/
 
@@ -8,8 +8,4 @@ ln -snf $(realpath kak/kakrc) ~/.config/kak/kakrc
 ln -snf $(realpath bash_profile) ~/.bash_profile
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath tmux.conf) ~/.tmux.conf
-
-for i in $(ls scripts/bin); do
-	ln -snf $(realpath scripts/bin/$i) ~/.local/bin/$i
-done
 
