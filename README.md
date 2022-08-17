@@ -4,7 +4,8 @@
 
 ## installation
 ```
-git clone https://github.com/faradayawerty
+git clone https://github.com/faradayawerty/dotfiles
+cd dotfiles
 
 cd unix-dev
 ./deploy
