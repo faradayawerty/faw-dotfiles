@@ -3,7 +3,7 @@ xcompmgr &
 
 setxkbmap -layout us,ru -option grp:win_space_toggle
 setx b off
-xwallpaper --stretch ~/Pictures/wallpaper.jpg
+xwallpaper --stretch ~/pictures/wallpaper.jpg
 xrdb ~/.Xresources
 
 exec dwm

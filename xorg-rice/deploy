@@ -7,5 +7,11 @@ mkdir -p ~/.local/share
 ln -snf $(realpath wallpaper.jpg) ~/pictures/wallpaper.jpg
 ln -snf $(realpath xresources) ~/.Xresources
 ln -snf $(realpath xinitrc) ~/.xinitrc
-ln -snf $(realpath sxiv/key-handler) ~/.config/sxiv/exec/key-handler
+ln -snf $(realpath sxiv_key-handler) ~/.config/sxiv/exec/key-handler
+
+cp dwm.zip /tmp
+cd /tmp
+unzip dwm.zip
+cd dwm
+sudo make clean && make && sudo make install
 
