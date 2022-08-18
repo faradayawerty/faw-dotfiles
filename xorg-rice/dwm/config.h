@@ -81,9 +81,8 @@ static Key keys[] = {
 	{ MODKEY,             XK_backslash,        spawn,          SHCMD("cmus-remote -u") },
 	{ MODKEY,                       XK_equal,  spawn,          SHCMD("amixer set Master 5%+") },
 	{ MODKEY,                       XK_minus,  spawn,          SHCMD("amixer set Master 5%-") },
-	{ 0,          XF86XK_AudioMute,            spawn,          SHCMD("amixer -q set Master toggle") },
-	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("brightnessctl set +5%") },
-	{ 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("brightnessctl set 5%-") },
+	{ MODKEY,                       XK_equal,  spawn,          SHCMD("brightnessctl set +5%") },
+	{ MODKEY,                       XK_minus,  spawn,          SHCMD("brightnessctl set 5%-") },
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("toggle_xcompmgr") },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("transset -a -t 0.9") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -116,8 +115,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY,                       XK_q,      quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("systemctl poweroff") },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("systemctl reboot") },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("poweroff") },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("reboot") },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 };
 
