@@ -1,11 +1,8 @@
 
-mkdir -p ~/.local/bin
-mkdir -p ~/.config/kak/autoload
-
-cp -r kak/autoload/* ~/.config/kak/autoload/
-
-ln -snf $(realpath kak/kakrc) ~/.config/kak/kakrc
+ln -snf $(realpath vimrc) ~/.vimrc
 ln -snf $(realpath bash_profile) ~/.bash_profile
 ln -snf $(realpath bashrc) ~/.bashrc
 ln -snf $(realpath tmux.conf) ~/.tmux.conf
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 

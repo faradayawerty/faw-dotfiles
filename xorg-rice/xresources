@@ -39,7 +39,7 @@
 UXTerm*renderFont: true
 UXTerm*faceName: Hack-Regular
 UXTerm*faceSize:     12
-UXTerm*faceSize1:    8
+UXTerm*faceSize1:    7
 UXTerm*faceSize2:    12
 UXTerm*faceSize3:    15
 UXTerm*faceSize4:    18
