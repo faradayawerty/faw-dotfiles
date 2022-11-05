@@ -10,7 +10,7 @@
 # emoji_list=path/to/emoji.list dmenuemoji
 
 
-[ -z $emoji_list ] && emoji_list=~/.local/share/dmenuemoji/emoji.list
+[ -z $emoji_list ] && emoji_list=~/.local/share/faw_dmenuemoji/emoji.list
 [ -z "$DMENU" ] && DMENU=dmenu
 
 # grab character using dmenu

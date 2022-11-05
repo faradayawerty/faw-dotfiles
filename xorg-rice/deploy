@@ -10,7 +10,7 @@ ln -snf $(realpath xinitrc) ~/.xinitrc
 ln -snf $(realpath sxiv_key-handler) ~/.config/sxiv/exec/key-handler
 
 ans="n"
-read -p "do you want to compile dwm? (y/N) " ans
+read -p "compile dwm? (y/N) " ans
 
 [ "$ans" = "n" ] && exit
 

@@ -1,3 +1,0 @@
-# install apt packages
-sudo xbps-install -Su $(sed s/#.*// software | sed /^$/d)
-
