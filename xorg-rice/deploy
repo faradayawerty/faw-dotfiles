@@ -14,9 +14,9 @@ read -p "do you want to compile dwm? (y/N) " ans
 
 [ "$ans" = "n" ] && exit
 
-cp dwm.zip /tmp
+cp faw_dwm.zip /tmp
 cd /tmp
-unzip dwm.zip
+unzip faw_dwm.zip
 cd dwm
 sudo make clean && make && sudo make install
 cd ..

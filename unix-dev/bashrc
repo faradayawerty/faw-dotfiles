@@ -31,6 +31,10 @@ alias mki="sudo make clean && make && sudo make install"
 alias cpu="clear; cpufetch"
 alias nf="clear; neofetch"
 
+function aurget {
+	git clone "https://aur.archlinux.org/$1.git"
+}
+
 function cd {
 	builtin cd "$@" && l
 }
