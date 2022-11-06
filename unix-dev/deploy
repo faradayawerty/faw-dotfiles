@@ -1,4 +1,15 @@
 
+bupath=~/.cache/faw_backup/unix-dev
+
+mkdir -p $bupath
+
+cp ~/.vimrc $bupath/vimrc
+cp ~/.bashrc $bupath/bashrc
+cp ~/.bash_profile $bupath/bash_profile
+cp ~/.tmux.conf $bupath/tmux.conf
+
+echo -e "\nnote: unix-dev backups are stored at $bupath\n"
+
 ln -snf $(realpath vimrc) ~/.vimrc
 ln -snf $(realpath bash_profile) ~/.bash_profile
 ln -snf $(realpath bashrc) ~/.bashrc
