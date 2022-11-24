@@ -1,4 +1,4 @@
 
-* .c linguist-vendored
-* .h linguist-vendored
+*.c linguist-vendored=true
+*.h linguist-vendored=true
 
