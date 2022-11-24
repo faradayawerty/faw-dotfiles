@@ -1,4 +1,6 @@
 
+linguist-vendored=false
 *.c linguist-vendored=true
 *.h linguist-vendored=true
+*.roff linguist-vendored=true
 
