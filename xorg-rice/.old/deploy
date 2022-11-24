@@ -1,0 +1,33 @@
+#!/bin/bash
+
+bupath=~/.cache/faw_backup/xorg-rice
+
+mkdir -p $bupath
+mkdir -p ~/pictures
+mkdir -p ~/.config/sxiv/exec/
+mkdir -p ~/.local/bin
+mkdir -p ~/.local/share
+
+cp ~/pictures/wallpaper.jpg $bupath
+cp .Xresources $bupath
+cp ~/.xinitrc $bupath
+cp ~/.config/sxiv/exec/key-handler $bupath
+
+echo -e "\nnote: xorg-rice backups are stored at $bupath\n"
+
+ln -snf $(realpath wallpaper.jpg) ~/pictures/wallpaper.jpg
+ln -snf $(realpath xresources) ~/.Xresources
+ln -snf $(realpath xinitrc) ~/.xinitrc
+ln -snf $(realpath sxiv_key-handler) ~/.config/sxiv/exec/key-handler
+
+read -p "compile dwm? (y/N) " ans
+[ "$ans" = "y" ] || exit
+
+cp faw_dwm.zip /tmp
+cd /tmp
+unzip faw_dwm.zip
+cd dwm
+sudo make clean && make && sudo make install
+cd ..
+rm -r dwm
+

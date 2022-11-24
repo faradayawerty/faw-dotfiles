@@ -1,0 +1,72 @@
+
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #111111
+*.color8:       #666666
+
+! red
+*.color1:       #d36265
+*.color9:       #ef8171
+
+! green
+*.color2:       #aece91
+*.color10:      #cfefb3
+
+! yellow
+*.color3:       #e7e18c
+*.color11:      #fff796
+
+! blue
+*.color4:       #5297cf
+*.color12:      #74b8ef
+
+! magenta
+*.color5:       #963c59
+*.color13:      #b85e7b
+
+! cyan
+*.color6:       #5e7175
+*.color14:      #a3babf
+
+! white
+*.color7:       #bebebe
+*.color15:      #ffffff
+
+UXTerm*renderFont: true
+UXTerm*faceName: Hack-Regular
+UXTerm*faceSize:     12
+UXTerm*faceSize1:    7
+UXTerm*faceSize2:    12
+UXTerm*faceSize3:    15
+UXTerm*faceSize4:    18
+UXTerm*faceSize5:    21
+UXTerm*faceSize6:    24
+UXTerm*utf8: 2
+UXTerm*locale: true
+UXTerm*geometry: 140x40
+UXTerm*BorderWidth: 0
+UXTerm.termName: xterm-256color
+UXTerm*vt100.metaSendsEscape: true
+UXTerm.vt100.translations: #override \n\
+  Ctrl Shift <Key>K: smaller-vt-font() \n\
+  Ctrl Shift <Key>J: larger-vt-font() \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
+URxvt.depth: 32
+URxvt.background: [90]#101010
+URxvt.font: xft:Hack-Regular:pixelsize=16
+URxvt.scrollBar: false
+URxvt.perl-ext-common: clipboard,resize-font
+URxvt.clipboard.autocopy: false
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.C-K: resize-font:smaller
+URxvt.keysym.C-J: resize-font:bigger
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+

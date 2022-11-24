@@ -1,14 +1,9 @@
 #!/bin/bash
 
-cd unix-dev
-./deploy
-cd ..
-
-cd xorg-rice
-./deploy
-cd ..
-
-cd bin-tools
-./deploy
-cd ..
+for i in bin-tools xorg-rice unix-dev; do
+	echo deploying $i...
+	cd $i
+	./deploy
+	cd ..
+done
 
