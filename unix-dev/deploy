@@ -1,6 +1,6 @@
+#!/bin/bash
 
 bupath=~/.cache/faw_backup/unix-dev
-
 mkdir -p $bupath
 
 cp ~/.vimrc $bupath/vimrc

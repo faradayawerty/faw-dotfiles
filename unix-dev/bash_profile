@@ -3,7 +3,6 @@
 source ~/.bashrc
 
 export EDITOR=vim
-export DMENU="rofi -dmenu"
 export GOPATH=~/.go
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 

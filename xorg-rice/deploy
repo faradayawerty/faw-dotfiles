@@ -1,0 +1,15 @@
+#!/bin/bash
+
+bupath=~/.cache/faw_backup/xorg-rice
+mkdir -p $bupath
+
+cp ~/.wallpaper.jpg $bupath/wallpaper.jpg
+
+echo -e "\nnote: xorg-rice backups are stored at $bupath\n"
+
+ln -snf $(realpath wallpaper.jpg) ~/.wallpaper.jpg
+
+cd suckless
+./deploy
+cd ..
+

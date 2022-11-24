@@ -1,5 +1,0 @@
-xcompmgr &
-setxkbmap -layout us,ru -option grp:win_space_toggle
-setx b off
-exec dwm
-
