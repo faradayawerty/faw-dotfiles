@@ -8,16 +8,13 @@ The basics I usually need on my linux installations.
 Love to keep things minimal.
 
 #### dependencies
-* gcc - for building dwm
-* make - for building dwm
-* maim - screenshoting
-* xterm - terminal emulator
-* xorg-transset - transparency
+* vim - text editor
+* tmux - terminal multiplexter
+* gcc - for building suckless tools
+* make - for building suckless tools
 * xcompmgr - compositing
 * xwallpaper - wallpaper setter
-* tmux - terminal multiplexter
-* vim - text editor
-* rofi - scripts with dialog menus
+* maim - screenshoting
 * acpi - battery info on dwm panel
 * xclip - clipboard manager
 
