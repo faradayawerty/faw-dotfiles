@@ -47,5 +47,12 @@ function todo {
 	done
 }
 
-[ -n "$(command -v transset)" ] && [ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 > /dev/null
+function alm {
+	cmd="mpv ~/alarm.mp3"
+	echo "$cmd" | at 5:40 tommorow
+	echo "$cmd" | at 6:00 tommorow
+	echo "$cmd" | at 6:20 tommorow
+	echo "$cmd" | at 6:40 tommorow
+	echo "$cmd" | at 7:00 tommorow
+}
 
