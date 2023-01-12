@@ -68,7 +68,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("faw_dmenu_emoji") },
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("faw_dmenu_unicode") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("faw_dmenu_resolution") },
-	{ 0,                            XK_Print,  spawn,          SHCMD("faw_screen") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("faw_screen") },
 	{ MODKEY,             XK_bracketleft,      spawn,          SHCMD("cmus-remote -r") },
 	{ MODKEY,             XK_bracketright,     spawn,          SHCMD("cmus-remote -n") },
 	{ MODKEY,             XK_backslash,        spawn,          SHCMD("cmus-remote -u") },

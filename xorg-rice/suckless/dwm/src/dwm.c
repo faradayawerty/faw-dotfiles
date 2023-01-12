@@ -2212,7 +2212,7 @@ main(int argc, char *argv[])
 	scan();
 
 	system("setxkbmap -layout us,ru -option grp:win_space_toggle");
-	system("xwallpaper --stretch ~/.wallpaper.jpg && xcompmgr&");
+	system("xwallpaper --stretch ~/.wallpaper.jpg && xcompmgr &");
 	system("while true; do\nxsetroot -name \" $(faw_dwm_panel) \"\nsleep 20s\ndone &");
 
 	run();
@@ -2220,3 +2220,4 @@ main(int argc, char *argv[])
 	XCloseDisplay(dpy);
 	return EXIT_SUCCESS;
 }
+
