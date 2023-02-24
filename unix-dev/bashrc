@@ -47,9 +47,3 @@ function todo {
 	done
 }
 
-function alarm {
-	atrm $(atq | cut -f1)
-	(echo "mpv ~/.alarm.mp3" | at 05:00 tomorrow)
-	(echo "mpv ~/.alarm.mp3" | at 07:00 tomorrow)
-}
-
