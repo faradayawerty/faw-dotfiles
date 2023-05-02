@@ -7,11 +7,11 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack-Mono:size=12" };
-static const char col_gray1[]       = "#202020";
-static const char col_gray2[]       = "#606060";
-static const char col_gray3[]       = "#909090";
-static const char col_gray4[]       = "#fff0f0";
-static const char col_blue[]        = "#7491a1";
+static const char col_gray1[]       = "#000000";
+static const char col_gray2[]       = "#111111";
+static const char col_gray3[]       = "#666666";
+static const char col_gray4[]       = "#bebebe";
+static const char col_blue[]        = "#5297cf";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
