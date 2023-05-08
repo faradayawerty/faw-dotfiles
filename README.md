@@ -20,8 +20,8 @@ Love to keep things minimal.
 
 #### installation
 ```
-git clone https://github.com/faradayawerty/dotfiles
-cd dotfiles
+git clone https://github.com/faradayawerty/faw-dotfiles
+cd faw-dotfiles
 ./deploy
 ```
 
