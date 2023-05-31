@@ -76,6 +76,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,  spawn,          SHCMD("amixer set Master 5%-") },
 	{ MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD("brightnessctl set +5%") },
 	{ MODKEY|ShiftMask,             XK_minus,  spawn,          SHCMD("brightnessctl set 5%-") },
+	{ MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("st -e pulsemixer") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

@@ -11,9 +11,9 @@ bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
 alias l='ls --color --group-directories-first -p'
-alias ll='clear; ls --color --group-directories-first -p -l'
+alias ll='clear; ls --color --group-directories-first -p -l -h -S'
 alias la='ls --color --group-directories-first -p -a'
-alias lla='clear; ls --color --group-directories-first -p -la'
+alias lla='clear; ls --color --group-directories-first -p -la -h -S'
 
 alias mpv240="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?240]+bestaudio/best'"
 alias mpv360="mpv --geometry=25%x25%-10-10 --ytdl-format='bestvideo[height<=?360]+bestaudio/best'"
