@@ -28,7 +28,7 @@ alias yd720="yt-dlp --add-metadata -ic -f 'bestvideo[height<=720]+bestaudio/best
 alias webcam="ffplay -vf hflip /dev/video0"
 alias tmx="tmux new-session -A -s default"
 alias mki="sudo make clean && make && sudo make install"
-alias cpu="clear; cpufetch"
+alias gpp="git add . && git commit -m '-' && git push"
 alias nf="clear; neofetch"
 
 function aurget {
@@ -39,7 +39,7 @@ function cd {
 	builtin cd "$@" && l
 }
 
-function daychunk20 {
+function todo {
 	for i in {00..23}; do
 		for j in 00 20 40; do
 			echo "$i:$j"
