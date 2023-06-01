@@ -1,9 +1,9 @@
 #!/bin/bash
 
-bupath=~/.cache/faw_backup/xorg-rice
+bupath=~/.cache/faw_backup/xorgrice
 mkdir -p $bupath
 cp ~/.wallpaper.jpg $bupath/wallpaper.jpg
-echo -e "\nnote: xorg-rice backups are stored at $bupath\n"
+echo -e "\nnote: xorgrice backups are stored at $bupath\n"
 
 mkdir -p ~/.config/sxiv/exec
 ln -snf $(realpath wallpaper.jpg) ~/.wallpaper.jpg

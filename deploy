@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in bin-tools xorg-rice unix-dev; do
+for i in bintools xorgrice unixdev; do
 	echo deploying $i...
 	cd $i
 	./deploy
