@@ -7,12 +7,12 @@ The basics I usually need on my linux installations, an ordinary suckless workfl
 #### dependencies
 * vim - text editor
 * tmux - terminal multiplexter
-* gcc - for building suckless tools
 * xcompmgr - compositing
 * xwallpaper - wallpaper setter
 * maim - screenshoting
 * acpi - battery info on dwm panel
 * xclip - clipboard manager
+* gcc - for building suckless tools (dwm, st, dmenu, sxiv)
 * make - for building suckless tools (dwm, st, dmenu, sxiv)
 
 #### installation
