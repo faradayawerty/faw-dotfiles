@@ -4,7 +4,6 @@ source ~/.bashrc
 
 export EDITOR=vim
 export GOPATH=~/.go
-export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 
 if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"

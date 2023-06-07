@@ -1,7 +1,6 @@
 
 call plug#begin('~/.vim/plugged')
 	Plug 'christoomey/vim-system-copy'
-	Plug 'fxn/vim-monochrome'
 	Plug 'mkitt/tabline.vim'
 call plug#end()
 
@@ -34,7 +33,6 @@ set termencoding=utf-8
 set listchars=tab:>-,space:.,eol:~
 set completeopt-=preview
 
-colorscheme monochrome
 highlight TabLine ctermbg=none ctermfg=none cterm=none
 highlight TabLineFill ctermfg=white ctermbg=none cterm=none
 highlight TabLineSel ctermfg=black ctermbg=blue cterm=none

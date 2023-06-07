@@ -1,9 +1,28 @@
 #!/bin/bash
 
-for i in bin-tools xorg-rice unix-dev; do
-	echo deploying $i...
-	cd $i
-	./deploy
-	cd ..
-done
+bupath=~/.cache/faw_backup/
+
+mkdir -p $bupath
+mkdir -p ~/.config/bspwm/
+mkdir -p ~/.config/sxhkd/
+
+echo -e "note: backups are stored at $bupath"
+
+cp ~/.vimrc $bupath/vimrc
+cp ~/.bashrc $bupath/bashrc
+cp ~/.bash_profile $bupath/bash_profile
+cp ~/.tmux.conf $bupath/tmux.conf
+cp ~/.config/bspwm/bspwmrc $bupath/bspwmrc
+cp ~/.config/sxhkd/sxhkdrc $bupath/sxhkdrc
+
+ln -snf $(realpath vimrc) ~/.vimrc
+ln -snf $(realpath bash_profile) ~/.bash_profile
+ln -snf $(realpath bashrc) ~/.bashrc
+ln -snf $(realpath tmux.conf) ~/.tmux.conf
+ln -snf $(realpath bspwmrc) ~/.config/bspwm/bspwmrc
+ln -snf $(realpath sxhkdrc) ~/.config/sxhkd/sxhkdrc
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+cd bash-scripts && ./deploy
 

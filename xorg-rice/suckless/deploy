@@ -1,8 +1,0 @@
-#!/bin/bash
-
-for i in $(ls -d */); do
-	cd $i/src/
-	sudo make clean && make && sudo make install
-	cd ../..
-done
-
