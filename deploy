@@ -1,28 +1,20 @@
 #!/bin/bash
 
-bupath=~/.cache/faw_backup/
+for i in $(ls suckless.d); do
+	cd suckless.d/$i && ./make.sh && cd ../..
+done
 
-mkdir -p $bupath
-mkdir -p ~/.config/bspwm/
-mkdir -p ~/.config/sxhkd/
+for i in $(ls local.d); do
+	mkdir -p ~/.local/$i && for j in $(ls local.d/$i); do
+		ln -snf $(realpath local.d/$i/$j) ~/.local/$i/$j
+	done
+done
 
-echo -e "note: backups are stored at $bupath"
+for i in $(ls unix.d); do
+	ln -snf $(realpath unix.d/$i) ~/.$i
+done
 
-cp ~/.vimrc $bupath/vimrc
-cp ~/.bashrc $bupath/bashrc
-cp ~/.bash_profile $bupath/bash_profile
-cp ~/.tmux.conf $bupath/tmux.conf
-cp ~/.config/bspwm/bspwmrc $bupath/bspwmrc
-cp ~/.config/sxhkd/sxhkdrc $bupath/sxhkdrc
-
-ln -snf $(realpath vimrc) ~/.vimrc
-ln -snf $(realpath bash_profile) ~/.bash_profile
-ln -snf $(realpath bashrc) ~/.bashrc
-ln -snf $(realpath tmux.conf) ~/.tmux.conf
-ln -snf $(realpath bspwmrc) ~/.config/bspwm/bspwmrc
-ln -snf $(realpath sxhkdrc) ~/.config/sxhkd/sxhkdrc
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-cd bash-scripts && ./deploy
+curl -fLo ~/.vim/autoload/plug.vim\
+	--create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\
+	--silent
 

@@ -1,8 +1,0 @@
-
-linguist-vendored=false
-*.c linguist-vendored=true
-*.h linguist-vendored=true
-*.1 linguist-vendored=true
-*.mk linguist-vendored=true
-Makefile linguist-vendored=true
-
