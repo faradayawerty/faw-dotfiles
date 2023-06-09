@@ -1,5 +1,11 @@
 #!/bin/bash
 
+[ -n "$(command -v pacman)" ]\
+	&& sudo pacman -Sy bash-completion vim tmux\
+		maim ttf-hack xwallpaper xcompmgr xclip mpv\
+		acpi yt-dlp make gcc wget curl\
+		imlib2 libexif
+
 for i in $(ls suckless.d); do
 	cd suckless.d/$i && ./make.sh && cd ../..
 done
