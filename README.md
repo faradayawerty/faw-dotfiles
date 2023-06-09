@@ -15,12 +15,12 @@ The basics I usually need on my linux installations, an ordinary suckless workfl
 * `mpv` (optional) - media viewing
 * `yt-dlp` (optional) - youtube downloading software
 * `acpi` (optional) - cpu temperature and battery information in `faw_panel` script
+* `curl` (build) - for installing `vimplug`
+* `wget` (build) - for downloading suckless source files (`dwm`, `st`, `dmenu`, `sxiv`)
 * `gcc` (build) - for building suckless tools (`dwm`, `st`, `dmenu`, `sxiv`)
 * `make` (build) - for building suckless tools (`dwm`, `st`, `dmenu`, `sxiv`)
-* `wget` (build) - for downloading suckless source files (`dwm`, `st`, `dmenu`, `sxiv`)
 * `imlib2` (build) - for building `sxiv`
 * `libexif2` (build) - for building `sxiv`
-* `curl` (build) - for installing `vimplug`
 
 #### installation
 ```
