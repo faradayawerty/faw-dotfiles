@@ -12,9 +12,10 @@ The basics I usually need on my linux installations, an ordinary suckless workfl
 * maim - screenshoting
 * acpi - battery and cpu temperature info on dwm panel
 * xclip - clipboard manager
-* gcc - for building suckless tools (dwm, st, dmenu, sxiv)
-* make - for building suckless tools (dwm, st, dmenu, sxiv)
-* curl - for downloading suckless source files (dwm, st, dmenu, sxiv)
+* gcc - for building suckless tools (dwm, st, dmenu)
+* make - for building suckless tools (dwm, st, dmenu)
+* curl - for downloading suckless source files (dwm, st, dmenu)
+* hack - preferred font
 
 #### installation
 ```

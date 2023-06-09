@@ -4,5 +4,5 @@ version=5.2\
 	&& tar xkf dmenu-$version.tar.gz && cd dmenu-$version
 patch -p1 < ../dmenu-faw-20230608.diff\
 	&& sudo make clean && make && sudo make install
-cd .. && rm -rf dmenu-$version dmenu-$version.tar.gz
+cd .. && rm -rf dmenu-$version && rm -rf dmenu-$version.tar.gz
 

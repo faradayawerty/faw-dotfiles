@@ -1,0 +1,28 @@
+diff -u a/config.def.h b/config.def.h
+--- a/config.def.h	2017-10-27 18:25:56.000000000 +0300
++++ b/config.def.h	2023-06-09 09:53:23.973528533 +0300
+@@ -9,16 +9,16 @@
+ /* bar font:
+  * (see fonts-conf(5) subsection "FONT NAMES" for valid values)
+  */
+-static const char * const BAR_FONT = "monospace:size=8";
++static const char * const BAR_FONT = "Hack-Regular:size=14";
+ 
+ /* colors:
+  * (see X(7) section "COLOR NAMES" for valid values)
+  */
+-static const char * const WIN_BG_COLOR = "#555555";
+-static const char * const WIN_FS_COLOR = "#000000";
+-static const char * const SEL_COLOR    = "#EEEEEE";
+-static const char * const BAR_BG_COLOR = "#222222";
+-static const char * const BAR_FG_COLOR = "#EEEEEE";
++static const char * const WIN_BG_COLOR = "#555556";
++static const char * const WIN_FS_COLOR = "#000001";
++static const char * const SEL_COLOR    = "#EEEEEF";
++static const char * const BAR_BG_COLOR = "#222223";
++static const char * const BAR_FG_COLOR = "#EEEEEF";
+ 
+ #endif
+ #ifdef _IMAGE_CONFIG
+Common subdirectories: a/exec and b/exec
+Common subdirectories: a/icon and b/icon

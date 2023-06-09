@@ -1,5 +1,3 @@
 #!/usr/bin/env sh
-#echo $(date +'%a %b %d %H:%M') $(TZ='Asia/Yekaterinburg' date +'%H:%M')
 echo $(date +'%a %b %d %H:%M')
-#date +'%H:%M'
 
