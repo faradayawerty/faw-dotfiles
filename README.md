@@ -11,7 +11,7 @@ The basics I usually need on my linux installations, an ordinary suckless workfl
 * `xwallpaper`
 * `xclip`
 * `maim`
-* `hack`
+* `ttf-hack`
 * `mpv` (optional)
 * `yt-dlp` (optional)
 * `acpi` (optional)
@@ -20,7 +20,7 @@ The basics I usually need on my linux installations, an ordinary suckless workfl
 * `gcc` (build)
 * `make` (build)
 * `imlib2` (build)
-* `libexif2` (build)
+* `libexif` (build)
 
 #### installation
 ```
