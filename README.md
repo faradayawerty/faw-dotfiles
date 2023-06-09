@@ -5,22 +5,22 @@
 The basics I usually need on my linux installations, an ordinary suckless workflow. Love keeping things simple minimal.
 
 #### dependencies
-* `vim` - text editor
-* `tmux` - terminal multiplexter
-* `xcompmgr` - compositing
-* `xwallpaper` - wallpaper setter
-* `xclip` - clipboard manager
-* `maim` - screenshoting utility
-* `hack` - preferred font
-* `mpv` (optional) - media viewing
-* `yt-dlp` (optional) - youtube downloading software
-* `acpi` (optional) - cpu temperature and battery information in `faw_panel` script
-* `curl` (build) - for installing `vimplug`
-* `wget` (build) - for downloading suckless source files (`dwm`, `st`, `dmenu`, `sxiv`)
-* `gcc` (build) - for building suckless tools (`dwm`, `st`, `dmenu`, `sxiv`)
-* `make` (build) - for building suckless tools (`dwm`, `st`, `dmenu`, `sxiv`)
-* `imlib2` (build) - for building `sxiv`
-* `libexif2` (build) - for building `sxiv`
+* `vim`
+* `tmux`
+* `xcompmgr`
+* `xwallpaper`
+* `xclip`
+* `maim`
+* `hack`
+* `mpv` (optional)
+* `yt-dlp` (optional)
+* `acpi` (optional)
+* `curl` (build)
+* `wget` (build)
+* `gcc` (build)
+* `make` (build)
+* `imlib2` (build)
+* `libexif2` (build)
 
 #### installation
 ```
