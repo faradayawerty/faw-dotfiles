@@ -12,13 +12,13 @@ The basics I usually need on my linux installations, an ordinary suckless workfl
 * `xclip` - clipboard manager
 * `maim` - screenshoting utility
 * `hack` - preferred font
-* `BUILD` `gcc` - for building suckless tools (`dwm`, `st`, `dmenu`, `sxiv`)
-* `BUILD` `make` - for building suckless tools (`dwm`, `st`, `dmenu`, `sxiv`)
-* `BUILD` `wget` - for downloading suckless source files (`dwm`, `st`, `dmenu`, `sxiv`)
-* `BUILD` `curl` - for installing `vimplug`
-* `OPTIONAL` `mpv` - media viewing
-* `OPTIONAL` `yt-dlp` - youtube downloading software
-* `OPTIONAL` `acpi` - cpu temperature and battery information in `faw_panel` script
+* `gcc` (BUILD) - for building suckless tools (`dwm`, `st`, `dmenu`, `sxiv`)
+* `make` (BUILD) - for building suckless tools (`dwm`, `st`, `dmenu`, `sxiv`)
+* `wget` (BUILD) - for downloading suckless source files (`dwm`, `st`, `dmenu`, `sxiv`)
+* `curl` (BUILD) - for installing `vimplug`
+* `mpv` (OPTIONAL) - media viewing
+* `yt-dlp` (OPTIONAL) - youtube downloading software
+* `acpi` (OPTIONAL) - cpu temperature and battery information in `faw_panel` script
 
 #### installation
 ```
