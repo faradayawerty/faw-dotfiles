@@ -2,9 +2,7 @@
 
 [ -n "$(command -v pacman)" ] && sudo pacman -Sy $(grep -Po '(?<=`)([a-z0-9-]+)(?=`)' README.md)
 
-for i in $(ls -d suckless.d/*.d); do
-	cd $i && ./make.sh && cd ../..
-done
+cd suckless.d && ./make.sh && cd ..
 
 for i in $(ls local.d); do
 	mkdir -p ~/.local/$i && for j in $(ls local.d/$i); do
