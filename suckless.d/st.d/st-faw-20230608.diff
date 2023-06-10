@@ -1,6 +1,6 @@
 diff -u a/config.def.h b/config.def.h
 --- a/config.def.h	2022-10-04 20:41:26.000000000 +0300
-+++ b/config.def.h	2023-06-08 23:51:42.348297583 +0300
++++ b/config.def.h	2023-06-10 22:12:39.623726771 +0300
 @@ -5,7 +5,7 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
@@ -10,19 +10,94 @@ diff -u a/config.def.h b/config.def.h
  static int borderpx = 2;
  
  /*
-@@ -93,6 +93,9 @@
+@@ -93,45 +93,52 @@
   */
  unsigned int tabspaces = 8;
  
 +/* bg opacity */
-+float alpha = 0.85;
++float alpha = 0.95;
 +
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
- 	/* 8 normal colors */
+-	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
+-
+-	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
+-
+-	[255] = 0,
+-
+-	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
+-	"gray90", /* default foreground colour */
+-	"black", /* default background colour */
+-};
+ 
++  /* 8 normal colors */
++  [0] = "#202020", /* black   */
++  [1] = "#b91e2e", /* red     */
++  [2] = "#81957c", /* green   */
++  [3] = "#f9bb80", /* yellow  */
++  [4] = "#356579", /* blue    */
++  [5] = "#2d2031", /* magenta */
++  [6] = "#0b3452", /* cyan    */
++  [7] = "#909090", /* white   */
++
++  /* 8 bright colors */
++  [8]  = "#606060", /* black   */
++  [9]  = "#d14548", /* red     */
++  [10] = "#a7b79a", /* green   */
++  [11] = "#fae3a0", /* yellow  */
++  [12] = "#7491a1", /* blue    */
++  [13] = "#87314e", /* magenta */
++  [14] = "#0f829d", /* cyan    */
++  [15] = "#fff0f0", /* white   */
++
++  /* special colors */
++  [256] = "#101010", /* background */
++  [257] = "#d2c5bc", /* foreground */
++};
+ 
+ /*
+  * Default colors (colorname index)
+- * foreground, background, cursor, reverse cursor
++ * foreground, background, cursor
++ */
++unsigned int defaultfg = 257;
++unsigned int defaultbg = 256;
++unsigned int defaultcs = 257;
++
++/*
++ * Colors used, when the specific fg == defaultfg. So in reverse mode this
++ * will reverse too. Another logic would only make the simple feature too
++ * complex.
+  */
+-unsigned int defaultfg = 258;
+-unsigned int defaultbg = 259;
+-unsigned int defaultcs = 256;
++static unsigned int defaultitalic = 7;
++static unsigned int defaultunderline = 7;
+ static unsigned int defaultrcs = 257;
+ 
+ /*
 diff -u a/config.mk b/config.mk
 --- a/config.mk	2022-10-04 20:41:26.000000000 +0300
-+++ b/config.mk	2023-06-08 23:49:36.191624295 +0300
++++ b/config.mk	2023-06-10 22:07:00.430375568 +0300
 @@ -16,7 +16,7 @@
  INCS = -I$(X11INC) \
         `$(PKG_CONFIG) --cflags fontconfig` \
@@ -34,16 +109,15 @@ diff -u a/config.mk b/config.mk
  
 diff -u a/st.h b/st.h
 --- a/st.h	2022-10-04 20:41:26.000000000 +0300
-+++ b/st.h	2023-06-08 23:49:36.191624295 +0300
++++ b/st.h	2023-06-10 22:07:00.430375568 +0300
 @@ -124,3 +124,4 @@
  extern unsigned int defaultfg;
  extern unsigned int defaultbg;
  extern unsigned int defaultcs;
 +extern float alpha;
-Only in b: st.h.orig
 diff -u a/x.c b/x.c
 --- a/x.c	2022-10-04 20:41:26.000000000 +0300
-+++ b/x.c	2023-06-08 23:49:36.191624295 +0300
++++ b/x.c	2023-06-10 22:07:00.430375568 +0300
 @@ -105,6 +105,7 @@
  	XSetWindowAttributes attrs;
  	int scr;
@@ -150,4 +224,3 @@ diff -u a/x.c b/x.c
  	case 'c':
  		opt_class = EARGF(usage());
  		break;
-Only in b: x.c.orig
