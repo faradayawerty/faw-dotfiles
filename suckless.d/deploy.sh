@@ -4,7 +4,7 @@
 
 function template {
 
-	font="Hack-Regular:size=14"
+	font="Hack-Regular:size=12"
 
 	foreground=ffffff
 	background=000000

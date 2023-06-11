@@ -2,7 +2,7 @@
 
 [ -n "$(command -v pacman)" ] && sudo pacman -Sy $(grep -Po '(?<=`)([a-z0-9-]+)(?=`)' README.md)
 
-cd suckless.d && ./make.sh && cd ..
+cd suckless.d && ./deploy.sh && cd ..
 
 for i in $(ls local.d); do
 	mkdir -p ~/.local/$i && for j in $(ls local.d/$i); do
@@ -10,8 +10,8 @@ for i in $(ls local.d); do
 	done
 done
 
-for i in $(ls unix.d); do
-	ln -snf $(realpath unix.d/$i) ~/.$i
+for i in $(ls -d unix.d/* xorg.d/*); do
+	ln -snf $(realpath $i) ~/.$(basename $i)
 done
 
 curl -fLo ~/.vim/autoload/plug.vim\

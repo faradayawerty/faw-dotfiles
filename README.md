@@ -9,6 +9,7 @@ The basics I usually need on my linux installations, an ordinary suckless workfl
 * `tmux`
 * `xcompmgr`
 * `xwallpaper`
+* `xbindkeys`
 * `xclip`
 * `maim`
 * `ttf-hack`
