@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# download, patch and build suckless tools
+
 function template {
 
 	font="Hack-Regular:size=14"
