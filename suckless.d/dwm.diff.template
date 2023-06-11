@@ -16,12 +16,12 @@ diff -u a/config.def.h b/config.def.h
 -static const char col_gray3[]       = "#bbbbbb";
 -static const char col_gray4[]       = "#eeeeee";
 -static const char col_cyan[]        = "#005577";
-+static const char *fonts[]          = { "Hack-Regular:size=14" };
-+static const char col_gray1[]       = "#222222";
-+static const char col_gray2[]       = "#444444";
-+static const char col_gray3[]       = "#bbbbbb";
-+static const char col_gray4[]       = "#eeeeee";
-+static const char col_cyan[]        = "#005577";
++static const char *fonts[]          = { "TEMPLATE_FONT" };
++static const char col_gray1[]       = "TEMPLATE_BACKGROUND";
++static const char col_gray2[]       = "TEMPLATE_BLACK";
++static const char col_gray3[]       = "TEMPLATE_WHITE";
++static const char col_gray4[]       = "TEMPLATE_BLACK";
++static const char col_cyan[]        = "TEMPLATE_BLUE";
 +static const unsigned int baralpha = 0xd0;
 +static const unsigned int borderalpha = OPAQUE;
  static const char *colors[][3]      = {

@@ -6,7 +6,7 @@ diff -u a/config.def.h b/config.def.h
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-+static char *font = "Hack-Regular:size=14";
++static char *font = "TEMPLATE_FONT";
  static int borderpx = 2;
  
  /*
@@ -49,28 +49,28 @@ diff -u a/config.def.h b/config.def.h
 -};
  
 +  /* 8 normal colors */
-+  [0] = "#202020", /* black   */
-+  [1] = "#b91e2e", /* red     */
-+  [2] = "#81957c", /* green   */
-+  [3] = "#f9bb80", /* yellow  */
-+  [4] = "#356579", /* blue    */
-+  [5] = "#2d2031", /* magenta */
-+  [6] = "#0b3452", /* cyan    */
-+  [7] = "#909090", /* white   */
++  [0] = "TEMPLATE_BLACK",
++  [1] = "TEMPLATE_RED",
++  [2] = "TEMPLATE_GREEN",
++  [3] = "TEMPLATE_YELLOW",
++  [4] = "TEMPLATE_BLUE",
++  [5] = "TEMPLATE_MAGENTA",
++  [6] = "TEMPLATE_CYAN",
++  [7] = "TEMPLATE_WHITE",
 +
 +  /* 8 bright colors */
-+  [8]  = "#606060", /* black   */
-+  [9]  = "#d14548", /* red     */
-+  [10] = "#a7b79a", /* green   */
-+  [11] = "#fae3a0", /* yellow  */
-+  [12] = "#7491a1", /* blue    */
-+  [13] = "#87314e", /* magenta */
-+  [14] = "#0f829d", /* cyan    */
-+  [15] = "#fff0f0", /* white   */
++  [8]  = "TEMPLATE_BLACK_BRIGHT",
++  [9]  = "TEMPLATE_RED_BRIGHT",
++  [10] = "TEMPLATE_GREEN_BRIGHT",
++  [11] = "TEMPLATE_YELLOW_BRIGHT",
++  [12] = "TEMPLATE_BLUE_BRIGHT",
++  [13] = "TEMPLATE_MAGENTA_BRIGHT",
++  [14] = "TEMPLATE_CYAN_BRIGHT",
++  [15] = "TEMPLATE_WHITE_BRIGHT",
 +
 +  /* special colors */
-+  [256] = "#101010", /* background */
-+  [257] = "#d2c5bc", /* foreground */
++  [256] = "TEMPLATE_BACKGROUND",
++  [257] = "TEMPLATE_FOREGROUND",
 +};
  
  /*
