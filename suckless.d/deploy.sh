@@ -2,49 +2,31 @@
 
 # download, patch and build suckless tools
 
+font="Hack-Regular:size=12"
+colors="#111111 #d36265 #aece91 #e7e18c #5297cf #963c59 #5e7175 #bebebe\
+	#666666 #ef8171 #cfefb3 #fff796 #74b8ef #b85e7b #a3babf #ffffff"
+
 function template {
-
-	font="Hack-Regular:size=12"
-
-	foreground=ffffff
-	background=000000
-	black=111111
-	black_bright=666666
-	red=d36265
-	red_bright=ef8171
-	green=aece91
-	green_bright=cfefb3
-	yellow=e7e18c
-	yellow_bright=fff796
-	blue=5297cf
-	blue_bright=74b8ef
-	magenta=963c59
-	magenta_bright=b85e7b
-	cyan=5e7175
-	cyan_bright=a3babf
-	white=bebebe
-	white_bright=ffffff
-
 	sed\
 		-e "s/TEMPLATE_FONT/$font/g"\
-		-e "s/TEMPLATE_BACKGROUND/#$background/g"\
-		-e "s/TEMPLATE_FOREGROUND/#$foreground/g"\
-		-e "s/TEMPLATE_BLACK_BRIGHT/#$black_bright/g"\
-		-e "s/TEMPLATE_RED_BRIGHT/#$red_bright/g"\
-		-e "s/TEMPLATE_GREEN_BRIGHT/#$green_bright/g"\
-		-e "s/TEMPLATE_YELLOW_BRIGHT/#$yellow_bright/g"\
-		-e "s/TEMPLATE_BLUE_BRIGHT/#$blue_bright/g"\
-		-e "s/TEMPLATE_MAGENTA_BRIGHT/#$magenta_bright/g"\
-		-e "s/TEMPLATE_CYAN_BRIGHT/#$cyan_bright/g"\
-		-e "s/TEMPLATE_WHITE_BRIGHT/#$white_bright/g"\
-		-e "s/TEMPLATE_BLACK/#$black/g"\
-		-e "s/TEMPLATE_RED/#$red/g"\
-		-e "s/TEMPLATE_GREEN/#$green/g"\
-		-e "s/TEMPLATE_YELLOW/#$yellow/g"\
-		-e "s/TEMPLATE_BLUE/#$blue/g"\
-		-e "s/TEMPLATE_MAGENTA/#$magenta/g"\
-		-e "s/TEMPLATE_CYAN/#$cyan/g"\
-		-e "s/TEMPLATE_WHITE/#$white/g"\
+		-e "s/TEMPLATE_BACKGROUND/$(echo $colors | cut -d' ' -f1)/g"\
+		-e "s/TEMPLATE_FOREGROUND/$(echo $colors | cut -d' ' -f8)/g"\
+		-e "s/TEMPLATE_BLACK_BRIGHT/$(echo $colors | cut -d' ' -f9)/g"\
+		-e "s/TEMPLATE_RED_BRIGHT/$(echo $colors | cut -d' ' -f10)/g"\
+		-e "s/TEMPLATE_GREEN_BRIGHT/$(echo $colors | cut -d' ' -f11)/g"\
+		-e "s/TEMPLATE_YELLOW_BRIGHT/$(echo $colors | cut -d' ' -f12)/g"\
+		-e "s/TEMPLATE_BLUE_BRIGHT/$(echo $colors | cut -d' ' -f13)/g"\
+		-e "s/TEMPLATE_MAGENTA_BRIGHT/$(echo $colors | cut -d' ' -f14)/g"\
+		-e "s/TEMPLATE_CYAN_BRIGHT/$(echo $colors | cut -d' ' -f15)/g"\
+		-e "s/TEMPLATE_WHITE_BRIGHT/$(echo $colors | cut -d' ' -f16)/g"\
+		-e "s/TEMPLATE_BLACK/$(echo $colors | cut -d' ' -f1)/g"\
+		-e "s/TEMPLATE_RED/$(echo $colors | cut -d' ' -f2)/g"\
+		-e "s/TEMPLATE_GREEN/$(echo $colors | cut -d' ' -f3)/g"\
+		-e "s/TEMPLATE_YELLOW/$(echo $colors | cut -d' ' -f4)/g"\
+		-e "s/TEMPLATE_BLUE/$(echo $colors | cut -d' ' -f5)/g"\
+		-e "s/TEMPLATE_MAGENTA/$(echo $colors | cut -d' ' -f6)/g"\
+		-e "s/TEMPLATE_CYAN/$(echo $colors | cut -d' ' -f7)/g"\
+		-e "s/TEMPLATE_WHITE/$(echo $colors | cut -d' ' -f8)/g"\
 		$1
 }
 
@@ -74,6 +56,9 @@ function url {
 		"sxiv") echo "github.com/xyb3rt/sxiv/archive/$(tarname sxiv)" ;;
 	esac
 }
+
+#[ -n "$(command -v schemer2)" ] && [ -f "../xorg.d/wallpaper.jpg" ] &&\
+#	colors="$(schemer2 -format img::colors -in ../xorg.d/wallpaper.jpg)"
 
 for i in dmenu dwm st sxiv; do
 	rm -rf $i-$(version $i)\

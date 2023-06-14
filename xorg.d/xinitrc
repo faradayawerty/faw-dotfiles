@@ -1,13 +1,12 @@
 
-xcompmgr &
-xbindkeys &
+pulseaudio --daemonize
+
+xwallpaper --stretch ~/.wallpaper.jpg && pkill xcompmgr; xcompmgr &
+setxkbmap -layout us,ru -option grp:alt_shift_toggle && pkill xbindkeys; xbindkeys &
 
 while true; do
 	xsetroot -name " $(faw_dwm_panel) " && sleep 20s
 done &
-
-xwallpaper --stretch ~/.wallpaper.jpg
-setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
 exec dwm
 
