@@ -57,9 +57,6 @@ function url {
 	esac
 }
 
-#[ -n "$(command -v schemer2)" ] && [ -f "../xorg.d/wallpaper.jpg" ] &&\
-#	colors="$(schemer2 -format img::colors -in ../xorg.d/wallpaper.jpg)"
-
 for i in dmenu dwm st sxiv; do
 	rm -rf $i-$(version $i)\
 		&& rm -rf $(tarname $i)\

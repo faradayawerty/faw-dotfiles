@@ -1,15 +1,11 @@
 
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
-   XF86AudioRaiseVolume
+	Mod4+Control+equal
 "pactl set-sink-volume @DEFAULT_SINK@ -1000"
-   XF86AudioLowerVolume
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
-   XF86AudioMute
-"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-   XF86AudioMicMute
+	Mod4+Control+minus
 
 "faw_screen"
-	Mod4+Shift+p
+	Mod4+Control+p
 "faw_dmenu_emoji"
 	Mod4+Control+e
 "faw_dmenu_unicode"

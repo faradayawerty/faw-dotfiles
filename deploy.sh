@@ -1,14 +1,10 @@
 #!/bin/bash
 
-[ -n "$(command -v pacman)" ] && sudo pacman -Sy $(grep -Po '(?<=`)([a-z0-9-]+)(?=`)' README.md)
+[ -n "$(command -v pacman)" ]\
+	&& sudo pacman -Sy $(grep -Po '(?<=`)([a-z0-9-]+)(?=`)' README.md)
 
 cd suckless.d && ./deploy.sh && cd ..
-
-for i in $(ls local.d); do
-	mkdir -p ~/.local/$i && for j in $(ls local.d/$i); do
-		ln -snf $(realpath local.d/$i/$j) ~/.local/$i/$j
-	done
-done
+cd local.d && ./deploy.sh && cd ..
 
 for i in $(ls -d unix.d/* xorg.d/*); do
 	ln -snf $(realpath $i) ~/.$(basename $i)
