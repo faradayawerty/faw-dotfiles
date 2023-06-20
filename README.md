@@ -8,21 +8,19 @@ The basics I usually need on my linux installations, an ordinary suckless workfl
 #### dependencies
 * `vim`
 * `tmux`
+* `xterm`
 * `xcompmgr`
 * `xwallpaper`
 * `xbindkeys`
 * `xclip`
 * `maim`
 * `ttf-hack`
+* `dmenu`
+* `sxiv (optional)`
 * `mpv` (optional)
-* `yt-dlp` (optional)
-* `acpi` (optional)
-* `curl` (build)
-* `wget` (build)
-* `gcc` (build)
-* `make` (build)
-* `imlib2` (build)
-* `libexif` (build)
+* `curl` (deploy)
+* `gcc` (deploy)
+* `make` (deploy)
 
 #### installation
 ```

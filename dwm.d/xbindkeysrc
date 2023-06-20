@@ -1,8 +1,8 @@
 
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
-	Mod4+Control+equal
+	Mod4+equal
 "pactl set-sink-volume @DEFAULT_SINK@ -1000"
-	Mod4+Control+minus
+	Mod4+minus
 
 "faw_screen"
 	Mod4+Control+p

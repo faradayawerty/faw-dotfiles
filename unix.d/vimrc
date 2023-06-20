@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'fxn/vim-monochrome'
 call plug#end()
 
-syntax on
+syntax off
 set background=dark
 set path+=**
 set showtabline=1
@@ -34,7 +34,7 @@ set termencoding=utf-8
 set listchars=tab:>-,space:.,eol:~
 set completeopt-=preview
 
-silent! colorscheme monochrome
+"silent! colorscheme monochrome
 
 highlight TabLine ctermbg=none ctermfg=none cterm=none
 highlight TabLineFill ctermfg=white ctermbg=none cterm=none
