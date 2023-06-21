@@ -3,7 +3,7 @@
 ![screenshot](https://github.com/faradayawerty/faw-dotfiles/blob/main/screenshot.png)
 
 #### description
-The basics I usually need on my linux installations, an ordinary suckless workflow. Love keeping things simple minimal.
+The basics I usually need on my linux installations, an ordinary suckless workflow. Love keeping things simple and minimal.
 
 #### dependencies
 * `vim`
