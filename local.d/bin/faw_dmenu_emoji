@@ -2,13 +2,11 @@
 
 # launches dmenu to select an emoji and copy it to clipboard
 #
-#
 # file with emoji by default should be located in ~/.local/share/dmenuemoji/
 # and named emoji.list
 #
 # but you can change it by launching the script like so
 # emoji_list=path/to/emoji.list dmenuemoji
-
 
 [ -z $emoji_list ] && emoji_list=~/.local/share/faw_dmenuemoji/emoji.list
 [ -z "$DMENU" ] && DMENU=dmenu

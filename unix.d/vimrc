@@ -39,6 +39,8 @@ set completeopt-=preview
 highlight TabLine ctermbg=none ctermfg=none cterm=none
 highlight TabLineFill ctermfg=white ctermbg=none cterm=none
 highlight TabLineSel ctermfg=black ctermbg=blue cterm=none
+highlight LineNr ctermfg=blue ctermbg=none cterm=none
+highlight Visual ctermfg=black ctermbg=blue cterm=none
 
 noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>

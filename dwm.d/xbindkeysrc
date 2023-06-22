@@ -1,20 +1,27 @@
 
-"pactl set-sink-volume @DEFAULT_SINK@ +1000"
-	Mod4+equal
-"pactl set-sink-volume @DEFAULT_SINK@ -1000"
-	Mod4+minus
-
-"faw_screen"
-	Mod4+Control+p
-"faw_dmenu_emoji"
-	Mod4+Control+e
-"faw_dmenu_unicode"
-	Mod4+Control+u
-"faw_dmenu_resolution"
-	Mod4+Control+s
-
+# aplication launchers
 "chromium"
 	Mod4+Control+b
 "telegram-desktop"
 	Mod4+Control+t
+
+# dmenu commands
+"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb indigo -sf white' faw_screen"
+	Mod4+Control+p
+"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb indigo -sf white' faw_dmenu_emoji"
+	Mod4+Control+e
+"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb indigo -sf white' faw_dmenu_unicode"
+	Mod4+Control+u
+"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb indigo -sf white' faw_dmenu_resolution"
+	Mod4+Control+s
+
+# media
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+	Mod4+equal
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+	Mod4+minus
+"brightnessctl set +10%"
+	Mod4+Shift+equal
+"brightnessctl set 10%-"
+	Mod4+Shift+minus
 
