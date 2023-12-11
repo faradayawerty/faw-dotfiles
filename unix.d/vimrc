@@ -4,17 +4,17 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mkitt/tabline.vim'
 call plug#end()
 
-colorscheme lunaperche
+silent! colorscheme lunaperche
 
-set number
+set background=dark
 set noswapfile 
+set number
+set listchars=tab:>-,space:.,eol:~
 set hlsearch
 set incsearch
-set listchars=tab:>-,space:.,eol:~
 set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
-set background=dark
 
 noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>
@@ -26,11 +26,6 @@ let g:system_copy_silent = 0
 if executable('xclip')
 	let g:system_copy#copy_command='xclip -sel clipboard'
 	let g:system_copy#paste_command='xclip -sel clipboard -o'
-endif
-
-if has("win32") || has("win16")
-	let g:system_copy#copy_command='clip'
-	let g:system_copy#paste_command='paste'
 endif
 
 " return to the same line you left off at
