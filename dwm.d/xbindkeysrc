@@ -1,10 +1,4 @@
 
-# aplication launchers
-"chromium"
-	Mod4+Control+b
-"telegram-desktop"
-	Mod4+Control+t
-
 # dmenu commands
 "DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb indigo -sf white' faw_screen"
 	Mod4+Control+p

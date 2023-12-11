@@ -7,8 +7,8 @@ dwm.dmenufont: Hack:size=12
 dwm.normbgcolor: black
 dwm.normbordercolor: grey10
 dwm.normfgcolor: white
-dwm.selbgcolor: indigo
-dwm.selbordercolor: indigo
+dwm.selbgcolor: #4169E1
+dwm.selbordercolor: #4169E1
 dwm.selfgcolor: white
 dwm.borderpx: 2
 dwm.snap: 1
@@ -24,7 +24,7 @@ XTerm*foreground: white
 XTerm*cursorColor: white
 
 XTerm*faceName: Hack-Regular
-XTerm*faceSize:     12
+XTerm*faceSize:     14
 XTerm*faceSize1:    10
 XTerm*faceSize2:    12
 XTerm*faceSize3:    14
