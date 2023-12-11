@@ -25,10 +25,6 @@ alias yd360="yt-dlp --add-metadata -ic -f 'bestvideo[height<=360]+bestaudio/best
 alias yd480="yt-dlp --add-metadata -ic -f 'bestvideo[height<=480]+bestaudio/best[height<=480]'"
 alias yd720="yt-dlp --add-metadata -ic -f 'bestvideo[height<=720]+bestaudio/best[height<=720]'"
 
-alias alm4="echo 'mpv ~/.alarm.mp3' | at 03:55 tomorrow"
-alias alm5="echo 'mpv ~/.alarm.mp3' | at 04:55 tomorrow"
-alias alm6="echo 'mpv ~/.alarm.mp3' | at 05:55 tomorrow"
-
 alias webcam="ffplay -vf hflip /dev/video0"
 alias tmx="tmux new-session -A -s default"
 alias mki="sudo make clean && make && sudo make install"
@@ -36,14 +32,6 @@ alias nf="clear; neofetch"
 
 function cd {
 	builtin cd "$@" && l
-}
-
-function todo {
-	for i in {00..23}; do
-		for j in 00 20 40; do
-			echo "$i:$j"
-		done
-	done
 }
 
 [ -n "$DISPLAY" ]\
