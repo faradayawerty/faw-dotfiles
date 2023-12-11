@@ -46,6 +46,9 @@ function todo {
 	done
 }
 
+[ -n "$DISPLAY" ]\
+	&& setxkbmap -layout us,ru -option grp:alt_shift_toggle
+
 [ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && [ -n "$(command -v transset)" ]\
 	&& transset --id "$WINDOWID" >/dev/null 0.9
 
