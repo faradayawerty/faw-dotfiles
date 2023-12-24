@@ -96,15 +96,16 @@ diff -ru a/dwm.1 b/dwm.1
 diff -ru a/dwm.c b/dwm.c
 --- a/dwm.c	2022-10-04 20:38:18.000000000 +0300
 +++ b/dwm.c	2023-12-24 14:06:18.894585301 +0300
-@@ -2140,8 +2140,11 @@
+@@ -2140,8 +2140,12 @@
  		die("pledge");
  #endif /* __OpenBSD__ */
  	scan();
 +	system("xbindkeys &");
 +	system("while true; do\nxsetroot -name \" $(faw_dwm_panel) \"\nsleep 20s\ndone &");
++	system("echo 'Sxiv.background: black' | xrdb -merge");
++	system("echo 'Sxiv.foreground: white' | xrdb -merge");
  	run();
  	cleanup();
  	XCloseDisplay(dpy);
  	return EXIT_SUCCESS;
  }
-+

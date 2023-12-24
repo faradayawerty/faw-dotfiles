@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in xinitrc xbindkeysrc; do
+for i in xbindkeysrc; do
 	ln -snf $(realpath $i) ~/.$(basename $i)
 done
 
