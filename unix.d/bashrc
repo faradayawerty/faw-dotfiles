@@ -1,9 +1,7 @@
 #!/bin/bash
 
 [[ $- != *i* ]] && return # if not running interactively, don't do anything
-
 stty -ixon # disable ctrl+s, ctrl+q
-
 PS1="\[\e[0;1;34m\][\[\e[m\]\[\e[0;1;37m\]\W\[\e[m\]\[\e[0;1;34m\]]\[\e[m\] "
 
 set -o vi
@@ -33,10 +31,4 @@ alias nf="clear; neofetch"
 function cd {
 	builtin cd "$@" && l
 }
-
-[ -n "$DISPLAY" ]\
-	&& setxkbmap -layout us,ru -option grp:alt_shift_toggle
-
-[ -z "$TMUX" ] && [ -n "$XTERM_VERSION" ] && [ -n "$(command -v transset)" ]\
-	&& transset --id "$WINDOWID" >/dev/null 0.9
 

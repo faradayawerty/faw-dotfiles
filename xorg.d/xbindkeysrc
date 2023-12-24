@@ -1,0 +1,29 @@
+
+# applications
+"telegram-desktop"
+	Mod4+Control+t
+"chromium"
+	Mod4+Control+b
+"chromium --kiosk --app="https://youtube.com""
+	Mod4+Control+y
+
+# dmenu commands
+"faw_screen"
+	Mod4+Control+p
+"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_emoji"
+	Mod4+Control+e
+"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_unicode"
+	Mod4+Control+u
+"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_resolution"
+	Mod4+Control+s
+
+# media
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+	Mod4+equal
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+	Mod4+minus
+"brightnessctl set +10%"
+	Mod4+Shift+equal
+"brightnessctl set 10%-"
+	Mod4+Shift+minus
+

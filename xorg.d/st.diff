@@ -1,0 +1,39 @@
+diff -ru a/config.def.h b/config.def.h
+--- a/config.def.h	2022-10-04 20:41:26.000000000 +0300
++++ b/config.def.h	2023-12-24 13:49:16.882652352 +0300
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char *font = "Hack-Regular:size=14:antialias=true:autohint=true";
+ static int borderpx = 2;
+ 
+ /*
+@@ -193,8 +193,8 @@
+ 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
+ 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
+ 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
+-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
+-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
++	{ TERMMOD,              XK_J,           zoom,           {.f = +1} },
++	{ TERMMOD,              XK_K,           zoom,           {.f = -1} },
+ 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+ 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
+ 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
+diff -ru a/st.1 b/st.1
+--- a/st.1	2022-10-04 20:41:26.000000000 +0300
++++ b/st.1	2023-12-24 13:36:00.736031632 +0300
+@@ -142,10 +142,10 @@
+ Print the selection to the
+ .I iofile.
+ .TP
+-.B Ctrl-Shift-Page Up
++.B Ctrl-Shift-j
+ Increase font size.
+ .TP
+-.B Ctrl-Shift-Page Down
++.B Ctrl-Shift-k
+ Decrease font size.
+ .TP
+ .B Ctrl-Shift-Home

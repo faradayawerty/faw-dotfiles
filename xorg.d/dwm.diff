@@ -1,0 +1,110 @@
+diff -ru a/config.def.h b/config.def.h
+--- a/config.def.h	2022-10-04 20:38:18.000000000 +0300
++++ b/config.def.h	2023-12-24 13:49:36.929317862 +0300
+@@ -5,17 +5,13 @@
+ static const unsigned int snap      = 32;       /* snap pixel */
+ static const int showbar            = 1;        /* 0 means no bar */
+ static const int topbar             = 1;        /* 0 means bottom bar */
+-static const char *fonts[]          = { "monospace:size=10" };
+-static const char dmenufont[]       = "monospace:size=10";
+-static const char col_gray1[]       = "#222222";
+-static const char col_gray2[]       = "#444444";
+-static const char col_gray3[]       = "#bbbbbb";
+-static const char col_gray4[]       = "#eeeeee";
+-static const char col_cyan[]        = "#005577";
++static const char *fonts[]          = { "Hack-Regular:size=12" };
++static const char dmenufont[]       = "Hack-Regular:size=12";
++static const char col_cyan[]        = "#4169E1";
+ static const char *colors[][3]      = {
+ 	/*               fg         bg         border   */
+-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
++	[SchemeNorm] = { "white", "black", "black" },
++	[SchemeSel]  = { "white", col_cyan,  col_cyan  },
+ };
+ 
+ /* tagging */
+@@ -27,15 +23,14 @@
+ 	 *	WM_NAME(STRING) = title
+ 	 */
+ 	/* class      instance    title       tags mask     isfloating   monitor */
+-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
++	{ "Steam",    NULL,       NULL,       0,            1,           -1 },
+ };
+ 
+ /* layout(s) */
+-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
++static const float mfact     = 0.65; /* factor of master area size [0.05..0.95] */
+ static const int nmaster     = 1;    /* number of clients in master area */
+-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
++static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
++static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen window */
+ 
+ static const Layout layouts[] = {
+ 	/* symbol     arrange function */
+@@ -45,7 +40,7 @@
+ };
+ 
+ /* key definitions */
+-#define MODKEY Mod1Mask
++#define MODKEY Mod4Mask
+ #define TAGKEYS(KEY,TAG) \
+ 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+@@ -56,7 +51,7 @@
+ #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+ 
+ /* commands */
+-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
++static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", "black", "-nf", "white", "-sb", col_cyan, "-sf", "white", NULL };
+ static const char *termcmd[]  = { "st", NULL };
+ 
+ static const Key keys[] = {
+@@ -72,12 +67,11 @@
+ 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+ 	{ MODKEY,                       XK_Return, zoom,           {0} },
+ 	{ MODKEY,                       XK_Tab,    view,           {0} },
+-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
++	{ MODKEY,                       XK_w,      killclient,     {0} },
+ 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+ 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+ 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
++	{ MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
+ 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+ 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+ 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+diff -ru a/dwm.1 b/dwm.1
+--- a/dwm.1	2022-10-04 20:38:18.000000000 +0300
++++ b/dwm.1	2023-12-24 13:44:27.846002374 +0300
+@@ -113,10 +113,10 @@
+ .B Mod1\-Return
+ Zooms/cycles focused window to/from master area (tiled layouts only).
+ .TP
+-.B Mod1\-Shift\-c
++.B Mod1\-w
+ Close focused window.
+ .TP
+-.B Mod1\-Shift\-space
++.B Mod1\-Shift\-f
+ Toggle focused window between tiled and floating state.
+ .TP
+ .B Mod1\-Tab
+diff -ru a/dwm.c b/dwm.c
+--- a/dwm.c	2022-10-04 20:38:18.000000000 +0300
++++ b/dwm.c	2023-12-24 14:06:18.894585301 +0300
+@@ -2140,8 +2140,11 @@
+ 		die("pledge");
+ #endif /* __OpenBSD__ */
+ 	scan();
++	system("xbindkeys &");
++	system("while true; do\nxsetroot -name \" $(faw_dwm_panel) \"\nsleep 20s\ndone &");
+ 	run();
+ 	cleanup();
+ 	XCloseDisplay(dpy);
+ 	return EXIT_SUCCESS;
+ }
++
