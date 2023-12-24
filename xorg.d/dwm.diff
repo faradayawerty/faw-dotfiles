@@ -19,7 +19,7 @@ diff -ru a/config.def.h b/config.def.h
  	/*               fg         bg         border   */
 -	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 -	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-+	[SchemeNorm] = { "white", "black", "black" },
++	[SchemeNorm] = { "white", "black", "#404040" },
 +	[SchemeSel]  = { "white", col_cyan,  col_cyan  },
  };
  
