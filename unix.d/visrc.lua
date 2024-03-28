@@ -32,7 +32,7 @@ vis.events.subscribe(vis.events.INIT, function()
 	lexers.STYLE_CURSOR = 'reverse'
 	lexers.STYLE_CURSOR_PRIMARY = lexers.STYLE_CURSOR..',fore:white'
 	lexers.STYLE_CURSOR_LINE = 'underlined'
-	lexers.STYLE_COLOR_COLUMN = 'back:red'
+	lexers.STYLE_COLOR_COLUMN = 'back:cyan'
 	lexers.STYLE_SELECTION = 'fore:black,back:blue'
 	lexers.STYLE_STATUS = 'reverse'
 	lexers.STYLE_STATUS_FOCUSED = 'reverse,bold'
@@ -45,5 +45,7 @@ end)
 vis.events.subscribe(vis.events.WIN_OPEN, function(win)
 	vis:command('set number')
 	vis:command('set tabwidth 6')
+	--vis:command('set colorcolumn 80')
+	vis:command('set syntax off')
 end)
 
