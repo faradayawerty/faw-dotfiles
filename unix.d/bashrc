@@ -28,6 +28,10 @@ alias tmx="tmux new-session -A -s default"
 alias mki="sudo make clean && make && sudo make install"
 alias nf="clear; neofetch"
 
+function al {
+	sleep "$1" && mpv ~/.alarm.mp3
+}
+
 function cd {
 	builtin cd "$@" && l
 }
