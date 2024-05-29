@@ -6,7 +6,7 @@
 The basics I usually need on my linux installations, an ordinary dwm desktop. Love keeping things simple and minimal.
 
 #### dependencies
-* `vis` - text editor
+* `vi` - text editor
 * `tmux` - terminal multiplexer
 * `xbindkeys` - key binding manager
 * `xclip` - clipboard manager
