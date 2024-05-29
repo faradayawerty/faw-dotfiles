@@ -14,7 +14,7 @@ The basics I usually need on my linux installations, an ordinary dwm desktop. Lo
 * `ttf-hack` - the primary font
 * `dmenu` - application launcher and dialog menu
 * `mpv` (optional) - media viewer
-* `curl` (deploy) - for downloading vim-plug and dwm src
+* `curl` (deploy) - for downloading dwm src
 * `gcc` (deploy) - for building dwm
 * `make` (deploy) - for building dwm
 
