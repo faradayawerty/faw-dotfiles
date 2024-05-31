@@ -3,6 +3,7 @@
 source ~/.bashrc
 
 export EDITOR=vi
+export OPEN=xdg-open
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 
 [ -d "$HOME/.local/bin" ]\
