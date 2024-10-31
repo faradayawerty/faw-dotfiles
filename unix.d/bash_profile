@@ -2,7 +2,7 @@
 
 source ~/.bashrc
 
-export EDITOR=vi
+export EDITOR=vim
 export OPEN=xdg-open
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 

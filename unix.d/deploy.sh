@@ -1,6 +1,8 @@
 #!/bin/bash
 
-for i in bashrc bash_profile tmux.conf exrc; do
+for i in bashrc bash_profile tmux.conf exrc vimrc; do
 	ln -snf $(realpath $i) ~/.$(basename $i)
 done
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 

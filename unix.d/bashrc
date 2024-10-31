@@ -26,9 +26,12 @@ alias yd720="yt-dlp --add-metadata -ic -f 'bestvideo[height<=720]+bestaudio/best
 alias webcam="ffplay -vf hflip /dev/video0"
 alias tmx="tmux new-session -A -s default"
 alias mki="sudo make clean && make && sudo make install"
-alias nf="clear; neofetch"
+alias nf="clear; fastfetch"
 
 function cd {
 	builtin cd "$@" && l
 }
 
+function gpp {
+	git add . && git commit -m "$@" && git push
+}
