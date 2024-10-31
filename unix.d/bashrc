@@ -35,3 +35,4 @@ function cd {
 function gpp {
 	git add . && git commit -m "$@" && git push
 }
+
