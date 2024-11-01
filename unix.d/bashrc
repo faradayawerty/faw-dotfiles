@@ -33,6 +33,10 @@ function cd {
 }
 
 function gpp {
-	git add . && git commit -m "$@" && git push
+	msg="$@"
+	[ -z "$msg" ] && echo 'need a commmit message' && return
+	git add .
+	git commit -m "$msg"
+	git push
 }
 

@@ -65,11 +65,3 @@ augroup line_return
 		\ endif
 augroup END
 
-function gpp {
-	msg="$@"
-	[ -z "$msg" ] && echo 'need a commmit message' && return
-	git add .
-	git commit -m "$msg"
-	git push
-}
-
