@@ -102,7 +102,7 @@ diff -ru a/dwm.c b/dwm.c
  	scan();
 +	system("xbindkeys &");
 +	system("while true; do\nxsetroot -name \" $(faw_dwm_panel) \"\nsleep 20s\ndone &");
-+	system("echo 'Sxiv.background: black' | xrdb -merge");
++	system("xsetroot -solid '#1a1a1f' && echo 'Sxiv.background: black' | xrdb -merge");
 +	system("echo 'Sxiv.foreground: white' | xrdb -merge");
  	run();
  	cleanup();
