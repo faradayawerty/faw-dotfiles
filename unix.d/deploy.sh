@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in bashrc bash_profile tmux.conf exrc vimrc; do
+for i in bashrc bash_profile tmux.conf exrc vimrc htoprc; do
 	ln -snf $(realpath $i) ~/.$(basename $i)
 done
 
