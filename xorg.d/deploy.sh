@@ -1,10 +1,9 @@
 #!/bin/bash
 
-for i in xbindkeysrc; do
-	ln -snf $(realpath $i) ~/.$(basename $i)
-done
-
-for i in dwm st; do
-	./$i-deploy.sh
+select wm in dwm fvwm none; do
+	[ "$wm" = "none" ] && exit
+	cd $wm
+	./deploy.sh
+	exit
 done
 

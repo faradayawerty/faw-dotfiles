@@ -36,8 +36,8 @@ set completeopt-=preview
 
 colorscheme monochrome
 highlight TabLine ctermbg=none ctermfg=none cterm=none
-highlight TabLineFill ctermfg=white ctermbg=none cterm=none
-highlight TabLineSel ctermfg=black ctermbg=blue cterm=none
+highlight TabLineFill ctermfg=gray ctermbg=none cterm=none
+highlight TabLineSel ctermfg=white ctermbg=none cterm=bold
 
 noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>
