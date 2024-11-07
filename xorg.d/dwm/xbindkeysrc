@@ -1,16 +1,4 @@
 
-# applications
-"telegram-desktop"
-	Mod4+Control+t
-"chromium"
-	Mod4+Control+b
-"discord"
-	Mod4+Control+d
-"chromium --kiosk --app="https://youtube.com""
-	Mod4+Control+y
-"pcmanfm"
-	Mod4+Control+f
-
 # dmenu commands
 "faw_screen"
 	Mod4+Control+p

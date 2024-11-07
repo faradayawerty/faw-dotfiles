@@ -2,7 +2,7 @@
 
 [[ $- != *i* ]] && return # if not running interactively, don't do anything
 stty -ixon # disable ctrl+s, ctrl+q
-PS1="\[\e[0;1;30m\][\[\e[m\]\[\e[0;1;37m\]\W\[\e[m\]\[\e[0;1;30m\]]\[\e[m\] "
+PS1="\[\e[0;1;34m\][\[\e[m\]\[\e[0;1;37m\]\W\[\e[m\]\[\e[0;1;34m\]]\[\e[m\] "
 
 set -o vi
 bind -m vi-command 'Control-l: clear-screen'
