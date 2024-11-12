@@ -19,3 +19,13 @@
 "brightnessctl set 10%-"
 	Mod4+Shift+minus
 
+# media
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+	XF86AudioRaiseVolume
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+	XF86AudioLowerVolume
+"brightnessctl set +10%"
+	XF86MonBrightnessUp
+"brightnessctl set 10%-"
+	XF86MonBrightnessDown
+

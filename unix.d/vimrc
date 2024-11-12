@@ -1,11 +1,11 @@
 
 call plug#begin('~/.vim/plugged')
 	Plug 'christoomey/vim-system-copy'
-	Plug 'fxn/vim-monochrome'
 	Plug 'mkitt/tabline.vim'
+	"Plug 'fxn/vim-monochrome'
 call plug#end()
 
-syntax on
+syntax off
 set background=dark
 set path+=**
 set showtabline=1
@@ -34,10 +34,11 @@ set termencoding=utf-8
 set listchars=tab:>-,space:.,eol:~
 set completeopt-=preview
 
-colorscheme monochrome
+"colorscheme monochrome
 highlight TabLine ctermbg=none ctermfg=none cterm=none
 highlight TabLineFill ctermfg=gray ctermbg=none cterm=none
 highlight TabLineSel ctermfg=white ctermbg=none cterm=bold
+highlight LineNr ctermfg=white ctermbg=none cterm=bold
 
 noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>
