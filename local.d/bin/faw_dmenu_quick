@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+[ -z "$DMENU" ] && DMENU=dmenu
+[ -z "$FOLDER" ] && FOLDER=~/Documents/quick/
+
+mkdir -p "$FOLDER"
+
+file="$(ls $FOLDER | $DMENU "$@" -l 24)"
+
+[ -n "$file" ] && xdg-open "$FOLDER/$file"
+

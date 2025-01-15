@@ -8,6 +8,8 @@
 	Mod4+Control+u
 "DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_resolution"
 	Mod4+Control+s
+"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_quick"
+	Mod4+Control+q
 
 # media
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
