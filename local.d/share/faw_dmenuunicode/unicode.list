@@ -96,8 +96,8 @@
 ∧ logical and
 ∨ logical or
 ¬ logical not
-⊇ subset or equal
-⊃ subset
+⊆ subset or equal
+⊂ subset
 ⋂ set intersection
 ∪ set union
 ℕ natural numbers
@@ -115,3 +115,4 @@
 ⌋ round down second
 ❤ heart
 — big long line
+║ norm
