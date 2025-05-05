@@ -10,8 +10,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 [ -d "$HOME/.local/bin" ]\
 	&& PATH="$HOME/.local/bin:$PATH"
 
-[[ -n "$DISPLAY" ]]\
-	&& setxkbmap -layout us,ru -option grp:alt_shift_toggle
+#[[ -n "$DISPLAY" ]]\
+#	&& setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
 [ -f ~/.xinitrc ] && [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z "$TMUX" ]]\
 	&& exec startx
