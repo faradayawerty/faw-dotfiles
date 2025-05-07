@@ -7,5 +7,5 @@ from time import sleep
 
 string = subprocess.check_output(['xsel']).decode('utf-8')
 sleep(0.1)
-os.system('xdotool type ' + unicodeit.replace(string))
+os.system('xdotool type ' + unicodeit.replace(string).replace('(', '\(').replace(')', '\)'))
 
