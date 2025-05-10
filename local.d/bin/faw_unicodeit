@@ -6,6 +6,18 @@ import subprocess
 from time import sleep
 
 string = subprocess.check_output(['xsel']).decode('utf-8')
+
+command = 'xdotool type ' + unicodeit.replace(
+    string.replace('\\phi', 'φ')
+          .replace(' ', '\\ ')
+          .replace('\\f', 'ƒ')
+          .replace('\\norm', '\|')
+          .replace('\\exp', '𝚎𝚡𝚙')
+          .replace('(', '\\(')
+          .replace(')', '\\)')
+    )
+
 sleep(0.1)
-os.system('xdotool type ' + unicodeit.replace(string).replace('(', '\(').replace(')', '\)'))
+os.system('xdotool keyup Super')
+os.system(command)
 
