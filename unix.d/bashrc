@@ -40,7 +40,7 @@ function n {
 	[ -f $today ] || faw_todo > $today
 	[ -f $tomorrow ] || faw_todo > $tomorrow
 	[ -f $yesterday ] || faw_todo > $yesterday
-	$EDITOR -p $path/todo.md $path/todo.txt $today $tomorrow $yesterday
+	$EDITOR -p $path/todo.md $path/todo.txt $yesterday $today $tomorrow
 }
 
 function cd {
