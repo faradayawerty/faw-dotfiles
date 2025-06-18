@@ -28,6 +28,21 @@ alias tmx="tmux new-session -A -s default"
 alias mki="sudo make clean && make && sudo make install"
 alias nf="clear; fastfetch"
 
+function n {
+	path=~/Documents/notes/
+	mkdir -p $path
+	mkdir -p $path/todo.d
+
+	today="$path/todo.d/$(date +'%y-%m-%d.txt')"
+	tomorrow="$path/todo.d/$(date +'%y-%m-%d.txt' -d '+1 day')"
+	yesterday="$path/todo.d/$(date +'%y-%m-%d.txt' -d '-1 day')"
+
+	[ -f $today ] || faw_todo > $today
+	[ -f $tomorrow ] || faw_todo > $tomorrow
+	[ -f $yesterday ] || faw_todo > $yesterday
+	$EDITOR -p $path/todo.md $path/todo.txt $today $tomorrow $yesterday
+}
+
 function cd {
 	builtin cd "$@" && l
 }

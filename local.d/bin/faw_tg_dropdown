@@ -1,0 +1,17 @@
+#!/bin/bash
+
+isup=No
+pg="$(pgrep telegram)"
+
+echo lol $pg
+
+[ -z "$pg" ] || isup=Yes
+
+if [ $isup = Yes ]; then
+	pkill telegram
+fi
+
+if [ $isup = No ]; then
+	telegram-desktop
+fi
+
