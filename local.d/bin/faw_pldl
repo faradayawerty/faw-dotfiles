@@ -15,7 +15,7 @@ if [ "$#" -eq 0 ]; then
     exit 1
 fi
 
-> "$FAILED_LIST"
+touch "$FAILED_LIST"
 
 echo "Получение списка видео из плейлиста..."
 mapfile -t VIDEO_IDS < <(yt-dlp --flat-playlist --get-id "$@")
