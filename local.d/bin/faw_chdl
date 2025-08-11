@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 NORMAL_DELAY=3
@@ -11,13 +10,13 @@ ARCHIVE_FILE="downloaded.txt"
 FORMAT="best[height<=360][protocol!=m3u8]/best[height<=480]/best"
 
 if [ "$#" -eq 0 ]; then
-    echo "Использование: $0 <playlist_url>"
+    echo "Использование: $0 <channel_url>"
     exit 1
 fi
 
 touch "$FAILED_LIST"
 
-echo "Получение списка видео из плейлиста..."
+echo "Получение списка видео с канала..."
 mapfile -t VIDEO_IDS < <(yt-dlp --flat-playlist --get-id "$@")
 
 echo "Найдено ${#VIDEO_IDS[@]} видео. Начинаю скачивание..."
@@ -32,12 +31,12 @@ for VIDEO_ID in "${VIDEO_IDS[@]}"; do
         --fragment-retries 10 \
         --retries 1000 \
         --download-archive "$ARCHIVE_FILE" \
-	   --force-ipv4 \
-	   --legacy-server-connect \
-	   --throttled-rate 500K \
-	   --concurrent-fragments 4 \
-	   --cookies-from-browser chromium \
-	   --socket-timeout 1 \
+        --force-ipv4 \
+        --legacy-server-connect \
+        --throttled-rate 500K \
+        --concurrent-fragments 4 \
+        --cookies-from-browser chromium \
+        --socket-timeout 1 \
         "$VIDEO_URL"
 
     EXIT_CODE=$?

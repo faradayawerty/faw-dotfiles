@@ -9,8 +9,8 @@
 #   \_/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/
 
 InfoStoreAdd terminal xterm
-InfoStoreAdd font "xft:Hack-Regular:size=8:antialias=True"
-InfoStoreAdd dir_screenshot "~/pictures/screenshots"
+InfoStoreAdd font "xft:Hack-Regular:size=12:antialias=True"
+InfoStoreAdd dir_screenshot "~/Pictures/screenshots"
 
 #   __                  _   _                 
 #  / _|_   _ _ __   ___| |_(_) ___  _ __  ___ 
@@ -29,8 +29,8 @@ InfoStoreAdd dir_screenshot "~/pictures/screenshots"
 # ran right after fvwm is done reading the config file
 DestroyFunc StartFunction
 AddToFunc   StartFunction
-+ I Exec exec xsetroot -solid '#1a1a1f'
-+ I Exec exec xrdb ~/.Xresources
++ I Exec exec xsetroot -solid '#2a2a2f'
++ I Exec exec xrdb ~/.Xresourcres
 + I Module FvwmButtons RightPanel
 + I Module FvwmEvent EventNewDesk
 
