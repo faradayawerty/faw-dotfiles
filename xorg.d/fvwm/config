@@ -60,6 +60,7 @@ AddToFunc   StartFunction
 + I Test (Init) Module FvwmBanner
 + I Module FvwmButtons RightPanel
 + I Module FvwmEvent EventNewDesk
++ I Exec exec xrdb ~/.Xresourcres
 
 # Function to set background when fvwm starts
 DestroyFunc InitBackground
