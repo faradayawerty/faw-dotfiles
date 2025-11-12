@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+# faw_ytmusicdlpl — скачать плейлист YouTube/YouTube Music и объединить треки в один MP3
+# Использование:
+#   faw_ytmusicdlpl <playlist_url> <output_title> [artist]
+
+set -euo pipefail
+
+# === Проверка зависимостей ===
+for cmd in yt-dlp ffmpeg; do
+    if ! command -v "$cmd" &>/dev/null; then
+        echo "❌ Требуется $cmd. Установи его перед использованием."
+        exit 1
+    fi
+done
+
+if [ -z "${1:-}" ] || [ -z "${2:-}" ]; then
+    echo "Использование: faw_ytmusicdlpl <playlist_url> <output_title> [artist]"
+    exit 1
+fi
+
+PLAYLIST_URL="$1"
+OUT_TITLE="$2"
+ARTIST="${3:-Unknown Artist}"
+
+# === Временные и выходные пути ===
+WORKDIR="$(mktemp -d /tmp/ytdlpl.XXXXXX)"
+OUTDIR="$(pwd)"
+FINAL_MP3="${OUTDIR}/${OUT_TITLE// /_}.mp3"
+
+echo "📂 Временная папка: $WORKDIR"
+cd "$WORKDIR"
+
+# === Шаг 1: Список видео из плейлиста ===
+echo "📜 Получаю список видео..."
+yt-dlp --flat-playlist --get-id "$PLAYLIST_URL" > ids.txt
+
+if [ ! -s ids.txt ]; then
+    echo "❌ Не удалось получить список видео."
+    exit 1
+fi
+
+# === Шаг 2: Скачивание и конвертация каждого трека ===
+n=0
+while IFS= read -r ID; do
+    n=$((n + 1))
+    echo "🎵 [$n] Обработка видео: $ID"
+    TRACK_URL="https://www.youtube.com/watch?v=$ID"
+
+    TITLE=$(yt-dlp --get-title "$TRACK_URL" 2>/dev/null || echo "track_$n")
+    SAFE_TITLE="${TITLE// /_}"
+    OUTFILE="${WORKDIR}/${SAFE_TITLE}.mp3"
+
+    # Скачиваем и конвертируем
+    yt-dlp -f "bestaudio[ext=webm]/bestaudio" -o - "$TRACK_URL" \
+        | ffmpeg -y -i pipe:0 -vn -ar 44100 -ac 2 -b:a 192k \
+        -metadata title="$TITLE" -metadata artist="$ARTIST" \
+        "$OUTFILE" < /dev/null || {
+            echo "⚠️ Пропущен: $TITLE"
+            continue
+        }
+done < ids.txt
+
+# === Шаг 3: Объединение всех MP3 ===
+echo "🧩 Объединение всех треков..."
+
+# Создаём список файлов для ffmpeg
+find . -type f -name "*.mp3" -printf "file '%p'\n" | sort > files.txt
+
+if [ ! -s files.txt ]; then
+    echo "❌ Нет MP3-файлов для объединения."
+    exit 1
+fi
+
+ffmpeg -f concat -safe 0 -i files.txt -c copy \
+    -metadata title="$OUT_TITLE" -metadata artist="$ARTIST" \
+    "$FINAL_MP3" < /dev/null
+
+# === Очистка ===
+rm -rf "$WORKDIR"
+
+echo "✅ Готово: $FINAL_MP3"

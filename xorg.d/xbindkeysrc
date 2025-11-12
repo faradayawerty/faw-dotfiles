@@ -1,17 +1,26 @@
 
-# dmenu commands
-"faw_screen"
-	Mod4+Control+p
+#"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_unicode"
+#	Mod4+Control+u
+
 "DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_emoji"
 	Mod4+Control+e
-"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_unicode"
-	Mod4+Control+u
 "DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_resolution"
 	Mod4+Control+s
 "DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_quick"
 	Mod4+Control+q
 
-# media
+"chromium --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled"
+	Mod4+Control+b
+
+"Telegram"
+	Mod4+Control+t
+
+"faw_unicodeit"
+	Mod4+Control+u
+
+"faw_screen"
+	Mod4+Control+p
+
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
 	Mod4+equal
 "pactl set-sink-volume @DEFAULT_SINK@ -1000"
@@ -21,7 +30,6 @@
 "brightnessctl set 10%-"
 	Mod4+Shift+minus
 
-# media
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
 	XF86AudioRaiseVolume
 "pactl set-sink-volume @DEFAULT_SINK@ -1000"

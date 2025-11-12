@@ -11,8 +11,8 @@ set path+=**
 set showtabline=1
 set foldignore=
 set laststatus=1
-set tabstop=5
-set shiftwidth=5
+set tabstop=6
+set shiftwidth=6
 set smarttab
 set autoindent
 set number
@@ -39,6 +39,7 @@ highlight TabLine ctermbg=none ctermfg=none cterm=none
 highlight TabLineFill ctermfg=gray ctermbg=none cterm=none
 highlight TabLineSel ctermfg=white ctermbg=none cterm=bold
 highlight LineNr ctermfg=white ctermbg=none cterm=bold
+highlight ColorColumn ctermbg=red
 
 noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>

@@ -14,7 +14,7 @@ diff -ru a/config.def.h b/config.def.h
 -static const char col_cyan[]        = "#005577";
 +static const char *fonts[]          = { "Hack-Regular:size=10" };
 +static const char dmenufont[]       = "Hack-Regular:size=10";
-+static const char col_cyan[]        = "#fa4e59";
++static const char col_cyan[]        = "#115577";
  static const char *colors[][3]      = {
  	/*               fg         bg         border   */
 -	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },

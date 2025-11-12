@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# faw_ytmusicdl — скачать трек с YouTube/YouTube Music и сохранить как MP3
+# Использование:
+#   faw_ytmusicdl <url> [title] [artist]
+
+set -euo pipefail
+
+# Проверка зависимостей
+for cmd in yt-dlp ffmpeg; do
+    if ! command -v "$cmd" &>/dev/null; then
+        echo "❌ Требуется $cmd. Установи его перед использованием."
+        exit 1
+    fi
+done
+
+if [ -z "${1:-}" ]; then
+    echo "Использование: faw_ytmusicdl <url> [title] [artist]"
+    exit 1
+fi
+
+URL="$1"
+TITLE="${2:-}"
+ARTIST="${3:-}"
+
+# === Пути ===
+TMPFILE="$(mktemp /tmp/ytmusicdl.XXXXXX.webm)"   # временный файл
+OUTDIR="$(pwd)"                                  # текущая папка
+cd "$OUTDIR"
+
+# === Скачивание ===
+echo "🔽 Скачивание аудио..."
+yt-dlp \
+    -f "bestaudio[ext=webm]/bestaudio" \
+    -o "$TMPFILE" \
+    --no-playlist \
+    --no-part \
+    --no-cache-dir \
+    --quiet --progress \
+    "$URL" || {
+        echo "❌ Ошибка при скачивании."
+        rm -f "$TMPFILE"
+        exit 1
+    }
+
+# === Получаем название, если не указано ===
+if [ -z "$TITLE" ]; then
+    TITLE=$(yt-dlp --get-title "$URL" 2>/dev/null || echo "unknown_title")
+fi
+
+OUTFILE="${OUTDIR}/${TITLE// /_}.mp3"
+
+# === Конвертация ===
+echo "🎧 Конвертация в MP3..."
+if [ -n "$ARTIST" ]; then
+    ffmpeg -y -i "$TMPFILE" -vn -ar 44100 -ac 2 -b:a 192k \
+        -metadata title="$TITLE" -metadata artist="$ARTIST" \
+        "$OUTFILE" < /dev/null
+else
+    ffmpeg -y -i "$TMPFILE" -vn -ar 44100 -ac 2 -b:a 192k \
+        -metadata title="$TITLE" \
+        "$OUTFILE" < /dev/null
+fi
+
+# === Очистка ===
+rm -f "$TMPFILE"
+
+echo "✅ Готово: $OUTFILE"

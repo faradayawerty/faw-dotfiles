@@ -6,5 +6,3 @@ for i in config images; do
 	ln -snf $(realpath $i) ~/.fvwm/$i
 done
 
-ln -snf $(realpath ../xresources) ~/.Xresourcres
-
