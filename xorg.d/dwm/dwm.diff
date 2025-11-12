@@ -100,9 +100,9 @@ diff -ru a/dwm.c b/dwm.c
  		die("pledge");
  #endif /* __OpenBSD__ */
  	scan();
-+	system("xbindkeys &");
++	//system("xbindkeys &");
++	//system("xsetroot -solid '#1a1a1f'");
 +	system("while true; do\nxsetroot -name \" $(faw_dwm_panel) \"\nsleep 20s\ndone &");
-+	system("xsetroot -solid '#1a1a1f'");
 +	system("echo 'Sxiv.background: black' | xrdb -merge");
 +	system("echo 'Sxiv.foreground: white' | xrdb -merge");
  	run();
