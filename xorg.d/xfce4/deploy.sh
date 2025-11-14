@@ -1,3 +1,0 @@
-
-echo DEPLOYING XFCE4 IS WIP
-
