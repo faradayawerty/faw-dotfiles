@@ -11,7 +11,7 @@ imagemagick ffmpeg yt-dlp
 
 xorg xorg-xinit
 
-xbindkeys xcompmgr xwallpaper xlockmore xclip xsel
+xbindkeys xcompmgr xwallpaper xlockmore xclip xsel xdotool
 
 ttf-hack noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 

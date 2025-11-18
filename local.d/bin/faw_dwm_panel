@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-echo "$(faw_panel_date)  $(faw_panel_bat)  $(faw_panel_mem)  $(faw_panel_temp)"
-

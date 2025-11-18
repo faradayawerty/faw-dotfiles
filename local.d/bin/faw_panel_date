@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-echo $(date +'%a %b %d %H:%M')
-

@@ -27,6 +27,7 @@ alias webcam="ffplay -vf hflip /dev/video0"
 alias tmx="tmux new-session -A -s default"
 alias mki="sudo make clean && make && sudo make install"
 alias nf="clear; fastfetch"
+alias dl="aria2c"
 
 function n {
 	path=~/Documents/notes
