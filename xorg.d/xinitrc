@@ -1,13 +1,11 @@
 
-#exec frankenwm
-
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
+
+xwallpaper --stretch ~/.wallpaper.jpg
+
+xcompmgr &
+
 xbindkeys &
-xsetroot -solid '#1a1a1f'
+
 exec dwm
-
-#xrdb ~/.Xresources
-#exec fvwm
-
-#exec xfce4-session
 

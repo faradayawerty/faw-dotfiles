@@ -1,0 +1,23 @@
+
+bash bash-completion tmux vim
+
+fastfetch cowsay sagemath
+
+git links aria2
+
+go jdk11-openjdk
+
+imagemagick ffmpeg yt-dlp 
+
+xorg xorg-xinit
+
+xbindkeys xcompmgr xwallpaper xlockmore xclip xsel
+
+ttf-hack noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+
+dmenu mpv maim
+
+pulseaudio pulsemixer
+
+telegram-desktop chromium krita
+
