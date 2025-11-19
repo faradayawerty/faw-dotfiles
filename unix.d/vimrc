@@ -5,36 +5,19 @@ call plug#begin('~/.vim/plugged')
 	Plug 'fxn/vim-monochrome'
 call plug#end()
 
-syntax on
-set background=dark
-set path+=**
-set showtabline=1
-set foldignore=
-set laststatus=1
+set number
 set tabstop=6
 set shiftwidth=6
-set smarttab
-set autoindent
-set number
-set norelativenumber
 set noswapfile 
 set hlsearch
 set incsearch
-set linebreak
-set foldmethod=indent
-set nofoldenable
-set nocursorline
-set noexpandtab
-set nopaste
 set ttimeout
 set ttimeoutlen=10
-set fileencoding=utf-8
-set encoding=utf-8
-set termencoding=utf-8
 set listchars=tab:>-,space:.,eol:~
-set completeopt-=preview
 
+syntax on
 colorscheme monochrome
+
 highlight TabLine ctermbg=none ctermfg=none cterm=none
 highlight TabLineFill ctermfg=gray ctermbg=none cterm=none
 highlight TabLineSel ctermfg=white ctermbg=none cterm=bold
