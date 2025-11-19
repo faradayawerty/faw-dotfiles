@@ -1,9 +1,11 @@
 
 bash bash-completion tmux vim
 
-fastfetch cowsay sagemath
+fastfetch cowsay sagemath mlocate
 
-git links aria2
+git aria2
+
+links htop
 
 go jdk11-openjdk
 
@@ -15,9 +17,9 @@ xbindkeys xcompmgr xwallpaper xlockmore xclip xsel xdotool
 
 ttf-hack noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
-dmenu mpv maim
+dmenu maim mpv sxiv
 
 pulseaudio pulsemixer
 
-telegram-desktop chromium krita
+telegram-desktop chromium krita qbittorrent
 
