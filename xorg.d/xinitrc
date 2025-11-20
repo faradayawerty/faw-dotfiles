@@ -1,13 +1,11 @@
 
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
-
 xwallpaper --stretch ~/.wallpaper.jpg
-
 xrdb ~/.Xresources
 
 xcompmgr &
-
 xbindkeys &
+while true; do xsetroot -name " $(fawm_panel) "; sleep 20s; done &
 
 exec dwm
 

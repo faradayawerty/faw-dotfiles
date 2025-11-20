@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+# CREATED WITH CHAT GPT
+
 # faw_ytmusicdl — скачать трек с YouTube/YouTube Music и сохранить как MP3
 # Использование:
 #   faw_ytmusicdl <url> [title] [artist]

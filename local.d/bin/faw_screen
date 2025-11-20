@@ -5,3 +5,4 @@ mkdir -p $dir
 
 maim -s $name
 xclip -selection clipboard -t image/png -i $name
+

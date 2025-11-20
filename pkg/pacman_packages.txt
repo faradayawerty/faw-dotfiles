@@ -7,19 +7,27 @@ git aria2
 
 links htop
 
-go jdk11-openjdk
+go jdk11-openjdk python python-pipx
 
-imagemagick ffmpeg yt-dlp 
+imagemagick poppler ffmpeg yt-dlp
 
 xorg xorg-xinit
 
 xbindkeys xcompmgr xwallpaper xlockmore xclip xsel xdotool
 
-ttf-hack noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+zip unzip unrar
+
+brightnessctl acpi
 
 dmenu maim mpv sxiv
 
+zathura zathura-djvu zathura-pdf-poppler
+
 pulseaudio pulsemixer
 
-telegram-desktop chromium krita qbittorrent
+telegram-desktop chromium krita qbittorrent pcmanfm
+
+ttf-hack noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+
+texlive texlive-langcyrillic texlive-mathscience
 
