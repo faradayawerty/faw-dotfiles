@@ -23,6 +23,9 @@
 "faw_screen"
 	Mod4+Control+p
 
+"xlock"
+	Mod4+Shift+l
+
 "pactl set-sink-volume @DEFAULT_SINK@ +5%"
 	Mod4+equal
 

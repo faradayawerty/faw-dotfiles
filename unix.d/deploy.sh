@@ -1,5 +1,7 @@
 #!/bin/bash
 
+distro="$@"
+
 for i in bashrc bash_profile tmux.conf vimrc htoprc; do
 	ln -snf $(realpath $i) ~/.$(basename $i)
 done

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+distro="$@"
+
 mkdir -p ~/.config/sxiv/exec/
 
 ln -snf $(realpath xinitrc) ~/.xinitrc

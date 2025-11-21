@@ -1,5 +1,7 @@
 #!/bin/bash
 
+distro="$@"
+
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
 
