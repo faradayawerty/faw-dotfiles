@@ -30,6 +30,7 @@ noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>
 noremap ,p :set paste!<cr>
 noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
+noremap <C-l> :noh<cr>
 
 let g:system_copy_silent = 0
 
@@ -51,4 +52,5 @@ augroup line_return
 		\	execute 'normal! g`"zvzz' |
 		\ endif
 augroup END
+
 

@@ -1,8 +1,12 @@
+#!/bin/bash
+
+[ -z "$SCREENSHOT_COMMAND" ] && SCREENSHOT_COMMAND="maim -s"
+[ -z "$IMAGE_VIEWER" ] && IMAGE_VIEWER="sxiv"
 
 dir=~/Pictures/screenshots
-name=$dir/screenshot$(date +"%d-%m-%H-%M-%S").png
 mkdir -p $dir
+cd $dir
 
-maim -s $name
-xclip -selection clipboard -t image/png -i $name
+name=screenshot$(date +"%d-%m-%H-%M-%S").png
+$SCREENSHOT_COMMAND $name && $IMAGE_VIEWER $(ls -t)
 

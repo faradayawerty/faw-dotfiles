@@ -12,6 +12,8 @@ do
         xclip -selection clipboard -t image/png -i $(realpath $file) ;;
     "b")
         xwallpaper --zoom "$file" ;;
+    "e")
+        mtpaint "$file" ;;
     esac
 done
 
