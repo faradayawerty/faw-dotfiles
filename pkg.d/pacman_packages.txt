@@ -19,13 +19,13 @@ zip unzip unrar
 
 brightnessctl acpi
 
-dmenu maim mpv sxiv
+dmenu maim mpv sxiv python-pywal
 
 zathura zathura-djvu zathura-pdf-poppler
 
 pulseaudio pulsemixer
 
-telegram-desktop chromium krita qbittorrent pcmanfm
+telegram-desktop chromium mtpaint qbittorrent pcmanfm
 
 ttf-hack noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 

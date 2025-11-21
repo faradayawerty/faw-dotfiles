@@ -1,14 +1,14 @@
 
-"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_emoji"
+"DMENU='dmenu -fn Hack:size=10' faw_dmenu_emoji"
 	Mod4+Control+e
 
-"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_unicode"
+"DMENU='dmenu -fn Hack:size=10' faw_dmenu_unicode"
 	Mod4+Control+u
 
-"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_resolution"
+"DMENU='dmenu -fn Hack:size=10' faw_dmenu_resolution"
 	Mod4+Control+s
 
-"DMENU='dmenu -fn Hack:size=12 -nb black -nf white -sb #4169E1 -sf white' faw_dmenu_quick"
+"DMENU='dmenu -fn Hack:size=10' faw_dmenu_quick"
 	Mod4+Control+q
 
 "chromium --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled"
