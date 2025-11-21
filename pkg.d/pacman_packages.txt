@@ -19,7 +19,9 @@ zip unzip unrar
 
 brightnessctl acpi
 
-dmenu maim mpv sxiv python-pywal
+dmenu mpv
+
+maim python-pywal
 
 zathura zathura-djvu zathura-pdf-poppler
 

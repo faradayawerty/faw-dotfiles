@@ -4,7 +4,6 @@ distro="$@"
 
 if [ "$distro" = "archlinux" ]; then
 	sudo pacman -Syu $(cat pacman_packages.txt)
-
 	read -p "Install yay? [y/N] " ans
 	if [ "$ans" = "y" ]; then
 		cd /tmp
