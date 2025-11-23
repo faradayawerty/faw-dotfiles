@@ -21,6 +21,8 @@ brightnessctl acpi
 
 dmenu mpv maim
 
+imlib2
+
 zathura zathura-djvu zathura-pdf-poppler
 
 pulseaudio pulsemixer
