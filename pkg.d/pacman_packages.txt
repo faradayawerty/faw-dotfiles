@@ -7,7 +7,7 @@ git aria2
 
 links htop
 
-go jdk11-openjdk python python-pipx
+go jdk11-openjdk
 
 imagemagick poppler ffmpeg yt-dlp
 
@@ -19,9 +19,7 @@ zip unzip unrar
 
 brightnessctl acpi
 
-dmenu mpv
-
-maim python-pywal
+dmenu mpv maim
 
 zathura zathura-djvu zathura-pdf-poppler
 
