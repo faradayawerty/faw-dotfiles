@@ -9,6 +9,6 @@ The basics I usually need on my linux installations, an ordinary dwm desktop. Lo
 ```
 git clone https://github.com/faradayawerty/faw-dotfiles
 cd faw-dotfiles
-./deploy.sh
+./deploy_archlinux.sh
 ```
 
