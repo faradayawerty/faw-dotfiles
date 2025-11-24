@@ -1,35 +1,19 @@
 
 bash bash-completion tmux vim
+zip unzip unrar brightnessctl acpi yt-dlp links htop
+imagemagick poppler ffmpeg pandoc 
+git aria2 fastfetch cowsay mlocate
+imlib2 python python-pipx sagemath ranger go jdk11-openjdk
+tlp bluez
 
-fastfetch cowsay sagemath mlocate
-
-git aria2
-
-links htop
-
-go jdk11-openjdk
-
-imagemagick poppler ffmpeg yt-dlp
-
-xorg xorg-xinit
-
-xbindkeys xcompmgr xwallpaper xlockmore xclip xsel xdotool
-
-zip unzip unrar
-
-brightnessctl acpi
-
-dmenu mpv maim
-
-imlib2
-
-zathura zathura-djvu zathura-pdf-poppler
-
-pulseaudio pulsemixer
-
+xorg xorg-xinit xbindkeys xcompmgr xarchiver
+xwallpaper xlockmore xclip xsel xdotool
+maim dmenu mpv zathura zathura-djvu zathura-pdf-poppler
 telegram-desktop chromium mtpaint qbittorrent pcmanfm
-
 ttf-hack noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-
 texlive texlive-langcyrillic texlive-mathscience
+supertuxkart supertux wesnoth 0ad sauerbraten sauerbraten-data
+cataclysm-dda cataclysm-dda-tiles endless-sky
+
+pulseaudio pulsemixer cmus
 
