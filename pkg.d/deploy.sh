@@ -24,7 +24,12 @@ if [ "$ans" = "y" ]; then
 		make clean && make && make install
 		cd ..
 	else
-		echo "fawm already pulled to $SRCDIR/fawm"
+		read -p "fawm already pulled to $SRCDIR/fawm, do you want to recompile it? [y/N] " ans
+		if [ "$ans" = "y" ]; then
+			cd fawm
+			make clean && make && make install
+			cd ..
+		fi
 	fi
 	if ! [ -d $SRCDIR/fast ]; then
 		git clone https://github.com/faradayawerty/fast
@@ -32,14 +37,24 @@ if [ "$ans" = "y" ]; then
 		make clean && make && make install
 		cd ..
 	else
-		echo "fast already pulled to $SRCDIR/fast"
+		read -p "fast already pulled to $SRCDIR/fast, do you want to recompile it? [y/N] " ans
+		if [ "$ans" = "y" ]; then
+			cd fast
+			make clean && make && make install
+			cd ..
+		fi
 	fi
 	if ! [ -d $SRCDIR/faxiv ]; then
 		git clone https://github.com/faradayawerty/faxiv
 		cd faxiv
 		make clean && make && make install
 	else
-		echo "faxiv already pulled to $SRCDIR/faxiv"
+		read -p "faxiv already pulled to $SRCDIR/faxiv, do you want to recompile it? [y/N] " ans
+		if [ "$ans" = "y" ]; then
+			cd faxiv
+			make clean && make && make install
+			cd ..
+		fi
 	fi
 fi
 
