@@ -14,6 +14,9 @@
 "chromium --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled"
 	Mod4+Control+b
 
+"pcmanfm"
+	Mod4+Control+f
+
 "Telegram"
 	Mod4+Control+t
 
@@ -45,7 +48,10 @@
 	XF86AudioLowerVolume
 
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-    XF86AudioMicMute
+	XF86AudioMicMute
+
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    XF86AudioMute
 
 "brightnessctl set +10%"
 	XF86MonBrightnessUp
