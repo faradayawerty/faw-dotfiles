@@ -10,7 +10,7 @@ do
         echo -n "$(realpath $file)" | xclip -selection clipboard ;;
     "Y")
         xclip -selection clipboard -t image/png -i $(realpath $file) ;;
-    "b")
+    "w")
         xwallpaper --zoom "$file" ;;
     "e")
         mtpaint "$file" ;;
