@@ -8,13 +8,10 @@
 "DMENU='dmenu -fn Hack:size=10' faw_dmenu_resolution"
 	Mod4+Control+s
 
-"DMENU='dmenu -fn Hack:size=10' faw_dmenu_quick"
-	Mod4+Control+q
-
 "chromium --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled"
 	Mod4+Control+b
 
-"sxiv -t ~/Pictures/wallpapers"
+"sxiv -t ~/Pictures/wallpapers $([ -d /usr/share/backgrounds/xfce ] && echo /usr/share/backgrounds/xfce)"
 	Mod4+Control+w
 
 "pcmanfm"
