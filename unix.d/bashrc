@@ -27,7 +27,8 @@ alias webcam="ffplay -vf hflip /dev/video0"
 alias tmx="tmux new-session -A -s default"
 alias nf="clear; fastfetch"
 alias dl="aria2c"
-alias enru="setxkbmap -layout us,ru -option grp:alt_shift_toggle"
+alias layout_enru="setxkbmap -layout us,ru -option grp:alt_shift_toggle"
+alias sn="sudo nekoray"
 
 function n {
 	path=~/Documents/notes

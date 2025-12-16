@@ -1,11 +1,7 @@
 
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
-
-xwallpaper --stretch ~/Pictures/wallpapers/$(ls ~/Pictures/wallpapers/ | shuf | head -n1)
-#while true; do sleep 300s; xwallpaper --stretch ~/Pictures/wallpapers/$(ls ~/Pictures/wallpapers/ | shuf | head -n1); done &
-
+xwallpaper --stretch $(ls ~/Pictures/wallpapers/* $([ -d /usr/share/backgrounds/xfce ] && echo /usr/share/backgrounds/xfce/*) | shuf | head -n1) 
 while true; do xsetroot -name " $(fawm_panel) "; sleep 20s; done &
-
 xcompmgr &
 xbindkeys &
 

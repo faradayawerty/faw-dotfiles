@@ -14,6 +14,9 @@
 "sxiv -t ~/Pictures/wallpapers $([ -d /usr/share/backgrounds/xfce ] && echo /usr/share/backgrounds/xfce)"
 	Mod4+Control+w
 
+"xwallpaper --stretch $(ls ~/Pictures/wallpapers/* $([ -d /usr/share/backgrounds/xfce ] && echo /usr/share/backgrounds/xfce/*) | shuf | head -n1)"
+	Mod4+Shift+w
+
 "pcmanfm"
 	Mod4+Control+f
 
