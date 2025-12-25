@@ -146,8 +146,8 @@ diff -upN dwm-6.6/config.def.h dwm-6.6-faw-patch/config.def.h
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 diff -upN dwm-6.6/config.h dwm-6.6-faw-patch/config.h
 --- dwm-6.6/config.h	1970-01-01 03:00:00.000000000 +0300
-+++ dwm-6.6-faw-patch/config.h	2025-12-25 21:54:02.196021847 +0300
-@@ -0,0 +1,196 @@
++++ dwm-6.6-faw-patch/config.h	2025-12-25 22:38:48.592725175 +0300
+@@ -0,0 +1,168 @@
 +/* See LICENSE file for copyright and license details. */
 +
 +/* appearance */
@@ -166,57 +166,6 @@ diff -upN dwm-6.6/config.h dwm-6.6-faw-patch/config.h
 +	[SchemeNorm] = { "#bbbbbb", "#222222", "#444444" },
 +	[SchemeSel]  = { "#eeeeee", "#005577", "#005577" },
 +};
-+
-+static const char *flyscheme_dracula[][3] = {
-+	[SchemeNorm] = { "#f8f8f2", "#282a36", "#44475a" },
-+	[SchemeSel]  = { "#282a36", "#bd93f9", "#bd93f9" },
-+};
-+
-+static const char *flyscheme_solarized[][3] = {
-+	[SchemeNorm] = { "#839496", "#002b36", "#073642" },
-+	[SchemeSel]  = { "#002b36", "#2aa198", "#2aa198" },
-+};
-+
-+static const char *flyscheme_nord[][3] = {
-+	[SchemeNorm] = { "#d8dee9", "#2e3440", "#4c566a" },
-+	[SchemeSel]  = { "#2e3440", "#88c0d0", "#88c0d0" },
-+};
-+
-+static const char *flyscheme_gruvbox[][3] = {
-+	[SchemeNorm] = { "#ebdbb2", "#282828", "#3c3836" },
-+	[SchemeSel]  = { "#282828", "#fabd2f", "#fabd2f" },
-+};
-+
-+static const char *flyscheme_light[][3] = {
-+	[SchemeNorm] = { "#222222", "#eeeeee", "#cccccc" },
-+	[SchemeSel]  = { "#ffffff", "#4a90e2", "#4a90e2" },
-+};
-+
-+static const char *flyscheme_plan9[][3] = {
-+	[SchemeNorm] = { "#000000", "#ffffea", "#999999" },
-+	[SchemeSel]  = { "#000000", "#9ecfff", "#9ecfff" },
-+};
-+
-+static const char *flyscheme_cyberpunk[][3] = {
-+	[SchemeNorm] = { "#00ffcc", "#0d0221", "#1d1231" },
-+	[SchemeSel]  = { "#0d0221", "#ff00aa", "#ff00aa" },
-+};
-+
-+/* you can move the schemes to a different header and do #include "flyschemes.h"
-+ * or you can move each scheme to its own file
-+ * and do #include flyscheme_light.h, #include flyscheme_plan9.h, ... */
-+
-+static const char *(*flyschemes[])[3] = {
-+	flyscheme_default,
-+	flyscheme_light,
-+	flyscheme_plan9,
-+	flyscheme_dracula,
-+	flyscheme_solarized,
-+	flyscheme_nord,
-+	flyscheme_gruvbox,
-+	flyscheme_cyberpunk,
-+	NULL // used to count the number of flyschemes
-+ };
 +
 +/* tagging */
 +static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -268,19 +217,42 @@ diff -upN dwm-6.6/config.h dwm-6.6-faw-patch/config.h
 +	NULL
 +};
 +
++#include "flyschemes.h"
++
++static const char *(*flyschemes[])[3] = {
++
++	flyscheme_default,
++	flyscheme_default_green,
++	flyscheme_default_yellow,
++	flyscheme_default_red,
++	flyscheme_default_magenta,
++	flyscheme_default_pink,
++
++	flyscheme_dracula,
++	flyscheme_gruvbox,
++	flyscheme_cyberpunk,
++
++	flyscheme_default,
++
++	flyscheme_dracula,
++	flyscheme_gruvbox,
++	flyscheme_cyberpunk,
++
++	NULL // used to count the number of flyschemes
++ };
++
 +static const char *st_optionschemes[] = {
++	"default", "default", "default", "default", "default", "default",
++	"dracula", "gruvbox", "cyberpunk",
 +	"default",
-+	"light",
-+	"plan9",
-+	"dracula",
-+	"solarized",
-+	"nord",
-+	"gruvbox",
-+	"cyberpunk"
++	"dracula", "gruvbox", "cyberpunk",
 +};
 +
 +static const char *st_alphas[] = {
-+	"0.8", "0.7", "0.9", "0.8", "0.9", "0.6", "0.7", "0.8"
++	"0.8", "0.8", "0.8", "0.8", "0.8", "0.8",
++	"0.9", "0.9", "0.9",
++	"1.0",
++	"1.0", "1.0", "1.0",
 +};
 +
 +static const char *termcmd[]  = {
@@ -742,3 +714,68 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-faw-patch/dwm.c
  int
  main(int argc, char *argv[])
  {
+diff -upN dwm-6.6/flyschemes.h dwm-6.6-faw-patch/flyschemes.h
+--- dwm-6.6/flyschemes.h	1970-01-01 03:00:00.000000000 +0300
++++ dwm-6.6-faw-patch/flyschemes.h	2025-12-25 22:33:13.942720618 +0300
+@@ -0,0 +1,61 @@
++
++static const char *flyscheme_default_green[][3] = {
++    [SchemeNorm] = { "#bbbbbb", "#222222", "#444444" },
++    [SchemeSel]  = { "#eeeeee", "#117755", "#117755" },
++};
++
++static const char *flyscheme_default_yellow[][3] = {
++    [SchemeNorm] = { "#bbbbbb", "#222222", "#444444" },
++    [SchemeSel]  = { "#eeeeee", "#aa7711", "#aa7711" },
++};
++
++static const char *flyscheme_default_red[][3] = {
++    [SchemeNorm] = { "#bbbbbb", "#222222", "#444444" },
++    [SchemeSel]  = { "#eeeeee", "#771111", "#771111" },
++};
++
++static const char *flyscheme_default_magenta[][3] = {
++    [SchemeNorm] = { "#bbbbbb", "#222222", "#444444" },
++    [SchemeSel]  = { "#eeeeee", "#551177", "#551177" },
++};
++
++static const char *flyscheme_default_pink[][3] = {
++    [SchemeNorm] = { "#bbbbbb", "#222222", "#444444" },
++    [SchemeSel]  = { "#eeeeee", "#aa1177", "#aa1177" },
++};
++
++static const char *flyscheme_dracula[][3] = {
++	[SchemeNorm] = { "#f8f8f2", "#282a36", "#44475a" },
++	[SchemeSel]  = { "#282a36", "#bd93f9", "#bd93f9" },
++};
++
++static const char *flyscheme_solarized[][3] = {
++	[SchemeNorm] = { "#839496", "#002b36", "#073642" },
++	[SchemeSel]  = { "#002b36", "#2aa198", "#2aa198" },
++};
++
++static const char *flyscheme_nord[][3] = {
++	[SchemeNorm] = { "#d8dee9", "#2e3440", "#4c566a" },
++	[SchemeSel]  = { "#2e3440", "#88c0d0", "#88c0d0" },
++};
++
++static const char *flyscheme_gruvbox[][3] = {
++	[SchemeNorm] = { "#ebdbb2", "#282828", "#3c3836" },
++	[SchemeSel]  = { "#282828", "#fabd2f", "#fabd2f" },
++};
++
++static const char *flyscheme_light[][3] = {
++	[SchemeNorm] = { "#222222", "#eeeeee", "#cccccc" },
++	[SchemeSel]  = { "#ffffff", "#4a90e2", "#4a90e2" },
++};
++
++static const char *flyscheme_plan9[][3] = {
++	[SchemeNorm] = { "#000000", "#ffffea", "#999999" },
++	[SchemeSel]  = { "#000000", "#9ecfff", "#9ecfff" },
++};
++
++static const char *flyscheme_cyberpunk[][3] = {
++	[SchemeNorm] = { "#00ffcc", "#0d0221", "#1d1231" },
++	[SchemeSel]  = { "#0d0221", "#ff00aa", "#ff00aa" },
++};
++
