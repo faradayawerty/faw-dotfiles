@@ -1,19 +1,72 @@
-
-bash bash-completion tmux vim
-zip unzip unrar brightnessctl acpi yt-dlp links htop
-imagemagick poppler ffmpeg pandoc 
-git aria2 fastfetch cowsay mlocate
-imlib2 python python-pipx sagemath ranger go jdk11-openjdk
-tlp bluez
-
-xorg xorg-xinit xbindkeys xcompmgr xarchiver
-xwallpaper xlockmore xclip xsel xdotool
-maim dmenu mpv zathura zathura-djvu zathura-pdf-poppler
-telegram-desktop chromium mtpaint qbittorrent pcmanfm
-ttf-hack noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-texlive texlive-langcyrillic texlive-mathscience
-supertuxkart supertux wesnoth 0ad sauerbraten sauerbraten-data
-cataclysm-dda cataclysm-dda-tiles endless-sky
-
-pulseaudio pulsemixer cmus
-
+0ad
+acpi
+aria2
+bash
+bash-completion
+bluez
+brightnessctl
+cataclysm-dda
+cataclysm-dda-tiles
+chromium
+cmus
+cowsay
+dmenu
+endless-sky
+fastfetch
+ffmpeg
+git
+go
+htop
+imagemagick
+imlib2
+jdk11-openjdk
+links
+maim
+mlocate
+mpv
+mtpaint
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
+pandoc
+pcmanfm
+poppler
+pulseaudio
+pulsemixer
+python
+python-pipx
+qbittorrent
+ranger
+sagemath
+sauerbraten
+sauerbraten-data
+supertux
+supertuxkart
+sxiv
+telegram-desktop
+texlive
+texlive-langcyrillic
+texlive-mathscience
+tlp
+tmux
+ttf-hack
+unrar
+unzip
+vim
+wesnoth
+xarchiver
+xbindkeys
+xclip
+xcompmgr
+xdotool
+xlockmore
+xorg
+xorg-xinit
+xsel
+xwallpaper
+yt-dlp
+zathura
+zathura-djvu
+zathura-pdf-poppler
+zip

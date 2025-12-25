@@ -21,8 +21,7 @@ colorscheme monochrome
 highlight TabLine ctermbg=none ctermfg=none cterm=none
 highlight TabLineFill ctermfg=gray ctermbg=none cterm=none
 highlight TabLineSel ctermfg=white ctermbg=none cterm=bold
-highlight LineNr ctermfg=white ctermbg=none cterm=bold
-highlight CursorLineNr ctermfg=none ctermbg=none cterm=underline
+highlight LineNr ctermbg=none ctermfg=blue cterm=bold
 highlight ColorColumn ctermbg=red
 highlight Visual ctermfg=white ctermbg=blue cterm=none
 
