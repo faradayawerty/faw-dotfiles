@@ -1,6 +1,6 @@
-diff -upN dwm-6.6/config.def.h dwm-6.6-faw-patch/config.def.h
+diff -upN dwm-6.6/config.def.h dwm-6.6-patched/config.def.h
 --- dwm-6.6/config.def.h	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-faw-patch/config.def.h	2025-12-25 21:42:43.442679202 +0300
++++ dwm-6.6-patched/config.def.h	2025-12-26 10:54:26.513301515 +0300
 @@ -2,22 +2,72 @@
  
  /* appearance */
@@ -105,7 +105,7 @@ diff -upN dwm-6.6/config.def.h dwm-6.6-faw-patch/config.def.h
 +	"-nb", "#222222", /* changed as dmenucmd[6] in cycle_flyschemes */
 +	"-nf", "#bbbbbb", /* changed as dmenucmd[8] in cycle_flyschemes */
 +	"-sb", "#005577", /* changed as dmenucmd[10] in cycle_flyschemes */
-+	"-sf", "$eeeeee", /* changed as dmenucmd[12] in cycle_flyschemes */
++	"-sf", "#eeeeee", /* changed as dmenucmd[12] in cycle_flyschemes */
 +	NULL
 +};
 +
@@ -144,10 +144,10 @@ diff -upN dwm-6.6/config.def.h dwm-6.6-faw-patch/config.def.h
  	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
  	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-diff -upN dwm-6.6/config.h dwm-6.6-faw-patch/config.h
+diff -upN dwm-6.6/config.h dwm-6.6-patched/config.h
 --- dwm-6.6/config.h	1970-01-01 03:00:00.000000000 +0300
-+++ dwm-6.6-faw-patch/config.h	2025-12-25 22:38:48.592725175 +0300
-@@ -0,0 +1,168 @@
++++ dwm-6.6-patched/config.h	2025-12-26 10:56:04.326629566 +0300
+@@ -0,0 +1,162 @@
 +/* See LICENSE file for copyright and license details. */
 +
 +/* appearance */
@@ -213,7 +213,7 @@ diff -upN dwm-6.6/config.h dwm-6.6-faw-patch/config.h
 +	"-nb", "#222222", /* changed as dmenucmd[6] in cycle_flyschemes */
 +	"-nf", "#bbbbbb", /* changed as dmenucmd[8] in cycle_flyschemes */
 +	"-sb", "#005577", /* changed as dmenucmd[10] in cycle_flyschemes */
-+	"-sf", "$eeeeee", /* changed as dmenucmd[12] in cycle_flyschemes */
++	"-sf", "#eeeeee", /* changed as dmenucmd[12] in cycle_flyschemes */
 +	NULL
 +};
 +
@@ -232,11 +232,7 @@ diff -upN dwm-6.6/config.h dwm-6.6-faw-patch/config.h
 +	flyscheme_gruvbox,
 +	flyscheme_cyberpunk,
 +
-+	flyscheme_default,
-+
-+	flyscheme_dracula,
-+	flyscheme_gruvbox,
-+	flyscheme_cyberpunk,
++	flyscheme_light,
 +
 +	NULL // used to count the number of flyschemes
 + };
@@ -245,14 +241,12 @@ diff -upN dwm-6.6/config.h dwm-6.6-faw-patch/config.h
 +	"default", "default", "default", "default", "default", "default",
 +	"dracula", "gruvbox", "cyberpunk",
 +	"default",
-+	"dracula", "gruvbox", "cyberpunk",
 +};
 +
 +static const char *st_alphas[] = {
 +	"0.8", "0.8", "0.8", "0.8", "0.8", "0.8",
 +	"0.9", "0.9", "0.9",
-+	"1.0",
-+	"1.0", "1.0", "1.0",
++	"0.7",
 +};
 +
 +static const char *termcmd[]  = {
@@ -316,9 +310,9 @@ diff -upN dwm-6.6/config.h dwm-6.6-faw-patch/config.h
 +	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 +};
 +
-diff -upN dwm-6.6/config.mk dwm-6.6-faw-patch/config.mk
+diff -upN dwm-6.6/config.mk dwm-6.6-patched/config.mk
 --- dwm-6.6/config.mk	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-faw-patch/config.mk	2025-12-25 21:49:17.406017956 +0300
++++ dwm-6.6-patched/config.mk	2025-12-26 10:54:26.513301515 +0300
 @@ -4,7 +4,7 @@ VERSION = 6.6
  # Customize below to fit your system
  
@@ -337,9 +331,9 @@ diff -upN dwm-6.6/config.mk dwm-6.6-faw-patch/config.mk
  
  # flags
  CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-diff -upN dwm-6.6/drw.c dwm-6.6-faw-patch/drw.c
+diff -upN dwm-6.6/drw.c dwm-6.6-patched/drw.c
 --- dwm-6.6/drw.c	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-faw-patch/drw.c	2025-12-25 21:42:20.706012217 +0300
++++ dwm-6.6-patched/drw.c	2025-12-26 10:54:26.513301515 +0300
 @@ -47,7 +47,7 @@ utf8decode(const char *s_in, long *u, in
  }
  
@@ -418,9 +412,9 @@ diff -upN dwm-6.6/drw.c dwm-6.6-faw-patch/drw.c
  		x += lpad;
  		w -= lpad;
  	}
-diff -upN dwm-6.6/drw.h dwm-6.6-faw-patch/drw.h
+diff -upN dwm-6.6/drw.h dwm-6.6-patched/drw.h
 --- dwm-6.6/drw.h	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-faw-patch/drw.h	2025-12-25 21:42:20.706012217 +0300
++++ dwm-6.6-patched/drw.h	2025-12-26 10:54:26.516634848 +0300
 @@ -20,6 +20,9 @@ typedef struct {
  	Display *dpy;
  	int screen;
@@ -451,9 +445,9 @@ diff -upN dwm-6.6/drw.h dwm-6.6-faw-patch/drw.h
  
  /* Cursor abstraction */
  Cur *drw_cur_create(Drw *drw, int shape);
-diff -upN dwm-6.6/dwm.1 dwm-6.6-faw-patch/dwm.1
+diff -upN dwm-6.6/dwm.1 dwm-6.6-patched/dwm.1
 --- dwm-6.6/dwm.1	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-faw-patch/dwm.1	2025-12-25 21:42:35.559345756 +0300
++++ dwm-6.6-patched/dwm.1	2025-12-26 10:54:26.516634848 +0300
 @@ -113,9 +113,15 @@ Decrease master area size.
  .B Mod1\-Return
  Zooms/cycles focused window to/from master area (tiled layouts only).
@@ -471,9 +465,9 @@ diff -upN dwm-6.6/dwm.1 dwm-6.6-faw-patch/dwm.1
  .B Mod1\-Shift\-space
  Toggle focused window between tiled and floating state.
  .TP
-diff -upN dwm-6.6/dwm.c dwm-6.6-faw-patch/dwm.c
+diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
 --- dwm-6.6/dwm.c	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-faw-patch/dwm.c	2025-12-25 22:22:29.916045141 +0300
++++ dwm-6.6-patched/dwm.c	2025-12-26 10:54:26.516634848 +0300
 @@ -51,11 +51,13 @@
                                 * MAX(0, MIN((y)+(h),(m)->wy+(m)->wh) - MAX((y),(m)->wy)))
  #define ISVISIBLE(C)            ((C->tags & C->mon->tagset[C->mon->seltags]))
@@ -714,9 +708,9 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-faw-patch/dwm.c
  int
  main(int argc, char *argv[])
  {
-diff -upN dwm-6.6/flyschemes.h dwm-6.6-faw-patch/flyschemes.h
+diff -upN dwm-6.6/flyschemes.h dwm-6.6-patched/flyschemes.h
 --- dwm-6.6/flyschemes.h	1970-01-01 03:00:00.000000000 +0300
-+++ dwm-6.6-faw-patch/flyschemes.h	2025-12-25 22:33:13.942720618 +0300
++++ dwm-6.6-patched/flyschemes.h	2025-12-26 10:55:27.523298225 +0300
 @@ -0,0 +1,61 @@
 +
 +static const char *flyscheme_default_green[][3] = {
@@ -749,16 +743,6 @@ diff -upN dwm-6.6/flyschemes.h dwm-6.6-faw-patch/flyschemes.h
 +	[SchemeSel]  = { "#282a36", "#bd93f9", "#bd93f9" },
 +};
 +
-+static const char *flyscheme_solarized[][3] = {
-+	[SchemeNorm] = { "#839496", "#002b36", "#073642" },
-+	[SchemeSel]  = { "#002b36", "#2aa198", "#2aa198" },
-+};
-+
-+static const char *flyscheme_nord[][3] = {
-+	[SchemeNorm] = { "#d8dee9", "#2e3440", "#4c566a" },
-+	[SchemeSel]  = { "#2e3440", "#88c0d0", "#88c0d0" },
-+};
-+
 +static const char *flyscheme_gruvbox[][3] = {
 +	[SchemeNorm] = { "#ebdbb2", "#282828", "#3c3836" },
 +	[SchemeSel]  = { "#282828", "#fabd2f", "#fabd2f" },
@@ -769,13 +753,23 @@ diff -upN dwm-6.6/flyschemes.h dwm-6.6-faw-patch/flyschemes.h
 +	[SchemeSel]  = { "#ffffff", "#4a90e2", "#4a90e2" },
 +};
 +
-+static const char *flyscheme_plan9[][3] = {
-+	[SchemeNorm] = { "#000000", "#ffffea", "#999999" },
-+	[SchemeSel]  = { "#000000", "#9ecfff", "#9ecfff" },
-+};
-+
 +static const char *flyscheme_cyberpunk[][3] = {
 +	[SchemeNorm] = { "#00ffcc", "#0d0221", "#1d1231" },
 +	[SchemeSel]  = { "#0d0221", "#ff00aa", "#ff00aa" },
 +};
++
++// static const char *flyscheme_plan9[][3] = {
++// 	[SchemeNorm] = { "#000000", "#ffffea", "#999999" },
++// 	[SchemeSel]  = { "#000000", "#9ecfff", "#9ecfff" },
++// };
++// 
++// static const char *flyscheme_solarized[][3] = {
++// 	[SchemeNorm] = { "#839496", "#002b36", "#073642" },
++// 	[SchemeSel]  = { "#002b36", "#2aa198", "#2aa198" },
++// };
++// 
++// static const char *flyscheme_nord[][3] = {
++// 	[SchemeNorm] = { "#d8dee9", "#2e3440", "#4c566a" },
++// 	[SchemeSel]  = { "#2e3440", "#88c0d0", "#88c0d0" },
++// };
 +

@@ -12,5 +12,6 @@ patch_path=$(realpath dwm-faw-patch.diff)\
 	&& cd dwm-6.6-patched\
 	&& patch -p1 < $patch_path\
 	&& make\
-	&& make install
+	&& make install\
+	&& make clean
 

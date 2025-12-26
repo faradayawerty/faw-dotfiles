@@ -12,5 +12,6 @@ patch_path=$(realpath st-faw-patch.diff)\
 	&& cd st-0.9.3\
 	&& patch -p1 < $patch_path\
 	&& make\
-	&& make install
+	&& make install\
+	&& make clean
 
