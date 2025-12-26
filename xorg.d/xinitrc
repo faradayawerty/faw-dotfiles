@@ -1,7 +1,9 @@
 
-echo -e "Sxiv.background: black\nSxiv.foreground: white" | xrdb -merge 
+setxkbmap -layout us,ru -option grp:ctrl_space_toggle
 
-xwallpaper --stretch $(ls ~/Pictures/wallpapers/* $([ -d /usr/share/backgrounds/xfce ] && echo /usr/share/backgrounds/xfce/*) | shuf | head -n1) 
+echo -e "Sxiv.background: black\nSxiv.foreground: white" | xrdb -merge
+
+xwallpaper --stretch $(ls ~/Pictures/wallpapers/* $([ -d /usr/share/backgrounds/xfce ] && echo /usr/share/backgrounds/xfce/*) | shuf | head -n1)
 
 while true; do xsetroot -name " $(fawm_panel) "; sleep 20s; done &
 

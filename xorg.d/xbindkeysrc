@@ -1,4 +1,7 @@
 
+"pkill -x xcompmgr || xcompmgr &"
+	Mod4+o
+
 "DMENU='dmenu -fn Hack:size=10' faw_dmenu_emoji"
 	Mod4+Control+e
 
