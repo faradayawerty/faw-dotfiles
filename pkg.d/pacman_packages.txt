@@ -10,6 +10,7 @@ cataclysm-dda-tiles
 chromium
 cmus
 cowsay
+curl
 dmenu
 endless-sky
 fastfetch
