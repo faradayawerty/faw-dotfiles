@@ -19,11 +19,9 @@ syntax on
 colorscheme monochrome
 
 highlight TabLine ctermbg=none ctermfg=none cterm=none
-highlight TabLineFill ctermfg=gray ctermbg=none cterm=none
-highlight TabLineSel ctermfg=white ctermbg=none cterm=bold
-highlight LineNr ctermbg=none ctermfg=blue cterm=bold
+highlight TabLineFill ctermbg=none ctermfg=gray cterm=none
+highlight TabLineSel ctermbg=none ctermfg=white cterm=bold
 highlight ColorColumn ctermbg=red
-highlight Visual ctermfg=black ctermbg=blue cterm=none
 
 noremap ,S :set spell! spelllang=en,ru<CR>
 noremap ,w :set list!<cr>

@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+# faw_ytmusicdl_playlist — скачать плейлист, конвертировать в MP3 и объединить
+
+set -euo pipefail
+
+# === Проверка зависимостей ===
+for cmd in yt-dlp ffmpeg; do
+    if ! command -v "$cmd" &>/dev/null; then
+        echo "❌ Требуется $cmd. Установи его перед использованием."
+        exit 1
+    fi
+done
+
+if [ -z "${1:-}" ]; then
+    echo "Использование:"
+    echo "  faw_ytmusicdl_playlist <playlist_url> [title] [artist]"
+    exit 1
+fi
+
+URL="$1"
+TITLE="${2:-}"
+ARTIST="${3:-}"
+
+# === Пути ===
+WORKDIR="$(mktemp -d /tmp/ytmusicdl_playlist.XXXXXX)"
+OUTDIR="$(pwd)"
+CONCAT_LIST="$WORKDIR/concat.txt"
+
+# === Получаем название плейлиста, если не указано ===
+if [ -z "$TITLE" ]; then
+    TITLE=$(yt-dlp --get-playlist-title "$URL" 2>/dev/null || echo "playlist")
+fi
+
+OUTFILE="${OUTDIR}/${TITLE// /_}.mp3"
+
+echo "📂 Временная папка: $WORKDIR"
+echo "🎼 Плейлист: $TITLE"
+
+# === Скачивание ===
+echo "🔽 Скачивание аудио..."
+yt-dlp \
+    -f "bestaudio[ext=webm]/bestaudio" \
+    -o "$WORKDIR/%(playlist_index)03d - %(title)s.%(ext)s" \
+    --yes-playlist \
+    --no-part \
+    --no-cache-dir \
+    --quiet --progress \
+    "$URL"
+
+# === Конвертация в MP3 ===
+echo "🎧 Конвертация в MP3..."
+for file in "$WORKDIR"/*.webm "$WORKDIR"/*.m4a "$WORKDIR"/*.opus; do
+    [ -e "$file" ] || continue
+    mp3="${file%.*}.mp3"
+
+    ffmpeg -y -i "$file" -vn -ar 44100 -ac 2 -b:a 192k \
+        "$mp3" < /dev/null
+
+    rm -f "$file"
+done
+
+# === Список для объединения ===
+for mp3 in "$WORKDIR"/*.mp3; do
+    echo "file '$mp3'" >> "$CONCAT_LIST"
+done
+
+# === Объединение ===
+echo "🧩 Объединение треков..."
+if [ -n "$ARTIST" ]; then
+    ffmpeg -y -f concat -safe 0 -i "$CONCAT_LIST" \
+        -metadata title="$TITLE" \
+        -metadata artist="$ARTIST" \
+        -c copy "$OUTFILE" < /dev/null
+else
+    ffmpeg -y -f concat -safe 0 -i "$CONCAT_LIST" \
+        -metadata title="$TITLE" \
+        -c copy "$OUTFILE" < /dev/null
+fi
+
+# === Очистка ===
+rm -rf "$WORKDIR"
+
+echo "✅ Готово: $OUTFILE"
