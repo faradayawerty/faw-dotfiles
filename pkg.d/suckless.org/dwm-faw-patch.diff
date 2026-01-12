@@ -1,5 +1,6 @@
---- dwm-6.6/config.def.h	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-patched/config.def.h	2025-12-26 10:54:26.513301515 +0300
+diff -upN dwm-6.7/config.def.h dwm-6.7-patched/config.def.h
+--- dwm-6.7/config.def.h	2026-01-10 13:33:58.160268753 +0300
++++ dwm-6.7-patched/config.def.h	2026-01-12 15:23:13.293319190 +0300
 @@ -2,22 +2,72 @@
  
  /* appearance */
@@ -89,9 +90,9 @@
 -static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 +static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
  static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+ static const int refreshrate = 120;  /* refresh rate (per second) for client move/resize */
  
- static const Layout layouts[] = {
-@@ -57,8 +107,38 @@ static const Layout layouts[] = {
+@@ -58,8 +108,38 @@ static const Layout layouts[] = {
  
  /* commands */
  static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -132,7 +133,7 @@
  
  static const Key keys[] = {
  	/* modifier                     key        function        argument */
-@@ -73,7 +153,9 @@ static const Key keys[] = {
+@@ -74,7 +154,9 @@ static const Key keys[] = {
  	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
  	{ MODKEY,                       XK_Return, zoom,           {0} },
  	{ MODKEY,                       XK_Tab,    view,           {0} },
@@ -143,10 +144,10 @@
  	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
  	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-diff -upN dwm-6.6/config.h dwm-6.6-patched/config.h
---- dwm-6.6/config.h	1970-01-01 03:00:00.000000000 +0300
-+++ dwm-6.6-patched/config.h	2025-12-26 10:56:04.326629566 +0300
-@@ -0,0 +1,162 @@
+diff -upN dwm-6.7/config.h dwm-6.7-patched/config.h
+--- dwm-6.7/config.h	1970-01-01 03:00:00.000000000 +0300
++++ dwm-6.7-patched/config.h	2026-01-12 15:43:09.669966016 +0300
+@@ -0,0 +1,163 @@
 +/* See LICENSE file for copyright and license details. */
 +
 +/* appearance */
@@ -184,6 +185,7 @@ diff -upN dwm-6.6/config.h dwm-6.6-patched/config.h
 +static const int nmaster     = 1;    /* number of clients in master area */
 +static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 +static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
++static const int refreshrate = 120;  /* refresh rate (per second) for client move/resize */
 +
 +static const Layout layouts[] = {
 +	/* symbol     arrange function */
@@ -309,10 +311,10 @@ diff -upN dwm-6.6/config.h dwm-6.6-patched/config.h
 +	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 +};
 +
-diff -upN dwm-6.6/config.mk dwm-6.6-patched/config.mk
---- dwm-6.6/config.mk	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-patched/config.mk	2025-12-26 10:54:26.513301515 +0300
-@@ -4,7 +4,7 @@ VERSION = 6.6
+diff -upN dwm-6.7/config.mk dwm-6.7-patched/config.mk
+--- dwm-6.7/config.mk	2026-01-10 13:33:58.160268753 +0300
++++ dwm-6.7-patched/config.mk	2026-01-12 15:23:13.293319190 +0300
+@@ -4,7 +4,7 @@ VERSION = 6.7
  # Customize below to fit your system
  
  # paths
@@ -330,9 +332,9 @@ diff -upN dwm-6.6/config.mk dwm-6.6-patched/config.mk
  
  # flags
  CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-diff -upN dwm-6.6/drw.c dwm-6.6-patched/drw.c
---- dwm-6.6/drw.c	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-patched/drw.c	2025-12-26 10:54:26.513301515 +0300
+diff -upN dwm-6.7/drw.c dwm-6.7-patched/drw.c
+--- dwm-6.7/drw.c	2026-01-10 13:33:58.160268753 +0300
++++ dwm-6.7-patched/drw.c	2026-01-12 15:40:25.156635378 +0300
 @@ -47,7 +47,7 @@ utf8decode(const char *s_in, long *u, in
  }
  
@@ -365,33 +367,31 @@ diff -upN dwm-6.6/drw.c dwm-6.6-patched/drw.c
  }
  
  void
-@@ -167,21 +170,21 @@ drw_fontset_free(Fnt *font)
+@@ -166,8 +169,7 @@ drw_fontset_free(Fnt *font)
+ 	}
  }
  
- void
+-void
 -drw_clr_create(Drw *drw, Clr *dest, const char *clrname)
-+drw_clr_create(Drw *drw, Clr *dest, const char *clrname, unsigned int alpha)
++void drw_clr_create(Drw *drw, Clr *dest, const char *clrname, unsigned int alpha)
  {
  	if (!drw || !dest || !clrname)
  		return;
- 
--	if (!XftColorAllocName(drw->dpy, DefaultVisual(drw->dpy, drw->screen),
--	                       DefaultColormap(drw->dpy, drw->screen),
-+	if (!XftColorAllocName(drw->dpy, drw->visual, drw->cmap,
+@@ -176,11 +178,12 @@ drw_clr_create(Drw *drw, Clr *dest, cons
+ 	                       DefaultColormap(drw->dpy, drw->screen),
  	                       clrname, dest))
  		die("error, cannot allocate color '%s'", clrname);
 +	dest->pixel = (dest->pixel & 0x00ffffffU) | (alpha << 24);
  }
  
- /* Wrapper to create color schemes. The caller has to call free(3) on the
-  * returned color scheme when done using it. */
+ /* Create color schemes. */
  Clr *
 -drw_scm_create(Drw *drw, const char *clrnames[], size_t clrcount)
 +drw_scm_create(Drw *drw, const char *clrnames[], const unsigned int clralphas[], size_t clrcount)
  {
  	size_t i;
  	Clr *ret;
-@@ -191,7 +194,7 @@ drw_scm_create(Drw *drw, const char *clr
+@@ -190,7 +193,7 @@ drw_scm_create(Drw *drw, const char *clr
  		return NULL;
  
  	for (i = 0; i < clrcount; i++)
@@ -400,7 +400,7 @@ diff -upN dwm-6.6/drw.c dwm-6.6-patched/drw.c
  	return ret;
  }
  
-@@ -250,9 +253,7 @@ drw_text(Drw *drw, int x, int y, unsigne
+@@ -273,9 +276,7 @@ drw_text(Drw *drw, int x, int y, unsigne
  		XFillRectangle(drw->dpy, drw->drawable, drw->gc, x, y, w, h);
  		if (w < lpad)
  			return x + w;
@@ -411,9 +411,9 @@ diff -upN dwm-6.6/drw.c dwm-6.6-patched/drw.c
  		x += lpad;
  		w -= lpad;
  	}
-diff -upN dwm-6.6/drw.h dwm-6.6-patched/drw.h
---- dwm-6.6/drw.h	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-patched/drw.h	2025-12-26 10:54:26.516634848 +0300
+diff -upN dwm-6.7/drw.h dwm-6.7-patched/drw.h
+--- dwm-6.7/drw.h	2026-01-10 13:33:58.160268753 +0300
++++ dwm-6.7-patched/drw.h	2026-01-12 15:30:28.476645235 +0300
 @@ -20,6 +20,9 @@ typedef struct {
  	Display *dpy;
  	int screen;
@@ -433,20 +433,23 @@ diff -upN dwm-6.6/drw.h dwm-6.6-patched/drw.h
  void drw_resize(Drw *drw, unsigned int w, unsigned int h);
  void drw_free(Drw *drw);
  
-@@ -39,8 +42,8 @@ unsigned int drw_fontset_getwidth_clamp(
+@@ -39,9 +42,9 @@ unsigned int drw_fontset_getwidth_clamp(
  void drw_font_getexts(Fnt *font, const char *text, unsigned int len, unsigned int *w, unsigned int *h);
  
  /* Colorscheme abstraction */
 -void drw_clr_create(Drw *drw, Clr *dest, const char *clrname);
--Clr *drw_scm_create(Drw *drw, const char *clrnames[], size_t clrcount);
 +void drw_clr_create(Drw *drw, Clr *dest, const char *clrname, unsigned int alpha);
 +Clr *drw_scm_create(Drw *drw, const char *clrnames[], const unsigned int clralphas[], size_t clrcount);
+ void drw_clr_free(Drw *drw, Clr *c);
+-Clr *drw_scm_create(Drw *drw, const char *clrnames[], size_t clrcount);
+ void drw_scm_free(Drw *drw, Clr *scm, size_t clrcount);
  
  /* Cursor abstraction */
- Cur *drw_cur_create(Drw *drw, int shape);
-diff -upN dwm-6.6/dwm.1 dwm-6.6-patched/dwm.1
---- dwm-6.6/dwm.1	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-patched/dwm.1	2025-12-26 10:54:26.516634848 +0300
+Binary files dwm-6.7/drw.o and dwm-6.7-patched/drw.o differ
+Binary files dwm-6.7/dwm and dwm-6.7-patched/dwm differ
+diff -upN dwm-6.7/dwm.1 dwm-6.7-patched/dwm.1
+--- dwm-6.7/dwm.1	2026-01-10 13:33:58.160268753 +0300
++++ dwm-6.7-patched/dwm.1	2026-01-12 15:23:13.296652524 +0300
 @@ -113,9 +113,15 @@ Decrease master area size.
  .B Mod1\-Return
  Zooms/cycles focused window to/from master area (tiled layouts only).
@@ -464,9 +467,9 @@ diff -upN dwm-6.6/dwm.1 dwm-6.6-patched/dwm.1
  .B Mod1\-Shift\-space
  Toggle focused window between tiled and floating state.
  .TP
-diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
---- dwm-6.6/dwm.c	2025-08-09 16:00:55.740267680 +0300
-+++ dwm-6.6-patched/dwm.c	2025-12-26 10:54:26.516634848 +0300
+diff -upN dwm-6.7/dwm.c dwm-6.7-patched/dwm.c
+--- dwm-6.7/dwm.c	2026-01-10 13:33:58.160268753 +0300
++++ dwm-6.7-patched/dwm.c	2026-01-12 15:27:07.626648618 +0300
 @@ -51,11 +51,13 @@
                                 * MAX(0, MIN((y)+(h),(m)->wy+(m)->wh) - MAX((y),(m)->wy)))
  #define ISVISIBLE(C)            ((C->tags & C->mon->tagset[C->mon->seltags]))
@@ -521,10 +524,10 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
  		drw_cur_free(drw, cursor[i]);
 -	for (i = 0; i < LENGTH(colors); i++)
 +	for (i = 0; i < LENGTH(flyscheme_default); i++)
- 		free(scheme[i]);
+ 		drw_scm_free(drw, scheme[i], 3);
  	free(scheme);
  	XDestroyWindow(dpy, wmcheckwin);
-@@ -1285,12 +1295,36 @@ void
+@@ -1286,12 +1296,36 @@ void
  resizeclient(Client *c, int x, int y, int w, int h)
  {
  	XWindowChanges wc;
@@ -565,7 +568,7 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
  	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
  	configure(c);
  	XSync(dpy, False);
-@@ -1557,7 +1591,8 @@ setup(void)
+@@ -1558,7 +1592,8 @@ setup(void)
  	sw = DisplayWidth(dpy, screen);
  	sh = DisplayHeight(dpy, screen);
  	root = RootWindow(dpy, screen);
@@ -575,7 +578,7 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
  	if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
  		die("no fonts could be loaded.");
  	lrpad = drw->fonts->h;
-@@ -1583,9 +1618,10 @@ setup(void)
+@@ -1584,9 +1619,10 @@ setup(void)
  	cursor[CurResize] = drw_cur_create(drw, XC_sizing);
  	cursor[CurMove] = drw_cur_create(drw, XC_fleur);
  	/* init appearance */
@@ -589,7 +592,7 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
  	/* init bars */
  	updatebars();
  	updatestatus();
-@@ -1700,7 +1736,7 @@ tile(Monitor *m)
+@@ -1701,7 +1737,7 @@ tile(Monitor *m)
  	for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
  		if (i < m->nmaster) {
  			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
@@ -598,7 +601,7 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
  			if (my + HEIGHT(c) < m->wh)
  				my += HEIGHT(c);
  		} else {
-@@ -1820,16 +1856,18 @@ updatebars(void)
+@@ -1821,16 +1857,18 @@ updatebars(void)
  	Monitor *m;
  	XSetWindowAttributes wa = {
  		.override_redirect = True,
@@ -621,7 +624,7 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
  		XDefineCursor(dpy, m->barwin, cursor[CurNormal]->cursor);
  		XMapRaised(dpy, m->barwin);
  		XSetClassHint(dpy, m->barwin, &ch);
-@@ -2128,6 +2166,43 @@ xerrorstart(Display *dpy, XErrorEvent *e
+@@ -2129,6 +2167,43 @@ xerrorstart(Display *dpy, XErrorEvent *e
  }
  
  void
@@ -665,7 +668,7 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
  zoom(const Arg *arg)
  {
  	Client *c = selmon->sel;
-@@ -2139,6 +2214,41 @@ zoom(const Arg *arg)
+@@ -2140,6 +2215,41 @@ zoom(const Arg *arg)
  	pop(c);
  }
  
@@ -707,9 +710,10 @@ diff -upN dwm-6.6/dwm.c dwm-6.6-patched/dwm.c
  int
  main(int argc, char *argv[])
  {
-diff -upN dwm-6.6/flyschemes.h dwm-6.6-patched/flyschemes.h
---- dwm-6.6/flyschemes.h	1970-01-01 03:00:00.000000000 +0300
-+++ dwm-6.6-patched/flyschemes.h	2025-12-26 10:55:27.523298225 +0300
+Binary files dwm-6.7/dwm.o and dwm-6.7-patched/dwm.o differ
+diff -upN dwm-6.7/flyschemes.h dwm-6.7-patched/flyschemes.h
+--- dwm-6.7/flyschemes.h	1970-01-01 03:00:00.000000000 +0300
++++ dwm-6.7-patched/flyschemes.h	2026-01-12 15:23:13.296652524 +0300
 @@ -0,0 +1,61 @@
 +
 +static const char *flyscheme_default_green[][3] = {
@@ -772,3 +776,4 @@ diff -upN dwm-6.6/flyschemes.h dwm-6.6-patched/flyschemes.h
 +// 	[SchemeSel]  = { "#2e3440", "#88c0d0", "#88c0d0" },
 +// };
 +
+Binary files dwm-6.7/util.o and dwm-6.7-patched/util.o differ
