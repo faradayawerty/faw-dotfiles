@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -z "$SCREENSHOT_COMMAND" ] && SCREENSHOT_COMMAND="maim -s"
+[ -z "$SCREENSHOT_COMMAND" ] && SCREENSHOT_COMMAND="maim $@"
 [ -z "$IMAGE_VIEWER" ] && IMAGE_VIEWER="sxiv"
 
 dir=~/Pictures/screenshots

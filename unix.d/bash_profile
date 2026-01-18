@@ -8,7 +8,8 @@ export HTOPRC=~/.htoprc
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix broken java apps in dwm
 
 [ -d "$HOME/.local/bin" ]\
-	&& PATH="$HOME/.local/bin:$PATH"
+	&& PATH="$HOME/.local/bin:$PATH"\
+	&& PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 
 [[ -n "$DISPLAY" ]]\
 	&& setxkbmap -layout us,ru -option grp:ctrl_space_toggle

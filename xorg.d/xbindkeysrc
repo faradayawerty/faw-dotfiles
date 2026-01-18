@@ -26,8 +26,11 @@
 "Telegram"
 	Mod4+Control+t
 
-"faw_screen"
+"faw_screen -s"
 	Mod4+Control+p
+
+"faw_screen"
+	Print
 
 "xlock"
 	Mod4+Shift+l
