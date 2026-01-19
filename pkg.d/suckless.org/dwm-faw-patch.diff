@@ -1,6 +1,6 @@
 diff -upN dwm-6.7/config.def.h dwm-6.7-patched/config.def.h
 --- dwm-6.7/config.def.h	2026-01-10 13:33:58.160268753 +0300
-+++ dwm-6.7-patched/config.def.h	2026-01-12 15:23:13.293319190 +0300
++++ dwm-6.7-patched/config.def.h	2026-01-12 17:14:18.889873391 +0300
 @@ -2,22 +2,72 @@
  
  /* appearance */
@@ -146,8 +146,8 @@ diff -upN dwm-6.7/config.def.h dwm-6.7-patched/config.def.h
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 diff -upN dwm-6.7/config.h dwm-6.7-patched/config.h
 --- dwm-6.7/config.h	1970-01-01 03:00:00.000000000 +0300
-+++ dwm-6.7-patched/config.h	2026-01-12 15:43:09.669966016 +0300
-@@ -0,0 +1,163 @@
++++ dwm-6.7-patched/config.h	2026-01-19 15:07:29.149864621 +0300
+@@ -0,0 +1,164 @@
 +/* See LICENSE file for copyright and license details. */
 +
 +/* appearance */
@@ -175,9 +175,10 @@ diff -upN dwm-6.7/config.h dwm-6.7-patched/config.h
 +	 *	WM_CLASS(STRING) = instance, class
 +	 *	WM_NAME(STRING) = title
 +	 */
-+	/* class      instance    title       tags mask     isfloating   monitor */
-+	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
++	/* class                 instance    title                 tags mask     isfloating   monitor */
++	{ "Gimp",                NULL,       NULL,                 0,            1,           -1 },
++	{ "Firefox",             NULL,       NULL,                 1 << 8,       0,           -1 },
++	{ "TelegramDesktop",     NULL,       "Media viewer",       0,            1,           -1 },
 +};
 +
 +/* layout(s) */
@@ -313,7 +314,7 @@ diff -upN dwm-6.7/config.h dwm-6.7-patched/config.h
 +
 diff -upN dwm-6.7/config.mk dwm-6.7-patched/config.mk
 --- dwm-6.7/config.mk	2026-01-10 13:33:58.160268753 +0300
-+++ dwm-6.7-patched/config.mk	2026-01-12 15:23:13.293319190 +0300
++++ dwm-6.7-patched/config.mk	2026-01-12 17:14:18.889873391 +0300
 @@ -4,7 +4,7 @@ VERSION = 6.7
  # Customize below to fit your system
  
@@ -334,7 +335,7 @@ diff -upN dwm-6.7/config.mk dwm-6.7-patched/config.mk
  CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
 diff -upN dwm-6.7/drw.c dwm-6.7-patched/drw.c
 --- dwm-6.7/drw.c	2026-01-10 13:33:58.160268753 +0300
-+++ dwm-6.7-patched/drw.c	2026-01-12 15:40:25.156635378 +0300
++++ dwm-6.7-patched/drw.c	2026-01-12 17:14:18.889873391 +0300
 @@ -47,7 +47,7 @@ utf8decode(const char *s_in, long *u, in
  }
  
@@ -413,7 +414,7 @@ diff -upN dwm-6.7/drw.c dwm-6.7-patched/drw.c
  	}
 diff -upN dwm-6.7/drw.h dwm-6.7-patched/drw.h
 --- dwm-6.7/drw.h	2026-01-10 13:33:58.160268753 +0300
-+++ dwm-6.7-patched/drw.h	2026-01-12 15:30:28.476645235 +0300
++++ dwm-6.7-patched/drw.h	2026-01-12 17:14:18.889873391 +0300
 @@ -20,6 +20,9 @@ typedef struct {
  	Display *dpy;
  	int screen;
@@ -445,11 +446,9 @@ diff -upN dwm-6.7/drw.h dwm-6.7-patched/drw.h
  void drw_scm_free(Drw *drw, Clr *scm, size_t clrcount);
  
  /* Cursor abstraction */
-Binary files dwm-6.7/drw.o and dwm-6.7-patched/drw.o differ
-Binary files dwm-6.7/dwm and dwm-6.7-patched/dwm differ
 diff -upN dwm-6.7/dwm.1 dwm-6.7-patched/dwm.1
 --- dwm-6.7/dwm.1	2026-01-10 13:33:58.160268753 +0300
-+++ dwm-6.7-patched/dwm.1	2026-01-12 15:23:13.296652524 +0300
++++ dwm-6.7-patched/dwm.1	2026-01-12 17:14:18.889873391 +0300
 @@ -113,9 +113,15 @@ Decrease master area size.
  .B Mod1\-Return
  Zooms/cycles focused window to/from master area (tiled layouts only).
@@ -469,7 +468,7 @@ diff -upN dwm-6.7/dwm.1 dwm-6.7-patched/dwm.1
  .TP
 diff -upN dwm-6.7/dwm.c dwm-6.7-patched/dwm.c
 --- dwm-6.7/dwm.c	2026-01-10 13:33:58.160268753 +0300
-+++ dwm-6.7-patched/dwm.c	2026-01-12 15:27:07.626648618 +0300
++++ dwm-6.7-patched/dwm.c	2026-01-12 17:14:18.889873391 +0300
 @@ -51,11 +51,13 @@
                                 * MAX(0, MIN((y)+(h),(m)->wy+(m)->wh) - MAX((y),(m)->wy)))
  #define ISVISIBLE(C)            ((C->tags & C->mon->tagset[C->mon->seltags]))
@@ -710,10 +709,9 @@ diff -upN dwm-6.7/dwm.c dwm-6.7-patched/dwm.c
  int
  main(int argc, char *argv[])
  {
-Binary files dwm-6.7/dwm.o and dwm-6.7-patched/dwm.o differ
 diff -upN dwm-6.7/flyschemes.h dwm-6.7-patched/flyschemes.h
 --- dwm-6.7/flyschemes.h	1970-01-01 03:00:00.000000000 +0300
-+++ dwm-6.7-patched/flyschemes.h	2026-01-12 15:23:13.296652524 +0300
++++ dwm-6.7-patched/flyschemes.h	2026-01-12 17:14:18.889873391 +0300
 @@ -0,0 +1,61 @@
 +
 +static const char *flyscheme_default_green[][3] = {
@@ -776,4 +774,3 @@ diff -upN dwm-6.7/flyschemes.h dwm-6.7-patched/flyschemes.h
 +// 	[SchemeSel]  = { "#2e3440", "#88c0d0", "#88c0d0" },
 +// };
 +
-Binary files dwm-6.7/util.o and dwm-6.7-patched/util.o differ

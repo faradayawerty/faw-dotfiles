@@ -25,6 +25,8 @@ imlib2
 jdk11-openjdk
 krita
 links
+love
+lua
 lxappearance
 maim
 mlocate
