@@ -1,8 +1,8 @@
 
 call plug#begin('~/.vim/plugged')
-	Plug 'christoomey/vim-system-copy'
 	Plug 'mkitt/tabline.vim'
-	Plug 'fxn/vim-monochrome'
+	Plug 'christoomey/vim-system-copy'
+	Plug 'faradayawerty/vim-monochrome'
 call plug#end()
 
 set number
