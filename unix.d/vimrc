@@ -23,7 +23,12 @@ highlight TabLineFill ctermbg=none ctermfg=gray cterm=none
 highlight TabLineSel ctermbg=none ctermfg=white cterm=bold
 highlight ColorColumn ctermbg=red
 
-noremap ,S :set spell! spelllang=en,ru<CR>
+autocmd FileType c,cpp nnoremap <buffer> ,i :%!indent -ut -i8 -ts8 -l80 -nlp -npsl -br -ce -fca -npcs -nprs -nsaf -nsai -nsaw<cr>
+autocmd FileType c,cpp vnoremap <buffer> ,i :!indent -ut -i8 -ts8 -l80 -nlp -npsl -br -ce -fca -npcs -nprs -nsaf -nsai -nsaw<cr>
+autocmd FileType javascript,html nnoremap <buffer> ,i :%!js-beautify -t --wrap-line-length=80 --max-preserve-newlines=1 --brace-style=end-expand<cr>
+autocmd FileType javascript,html vnoremap <buffer> ,i :!js-beautify -t --wrap-line-length=80 --max-preserve-newlines=1 --brace-style=end-expand<cr>
+
+noremap ,S :set spell! spelllang=en,ru<cr>
 noremap ,w :set list!<cr>
 noremap ,p :set paste!<cr>
 noremap ,c :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<cr>
@@ -49,5 +54,4 @@ augroup line_return
 		\	execute 'normal! g`"zvzz' |
 		\ endif
 augroup END
-
 

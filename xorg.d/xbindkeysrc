@@ -14,11 +14,17 @@
 "chromium --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled"
 	Mod4+Control+b
 
+"yandex-browser-stable"
+	Mod4+Control+y
+
 "sxiv -t ~/Pictures/wallpapers $([ -d /usr/share/backgrounds/xfce ] && echo /usr/share/backgrounds/xfce)"
 	Mod4+Control+w
 
-"xwallpaper --stretch $(ls ~/Pictures/wallpapers/* $([ -d /usr/share/backgrounds/xfce ] && echo /usr/share/backgrounds/xfce/*) | shuf | head -n1)"
+"xwallpaper --zoom $(ls ~/Pictures/wallpapers/* $([ -d /usr/share/backgrounds/xfce ] && echo /usr/share/backgrounds/xfce/*) | shuf | head -n1)"
 	Mod4+Shift+w
+
+"faw_metro_moscow"
+	Mod4+Control+m
 
 "pcmanfm"
 	Mod4+Control+f

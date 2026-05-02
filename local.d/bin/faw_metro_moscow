@@ -1,0 +1,4 @@
+#!/bin/bash
+
+zathura ~/.local/share/metro/metro_map_ru.pdf
+
